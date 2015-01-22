@@ -188,7 +188,7 @@ public extension CGPath {
 // MARK: Bounding box and length
 
 public extension CGPath {
-    public var bounds: CGRect { get { return CGPathGetPathBoundingBox(self) }}
+    public var boundingBox: CGRect { get { return CGPathGetPathBoundingBox(self) }}
     
     public var length: CGFloat { get {
         var ret:CGFloat = 0.0
