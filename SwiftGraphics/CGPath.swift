@@ -92,6 +92,31 @@ public extension CGMutablePath {
     }
 }
 
+// MARK: Add smooth curve segment whose start tangent is the end tangent of the previous segment
+
+public extension CGMutablePath {
+    func addSmoothQuadCurveToPoint(end:CGPoint) -> CGMutablePath {
+        return addQuadCurveToPoint(end, control1: outControlPoint())
+    }
+    
+    func addSmoothQuadCurveToPoint(end:CGPoint, relative:Bool) -> CGMutablePath {
+        return addQuadCurveToPoint(end, control1: outControlPoint(), relative:relative)
+    }
+    
+    func addSmoothCubicCurveToPoint(end:CGPoint, control2:CGPoint) -> CGMutablePath {
+        return addCubicCurveToPoint(end, control1:outControlPoint(), control2:control2)
+    }
+    
+    func addSmoothCubicCurveToPoint(end:CGPoint, control2:CGPoint, relative:Bool) -> CGMutablePath {
+        return addCubicCurveToPoint(end, control1:outControlPoint(), control2:control2, relative:relative)
+    }
+    
+    private func outControlPoint() -> CGPoint {
+        let n = pointCount
+        return n > 1 ? 2 * currentPoint - getPoint(n - 2)! : currentPoint
+    }
+}
+
 // MARK: Enumerate path elements
 
 public extension CGPath {
@@ -201,6 +226,62 @@ public extension CGPath {
                 ret += BezierCurve(points:points).length
             default:
                 assert(false)
+            }
+        }
+        return ret
+    }}
+}
+
+// MARK: Get control points and endpoints of path segments
+
+public extension CGPath {
+    
+    var points: [CGPoint] { get {
+        var ret:[CGPoint] = []
+        
+        enumerate() { (type, points) -> Void in
+            switch type.value {
+            case kCGPathElementMoveToPoint.value:
+                ret.append(points[0])
+            case kCGPathElementAddLineToPoint.value:
+                ret.append(points[1])
+            case kCGPathElementAddCurveToPoint.value:
+                [1, 2, 3].map { ret.append(points[$0]) }
+            case kCGPathElementCloseSubpath.value:
+                println("")
+            default:
+                println("")
+            }
+        }
+        return ret
+    }}
+    
+    var pointCount: Int { get {
+        var ret = 0
+        
+        enumerate() { (type, points) -> Void in
+            switch type.value {
+            case kCGPathElementMoveToPoint.value:
+                ret = ret + 1
+            case kCGPathElementAddLineToPoint.value:
+                ret = ret + 1
+            case kCGPathElementAddCurveToPoint.value:
+                ret = ret + 3
+            case kCGPathElementCloseSubpath.value:
+                println("")
+            default:
+                println("")
+            }
+        }
+        return ret
+    }}
+    
+    var isClosed : Bool { get {
+        var ret = false
+        
+        CGPathApplyWithBlock(self) { (elementPtr) -> Void in
+            if elementPtr.memory.type.value == kCGPathElementCloseSubpath.value {
+                ret = true
             }
         }
         return ret
