@@ -96,7 +96,8 @@ public extension CGMutablePath {
 
 public extension CGPath {
     func enumerate(block:(type:CGPathElementType, points:[CGPoint]) -> Void) {
-        var curpt  = CGPoint()
+        var curpt = CGPoint()
+        var start = curpt
         
         CGPathApplyWithBlock(self) {
             (elementPtr:UnsafePointer<CGPathElement>) -> Void in
@@ -105,6 +106,7 @@ public extension CGPath {
             switch element.type.value {
             case kCGPathElementMoveToPoint.value:
                 curpt = element.points.memory
+                start = curpt
                 block(type:kCGPathElementMoveToPoint, points:[curpt])
                 
             case kCGPathElementAddLineToPoint.value:
@@ -127,7 +129,7 @@ public extension CGPath {
                 curpt = points[3]
             
             case kCGPathElementCloseSubpath.value:
-                block(type:kCGPathElementCloseSubpath, points:[curpt, self.getPoint(0)!])
+                block(type:kCGPathElementCloseSubpath, points:[curpt, start])
             default:
                 println("default")
             }
@@ -138,11 +140,25 @@ public extension CGPath {
         var pt:CGPoint?
         var i = 0
         
-        CGPathApplyWithBlock(self) {
-            (elementPtr:UnsafePointer<CGPathElement>) -> Void in
-            if index == i++ {
-                let element : CGPathElement = elementPtr.memory
-                pt = element.points.memory
+        enumerate() { (type, points) -> Void in
+            switch type.value {
+            case kCGPathElementMoveToPoint.value:
+                if index == i++ {
+                    pt = points[0]
+                }
+            case kCGPathElementAddLineToPoint.value:
+                if index == i++ {
+                    pt = points[1]
+                }
+            case kCGPathElementAddCurveToPoint.value:
+                if index >= i && index - i < 3 {
+                    pt = points[index - i + 1]
+                }
+                i = i + 3
+            case kCGPathElementCloseSubpath.value:
+                println("kCGPathElementCloseSubpath")
+            default:
+                println("default")
             }
         }
         return pt
@@ -172,7 +188,7 @@ public extension CGPath {
 // MARK: Bounding box and length
 
 public extension CGPath {
-    public var bounds: CGRect { get { return CGPathGetPathBoundingBox(self) }}
+    public var boundingBox: CGRect { get { return CGPathGetPathBoundingBox(self) }}
     
     public var length: CGFloat { get {
         var ret:CGFloat = 0.0
