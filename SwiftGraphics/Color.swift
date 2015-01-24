@@ -37,8 +37,8 @@ public func ==(lhs: RGB, rhs: RGB) -> Bool {
 }
 
 public extension RGB {
-    public var CGColor:CGColorRef {
-        return CGColorCreateGenericRGB(r, g, b, 1.0)
+    public var cgColor:CGColor {
+        return CGColor.color(red:r, green:g, blue:b)
     }
 }
 
@@ -76,9 +76,9 @@ public func ==(lhs: HSV, rhs: HSV) -> Bool {
 }
 
 public extension HSV {
-    public var CGColor:CGColorRef {
+    public var cgColor:CGColor {
         let rgb = convert(self)
-        return rgb.CGColor
+        return rgb.cgColor
     }
 }
 

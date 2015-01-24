@@ -20,7 +20,7 @@ for var n:CGFloat = 0; n <= 1.0; n += 0.05 {
 
     let color = lerp(start_color, end_color, n)
 
-    style.fillColor = color.CGColor.withAlpha(0.1)
+    style.fillColor = color.cgColor.withAlpha(0.1)
     context.draw(p, style:style)
 }
 
@@ -29,7 +29,3 @@ p.circumcircle.drawInContext(context)
 
 
 context.nsimage
-
-
-
-
