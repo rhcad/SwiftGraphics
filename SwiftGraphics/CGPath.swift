@@ -8,6 +8,29 @@
 
 import CoreGraphics
 
+public extension CGPathDrawingMode {
+    public init(strokeColor:CGColorRef?, fillColor:CGColorRef?, evenOdd:Bool = false) {
+        let hasStrokeColor = strokeColor != nil && strokeColor!.alpha > 0.0
+        let hasFillColor = fillColor != nil && fillColor!.alpha > 0.0
+        switch (Int(hasStrokeColor), Int(hasFillColor), Int(evenOdd)) {
+            case (1, 1, 0):
+                self = kCGPathFillStroke
+            case (0, 1, 0):
+                self = kCGPathFill
+            case (1, 0, 0):
+                self = kCGPathStroke
+            case (1, 1, 1):
+                self = kCGPathEOFillStroke
+            case (0, 1, 1):
+                self = kCGPathEOFill
+            default:
+                assertionFailure("Invalid combination (stroke:\(strokeColor), fill:\(fillColor), evenOdd:\(evenOdd))")
+        }
+    }
+}
+
+
+
 public extension CGMutablePath {
 
     var currentPoint : CGPoint { get { return CGPathGetCurrentPoint(self) } }
