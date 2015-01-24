@@ -67,7 +67,7 @@ public extension CGContext {
             }
             else {
                 let style = Style()
-                self.style = style
+                setAssociatedObject(self, &CGContext_Style_Key, style)
                 return style
             }
         }
@@ -77,38 +77,38 @@ public extension CGContext {
         }
     }
 
-    func apply(style:Style) {
-        if let fillColor = style.fillColor {
+    func apply(newStyle:Style) {
+        if let fillColor = newStyle.fillColor {
             setFillColor(fillColor)
         }
-        if let strokeColor = style.strokeColor {
+        if let strokeColor = newStyle.strokeColor {
             setStrokeColor(strokeColor)
         }
-        if let lineWidth = style.lineWidth {
+        if let lineWidth = newStyle.lineWidth {
             setLineWidth(lineWidth)
         }
-        if let lineCap = style.lineCap {
+        if let lineCap = newStyle.lineCap {
             setLineCap(lineCap)
         }
-        if let lineJoin = style.lineJoin {
+        if let lineJoin = newStyle.lineJoin {
             setLineJoin(lineJoin)
         }
-        if let miterLimit = style.miterLimit {
+        if let miterLimit = newStyle.miterLimit {
             setMiterLimit(miterLimit)
         }
-        if let lineDash = style.lineDash {
+        if let lineDash = newStyle.lineDash {
             setLineDash(lineDash, phase: 0.0)
         }
-        if let lineDashPhase = style.lineDashPhase {
+        if let lineDashPhase = newStyle.lineDashPhase {
             // TODO
         }
-        if let flatness = style.flatness {
+        if let flatness = newStyle.flatness {
             setFlatness(flatness)
         }
-        if let alpha = style.alpha {
+        if let alpha = newStyle.alpha {
             setAlpha(alpha)
         }
-        if let blendMode = style.blendMode {
+        if let blendMode = newStyle.blendMode {
             setBlendMode(blendMode)
         }
     }
@@ -295,9 +295,12 @@ public extension CGContext {
     }
 
     func with(style:Style, block:() -> Void) {
-        CGContextSaveGState(self)
-        self.apply(style)
+        let savedStyle = self.style
+//        CGContextSaveGState(self)
+        self.style = style
+//        self.apply(style)
         block()
-        CGContextRestoreGState(self)
+//        CGContextRestoreGState(self)
+        self.style = savedStyle
     }
 }
