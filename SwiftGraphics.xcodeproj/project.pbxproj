@@ -306,6 +306,7 @@
 		457DEBD21A6495BB003E4363 /* Drawable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
 		457DEBD41A649689003E4363 /* Path.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Path.playground; sourceTree = "<group>"; };
 		457E54501A68D35B0059B357 /* Turn.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Turn.playground; sourceTree = "<group>"; };
+		457E72861A72EA6E00E5A7A1 /* RegularPolygon.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RegularPolygon.playground; sourceTree = "<group>"; };
 		458BDD8119BCF7D100CD0EAC /* QuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadTree.swift; sourceTree = "<group>"; };
 		4594B08719AEDC2100101EB4 /* SwiftGraphicsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftGraphicsHelper.h; sourceTree = "<group>"; };
 		4594B08819AEDC2100101EB4 /* SwiftGraphicsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftGraphicsHelper.m; sourceTree = "<group>"; };
@@ -604,6 +605,7 @@
 				45ECEC301A6561D60018F7C6 /* BezierPath.playground */,
 				457E54501A68D35B0059B357 /* Turn.playground */,
 				45BF4CAC1A69929C00F260B0 /* Ellipse.playground */,
+				457E72861A72EA6E00E5A7A1 /* RegularPolygon.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
