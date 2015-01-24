@@ -26,15 +26,12 @@ func pt(x:CGFloat, y:CGFloat) -> CGPoint {
     return CGPoint(x:x, y:y)
 }
 
-SGPRender("Test", XCPShowView) {
-    (ctx:CGContext, bounds:CGRect) in
-    ctx.with {
-        CGContextConcatCTM(ctx, CGAffineTransform(tx:100, ty:100))        
-        let t1 = Triangle(pt(100,0), pt(200,0), pt(100,150))
-        ctx.plot([
-            t1,
-            t1.points.0, t1.points.1, t1.points.2,
-            t1.circumcenter, t1.circumcircle, 
-        ])
-    }
-}
+let context = CGContextRef.bitmapContext(CGSize(w:400, h:400), origin:CGPoint(x:0.5, y:0.5))
+
+
+
+let t1 = Triangle(pt(100,0), pt(200,0), pt(100,150))
+context.draw(t1)
+context.draw(t1.markup)
+
+context.nsimage

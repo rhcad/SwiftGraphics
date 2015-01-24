@@ -42,6 +42,12 @@
 		2E0F5BDF1A6A8FCA00221BB0 /* GrahamScanUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F5BDE1A6A8FCA00221BB0 /* GrahamScanUnitTests.swift */; };
 		450155841A62F9F600D7FB7B /* SwiftGraphicsPlayground_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450155831A62F9F600D7FB7B /* SwiftGraphicsPlayground_UnitTests.swift */; };
 		450155851A62F9F600D7FB7B /* SwiftGraphicsPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454FE66219C77031002E4DEF /* SwiftGraphicsPlayground.framework */; };
+		45066CFA1A74347300F561E1 /* Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CF91A74347300F561E1 /* Lines.swift */; };
+		45066CFB1A74347300F561E1 /* Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CF91A74347300F561E1 /* Lines.swift */; };
+		45066CFD1A74349500F561E1 /* Lines+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CFC1A74349500F561E1 /* Lines+Drawing.swift */; };
+		45066CFE1A74349500F561E1 /* Lines+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CFC1A74349500F561E1 /* Lines+Drawing.swift */; };
+		45066D001A743BD400F561E1 /* Triangle+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CFF1A743BD400F561E1 /* Triangle+Markup.swift */; };
+		45066D011A743BD400F561E1 /* Triangle+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CFF1A743BD400F561E1 /* Triangle+Markup.swift */; };
 		450717071A6B7EBA00E86EB4 /* Bitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450717061A6B7EBA00E86EB4 /* Bitmap.swift */; };
 		450717091A6B7F0700E86EB4 /* CGTypes+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450717081A6B7F0700E86EB4 /* CGTypes+String.swift */; };
 		4514F60E1A61D4C400CC9C26 /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F5FB1A61D4C400CC9C26 /* ArcView.swift */; };
@@ -255,6 +261,9 @@
 		4501557F1A62F9F600D7FB7B /* SwiftGraphicsPlayground_OSX_UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGraphicsPlayground_OSX_UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		450155821A62F9F600D7FB7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		450155831A62F9F600D7FB7B /* SwiftGraphicsPlayground_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGraphicsPlayground_UnitTests.swift; sourceTree = "<group>"; };
+		45066CF91A74347300F561E1 /* Lines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lines.swift; sourceTree = "<group>"; };
+		45066CFC1A74349500F561E1 /* Lines+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lines+Drawing.swift"; sourceTree = "<group>"; };
+		45066CFF1A743BD400F561E1 /* Triangle+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Triangle+Markup.swift"; sourceTree = "<group>"; };
 		450717061A6B7EBA00E86EB4 /* Bitmap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitmap.swift; sourceTree = "<group>"; };
 		450717081A6B7F0700E86EB4 /* CGTypes+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGTypes+String.swift"; sourceTree = "<group>"; };
 		4514F5FB1A61D4C400CC9C26 /* ArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcView.swift; sourceTree = "<group>"; };
@@ -275,7 +284,6 @@
 		4515825B19C9F21000856C91 /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		4515825E19C9F6A600856C91 /* TurnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnTests.swift; sourceTree = "<group>"; };
 		4515826019C9F83300856C91 /* Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
-		4515826319CA0BA300856C91 /* MonotoneChain.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MonotoneChain.playground; sourceTree = "<group>"; };
 		451835E11A73072E006B123B /* Lerp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lerp.swift; sourceTree = "<group>"; };
 		451CE9F31A61D73B006F721B /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ScratchPad.playground; sourceTree = "<group>"; };
 		451CE9F41A61D73C006F721B /* SwiftGraphicsTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftGraphicsTest.playground; sourceTree = "<group>"; };
@@ -295,7 +303,7 @@
 		454D550C19AA5CE6000E3EB3 /* SwiftGraphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftGraphics.h; sourceTree = "<group>"; };
 		454D551219AA5CE6000E3EB3 /* SwiftGraphicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGraphicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454D551519AA5CE6000E3EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		454FE65C19C7700E002E4DEF /* GrahamScan.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = GrahamScan.playground; sourceTree = "<group>"; };
+		454FE65C19C7700E002E4DEF /* ConvexHull.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ConvexHull.playground; sourceTree = "<group>"; };
 		454FE66219C77031002E4DEF /* SwiftGraphicsPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftGraphicsPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		454FE66519C77031002E4DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		454FE66619C77031002E4DEF /* SwiftGraphicsPlayground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftGraphicsPlayground.h; sourceTree = "<group>"; };
@@ -440,6 +448,16 @@
 				450155821A62F9F600D7FB7B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45066CF81A7428BA00F561E1 /* Drawable */ = {
+			isa = PBXGroup;
+			children = (
+				45E38D1E1A74235800EC672A /* Drawable.swift */,
+				45E38D1F1A74235800EC672A /* Geometry+Drawable.swift */,
+				45066CFC1A74349500F561E1 /* Lines+Drawing.swift */,
+			);
+			name = Drawable;
 			sourceTree = "<group>";
 		};
 		450717051A6B7EA100E86EB4 /* Non-Graphics */ = {
@@ -597,14 +615,14 @@
 			isa = PBXGroup;
 			children = (
 				02A969E21A6744C3006DDF62 /* RulerPoint.playground */,
-				454FE65C19C7700E002E4DEF /* GrahamScan.playground */,
-				4515826319CA0BA300856C91 /* MonotoneChain.playground */,
+				454FE65C19C7700E002E4DEF /* ConvexHull.playground */,
 				45FAC0661A16C4CA00A3F1D3 /* Animations.playground */,
 				45BF1EBF1A61FED300DE8AE5 /* Random.playground */,
 				457DEBD41A649689003E4363 /* Path.playground */,
 				45ECEC301A6561D60018F7C6 /* BezierPath.playground */,
 				45BF4CAC1A69929C00F260B0 /* Ellipse.playground */,
 				457E72861A72EA6E00E5A7A1 /* RegularPolygon.playground */,
+				45BA25BB19CA156800B612B7 /* Triangle.playground */,
 				45E38D311A7424F600EC672A /* Broken or Limited Usefulness */,
 				45E38D321A74254000EC672A /* Very WIP */,
 			);
@@ -618,7 +636,6 @@
 				458C59021A740A1000E993A6 /* WIP */,
 				458C59011A7409E200E993A6 /* Will Deprecate */,
 				450717051A6B7EA100E86EB4 /* Non-Graphics */,
-				458C59001A7409D000E993A6 /* Markup */,
 				454FE66419C77031002E4DEF /* Supporting Files */,
 			);
 			path = SwiftGraphicsPlayground;
@@ -641,13 +658,6 @@
 				4556218F1A6A2DD800EB181E /* Scratch.swift */,
 			);
 			path = HandleEditor;
-			sourceTree = "<group>";
-		};
-		458C59001A7409D000E993A6 /* Markup */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Markup;
 			sourceTree = "<group>";
 		};
 		458C59011A7409E200E993A6 /* Will Deprecate */ = {
@@ -709,8 +719,7 @@
 				458C59031A740A7D00E993A6 /* Utilities */,
 				458C59041A740ABE00E993A6 /* Algorithms */,
 				4594B09119AEE31E00101EB4 /* Path.swift */,
-				45E38D1E1A74235800EC672A /* Drawable.swift */,
-				45E38D1F1A74235800EC672A /* Geometry+Drawable.swift */,
+				45066CF81A7428BA00F561E1 /* Drawable */,
 				45E38D201A74235800EC672A /* Style.swift */,
 				45E38D301A74249000EC672A /* Markup */,
 			);
@@ -749,15 +758,16 @@
 		45DC21761A6979DD00A25EC9 /* Geometry */ = {
 			isa = PBXGroup;
 			children = (
-				02C9D0111A71D12F00B9696E /* RegularPolygon.swift */,
-				456C315B19C65B0E003AA1DF /* Ellipse.swift */,
+				458C59071A7410A500E993A6 /* GeometryProtocols.swift */,
+				459EE5E319AEC5130012E023 /* BasicGeometry.swift */,
+				45066CF91A74347300F561E1 /* Lines.swift */,
 				459EE5DC19AEC5130012E023 /* BezierCurve.swift */,
 				02BF437D1A64FACB00132343 /* BezierCurve+BoundingBox.swift */,
-				459EE5E319AEC5130012E023 /* BasicGeometry.swift */,
-				45C11B5A1A69751B0029A61C /* Triangle.swift */,
-				459A4C4B1A69913600E87608 /* Circle.swift */,
 				45E298721A69B2DC006FE740 /* BezierCurveChain.swift */,
-				458C59071A7410A500E993A6 /* GeometryProtocols.swift */,
+				459A4C4B1A69913600E87608 /* Circle.swift */,
+				456C315B19C65B0E003AA1DF /* Ellipse.swift */,
+				02C9D0111A71D12F00B9696E /* RegularPolygon.swift */,
+				45C11B5A1A69751B0029A61C /* Triangle.swift */,
 			);
 			name = Geometry;
 			sourceTree = "<group>";
@@ -792,9 +802,10 @@
 		45E38D301A74249000EC672A /* Markup */ = {
 			isa = PBXGroup;
 			children = (
+				45E38D291A74242E00EC672A /* Markup.swift */,
 				45E38D271A74242E00EC672A /* BezierPath+Markup.swift */,
 				45E38D281A74242E00EC672A /* Ellipse+Markup.swift */,
-				45E38D291A74242E00EC672A /* Markup.swift */,
+				45066CFF1A743BD400F561E1 /* Triangle+Markup.swift */,
 			);
 			name = Markup;
 			sourceTree = "<group>";
@@ -802,7 +813,6 @@
 		45E38D311A7424F600EC672A /* Broken or Limited Usefulness */ = {
 			isa = PBXGroup;
 			children = (
-				45BA25BB19CA156800B612B7 /* Triangle.playground */,
 				45592F501A61B65200F496D2 /* TransformTest.playground */,
 				451CE9F31A61D73B006F721B /* ScratchPad.playground */,
 				451CE9F41A61D73C006F721B /* SwiftGraphicsTest.playground */,
@@ -1081,6 +1091,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45066CFD1A74349500F561E1 /* Lines+Drawing.swift in Sources */,
 				45A14E1C1A69D582006F4949 /* GenericGeometryTypes.swift in Sources */,
 				451835E21A73072E006B123B /* Lerp.swift in Sources */,
 				029651AC1A6366FA0099DA1C /* CDisplayLink.m in Sources */,
@@ -1102,6 +1113,7 @@
 				459EE5E719AEC5130012E023 /* BezierCurve.swift in Sources */,
 				45563F2F19B1047E003B1639 /* CColorConverter.m in Sources */,
 				02C9D0121A71D12F00B9696E /* RegularPolygon.swift in Sources */,
+				45066D001A743BD400F561E1 /* Triangle+Markup.swift in Sources */,
 				459EE5F919AEC5130012E023 /* Scaling.swift in Sources */,
 				459EE5F719AEC5130012E023 /* Quadrant.swift in Sources */,
 				459A4C4C1A69913600E87608 /* Circle.swift in Sources */,
@@ -1120,6 +1132,7 @@
 				45F32C721A6455BB00E3DA68 /* CGColor.swift in Sources */,
 				459EE5F519AEC5130012E023 /* BasicGeometry.swift in Sources */,
 				0205AE4A1A6678D3006444C8 /* CGPoint+Ruler.swift in Sources */,
+				45066CFA1A74347300F561E1 /* Lines.swift in Sources */,
 				459EE5EF19AEC5130012E023 /* CGPoint.swift in Sources */,
 				4594B09219AEE31E00101EB4 /* Path.swift in Sources */,
 				45C11B5B1A69751B0029A61C /* Triangle.swift in Sources */,
@@ -1208,11 +1221,13 @@
 				459EE5F219AEC5130012E023 /* CGRect.swift in Sources */,
 				45A14E1D1A69D582006F4949 /* GenericGeometryTypes.swift in Sources */,
 				45F32C731A6455BB00E3DA68 /* CGColor.swift in Sources */,
+				45066CFB1A74347300F561E1 /* Lines.swift in Sources */,
 				45E38D2B1A74242E00EC672A /* BezierPath+Markup.swift in Sources */,
 				459EE5FC19AEC5130012E023 /* Utilities.swift in Sources */,
 				4515825D19C9F21800856C91 /* Turn.swift in Sources */,
 				45E38D221A74235800EC672A /* Drawable.swift in Sources */,
 				458BDD8319BCF7D100CD0EAC /* QuadTree.swift in Sources */,
+				45066D011A743BD400F561E1 /* Triangle+Markup.swift in Sources */,
 				459EE5E819AEC5130012E023 /* BezierCurve.swift in Sources */,
 				02C9D0131A71D12F00B9696E /* RegularPolygon.swift in Sources */,
 				459A4C4F1A69914000E87608 /* Triangle.swift in Sources */,
@@ -1236,6 +1251,7 @@
 				4594B09319AEE31E00101EB4 /* Path.swift in Sources */,
 				45E38D241A74235800EC672A /* Geometry+Drawable.swift in Sources */,
 				459EE5EA19AEC5130012E023 /* CGAffineTransform.swift in Sources */,
+				45066CFE1A74349500F561E1 /* Lines+Drawing.swift in Sources */,
 				45E38D2D1A74242E00EC672A /* Ellipse+Markup.swift in Sources */,
 				456C315D19C65B0E003AA1DF /* Ellipse.swift in Sources */,
 				451835E31A73072E006B123B /* Lerp.swift in Sources */,

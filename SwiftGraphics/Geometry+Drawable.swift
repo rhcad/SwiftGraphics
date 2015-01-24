@@ -8,6 +8,8 @@
 
 import SwiftGraphics
 
+// MARK: CGPoint
+
 extension CGPoint : Geometry {
     public var frame:CGRect { get { return CGRect(center:self, diameter:0) } }
 }
@@ -18,6 +20,8 @@ extension CGPoint : Drawable {
     }
 }
 
+// MARK: BezierCurve
+
 extension BezierCurve: Drawable {
 
     public var frame:CGRect {
@@ -26,23 +30,24 @@ extension BezierCurve: Drawable {
         }
     }
 
-
     public func drawInContext(context:CGContext) {
         context.stroke(self)
     }
 }
 
+// MARK: Circle
+
 extension Circle : Drawable {
-    public func drawInContext(ctx:CGContext) {
-        ctx.strokeEllipseInRect(frame)
+    public func drawInContext(context:CGContext) {
+        CGContextAddEllipseInRect(context, self.frame)
+        let mode = CGPathDrawingMode(strokeColor:context.strokeColor, fillColor:context.fillColor)
+        CGContextDrawPath(context, mode)
     }
 }
 
+// MARK: Triangle
+
 extension Triangle : Drawable {
-    public func drawInContext(ctx:CGContext) {
-        let (a,b,c) = points
-        ctx.strokeLine([a, b, c], close:true)
-    }
     public var frame : CGRect {
         get {
             let (a,b,c) = self.points
@@ -53,22 +58,26 @@ extension Triangle : Drawable {
             return CGRect.unionOfRects(rects)
         }
     }
-}
 
-
-public struct Saltire {
-    public let frame:CGRect
-
-    public init(frame:CGRect) {
-        self.frame = frame
-    }
-}
-
-extension Saltire: Drawable {
     public func drawInContext(context:CGContext) {
-        context.strokeSaltire(frame)
+        let path = CGPathCreateMutable()
+        let points = pointsArray
+        path.move(pointsArray[0])
+        path.addLines(pointsArray)
+        path.close()
+        let mode = CGPathDrawingMode(strokeColor:context.strokeColor, fillColor:context.fillColor)
+        CGContextAddPath(context, path)
+        CGContextDrawPath(context, mode)
     }
 }
+
+// MARK: Saltire
+
+//extension Saltire: Drawable {
+//    public func drawInContext(context:CGContext) {
+//        context.strokeSaltire(frame)
+//    }
+//}
 
 extension RegularPolygon: Drawable {
 
@@ -79,9 +88,12 @@ extension RegularPolygon: Drawable {
     }
 
     public func drawInContext(context: CGContext) {
-        let path = Path(vertices:points, closed:true)
+        let path = CGPathCreateMutable()
+        path.move(points[0])
+        path.addLines(points)
+        path.close()
         let mode = CGPathDrawingMode(strokeColor:context.strokeColor, fillColor:context.fillColor)
-        CGContextAddPath(context, path.cgPath)
+        CGContextAddPath(context, path)
         CGContextDrawPath(context, mode)
     }
 }

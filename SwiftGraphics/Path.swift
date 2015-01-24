@@ -8,15 +8,17 @@
 
 import CoreGraphics
 
+public enum PathElement {
+    case move(CGPoint)
+    case addLine(CGPoint)
+    case addCurve(BezierCurve)
+    case close
+}
+
+
 public struct Path {
-    public enum Element {
-        case move(CGPoint)
-        case addLine(CGPoint)
-        case addCurve(BezierCurve)
-        case close
-    }
-    
-    public var elements:[Element] = []
+
+    public var elements:[PathElement] = []
     
     public var currentPoint : CGPoint = CGPointZero
 

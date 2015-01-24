@@ -9,8 +9,10 @@
 import CoreGraphics
 
 public struct Triangle {
+    // TODO: Rename -> vertex
     public let points: (CGPoint, CGPoint, CGPoint)
 
+    // TODO: Deprecate and take a tuple
     public init(_ p0:CGPoint, _ p1:CGPoint, _ p2:CGPoint) {
         self.points = (p0, p1, p2)
     }

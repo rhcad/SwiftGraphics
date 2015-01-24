@@ -45,9 +45,9 @@ public struct Guide: Markup {
 //            case .line:
 //                break
             case .lineSegment(let lineSegment):
-                context.stroke(lineSegment)
+                context.draw(lineSegment)
             case .polygon(let polygon):
-                context.stroke(polygon)
+                context.draw(polygon)
             case .rectangle(let rectangle):
                 context.strokeRect(rectangle.frame)
         }

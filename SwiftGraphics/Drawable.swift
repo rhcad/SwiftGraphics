@@ -8,16 +8,7 @@
 
 import SwiftGraphics
 
-public protocol HitTestable {
-    func contains(point:CGPoint) -> Bool
-    func onEdge(point:CGPoint, lineThickness:CFloat) -> Bool
-}
-
-public protocol Pathable {
-    var path:Path { get }
-}
-
-public protocol Drawable {
+public protocol Drawable: Geometry {
     func drawInContext(context:CGContextRef)
 }
 
@@ -25,13 +16,17 @@ public protocol Drawable {
 
 public extension CGContext {
     func draw(drawable:Drawable, style:Style? = nil) {
+
+        // TODO: Saving and restoring the graphics state each draw() seems very expensive. #performance #optimisation
         if let style = style {
             with(style) {
                 drawable.drawInContext(self)
             }
         }
         else {
-            drawable.drawInContext(self)
+            with {
+                drawable.drawInContext(self)
+            }
         }
     }
 
@@ -50,16 +45,6 @@ public extension CGContext {
 
     }
 
-    /**
-     This is a bit of a hack.
-
-     :param: things <#things description#>
-     :param: style  <#style description#>
-     :param: filter <#filter description#>
-     */
-    func draw <T> (things:Array <T>, style:Style? = nil, filter:T -> Drawable) {
-        let drawables = things.map(filter)
-        draw(drawables, style:style)
-    }
-
 }
+
+

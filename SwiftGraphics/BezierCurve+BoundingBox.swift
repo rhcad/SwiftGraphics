@@ -29,7 +29,7 @@ public extension BezierCurve {
         let pt3 = controls[1]
         let pt4 = end
     
-        var bbox = CGRect(P1:pt1, P2:pt4)   // compute linear bounds first
+        var bbox = CGRect(points:(pt1, pt4))   // compute linear bounds first
         var flag = 0
         
         // Recompute bounds projected on the x-axis, if the control points lie outside the bounding box x-bounds

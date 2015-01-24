@@ -27,6 +27,26 @@ public struct Style {
     }
 }
 
+public extension Style {
+    public static var defaultStyle:Style {
+        get {
+            var style = Style()
+            style.fillColor = nil
+            style.strokeColor = CGColor.blackColor()
+            style.lineWidth = 1.0
+//            style.lineCap = kCGLineCapButt
+//            style.lineJoin = kCGLineJoinBevel
+//            style.miterLimit = 4.0
+//            style.lineDash = [1]
+//            style.lineDashPhase = 0.0
+//            style.flatness = 4
+//            style.alpha = 1.0
+//            style.blendMode = kCGBlendModeNormal
+            return style
+        }
+    }
+}
+
 public enum StyleElement {
     case fillColor(CGColor)
     case strokeColor(CGColor)
@@ -51,7 +71,7 @@ public extension CGContext {
                 return style
             }
             else {
-                let style = Style()
+                var style = Style.defaultStyle
                 setAssociatedObject(self, &CGContext_Style_Key, style)
                 return style
             }

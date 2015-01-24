@@ -16,7 +16,7 @@ protocol Drawable {
 
 extension Rectangle : Drawable {
     func draw(context:CGContext) {
-        context.strokeRect(self)
+        context.strokeRect(self.frame)
     }
 }
 

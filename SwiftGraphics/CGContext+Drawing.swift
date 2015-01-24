@@ -8,12 +8,7 @@
 
 import Foundation
 
-// TODO: This code is mostly experimental, use at your own risk - see TODO.markdown
-
- /**
-  *  Most of this will be deprecated and replaced by the Drawable API.
-  */
-
+// TODO: Deprecate. Most of this will be deprecated and replaced by the Drawable API. #deprecate #simplify
 public extension CGContext {
 
     func strokePath(path:CGPath) {
@@ -45,11 +40,11 @@ public extension CGContext {
     }
 
     // TODO: Rename strokePolygon?
-    func strokeLine(points:[CGPoint], close:Bool = false) {
+    func strokeLine(points:[CGPoint], closed:Bool = false) {
         var newPoints:[CGPoint] = []
         for (first, second) in GeneratorOf(SlidingWindow(points)) {
             if second == nil {
-                if (close == true) {
+                if (closed == true) {
                     newPoints.append(first)
                     newPoints.append(points[0])
                 }

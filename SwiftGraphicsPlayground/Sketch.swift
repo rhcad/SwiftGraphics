@@ -63,7 +63,7 @@ public class CircleNode : Shape, Node, GeometryNode {
 }
 
 public class LineSegmentNode : Shape, Node, GeometryNode {
-    public var frame : CGRect { get { return CGRect(P1:start, P2:end) } }
+    public var frame : CGRect { get { return CGRect(p1:start, p2:end) } }
 
     public var start : CGPoint
     public var end : CGPoint

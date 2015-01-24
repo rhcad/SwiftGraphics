@@ -72,6 +72,13 @@ public extension CGMutablePath {
         }
     }
 
+    func addLines(points:[CGPoint], relative:Bool = false) -> CGMutablePath {
+        for point in points {
+            addLine(point, relative:relative)
+        }
+        return self
+    }
+
     func addQuadCurveToPoint(end:CGPoint, control1:CGPoint) -> CGMutablePath {
         CGPathAddQuadCurveToPoint(self, nil, control1.x, control1.y, end.x, end.y)
         return self

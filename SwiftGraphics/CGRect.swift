@@ -26,9 +26,15 @@ public extension CGRect {
         self.size = CGSize(width:width, height:height)
     }
 
-    init(P1:CGPoint, P2:CGPoint) {
-        self.origin = CGPoint(x:min(P1.x, P2.x), y:min(P1.y, P2.y))
-        self.size = CGSize(width:abs(P2.x - P1.x), height:abs(P2.y - P1.y))
+    // TODO: Deprecate in favour of init(points:(CGPoint, CGPoint)) #deprecate #simplify
+    init(p1:CGPoint, p2:CGPoint) {
+        self.origin = CGPoint(x:min(p1.x, p2.x), y:min(p1.y, p2.y))
+        self.size = CGSize(width:abs(p2.x - p1.x), height:abs(p2.y - p1.y))
+    }
+
+    init(points:(CGPoint, CGPoint)) {
+        self.origin = CGPoint(x:min(points.0.x, points.1.x), y:min(points.0.y, points.1.y))
+        self.size = CGSize(width:abs(points.1.x - points.0.x), height:abs(points.1.y - points.0.y))
     }
 
     init(center:CGPoint, size:CGSize) {
@@ -47,7 +53,7 @@ public extension CGRect {
     }
 
     init(minX:CGFloat, minY:CGFloat, maxX:CGFloat, maxY:CGFloat) {
-        self = CGRect(P1:CGPoint(x:minX, y:minY), P2:CGPoint(x:maxX, y:maxY))
+        self = CGRect(points:(CGPoint(x:minX, y:minY), CGPoint(x:maxX, y:maxY)))
     }
 }
 
