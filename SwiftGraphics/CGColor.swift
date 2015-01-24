@@ -14,6 +14,22 @@ import AppKit
 import UIKit
 #endif
 
+extension CGColor: Printable {
+    public var description: String {
+        get {
+            return CFCopyDescription(self)
+        }
+    }
+}
+
+public extension CGColor {
+    public var alpha:CGFloat {
+        get {
+            return CGColorGetAlpha(self)
+        }
+    }
+}
+
 public extension CGColor {
 
     class func color(# colorSpace:CGColorSpace, components:[CGFloat]) -> CGColor! {
