@@ -16,9 +16,9 @@ public struct BezierCurve {
         case OrderN(Int)
     }
 
-    public var start : CGPoint?
-    public var controls : [CGPoint]
-    public var end : CGPoint
+    public var start: CGPoint?
+    public var controls: [CGPoint]
+    public var end: CGPoint
 
     public init(controls:[CGPoint], end:CGPoint) {
         self.controls = controls
@@ -31,7 +31,7 @@ public struct BezierCurve {
         self.end = end
     }
 
-    public var order : Order {
+    public var order: Order {
         get {
             switch controls.count + 2 {
                 case 3:
@@ -43,7 +43,7 @@ public struct BezierCurve {
             }       
         }
     }
-    public var points : [CGPoint] {
+    public var points: [CGPoint] {
         get {
             if let start = start {
                 return [start] + controls + [end]
@@ -57,7 +57,7 @@ public struct BezierCurve {
 
 // MARK: Good old Printable.
 
-extension BezierCurve : Printable {
+extension BezierCurve: Printable {
     public var description: String {
         get {
 

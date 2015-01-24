@@ -52,7 +52,7 @@ public extension Path {
         self.init()
 
         move(vertices[0])
-        for vertex in vertices {
+        for vertex in vertices[1..<vertices.count] {
             addLine(vertex)
         }
         if closed {
