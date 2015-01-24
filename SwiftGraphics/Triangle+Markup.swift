@@ -16,6 +16,11 @@ public extension Triangle {
             markup.append(Marker(point: points.0, tag: "vertex"))
             markup.append(Marker(point: points.1, tag: "vertex"))
             markup.append(Marker(point: points.2, tag: "vertex"))
+            markup.append(Marker(point: circumcenter, tag: "circumcenter"))
+
+
+            markup.append(Guide(drawable:circumcircle, tag:"circumcircle"))
+            markup.append(Guide(drawable:incenter, tag:"incenter"))
 
 //            for control in controls {
 //                markup.append(Marker(point: control, tag: "control"))

@@ -8,8 +8,6 @@
 
 import CoreGraphics
 
-import SwiftGraphics
-
 public struct Style {
     public var fillColor:CGColor?
     public var strokeColor:CGColor?

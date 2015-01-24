@@ -7,7 +7,6 @@
 //
 
 import CoreGraphics
-import SwiftGraphics
 
 public extension BezierCurve {
     var markup:[Markup] {
@@ -21,14 +20,14 @@ public extension BezierCurve {
             }
 
             let A = LineSegment(start:start!, end:controls[0])
-            markup.append(Guide(type: .lineSegment(A), tag: "controlLine"))
+            markup.append(Guide(drawable:A, tag: "controlLine"))
 
             let B = LineSegment(start:end, end:controls[1])
-            markup.append(Guide(type: .lineSegment(B), tag: "controlLine"))
+            markup.append(Guide(drawable:B, tag: "controlLine"))
 
-            markup.append(Guide(type: .rectangle(Rectangle(frame: boundingBox)), tag: "boundingBox"))
+            markup.append(Guide(drawable:Rectangle(frame: boundingBox), tag: "boundingBox"))
 
-            markup.append(Guide(type: .rectangle(Rectangle(frame: boundingBox)), tag: "simpleBounds"))
+            markup.append(Guide(drawable:Rectangle(frame: boundingBox), tag: "simpleBounds"))
             return markup
         }
     }

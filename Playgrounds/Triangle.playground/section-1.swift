@@ -26,12 +26,15 @@ func pt(x:CGFloat, y:CGFloat) -> CGPoint {
     return CGPoint(x:x, y:y)
 }
 
-let context = CGContextRef.bitmapContext(CGSize(w:400, h:400), origin:CGPoint(x:0.5, y:0.5))
-
-
+let context = CGContextRef.bitmapContext(CGSize(w:480, h:320), origin:CGPoint(x:0.5, y:0.5))
 
 let t1 = Triangle(pt(100,0), pt(200,0), pt(100,150))
+
+
+CGContextTranslateCTM(context, -t1.circumcenter.x, -t1.circumcenter.y)
+
 context.draw(t1)
 context.draw(t1.markup)
 
 context.nsimage
+

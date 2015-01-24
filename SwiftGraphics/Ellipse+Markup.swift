@@ -7,7 +7,6 @@
 //
 
 import CoreGraphics
-import SwiftGraphics
 
 public extension Ellipse {
 
@@ -52,15 +51,15 @@ public extension Ellipse {
             markup.append(Marker(point: center + CGPoint(y:+b) * t, tag: "+b", style: style3))
 
             let A = LineSegment(start:center + CGPoint(x:-a) * t, end:center + CGPoint(x:+a) * t)
-            markup.append(Guide(type: .lineSegment(A), tag: "A", style:style2))
+            markup.append(Guide(drawable:A, tag: "A", style:style2))
 
             let B = LineSegment(start:center + CGPoint(y:-b) * t, end:center + CGPoint(y:+b) * t)
-            markup.append(Guide(type: .lineSegment(B), tag: "B", style:style2))
+            markup.append(Guide(drawable:B, tag: "B", style:style2))
 
             let rect = Polygon(points: [corners.0, corners.1, corners.2, corners.3])
-            markup.append(Guide(type: .polygon(rect), tag: "frame", style:style2))
+            markup.append(Guide(drawable:rect, tag: "frame", style:style2))
 
-            markup.append(Guide(type: .rectangle(Rectangle(frame:boundingBox)), tag: "boundingBox", style:style2))
+            markup.append(Guide(drawable:Rectangle(frame:boundingBox), tag: "boundingBox", style:style2))
 
             return markup
         }

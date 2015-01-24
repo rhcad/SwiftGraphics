@@ -7,55 +7,40 @@
 //
 
 import CoreGraphics
-import SwiftGraphics
 
+// TODO: extend Drawable
 public protocol Markup {
     var tag:String? { get }
     var style:Style? { get }
-    func draw(context:CGContext)
+    func drawInContext(context:CGContext)
 }
+
+// TODO: Create "Markupable" protocol
 
 public struct Guide: Markup {
 
-    public enum Type {
-//        case line(Line)
-        case lineSegment(LineSegment)
-        case polygon(SwiftGraphics.Polygon)
-        case rectangle(SwiftGraphics.Rectangle)
-    }
-
-    public let type:Type
+    public let drawable:Drawable
     public let tag:String?
     public let style:Style?
 
-    public init(type:Type, tag:String? = nil, style:Style? = nil) {
-        self.type = type
+    public init(drawable:Drawable, tag:String? = nil, style:Style? = nil) {
+        self.drawable = drawable
         self.tag = tag
         self.style = style
     }
 
-    public func draw(context:CGContext) {
+    public func drawInContext(context:CGContext) {
 
         if let style = style {
             CGContextSaveGState(context)
             context.apply(style)
         }
 
-        switch type {
-//            case .line:
-//                break
-            case .lineSegment(let lineSegment):
-                context.draw(lineSegment)
-            case .polygon(let polygon):
-                context.draw(polygon)
-            case .rectangle(let rectangle):
-                context.strokeRect(rectangle.frame)
-        }
+        drawable.drawInContext(context)
 
         if let style = style {
             CGContextRestoreGState(context)
         }
-
     }
 }
 
@@ -70,7 +55,7 @@ public struct Marker: Markup {
         self.style = style
     }
 
-    public func draw(context:CGContext) {
+    public func drawInContext(context:CGContext) {
         if let style = style {
             CGContextSaveGState(context)
             context.apply(style)
@@ -101,7 +86,7 @@ public extension CGContext {
                 apply(style)
             }
 
-            item.draw(self)
+            item.drawInContext(self)
 
             if let style = style {
                 CGContextRestoreGState(self)

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 schwa.io. All rights reserved.
 //
 
-import SwiftGraphics
+import CoreGraphics
 
 // MARK: CGPoint
 

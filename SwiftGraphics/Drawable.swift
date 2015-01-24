@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 schwa.io. All rights reserved.
 //
 
-import SwiftGraphics
+import CoreGraphics
 
 public protocol Drawable: Geometry {
     func drawInContext(context:CGContextRef)
