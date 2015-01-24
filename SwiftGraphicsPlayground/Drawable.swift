@@ -16,38 +16,7 @@ public protocol Geometry {
 
 
 public protocol Drawable: Geometry {
-    func drawInContext(context:CGContext)
-}
-
-// #############################################################################
-
-public extension CGContext {
-
-    // TODO: Rename.
-    func plotPoints(points:[CGPoint]) {
-        for (index, point) in enumerate(points) {
-            self.strokeCross(CGRect(center:point, diameter:10))
-        }
-    }
-
-//public extension CGContext {
-//
-//    public func plot(a:Array <Drawable>) {
-//        for e in a {
-//            e.drawInContext(self)
-////            strokeRect(e.frame)
-//        }
-//    }
-
-//    public func plot(d:[String:Drawable]) {
-//        for (key, value) in d {
-//            value.drawInContext(self)
-//            println(key)
-//            drawLabel(key, point:value.frame.mid, size: 16)
-////            strokeRect(value.frame)
-//        }
-//    }
-
+    func drawInContext(context:CGContextRef)
 }
 
 // #############################################################################
@@ -96,3 +65,15 @@ public extension CGContext {
 //    }
 //}
 
+
+// #############################################################################
+
+public extension CGContext {
+
+    // TODO: Rename.
+    func plotPoints(points:[CGPoint]) {
+        for (index, point) in enumerate(points) {
+            self.strokeCross(CGRect(center:point, diameter:10))
+        }
+    }
+}
