@@ -8,7 +8,6 @@
 
 import SwiftGraphics
 
-
 extension CGPoint : Geometry {
     public var frame:CGRect { get { return CGRect(center:self, diameter:0) } }
 }
@@ -18,9 +17,6 @@ extension CGPoint : Drawable {
         ctx.plotPoints([self])
     }
 }
-
-
-
 
 extension BezierCurve: Drawable {
 
@@ -54,7 +50,6 @@ extension Triangle : Drawable {
             let rects:[CGRect] = points.map {
                 return $0.frame
             }
-            println(rects)
             return CGRect.unionOfRects(rects)
         }
     }
@@ -74,3 +69,20 @@ extension Saltire: Drawable {
         context.strokeSaltire(frame)
     }
 }
+
+extension RegularPolygon: Drawable {
+
+    public var frame:CGRect {
+        get {
+            return self.circumcircle.frame
+        }
+    }
+
+    public func drawInContext(context: CGContext) {
+        let path = Path(vertices:points, closed:true)
+        let mode = CGPathDrawingMode(strokeColor:context.strokeColor, fillColor:context.fillColor)
+        CGContextAddPath(context, path.CGPath)
+        CGContextDrawPath(context, mode)
+    }
+}
+
