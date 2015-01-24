@@ -9,21 +9,6 @@
 import CoreGraphics
 
 import SwiftGraphics
-import SwiftGraphicsPlayground
-
-// #############################################################################
-
-//fillColor
-//strokeColor
-//lineWidth
-//lineCap
-//lineJoin
-//miterLimit
-//lineDash
-//lineDashPhase
-//flatness
-//alpha
-//blendMode
 
 public struct Style {
     public var fillColor:CGColor?
@@ -228,18 +213,6 @@ public extension CGContext {
 
 }
 
-//fillColor
-//strokeColor
-//lineWidth
-//lineCap
-//lineJoin
-//miterLimit
-//lineDash
-//lineDashPhase
-//flatness
-//alpha
-//blendMode
-
 public extension Style {
     mutating func add(element:StyleElement) {
         switch element {
@@ -296,11 +269,10 @@ public extension CGContext {
 
     func with(style:Style, block:() -> Void) {
         let savedStyle = self.style
-//        CGContextSaveGState(self)
         self.style = style
-//        self.apply(style)
-        block()
-//        CGContextRestoreGState(self)
+        with() {
+            block()
+        }
         self.style = savedStyle
     }
 }
