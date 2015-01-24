@@ -8,8 +8,6 @@
 
 import CoreGraphics
 
-import Foundation
-
 public struct BezierCurve {
 
     public enum Order {

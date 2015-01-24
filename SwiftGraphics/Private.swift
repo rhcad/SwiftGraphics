@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 schwa.io. All rights reserved.
 //
 
-import Foundation
 import CoreGraphics
 
 // Utility code that is used by SwiftGraphics but isn't intended to be used outside of this project

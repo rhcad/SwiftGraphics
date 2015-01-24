@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 schwa.io. All rights reserved.
 //
 
-import Foundation
-
 import SwiftGraphics
 
 public struct Bitmap {

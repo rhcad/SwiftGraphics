@@ -8,10 +8,6 @@
 
 import CoreGraphics
 
-// Playground - noun: a place where people can play
-
-import Foundation
-
 public protocol Subtractable {
     func - (lhs:Self, rhs:Self) -> Self
 }
