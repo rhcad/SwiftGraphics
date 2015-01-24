@@ -24,6 +24,34 @@ var ellipses = [
 
 let s = Int(ceil(sqrt(Double(ellipses.count))))
 
+let style1 = SwiftGraphics.Style(elements:[
+    .strokeColor(CGColor.redColor()),
+    ])
+let style2 = SwiftGraphics.Style(elements:[
+    .strokeColor(CGColor.blueColor()),
+    .lineDash([5,5]),
+    ])
+let style3 = SwiftGraphics.Style(elements:[
+    .strokeColor(CGColor.purpleColor()),
+    .lineDash([2,2]),
+    ])
+
+let styles = [
+    "center": style1,
+    "foci": style1,
+    "corner": style1,
+    "-a": style3,
+    "+a": style3,
+    "-b": style3,
+    "+b": style3,
+    "A": style3,
+    "B": style3,
+    "frame": style2,
+    "boundingBox": style2,
+    ]
+
+
+
 var generator = ellipses.generate()
 
 let tileSize = CGSize(w:400, h:400)
@@ -41,7 +69,7 @@ let cgimage = CGContextRef.imageWithBlock(bitmapSize, color:CGColor.lightGrayCol
             context.stroke(ellipse.asBezierChain)
 
             let markup = ellipse.markup
-            context.draw(markup)
+            context.draw(markup, styles:styles)
         }
     }
 }

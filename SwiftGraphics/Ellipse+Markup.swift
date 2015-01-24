@@ -14,22 +14,10 @@ public extension Ellipse {
         get {
             var markup:[Markup] = []
 
-            let style1 = SwiftGraphics.Style(elements:[
-                .strokeColor(CGColor.redColor()),
-                ])
-            let style2 = SwiftGraphics.Style(elements:[
-                .strokeColor(CGColor.blueColor()),
-                .lineDash([5,5]),
-                ])
-            let style3 = SwiftGraphics.Style(elements:[
-                .strokeColor(CGColor.purpleColor()),
-                .lineDash([2,2]),
-                ])
-
             // Center and foci already include rotation...
-            markup.append(Marker(point: center, tag: "center", style: style1))
-            markup.append(Marker(point: foci.0, tag: "foci", style: style1))
-            markup.append(Marker(point: foci.1, tag: "foci", style: style1))
+            markup.append(Marker(point: center, tag: "center"))
+            markup.append(Marker(point: foci.0, tag: "foci"))
+            markup.append(Marker(point: foci.1, tag: "foci"))
 
             let t = CGAffineTransform(rotation: rotation)
 
@@ -40,26 +28,26 @@ public extension Ellipse {
                 center + CGPoint(x:-a, y:+b) * t
             )
 
-            markup.append(Marker(point: corners.0, tag: "corner", style: style3))
-            markup.append(Marker(point: corners.1, tag: "corner", style: style3))
-            markup.append(Marker(point: corners.2, tag: "corner", style: style3))
-            markup.append(Marker(point: corners.3, tag: "corner", style: style3))
+            markup.append(Marker(point: corners.0, tag: "corner"))
+            markup.append(Marker(point: corners.1, tag: "corner"))
+            markup.append(Marker(point: corners.2, tag: "corner"))
+            markup.append(Marker(point: corners.3, tag: "corner"))
 
-            markup.append(Marker(point: center + CGPoint(x:-a) * t, tag: "-a", style: style3))
-            markup.append(Marker(point: center + CGPoint(x:+a) * t, tag: "+a", style: style3))
-            markup.append(Marker(point: center + CGPoint(y:-b) * t, tag: "-b", style: style3))
-            markup.append(Marker(point: center + CGPoint(y:+b) * t, tag: "+b", style: style3))
+            markup.append(Marker(point: center + CGPoint(x:-a) * t, tag: "-a"))
+            markup.append(Marker(point: center + CGPoint(x:+a) * t, tag: "+a"))
+            markup.append(Marker(point: center + CGPoint(y:-b) * t, tag: "-b"))
+            markup.append(Marker(point: center + CGPoint(y:+b) * t, tag: "+b"))
 
             let A = LineSegment(start:center + CGPoint(x:-a) * t, end:center + CGPoint(x:+a) * t)
-            markup.append(Guide(drawable:A, tag: "A", style:style2))
+            markup.append(Guide(drawable:A, tag: "A"))
 
             let B = LineSegment(start:center + CGPoint(y:-b) * t, end:center + CGPoint(y:+b) * t)
-            markup.append(Guide(drawable:B, tag: "B", style:style2))
+            markup.append(Guide(drawable:B, tag: "B"))
 
             let rect = Polygon(points: [corners.0, corners.1, corners.2, corners.3])
-            markup.append(Guide(drawable:rect, tag: "frame", style:style2))
+            markup.append(Guide(drawable:rect, tag: "frame"))
 
-            markup.append(Guide(drawable:Rectangle(frame:boundingBox), tag: "boundingBox", style:style2))
+            markup.append(Guide(drawable:Rectangle(frame:boundingBox), tag: "boundingBox"))
 
             return markup
         }

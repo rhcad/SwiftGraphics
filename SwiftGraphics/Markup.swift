@@ -11,7 +11,6 @@ import CoreGraphics
 // TODO: extend Drawable
 public protocol Markup {
     var tag:String? { get }
-    var style:Style? { get }
     func drawInContext(context:CGContext)
 }
 
@@ -21,51 +20,28 @@ public struct Guide: Markup {
 
     public let drawable:Drawable
     public let tag:String?
-    public let style:Style?
 
-    public init(drawable:Drawable, tag:String? = nil, style:Style? = nil) {
+    public init(drawable:Drawable, tag:String? = nil) {
         self.drawable = drawable
         self.tag = tag
-        self.style = style
     }
 
     public func drawInContext(context:CGContext) {
-
-        if let style = style {
-            CGContextSaveGState(context)
-            context.apply(style)
-        }
-
         drawable.drawInContext(context)
-
-        if let style = style {
-            CGContextRestoreGState(context)
-        }
     }
 }
 
 public struct Marker: Markup {
     public let point:CGPoint
     public let tag:String?
-    public var style:Style?
 
-    public init(point:CGPoint, tag:String? = nil, style:Style? = nil) {
+    public init(point:CGPoint, tag:String? = nil) {
         self.point = point
         self.tag = tag
-        self.style = style
     }
 
     public func drawInContext(context:CGContext) {
-        if let style = style {
-            CGContextSaveGState(context)
-            context.apply(style)
-        }
-
         context.strokeSaltire(CGRect(center:point, diameter:10))
-
-        if let style = style {
-            CGContextRestoreGState(context)
-        }
     }
 
     public static func markers(points:[CGPoint]) -> [Marker] {
