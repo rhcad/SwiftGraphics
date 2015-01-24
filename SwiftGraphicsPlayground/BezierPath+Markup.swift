@@ -29,9 +29,9 @@ public extension BezierCurve {
             let B = LineSegment(start:end, end:controls[1])
             markup.append(Guide(type: .lineSegment(B), tag: "controlLine"))
 
-            markup.append(Guide(type: .rectangle(boundingBox), tag: "boundingBox"))
+            markup.append(Guide(type: .rectangle(Rectangle(frame: boundingBox)), tag: "boundingBox"))
 
-            markup.append(Guide(type: .rectangle(simpleBounds), tag: "simpleBounds"))
+            markup.append(Guide(type: .rectangle(Rectangle(frame: boundingBox)), tag: "simpleBounds"))
             return markup
         }
     }

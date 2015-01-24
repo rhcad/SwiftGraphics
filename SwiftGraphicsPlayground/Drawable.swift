@@ -10,17 +10,6 @@ import SwiftGraphics
 
 // #############################################################################
 
-public protocol Geometry {
-    var frame:CGRect { get }    
-}
-
-
-public protocol Drawable: Geometry {
-    func drawInContext(context:CGContextRef)
-}
-
-// #############################################################################
-
 public extension CGContext {
     func draw(drawable:Drawable, style:Style? = nil) {
         if let style = style {

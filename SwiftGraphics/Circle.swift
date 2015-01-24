@@ -34,6 +34,7 @@ public struct Circle {
 
 extension Circle {
 
+    // TODO: Just convert into an ellipse.
     var asBezierCurves:(BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
         get {
             let quadrants = [

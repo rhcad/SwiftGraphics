@@ -10,7 +10,13 @@ import CoreGraphics
 
 // MARK: -
 
-public typealias Rectangle = CGRect
+public struct Rectangle {
+    public let frame:CGRect
+
+    public init(frame:CGRect) {
+        self.frame = frame
+    }
+}
 
 // MARK: -
 

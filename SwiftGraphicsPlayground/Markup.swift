@@ -50,7 +50,7 @@ public struct Guide: Markup {
             case .polygon(let polygon):
                 context.stroke(polygon)
             case .rectangle(let rectangle):
-                context.strokeRect(rectangle)
+                context.strokeRect(rectangle.frame)
         }
 
         if let style = style {

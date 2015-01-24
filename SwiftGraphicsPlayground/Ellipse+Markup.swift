@@ -61,7 +61,7 @@ public extension Ellipse {
             let rect = Polygon(points: [corners.0, corners.1, corners.2, corners.3])
             markup.append(Guide(type: .polygon(rect), tag: "frame", style:style2))
 
-            markup.append(Guide(type: .rectangle(boundingBox), tag: "boundingBox", style:style2))
+            markup.append(Guide(type: .rectangle(Rectangle(frame:boundingBox)), tag: "boundingBox", style:style2))
 
             return markup
         }

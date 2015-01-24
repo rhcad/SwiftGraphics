@@ -9,10 +9,8 @@
 import CoreGraphics
 
 public extension CGPathDrawingMode {
-    public init(strokeColor:CGColorRef?, fillColor:CGColorRef?, evenOdd:Bool = false) {
-        let hasStrokeColor = strokeColor != nil && strokeColor!.alpha > 0.0
-        let hasFillColor = fillColor != nil && fillColor!.alpha > 0.0
-        switch (Int(hasStrokeColor), Int(hasFillColor), Int(evenOdd)) {
+    public init(hasStroke:Bool, hasFill:Bool, evenOdd:Bool = false) {
+        switch (Int(hasStroke), Int(hasFill), Int(evenOdd)) {
             case (1, 1, 0):
                 self = kCGPathFillStroke
             case (0, 1, 0):
@@ -24,8 +22,14 @@ public extension CGPathDrawingMode {
             case (0, 1, 1):
                 self = kCGPathEOFill
             default:
-                assertionFailure("Invalid combination (stroke:\(strokeColor), fill:\(fillColor), evenOdd:\(evenOdd))")
+                assertionFailure("Invalid combination (stroke:\(hasStroke), fill:\(hasFill), evenOdd:\(evenOdd))")
         }
+    }
+
+    public init(strokeColor:CGColorRef?, fillColor:CGColorRef?, evenOdd:Bool = false) {
+        let hasStrokeColor = strokeColor != nil && strokeColor!.alpha > 0.0
+        let hasFillColor = fillColor != nil && fillColor!.alpha > 0.0
+        self.init(hasStroke: hasStrokeColor, hasFill: hasFillColor, evenOdd: evenOdd)
     }
 }
 

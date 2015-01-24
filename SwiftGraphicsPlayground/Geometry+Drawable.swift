@@ -81,7 +81,7 @@ extension RegularPolygon: Drawable {
     public func drawInContext(context: CGContext) {
         let path = Path(vertices:points, closed:true)
         let mode = CGPathDrawingMode(strokeColor:context.strokeColor, fillColor:context.fillColor)
-        CGContextAddPath(context, path.CGPath)
+        CGContextAddPath(context, path.cgPath)
         CGContextDrawPath(context, mode)
     }
 }

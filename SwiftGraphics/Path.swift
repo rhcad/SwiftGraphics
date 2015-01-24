@@ -63,7 +63,7 @@ public extension Path {
 
 
 public extension Path {
-    var CGPath:CGPathRef {
+    var cgPath:CGPath {
         get {
             var CGPath = CGPathCreateMutable()
 
