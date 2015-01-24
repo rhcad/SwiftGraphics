@@ -8,7 +8,6 @@
 
 import CoreGraphics
 import SwiftGraphics
-import SwiftGraphicsPlayground
 
 public protocol Markup {
     var tag:String? { get }

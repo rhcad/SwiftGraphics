@@ -12,15 +12,3 @@ public protocol Geometry {
     var frame:CGRect { get }
 }
 
-public protocol HitTestable {
-    func contains(point:CGPoint) -> Bool
-    func onEdge(point:CGPoint, lineThickness:CFloat) -> Bool
-}
-
-public protocol Pathable {
-    var path:Path { get }
-}
-
-public protocol Drawable {
-    func drawInContext(context:CGContextRef)
-}

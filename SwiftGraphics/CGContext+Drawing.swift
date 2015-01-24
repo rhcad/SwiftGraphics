@@ -8,8 +8,11 @@
 
 import Foundation
 
-
 // TODO: This code is mostly experimental, use at your own risk - see TODO.markdown
+
+ /**
+  *  Most of this will be deprecated and replaced by the Drawable API.
+  */
 
 public extension CGContext {
 
@@ -85,5 +88,13 @@ public extension CGContext {
             CGPoint(x:rect.minX, y:rect.maxY), CGPoint(x:rect.maxX, y:rect.minY),
         ]
         strokeLines(linePoints)
+    }
+
+
+    // TODO: Rename/Deprecate
+    func plotPoints(points:[CGPoint]) {
+        for (index, point) in enumerate(points) {
+            self.strokeCross(CGRect(center:point, diameter:10))
+        }
     }
 }

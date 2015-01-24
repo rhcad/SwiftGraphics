@@ -8,7 +8,20 @@
 
 import SwiftGraphics
 
-// #############################################################################
+public protocol HitTestable {
+    func contains(point:CGPoint) -> Bool
+    func onEdge(point:CGPoint, lineThickness:CFloat) -> Bool
+}
+
+public protocol Pathable {
+    var path:Path { get }
+}
+
+public protocol Drawable {
+    func drawInContext(context:CGContextRef)
+}
+
+// MARK: CGContext+Drawable
 
 public extension CGContext {
     func draw(drawable:Drawable, style:Style? = nil) {
@@ -37,32 +50,16 @@ public extension CGContext {
 
     }
 
+    /**
+     This is a bit of a hack.
+
+     :param: things <#things description#>
+     :param: style  <#style description#>
+     :param: filter <#filter description#>
+     */
     func draw <T> (things:Array <T>, style:Style? = nil, filter:T -> Drawable) {
         let drawables = things.map(filter)
         draw(drawables, style:style)
     }
 
-}
-
-
-//extension Array {
-//    func converted <U> () -> [U] {
-//        return self.map() {
-//            (value:T) -> U in
-//            return value as U
-//        }
-//    }
-//}
-
-
-// #############################################################################
-
-public extension CGContext {
-
-    // TODO: Rename.
-    func plotPoints(points:[CGPoint]) {
-        for (index, point) in enumerate(points) {
-            self.strokeCross(CGRect(center:point, diameter:10))
-        }
-    }
 }

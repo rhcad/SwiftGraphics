@@ -8,7 +8,6 @@
 
 import CoreGraphics
 import SwiftGraphics
-import SwiftGraphicsPlayground
 
 public extension Ellipse {
 
@@ -16,14 +15,14 @@ public extension Ellipse {
         get {
             var markup:[Markup] = []
 
-            let style1 = Style(elements:[
+            let style1 = SwiftGraphics.Style(elements:[
                 .strokeColor(CGColor.redColor()),
                 ])
-            let style2 = Style(elements:[
+            let style2 = SwiftGraphics.Style(elements:[
                 .strokeColor(CGColor.blueColor()),
                 .lineDash([5,5]),
                 ])
-            let style3 = Style(elements:[
+            let style3 = SwiftGraphics.Style(elements:[
                 .strokeColor(CGColor.purpleColor()),
                 .lineDash([2,2]),
                 ])

@@ -8,7 +8,6 @@
 
 import CoreGraphics
 import SwiftGraphics
-import SwiftGraphicsPlayground
 
 public extension BezierCurve {
 
