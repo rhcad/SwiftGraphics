@@ -64,6 +64,8 @@
 		4515825F19C9F6A600856C91 /* TurnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515825E19C9F6A600856C91 /* TurnTests.swift */; };
 		4515826119C9F83300856C91 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515826019C9F83300856C91 /* Private.swift */; };
 		4515826219C9F83300856C91 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515826019C9F83300856C91 /* Private.swift */; };
+		451835E21A73072E006B123B /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451835E11A73072E006B123B /* Lerp.swift */; };
+		451835E31A73072E006B123B /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451835E11A73072E006B123B /* Lerp.swift */; };
 		4537991A19AA6C37004DF99E /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537991919AA6C37004DF99E /* CGPointTests.swift */; };
 		4537991D19AA788B004DF99E /* CGSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537991C19AA788B004DF99E /* CGSizeTests.swift */; };
 		453997C91A61F89F00572E47 /* BouncingBalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453997C31A61F89F00572E47 /* BouncingBalls.swift */; };
@@ -263,6 +265,7 @@
 		4515825E19C9F6A600856C91 /* TurnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnTests.swift; sourceTree = "<group>"; };
 		4515826019C9F83300856C91 /* Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 		4515826319CA0BA300856C91 /* MonotoneChain.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MonotoneChain.playground; sourceTree = "<group>"; };
+		451835E11A73072E006B123B /* Lerp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lerp.swift; sourceTree = "<group>"; };
 		451CE9F31A61D73B006F721B /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ScratchPad.playground; sourceTree = "<group>"; };
 		451CE9F41A61D73C006F721B /* SwiftGraphicsTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftGraphicsTest.playground; sourceTree = "<group>"; };
 		4537990419AA671E004DF99E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -660,6 +663,7 @@
 				456877E119B6857B004BEFD6 /* CoordinateSystems.swift */,
 				4594B08719AEDC2100101EB4 /* SwiftGraphicsHelper.h */,
 				4594B08819AEDC2100101EB4 /* SwiftGraphicsHelper.m */,
+				451835E11A73072E006B123B /* Lerp.swift */,
 			);
 			path = SwiftGraphics;
 			sourceTree = "<group>";
@@ -1002,6 +1006,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A14E1C1A69D582006F4949 /* GenericGeometryTypes.swift in Sources */,
+				451835E21A73072E006B123B /* Lerp.swift in Sources */,
 				029651AC1A6366FA0099DA1C /* CDisplayLink.m in Sources */,
 				02BF437E1A64FACB00132343 /* BezierCurve+BoundingBox.swift in Sources */,
 				456C315C19C65B0E003AA1DF /* Ellipse.swift in Sources */,
@@ -1147,6 +1152,7 @@
 				4594B09319AEE31E00101EB4 /* Path.swift in Sources */,
 				459EE5EA19AEC5130012E023 /* CGAffineTransform.swift in Sources */,
 				456C315D19C65B0E003AA1DF /* Ellipse.swift in Sources */,
+				451835E31A73072E006B123B /* Lerp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

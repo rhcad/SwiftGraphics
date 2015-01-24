@@ -32,27 +32,6 @@ public func clamp <T:Comparable> (value:T, lower:T, upper:T) -> T {
     return max(min(value, upper), lower)
 }
 
-// MARK: lerp
-
-public func lerp(lower:CGFloat, upper:CGFloat, factor:CGFloat) -> CGFloat {
-    return (1.0 - factor) * lower + factor * upper
-}
-
-public func lerp(lower:CGPoint, upper:CGPoint, factor:CGFloat) -> CGPoint {
-    return (1.0 - factor) * lower + factor * upper
-}
-
-public func lerp(lower:CGSize, upper:CGSize, factor:CGFloat) -> CGSize {
-    return (1.0 - factor) * lower + factor * upper
-}
-
-public func lerp(lower:CGRect, upper:CGRect, factor:CGFloat) -> CGRect {
-    return CGRect(
-        origin:lerp(lower.origin, upper.origin, factor),
-        size:lerp(lower.size, upper.size, factor)
-        )
-}
-
 // MARK: Degrees/Radians
 
 public func DegreesToRadians(v:CGFloat) -> CGFloat {
