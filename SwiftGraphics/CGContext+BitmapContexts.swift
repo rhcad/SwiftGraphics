@@ -13,14 +13,12 @@ import AppKit
 #endif
 
 public extension CGContext {
-    class func bitmapContext(size:CGSize) -> CGContext! {
-        let colorspace = CGColorSpaceCreateDeviceRGB()    
-        var bitmapInfo = CGBitmapInfo(CGImageAlphaInfo.PremultipliedFirst.rawValue)
-        return CGBitmapContextCreate(nil, UInt(size.width), UInt(size.height), 8, UInt(size.width) * 4, colorspace, bitmapInfo)
-    }
+    class func bitmapContext(size:CGSize, origin:CGPoint = CGPointZero, color:CGColor = CGColor.whiteColor()) -> CGContext! {
 
-    class func bitmapContext(size:CGSize, color:CGColor, origin:CGPoint = CGPointZero) -> CGContext! {
-        var context = bitmapContext(size)
+        let colorspace = CGColorSpaceCreateDeviceRGB()
+        var bitmapInfo = CGBitmapInfo(CGImageAlphaInfo.PremultipliedFirst.rawValue)
+        let context = CGBitmapContextCreate(nil, UInt(size.width), UInt(size.height), 8, UInt(size.width) * 4, colorspace, bitmapInfo)
+
         context.with {
             context.setFillColor(color)
             context.fillRect(CGRect(size:size))
