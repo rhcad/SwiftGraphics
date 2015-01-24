@@ -8,76 +8,17 @@
 
 import CoreGraphics
 
-//struct Color {
-//    let CGColor:CGColorRef?
-//
-//    init(CGColor:CGColorRef) {
-//        self.CGColor = CGColor
-//    }
-//
-//    init(red:CGFloat = 0.0, green:CGFloat = 0.0, blue:CGFloat = 0.0, alpha:CGFloat = 1.0) {
-//        self.CGColor = CGColorCreateGenericRGB(red, green, blue, alpha)
-//    }
-//
-//    init(white:CGFloat, alpha:CGFloat = 1.0) {
-//        self.CGColor = CGColorCreateGenericGray(white, alpha)
-//    }
-//
-//    static var blackColor = Color(white:0)
-//    static var darkGrayColor = Color(white:0.333)
-//    static var lightGrayColor = Color(white:0.667)
-//    static var whiteColor = Color(white:1)
-//    static var grayColor = Color(white:0.5)
-//    static var redColor = Color(red:1)
-//    static var greenColor = Color(green:1)
-//    static var blueColor = Color(blue:1)
-//    static var cyanColor = Color(green:1, blue:1)
-//    static var yellowColor = Color(red:1, green:1)
-//    static var magnetaColor = Color(green:1, blue:1)
-//    static var orangeColor = Color(red:1, green:0.5)
-//    static var purpleColor = Color(red:0.5, blue:0.5)
-//    static var brownColor = Color(red:0.6, green:0.4, blue:0.2)
-//    static var clearColor = Color(white:0.0, alpha:0.0)
-//
-//}
-//
-//println(sizeof(Color))
-//
-//print(Color.redColor.CGColor)
-//println(NSColor.redColor().CGColor)
-
-
-public struct HSV {
-    var h:CGFloat = 0.0
-    var s:CGFloat = 0.0
-    var v:CGFloat = 0.0
-    public init(h:CGFloat = 0.0, s:CGFloat = 0.0, v:CGFloat = 0.0) {
-        (self.h, self.s, self.v) = (h,s,v)
-    }
-    public init(tuple:(h:CGFloat, s:CGFloat, v:CGFloat)) {
-        (self.h, self.s, self.v) = tuple
-    }
-}
-
-extension HSV : Printable {
-    public var description: String { return "HSV(\(h), \(s), \(v))" }
-}
-
-extension HSV : Equatable {
-    
-}
-
-public func ==(lhs: HSV, rhs: HSV) -> Bool {
-    return lhs.h == rhs.h && lhs.s == rhs.s && lhs.v == rhs.v
-}
+// MARK: RGB
 
 public struct RGB {
-    var r:CGFloat = 0.0
-    var g:CGFloat = 0.0
-    var b:CGFloat = 0.0
+    public var r:CGFloat = 0.0
+    public var g:CGFloat = 0.0
+    public var b:CGFloat = 0.0
+
     public init(r:CGFloat = 0.0, g:CGFloat = 0.0, b:CGFloat = 0.0) {
         (self.r, self.g, self.b) = (r,g,b)
     }
+
     public init(tuple:(r:CGFloat, g:CGFloat, b:CGFloat)) {
         (self.r, self.g, self.b) = tuple
     }
@@ -88,11 +29,71 @@ extension RGB : Printable {
 }
 
 extension RGB : Equatable {
-    
+
 }
 
 public func ==(lhs: RGB, rhs: RGB) -> Bool {
     return lhs.r == rhs.r && lhs.g == rhs.g && lhs.b == rhs.b
+}
+
+public extension RGB {
+    public var CGColor:CGColorRef {
+        return CGColorCreateGenericRGB(r, g, b, 1.0)
+    }
+}
+
+// MARK: HSV
+
+public struct HSV {
+    public let h:CGFloat = 0.0
+    public let s:CGFloat = 0.0
+    public let v:CGFloat = 0.0
+
+    public init(h:CGFloat = 0.0, s:CGFloat = 0.0, v:CGFloat = 0.0) {
+        (self.h, self.s, self.v) = (h,s,v)
+    }
+
+    public init(tuple:(h:CGFloat, s:CGFloat, v:CGFloat)) {
+        (self.h, self.s, self.v) = tuple
+    }
+
+    public var asTuple:(CGFloat, CGFloat, CGFloat) {
+        get {
+            return (h,s,v)
+        }
+    }
+}
+
+extension HSV : Printable {
+    public var description: String { return "HSV(\(h), \(s), \(v))" }
+}
+
+extension HSV : Equatable {
+}
+
+public func ==(lhs: HSV, rhs: HSV) -> Bool {
+    return lhs.h == rhs.h && lhs.s == rhs.s && lhs.v == rhs.v
+}
+
+public extension HSV {
+    public var CGColor:CGColorRef {
+        let rgb = convert(self)
+        return rgb.CGColor
+    }
+}
+
+// MARK: Lerping HSV
+
+extension HSV: Lerpable {
+    typealias FactorType = CGFloat
+}
+
+public func + (lhs:HSV, rhs:HSV) -> HSV {
+    return HSV(h:lhs.h + rhs.h, s:lhs.s + rhs.s, v:lhs.v + rhs.v)
+}
+
+public func * (lhs:HSV, rhs:CGFloat) -> HSV {
+    return HSV(h:lhs.h * rhs, s:lhs.s * rhs, v:lhs.v * rhs)
 }
 
 // TODO: One option? Or just add alpha to colors
@@ -178,3 +179,5 @@ public func convert(rgb:RGB) -> HSV {
 
     return HSV(h:h, s:s, v:v)
 }
+
+
