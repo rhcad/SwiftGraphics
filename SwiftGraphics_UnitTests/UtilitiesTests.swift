@@ -24,7 +24,7 @@ class UtilitesTests: XCTestCase {
     }
     
     func testLerpFloat() {
-        XCTAssert(lerp(1, 2, 2) == 3)
+        XCTAssert(lerp(Double(1.0), Double(2.0), Double(2.0)) == Double(3.0))
     }
     
     func testLerpPoint() {
@@ -46,7 +46,6 @@ class UtilitesTests: XCTestCase {
         let rad30 = 0.52359877559829882
         XCTAssert(DegreesToRadians(30.0) == rad30)
         XCTAssert(DegreesToRadians(CGFloat(30)) == CGFloat(rad30))
-
     }
     
     func testRadiansToDegrees() {
