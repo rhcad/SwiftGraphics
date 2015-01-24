@@ -14,6 +14,11 @@ public protocol Markup {
     func drawInContext(context:CGContext)
 }
 
+public protocol Markupable {
+    var markup:[Markup] { get }
+}
+
+
 // TODO: Create "Markupable" protocol
 
 public struct Guide: Markup {
@@ -52,6 +57,7 @@ public struct Marker: Markup {
 }
 
 public extension CGContext {
+
     func draw(markup:[Markup], styles:[String:Style]? = nil) {
         for item in markup {
 

@@ -34,7 +34,10 @@ let t1 = Triangle(pt(100,0), pt(200,0), pt(100,150))
 CGContextTranslateCTM(context, -t1.circumcenter.x, -t1.circumcenter.y)
 
 context.draw(t1)
-context.draw(t1.markup)
+let styles = stylesForMarkup(t1.markup)
+context.draw(t1.markup, styles:styles)
 
 context.nsimage
+
+
 

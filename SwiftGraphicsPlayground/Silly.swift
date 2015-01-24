@@ -35,3 +35,25 @@ public func tiled(context:CGContext, tileSize:CGSize, dimension:IntSize, origin:
         }
     }
 }
+
+public func stylesForMarkup(markup:[Markup]) -> [String:SwiftGraphics.Style] {
+
+    let rng = Random(provider: SRandomProvider(seed: 42)))
+
+    var styles:[String:SwiftGraphics.Style] = [:]
+    for item in markup {
+        if let tag = item.tag {
+            if let style = styles[tag] {
+                // NOP
+            }
+            else {
+                var style = SwiftGraphics.Style()
+
+                let hue:CGFloat = rng.random()
+                style.strokeColor = HSV(h: hue, s: 1.0, v: 0.5).cgColor
+                styles[tag] = style
+            }
+        }
+    }
+    return styles
+}
