@@ -19,6 +19,9 @@ public struct Rectangle {
     }
 }
 
+extension Rectangle: Geometry {
+}
+
 // TODO: This cannot live in other file due to swiftc problems.
 extension Rectangle: Drawable {
    public func drawInContext(context:CGContext) {
