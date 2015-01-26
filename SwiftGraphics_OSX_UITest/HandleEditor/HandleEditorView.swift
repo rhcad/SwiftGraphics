@@ -126,19 +126,19 @@ extension BoxObject : Interactive {
     internal func updateFromHandles(handles:[Handle], activeHandleIndex:Int) {
         switch activeHandleIndex {
             case 0:
-                self.frame = CGRect(P1:handles[0].position, P2:handles[2].position);
+                self.frame = CGRect(p1:handles[0].position, p2:handles[2].position);
                 handles[1].position = CGPoint(x:handles[0].position.x, y:handles[2].position.y)
                 handles[3].position = CGPoint(x:handles[2].position.x, y:handles[0].position.y)
             case 1:
-                self.frame = CGRect(P1:handles[1].position, P2:handles[3].position);
+                self.frame = CGRect(p1:handles[1].position, p2:handles[3].position);
                 handles[0].position = CGPoint(x:handles[1].position.x, y:handles[3].position.y)
                 handles[2].position = CGPoint(x:handles[3].position.x, y:handles[1].position.y)
             case 2:
-                self.frame = CGRect(P1:handles[2].position, P2:handles[0].position);
+                self.frame = CGRect(p1:handles[2].position, p2:handles[0].position);
                 handles[1].position = CGPoint(x:handles[0].position.x, y:handles[2].position.y)
                 handles[3].position = CGPoint(x:handles[2].position.x, y:handles[0].position.y)
             case 3:
-                self.frame = CGRect(P1:handles[3].position, P2:handles[1].position);
+                self.frame = CGRect(p1:handles[3].position, p2:handles[1].position);
                 handles[0].position = CGPoint(x:handles[1].position.x, y:handles[3].position.y)
                 handles[2].position = CGPoint(x:handles[3].position.x, y:handles[1].position.y)
             default:
