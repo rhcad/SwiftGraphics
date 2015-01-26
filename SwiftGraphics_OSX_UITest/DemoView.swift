@@ -32,7 +32,7 @@ class DemoView: NSView {
 
         context.withColor(CGColor.greenColor()) {
             let hull = convexHull(self.points)
-            context.strokeLine(hull, close:true)
+            context.strokeLine(hull, closed:true)
         }
 
     }
