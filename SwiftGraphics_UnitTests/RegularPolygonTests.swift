@@ -41,9 +41,9 @@ class RegularPolygonTests: XCTestCase {
         XCTAssertEqualWithAccuracy(p.length, {let s=t.lengths; return s.0+s.1+s.2}(), tol)
         
         // TODO: There are some issues in Triangle class, so comment the following lines.
-        //XCTAssertEqualWithAccuracy(p.area, t.area, tol)
-        //XCTAssertEqualWithAccuracy(p.circumcircle.radius, t.circumcircle.radius, tol)
-        //XCTAssertEqualWithAccuracy(p.inradius, t.inradius, tol)
+        XCTAssertEqualWithAccuracy(p.area, t.area, tol)
+        XCTAssertEqualWithAccuracy(p.circumcircle.radius, t.circumcircle.radius, tol)
+        XCTAssertEqualWithAccuracy(p.inradius, t.inradius, tol)
         XCTAssertEqualWithAccuracy(p.center.x, t.incenter.x, tol)
         //XCTAssertEqualWithAccuracy(p.center.y, t.incenter.y, tol)
     }
