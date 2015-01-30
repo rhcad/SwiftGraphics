@@ -31,6 +31,8 @@
 		026F21061A5FB26600A52D0E /* MonotoneChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA25B719CA112E00B612B7 /* MonotoneChain.swift */; };
 		029651AB1A6366FA0099DA1C /* CDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 029651A91A6366FA0099DA1C /* CDisplayLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		029651AC1A6366FA0099DA1C /* CDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 029651AA1A6366FA0099DA1C /* CDisplayLink.m */; };
+		02AAA8ED1A7A16A5001898E2 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAA8EC1A7A16A5001898E2 /* Gradient.swift */; };
+		02AAA8EE1A7A16A5001898E2 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAA8EC1A7A16A5001898E2 /* Gradient.swift */; };
 		02BF437E1A64FACB00132343 /* BezierCurve+BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF437D1A64FACB00132343 /* BezierCurve+BoundingBox.swift */; };
 		02BF437F1A64FACB00132343 /* BezierCurve+BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF437D1A64FACB00132343 /* BezierCurve+BoundingBox.swift */; };
 		02C9D0121A71D12F00B9696E /* RegularPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9D0111A71D12F00B9696E /* RegularPolygon.swift */; };
@@ -251,6 +253,7 @@
 		029651A91A6366FA0099DA1C /* CDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDisplayLink.h; sourceTree = "<group>"; };
 		029651AA1A6366FA0099DA1C /* CDisplayLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDisplayLink.m; sourceTree = "<group>"; };
 		02A969E21A6744C3006DDF62 /* RulerPoint.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RulerPoint.playground; sourceTree = "<group>"; };
+		02AAA8EC1A7A16A5001898E2 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		02BF437D1A64FACB00132343 /* BezierCurve+BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BezierCurve+BoundingBox.swift"; sourceTree = "<group>"; };
 		02C9D0111A71D12F00B9696E /* RegularPolygon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularPolygon.swift; sourceTree = "<group>"; };
 		02C9D0251A724D9C00B9696E /* RegularPolygonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularPolygonTests.swift; sourceTree = "<group>"; };
@@ -721,6 +724,7 @@
 				4594B09119AEE31E00101EB4 /* Path.swift */,
 				45066CF81A7428BA00F561E1 /* Drawable */,
 				45E38D201A74235800EC672A /* Style.swift */,
+				02AAA8EC1A7A16A5001898E2 /* Gradient.swift */,
 				45E38D301A74249000EC672A /* Markup */,
 			);
 			path = SwiftGraphics;
@@ -1106,6 +1110,7 @@
 				45E38D231A74235800EC672A /* Geometry+Drawable.swift in Sources */,
 				458C59081A7410A500E993A6 /* GeometryProtocols.swift in Sources */,
 				45E38D2C1A74242E00EC672A /* Ellipse+Markup.swift in Sources */,
+				02AAA8ED1A7A16A5001898E2 /* Gradient.swift in Sources */,
 				4594B08B19AEDC2100101EB4 /* SwiftGraphicsHelper.m in Sources */,
 				459EE5F119AEC5130012E023 /* CGRect.swift in Sources */,
 				459EE5FB19AEC5130012E023 /* Utilities.swift in Sources */,
@@ -1233,6 +1238,7 @@
 				459A4C4F1A69914000E87608 /* Triangle.swift in Sources */,
 				4515826219C9F83300856C91 /* Private.swift in Sources */,
 				45F5CE211A74094000F4B15D /* AssociatedObjects+Private.swift in Sources */,
+				02AAA8EE1A7A16A5001898E2 /* Gradient.swift in Sources */,
 				458C590C1A74121600E993A6 /* CGContext+Drawing.swift in Sources */,
 				459EE5FA19AEC5130012E023 /* Scaling.swift in Sources */,
 				459EE5F819AEC5130012E023 /* Quadrant.swift in Sources */,

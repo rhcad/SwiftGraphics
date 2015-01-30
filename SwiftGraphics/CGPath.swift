@@ -39,17 +39,13 @@ public extension CGMutablePath {
 
     var currentPoint : CGPoint { get { return CGPathGetCurrentPoint(self) } }
 
-    func move(point:CGPoint) -> CGMutablePath {
-        CGPathMoveToPoint(self, nil, point.x, point.y)
-        return self
-    }
-
-    func move(point:CGPoint, relative:Bool) -> CGMutablePath {
+    func move(point:CGPoint, relative:Bool = false) -> CGMutablePath {
         if relative {
             return move(point + currentPoint)
         }
         else {
-            return move(point)
+            CGPathMoveToPoint(self, nil, point.x, point.y)
+            return self
         }
     }
     
@@ -58,17 +54,13 @@ public extension CGMutablePath {
         return self
     }
 
-    func addLine(point:CGPoint) -> CGMutablePath {
-        CGPathAddLineToPoint(self, nil, point.x, point.y)
-        return self
-    }
-
-    func addLine(point:CGPoint, relative:Bool) -> CGMutablePath {
+    func addLine(point:CGPoint, relative:Bool = false) -> CGMutablePath {
         if relative {
             return addLine(point + currentPoint)
         }
         else {
-            return addLine(point)
+            CGPathAddLineToPoint(self, nil, point.x, point.y)
+            return self
         }
     }
 
@@ -79,31 +71,23 @@ public extension CGMutablePath {
         return self
     }
 
-    func addQuadCurveToPoint(end:CGPoint, control1:CGPoint) -> CGMutablePath {
-        CGPathAddQuadCurveToPoint(self, nil, control1.x, control1.y, end.x, end.y)
-        return self
-    }
-
-    func addQuadCurveToPoint(end:CGPoint, control1:CGPoint, relative:Bool) -> CGMutablePath {
+    func addQuadCurveToPoint(end:CGPoint, control1:CGPoint, relative:Bool = false) -> CGMutablePath {
         if relative {
             return addQuadCurveToPoint(end + currentPoint, control1:control1 + currentPoint)
         }
         else {
-            return addQuadCurveToPoint(end, control1:control1)
+            CGPathAddQuadCurveToPoint(self, nil, control1.x, control1.y, end.x, end.y)
+            return self
         }
     }
 
-    func addCubicCurveToPoint(end:CGPoint, control1:CGPoint, control2:CGPoint) -> CGMutablePath {
-        CGPathAddCurveToPoint(self, nil, control1.x, control1.y, control2.x, control2.y, end.x, end.y)
-        return self
-    }
-
-    func addCubicCurveToPoint(end:CGPoint, control1:CGPoint, control2:CGPoint, relative:Bool) -> CGMutablePath {
+    func addCubicCurveToPoint(end:CGPoint, control1:CGPoint, control2:CGPoint, relative:Bool = false) -> CGMutablePath {
         if relative {
             return addCubicCurveToPoint(end + currentPoint, control1:control1 + currentPoint, control2:control2 + currentPoint)
         }
         else {
-            return addCubicCurveToPoint(end, control1:control1, control2:control2)
+            CGPathAddCurveToPoint(self, nil, control1.x, control1.y, control2.x, control2.y, end.x, end.y)
+            return self
         }
     }
 
