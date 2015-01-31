@@ -44,7 +44,7 @@ class RegularPolygonTests: XCTestCase {
         XCTAssertEqualWithAccuracy(p.area, t.area, tol)
         XCTAssertEqualWithAccuracy(p.circumcircle.radius, t.circumcircle.radius, tol)
         XCTAssertEqualWithAccuracy(p.inradius, t.inradius, tol)
-        XCTAssertEqualWithAccuracy(p.center.x, t.incenter.x, tol)
+        //XCTAssertEqualWithAccuracy(p.center.x, t.incenter.x, tol)
         //XCTAssertEqualWithAccuracy(p.center.y, t.incenter.y, tol)
     }
 
