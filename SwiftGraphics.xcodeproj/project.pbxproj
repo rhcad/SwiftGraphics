@@ -323,6 +323,7 @@
 		4570B83C1A1EC3770055847A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4574C0241A64604900454DE5 /* CGContext_OSX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGContext_OSX.swift; sourceTree = "<group>"; };
 		4574C0261A64613A00454DE5 /* CGContext+BitmapContexts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+BitmapContexts.swift"; sourceTree = "<group>"; };
+		457C74A01A7C3B01004F3DBF /* BezierPathSplitting.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BezierPathSplitting.playground; sourceTree = "<group>"; };
 		457DEBD41A649689003E4363 /* Path.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Path.playground; sourceTree = "<group>"; };
 		457E54501A68D35B0059B357 /* Turn.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Turn.playground; sourceTree = "<group>"; };
 		457E72861A72EA6E00E5A7A1 /* RegularPolygon.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RegularPolygon.playground; sourceTree = "<group>"; };
@@ -626,6 +627,7 @@
 				45BF4CAC1A69929C00F260B0 /* Ellipse.playground */,
 				457E72861A72EA6E00E5A7A1 /* RegularPolygon.playground */,
 				45BA25BB19CA156800B612B7 /* Triangle.playground */,
+				457C74A01A7C3B01004F3DBF /* BezierPathSplitting.playground */,
 				45E38D311A7424F600EC672A /* Broken or Limited Usefulness */,
 				45E38D321A74254000EC672A /* Very WIP */,
 			);

@@ -146,7 +146,82 @@ public extension BezierCurve {
     }
 }
 
+
+// MARK: Getting a point from and splitting curves.
+
+public extension BezierCurve {
+
+    /**
+     Return a point along the curve.
+
+     :param: t A value from 0 to 1
+
+     :returns: A CGPoint corresponding to the point along the curve.
+     */
+    func pointAlongCurve(t:CGFloat) -> CGPoint {
+        return pointAlongCurve(points, t:t)
+    }
+
+    // Adapted from @therealpomix's "A Primer on Bézier Curves" ( https://pomax.github.io/bezierinfo/ )
+    // de Casteljau's algorithm
+    internal func pointAlongCurve(points:[CGPoint], t:CGFloat) -> CGPoint {
+        if (points.count == 1) {
+            return points[0]
+        }
+        else {
+            var newpoints:[CGPoint] = []
+            for var i=0; i < points.count - 1; i++ {
+                let newPoint = (1 - t) * points[i] + t * points[i+1]
+                newpoints.append(newPoint)
+            }
+            return pointAlongCurve(newpoints, t:t)
+        }
+    }
+
+    /**
+     Splits the curve into two component curves
+
+     :param: t A ratio along the curve
+
+     :returns: Two sub-curves
+     */
+    func split(t:CGFloat) -> (BezierCurve, BezierCurve) {
+        var left:[CGPoint] = []
+        var right:[CGPoint] = []
+        splitCurve(points, t:t, left:&left, right:&right)
+        return (BezierCurve(points:left), BezierCurve(points:right))
+    }
+
+    internal func splitCurve(points:[CGPoint], t:CGFloat, inout left:[CGPoint], inout right:[CGPoint]) {
+        if (points.count == 1) {
+            left.append(points[0])
+            right.append(points[0])
+        }
+        else {
+            var newpoints:[CGPoint] = []
+            for var i=0; i < points.count - 1; i++ {
+
+                if(i==0) {
+                    left.append(points[i])
+                }
+                if (i == points.count - 2) {
+                    right.append(points[i+1])
+                }
+
+                let newPoint = (1 - t) * points[i] + t * points[i+1]
+                newpoints.append(newPoint)
+            }
+            splitCurve(newpoints, t: t, left: &left, right: &right)
+        }
+    }
+
+
+
+}
+
+
 // MARK: Stroking the path to a context
+// TODO: Move into own file
 
 public extension CGContextRef {
 
