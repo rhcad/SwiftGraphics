@@ -140,8 +140,7 @@ public func convert(hsv:HSV) -> RGB {
             case 5:
                 return RGB(tuple:(v,p,q))
             default:
-                assert(false)
-                break
+                fatalError("Cannot convert HSV to RGB")
         }
     }
 }
