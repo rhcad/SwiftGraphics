@@ -10,10 +10,112 @@
 
 import CoreGraphics
 
+// MARK: Getting a point from and splitting curves.
+
 public extension BezierCurve {
-    
-// MARK: simpleBounds and bounds
-    
+
+    /**
+     Return a point along the curve.
+
+     :param: t A value from 0 to 1
+
+     :returns: A CGPoint corresponding to the point along the curve.
+     */
+    func pointAlongCurve(t:CGFloat) -> CGPoint {
+        return BezierCurve.pointAlongCurveDeCasteljaus(points, t:t)
+    }
+
+    /**
+     Splits the curve into two component curves
+
+     :param: t A ratio along the curve
+
+     :returns: Two sub-curves
+     */
+    func split(t:CGFloat) -> (BezierCurve, BezierCurve) {
+        return splitCurveDeCasteljaus(t)
+    }
+}
+
+public extension BezierCurve {
+    static internal let m2 = Matrix <CGFloat> (values:[1,0,0,0, -3,3,0,0, 3,-6,3,0, -1,3,-3,1], width:4, height:4)
+
+    static func pointAlongCurveMatrix(points:[CGPoint], t:CGFloat) -> CGPoint {
+        assert(points.count == 4)
+        // TODO: Implement quadratic form
+        let values = [1, t, t ** 2, t ** 3]
+
+        let m1 = Matrix(values:values, width:4, height:1)
+
+        let m3x_values:Array <CGFloat> = points.map() { return $0.x }
+        let m3x = Matrix(values:m3x_values, width:1, height:m3x_values.count)
+
+        let m3y_values:Array <CGFloat> = points.map() { return $0.y }
+        let m3y = Matrix(values:m3y_values, width:1, height:m3y_values.count)
+
+        var rx = m1 * m2 * m3x
+        var ry = m1 * m2 * m3y
+
+        return CGPoint(x:CGFloat(rx.values[0]), y:CGFloat(ry.values[0]))
+    }
+
+    // TODO: Add split
+}
+
+
+public extension BezierCurve {
+
+    // Adapted from @therealpomix's "A Primer on Bézier Curves" ( https://pomax.github.io/bezierinfo/ )
+    // de Casteljau's algorithm
+    static func pointAlongCurveDeCasteljaus(points:[CGPoint], t:CGFloat) -> CGPoint {
+        if (points.count == 1) {
+            return points[0]
+        }
+        else {
+            var newpoints:[CGPoint] = []
+            for var i=0; i < points.count - 1; i++ {
+                let newPoint = (1 - t) * points[i] + t * points[i+1]
+                newpoints.append(newPoint)
+            }
+            return pointAlongCurveDeCasteljaus(newpoints, t:t)
+        }
+    }
+
+    func splitCurveDeCasteljaus(t:CGFloat) -> (BezierCurve, BezierCurve) {
+        var left:[CGPoint] = []
+        var right:[CGPoint] = []
+        BezierCurve.splitCurveDeCasteljaus(points, t:t, left:&left, right:&right)
+        return (BezierCurve(points:left), BezierCurve(points:right))
+    }
+
+    static func splitCurveDeCasteljaus(points:[CGPoint], t:CGFloat, inout left:[CGPoint], inout right:[CGPoint]) {
+        if (points.count == 1) {
+            left.append(points[0])
+            right.append(points[0])
+        }
+        else {
+            var newpoints:[CGPoint] = []
+            for var i=0; i < points.count - 1; i++ {
+
+                if(i==0) {
+                    left.append(points[i])
+                }
+                if (i == points.count - 2) {
+                    right.append(points[i+1])
+                }
+
+                let newPoint = (1 - t) * points[i] + t * points[i+1]
+                newpoints.append(newPoint)
+            }
+            splitCurveDeCasteljaus(newpoints, t: t, left: &left, right: &right)
+        }
+    }
+}
+
+// MARK: Bounds
+
+public extension BezierCurve {
+
     public var simpleBounds: CGRect { get {
         return CGRect.unionOfPoints(points)
     }}

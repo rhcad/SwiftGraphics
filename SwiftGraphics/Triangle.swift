@@ -199,7 +199,8 @@ public extension Triangle {
         let k = 2 * area / (a * alpha + b * beta + c * gamma)
 //        let C:CGFloat = DegreesToRadians(90)//angles.2
         let C = angles.2
-        let x = (k * beta - r + (k * alpha - r) * cos(C)) / sin(C)
+        // (Unnecessarily specify CGFloat to prevent compiler from complaining about complexity while inferring type)
+        let x:CGFloat = (k * beta - r + (k * alpha - r) * cos(C)) / sin(C)
         let y = k * alpha - r
         return CGPoint(x:x, y:y)
     }    

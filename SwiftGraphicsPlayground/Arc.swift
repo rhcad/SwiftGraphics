@@ -122,7 +122,8 @@ public func computeArc(x0:CGFloat, y0:CGFloat, rx:CGFloat, ry:CGFloat, angle:CGF
     // Step 2 : Compute (cx1, cy1)
     //
     var sign:CGFloat = (largeArcFlag == sweepFlag) ? -1 : 1
-    var sq = ((Prx*Pry)-(Prx*Py1)-(Pry*Px1)) / ((Prx*Py1)+(Pry*Px1))
+    // (Unnecessarily specify CGFloat to prevent compiler from complaining about complexity while inferring type)
+    var sq:CGFloat = ((Prx*Pry)-(Prx*Py1)-(Pry*Px1)) / ((Prx*Py1)+(Pry*Px1))
     sq = (sq < 0) ? 0 : sq
     let coef = sign * sqrt(sq)
     let cx1 = coef * ((rx * y1) / ry)
