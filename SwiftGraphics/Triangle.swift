@@ -136,9 +136,11 @@ public extension Triangle {
     public var signedArea: CGFloat {
         get {
             let (a, b, c) = points
-            let signedArea = 0.5 * (a.x * (b.y - c.y) +
-                b.x * (c.y - b.y) +
-                c.x * (b.y - b.y))
+            let signedArea = 0.5 * (
+                a.x * (b.y - c.y) +
+                b.x * (c.y - a.y) +
+                c.x * (a.y - b.y)
+            )
             return signedArea
         }
     }
