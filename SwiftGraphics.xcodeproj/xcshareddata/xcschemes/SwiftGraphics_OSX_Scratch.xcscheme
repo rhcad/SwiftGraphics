@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45B8AE8F19BCE56E00C61A3F"
-               BuildableName = "All"
-               BlueprintName = "All"
+               BlueprintIdentifier = "455AC2C21A76130B00BCC373"
+               BuildableName = "SwiftGraphics_OSX_Scratch.app"
+               BlueprintName = "SwiftGraphics_OSX_Scratch"
                ReferencedContainer = "container:SwiftGraphics.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,8 +26,18 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Release">
+      buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4501557E1A62F9F600D7FB7B"
+               BuildableName = "SwiftGraphicsPlayground_OSX_UnitTests.xctest"
+               BlueprintName = "SwiftGraphicsPlayground_OSX_UnitTests"
+               ReferencedContainer = "container:SwiftGraphics.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
@@ -42,9 +52,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45B8AE8F19BCE56E00C61A3F"
-            BuildableName = "All"
-            BlueprintName = "All"
+            BlueprintIdentifier = "455AC2C21A76130B00BCC373"
+            BuildableName = "SwiftGraphics_OSX_Scratch.app"
+            BlueprintName = "SwiftGraphics_OSX_Scratch"
             ReferencedContainer = "container:SwiftGraphics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -58,15 +68,16 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45B8AE8F19BCE56E00C61A3F"
-            BuildableName = "All"
-            BlueprintName = "All"
+            BlueprintIdentifier = "455AC2C21A76130B00BCC373"
+            BuildableName = "SwiftGraphics_OSX_Scratch.app"
+            BlueprintName = "SwiftGraphics_OSX_Scratch"
             ReferencedContainer = "container:SwiftGraphics.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -76,15 +87,16 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45B8AE8F19BCE56E00C61A3F"
-            BuildableName = "All"
-            BlueprintName = "All"
+            BlueprintIdentifier = "455AC2C21A76130B00BCC373"
+            BuildableName = "SwiftGraphics_OSX_Scratch.app"
+            BlueprintName = "SwiftGraphics_OSX_Scratch"
             ReferencedContainer = "container:SwiftGraphics.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

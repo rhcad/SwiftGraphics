@@ -12,7 +12,6 @@ import XCTest
 class ProjectTests: XCTestCase {
     func testProjectConfiguration() {
 
-// TODO: Flip this when we switch unit tests to RELEASE builds
 #if !DEBUG && RELEASE
         XCTAssert(true)
 #else
