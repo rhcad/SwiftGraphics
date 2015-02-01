@@ -227,14 +227,18 @@ public extension CGPoint {
     }
     
     func distanceTo(p1:CGPoint, p2:CGPoint) -> CGFloat {
+        return distanceToBeeline(p1, p2:p2).0
+    }
+    
+    func distanceToBeeline(p1:CGPoint, p2:CGPoint) -> (CGFloat, CGPoint) {
         if p1 == p2 {
-            return distanceTo(p1)
+            return (distanceTo(p1), p1)
         }
         if p1.x == p2.x {
-            return abs(p1.x - self.x)
+            return (abs(p1.x - self.x), CGPoint(x:p1.x, y:self.y))
         }
         if p1.y == p2.y {
-            return abs(p1.y - self.y)
+            return (abs(p1.y - self.y), CGPoint(x:self.x, y:p1.y))
         }
         
         let t1 = (p2.y - p1.y) / (p2.x - p1.x)
@@ -243,7 +247,7 @@ public extension CGPoint {
         let perpx = numerator / (t1 - t2)
         let perp = CGPoint(x: perpx, y: p1.y + (perpx - p1.x) * t1)
         
-        return distanceTo(perp)
+        return (distanceTo(perp), perp)
     }
 
     func angleTo(vec:CGPoint) -> CGFloat {       // [-M_PI, M_PI)
@@ -267,9 +271,11 @@ public func collinear(a:CGPoint, b:CGPoint, c:CGPoint) -> Bool {
     return (b.x - a.x) * (c.y - a.y) ==% (c.x - a.x) * (b.y - a.y)
 }
 
+/**
+ Return true if c is near to the beeline a b.
+ */
 public func collinear(a:CGPoint, b:CGPoint, c:CGPoint, tol:CGFloat) -> Bool {
-    let d = c.distanceTo(a, p2:b)
-    return abs(d) <= tol
+    return abs(c.distanceTo(a, p2:b)) <= tol
 }
 
 public func angle(vertex:CGPoint, p1:CGPoint, p2:CGPoint) -> CGFloat {
