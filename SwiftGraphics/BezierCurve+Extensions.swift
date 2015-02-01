@@ -38,25 +38,25 @@ public extension BezierCurve {
 }
 
 public extension BezierCurve {
-    static internal let m2 = Matrix <CGFloat> (values:[1,0,0,0, -3,3,0,0, 3,-6,3,0, -1,3,-3,1], width:4, height:4)
+    static internal let m2 = Matrix(values:[1,0,0,0, -3,3,0,0, 3,-6,3,0, -1,3,-3,1], columns:4, rows:4)
 
     static func pointAlongCurveMatrix(points:[CGPoint], t:CGFloat) -> CGPoint {
         assert(points.count == 4)
-        // TODO: Implement quadratic form
-        let values = [1, t, t ** 2, t ** 3]
 
-        let m1 = Matrix(values:values, width:4, height:1)
+        let values = [1, t, t * t, t * t * t]
+        let valuesPointer = UnsafePointer <CGFloat> (values)
 
-        let m3x_values:Array <CGFloat> = points.map() { return $0.x }
-        let m3x = Matrix(values:m3x_values, width:1, height:m3x_values.count)
+        let m1 = Matrix(pointer:valuesPointer, columns:4, rows:1)
 
-        let m3y_values:Array <CGFloat> = points.map() { return $0.y }
-        let m3y = Matrix(values:m3y_values, width:1, height:m3y_values.count)
+        let pointsPointer = UnsafePointer <CGFloat> (points)
+
+        let m3x = Matrix(pointer:pointsPointer, columns:1, rows:points.count, stride:2)
+        let m3y = Matrix(pointer:pointsPointer, columns:1, rows:points.count, stride:2, start:1)
 
         var rx = m1 * m2 * m3x
         var ry = m1 * m2 * m3y
 
-        return CGPoint(x:CGFloat(rx.values[0]), y:CGFloat(ry.values[0]))
+        return CGPoint(x:CGFloat(rx.pointer[0]), y:CGFloat(ry.pointer[0]))
     }
 
     // TODO: Add split
