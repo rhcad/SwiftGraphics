@@ -52,6 +52,16 @@
                ReferencedContainer = "container:SwiftGraphics.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4501557E1A62F9F600D7FB7B"
+               BuildableName = "SwiftGraphicsPlayground_OSX_UnitTests.xctest"
+               BlueprintName = "SwiftGraphicsPlayground_OSX_UnitTests"
+               ReferencedContainer = "container:SwiftGraphics.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
