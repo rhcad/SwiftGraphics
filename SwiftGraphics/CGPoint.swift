@@ -274,8 +274,8 @@ public func collinear(a:CGPoint, b:CGPoint, c:CGPoint) -> Bool {
 /**
  Return true if c is near to the beeline a b.
  */
-public func collinear(a:CGPoint, b:CGPoint, c:CGPoint, tol:CGFloat) -> Bool {
-    return c.distanceTo(a, p2:b) <= tol
+public func collinear(a:CGPoint, b:CGPoint, c:CGPoint, tolerance:CGFloat) -> Bool {
+    return c.distanceTo(a, p2:b) <= tolerance
 }
 
 /**
