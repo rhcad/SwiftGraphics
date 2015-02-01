@@ -102,7 +102,7 @@ extension Matrix: Printable {
     public var description:String {
 
         let strings:[String] = (0..<rows).map() {
-            let strings:[String] = self.row($0).map() { $0.description }
+            let strings:[String] = self.row($0).map() { "\($0)" }
             let string = ", ".join(strings)
             return "[\(string)]"
         }
