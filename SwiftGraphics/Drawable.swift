@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-public protocol Drawable: Geometry {
+public protocol Drawable {
     func drawInContext(context:CGContextRef)
 }
 
