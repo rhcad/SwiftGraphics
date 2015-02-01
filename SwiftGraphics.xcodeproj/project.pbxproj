@@ -149,6 +149,7 @@
 		45BA25B819CA112E00B612B7 /* MonotoneChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA25B719CA112E00B612B7 /* MonotoneChain.swift */; };
 		45BA25BD19CA1E8A00B612B7 /* ConvexHullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA25BC19CA1E8A00B612B7 /* ConvexHullTests.swift */; };
 		45C11B5B1A69751B0029A61C /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C11B5A1A69751B0029A61C /* Triangle.swift */; };
+		45C4C35C1A7DA8EF0036EE2B /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4C35B1A7DA8EF0036EE2B /* ProjectTests.swift */; };
 		45C6DC751A13E59C004C4693 /* TransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6DC741A13E59C004C4693 /* TransformTests.swift */; };
 		45CFDC661A61CA0700053F96 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDC651A61CA0700053F96 /* Utilities.swift */; };
 		45CFDC691A61CB4500053F96 /* GrahamScan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDC671A61CB3000053F96 /* GrahamScan.swift */; };
@@ -359,6 +360,7 @@
 		45BF1EBF1A61FED300DE8AE5 /* Random.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Random.playground; sourceTree = "<group>"; };
 		45BF4CAC1A69929C00F260B0 /* Ellipse.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Ellipse.playground; sourceTree = "<group>"; };
 		45C11B5A1A69751B0029A61C /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		45C4C35B1A7DA8EF0036EE2B /* ProjectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTests.swift; sourceTree = "<group>"; };
 		45C6DC741A13E59C004C4693 /* TransformTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformTests.swift; sourceTree = "<group>"; };
 		45CFDC651A61CA0700053F96 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		45CFDC671A61CB3000053F96 /* GrahamScan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrahamScan.swift; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 				2E0F5BDA1A69BBA600221BB0 /* QuadrantTests.swift */,
 				2E0F5BDC1A69C43A00221BB0 /* UtilitiesTests.swift */,
 				2E0F5BDE1A6A8FCA00221BB0 /* GrahamScanUnitTests.swift */,
+				45C4C35B1A7DA8EF0036EE2B /* ProjectTests.swift */,
 			);
 			path = SwiftGraphics_UnitTests;
 			sourceTree = "<group>";
@@ -1156,6 +1159,7 @@
 			files = (
 				2E0F5BDB1A69BBA600221BB0 /* QuadrantTests.swift in Sources */,
 				4515825F19C9F6A600856C91 /* TurnTests.swift in Sources */,
+				45C4C35C1A7DA8EF0036EE2B /* ProjectTests.swift in Sources */,
 				2E0F5BDF1A6A8FCA00221BB0 /* GrahamScanUnitTests.swift in Sources */,
 				2E0F5BD91A6986DA00221BB0 /* ColorTests.swift in Sources */,
 				4537991D19AA788B004DF99E /* CGSizeTests.swift in Sources */,
@@ -1401,6 +1405,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1442,6 +1447,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
