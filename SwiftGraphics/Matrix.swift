@@ -71,6 +71,7 @@ public func * (lhs:Matrix, rhs:Matrix) -> Matrix {
     var resultPointer = UnsafeMutablePointer <Float> (resultData.mutableBytes)
     vDSP_mmul(UnsafePointer <Float> (lhs.pointer), lhs.stride, UnsafePointer <Float> (rhs.pointer), rhs.stride, resultPointer, 1, vDSP_Length(lhs.rows), vDSP_Length(rhs.columns), vDSP_Length(lhs.columns))
 #else
+    // Reported as https://github.com/schwa/SwiftGraphics/issues/49
     // See: http://stackoverflow.com/questions/26519169/matrix-multiplication-in-swift-using-accelerate-framework-32-bit-vs-64-bit
     // See cblas_sgemm
 
