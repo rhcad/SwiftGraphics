@@ -14,15 +14,6 @@ extension CGPoint : Printable {
     public var description: String { get { return "\(x), \(y)" } }
 }
 
-// MARK: Equatable
-
-extension CGPoint : Equatable {
-}
-
-public func == (lhs:CGPoint, rhs:CGPoint) -> Bool {
-    return CGPointEqualToPoint(lhs, rhs)
-}
-
 // MARK: Convenience initializers
 
 public extension CGPoint {
