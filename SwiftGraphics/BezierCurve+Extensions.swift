@@ -22,7 +22,7 @@ public extension BezierCurve {
      :returns: A CGPoint corresponding to the point along the curve.
      */
     func pointAlongCurve(t:CGFloat) -> CGPoint {
-        return BezierCurve.pointAlongCurveDeCasteljaus(points, t:t)
+        return BezierCurve.pointAlongCurveMatrix(points, t:t)
     }
 
     /**
