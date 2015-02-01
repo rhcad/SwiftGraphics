@@ -163,8 +163,8 @@ public extension CGPoint {
     var square : CGFloat {
         get {
             return x ** 2 + y ** 2
-            }
         }
+    }
 
     var normalized : CGPoint { get {
         let len = magnitude
@@ -180,15 +180,15 @@ public extension CGPoint {
     var isZero: Bool {
         get {
             return x == 0 && y == 0
-            }
         }
+    }
 
     // TODO: It might be better to remove this and let users use ==% CGPointZero
     var isFuzzyZero: Bool {
         get {
             return self ==% CGPointZero
-            }
         }
+    }
 }
 
 public func atan2(point:CGPoint) -> CGFloat {   // (-M_PI, M_PI]
@@ -212,6 +212,10 @@ public func ceil(value:CGPoint) -> CGPoint {
 
 public func round(value:CGPoint) -> CGPoint {
     return value.map { round($0) }
+}
+
+public func round(value:CGPoint, decimal:Int) -> CGPoint {
+    return value.map { round($0, decimal) }
 }
 
 // MARK: Distance and angle between two points or vectors

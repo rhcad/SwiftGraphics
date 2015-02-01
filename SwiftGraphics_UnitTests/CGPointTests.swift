@@ -55,6 +55,13 @@ class CGPointTests: XCTestCase {
         XCTAssertEqual(CGPoint(x:50, y:-50).clamped(r), CGPoint(x:50, y:0))
         XCTAssertEqual(CGPoint(x:50, y:250).clamped(r), CGPoint(x:50, y:200))
     }
+    
+    func testRound() {
+        XCTAssertEqual(round(CGPoint((100.1, 100.5)), 0), CGPoint(x:100, y:101))
+        XCTAssertEqual(round(CGPoint((-10.1, -10.5)), 0), CGPoint(x:-10, y:-10))
+        XCTAssertEqual(round(CGPoint((14.49, 15.44999)), 1), CGPoint(x:14.5, y:15.4))
+        XCTAssertEqual(round(CGPoint((14.99999, 15.0)), -1), CGPoint(x:10, y:20))
+    }
 
 //    func testDotProduct() {
 //
