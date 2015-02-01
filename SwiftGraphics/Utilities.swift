@@ -32,6 +32,12 @@ public func clamp <T:Comparable> (value:T, lower:T, upper:T) -> T {
     return max(min(value, upper), lower)
 }
 
+public func round(value:CGFloat, decimal:Int) -> CGFloat {
+    let e10n = pow(10.0, CGFloat(clamp(decimal, -6, 7)))
+    let fl = floor(e10n * value + 0.5)
+    return fl / e10n
+}
+
 // MARK: Degrees/Radians
 
 public func DegreesToRadians(v:CGFloat) -> CGFloat {

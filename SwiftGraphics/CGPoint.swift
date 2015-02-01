@@ -163,8 +163,8 @@ public extension CGPoint {
     var square : CGFloat {
         get {
             return x ** 2 + y ** 2
-            }
         }
+    }
 
     var normalized : CGPoint { get {
         let len = magnitude
@@ -180,15 +180,15 @@ public extension CGPoint {
     var isZero: Bool {
         get {
             return x == 0 && y == 0
-            }
         }
+    }
 
     // TODO: It might be better to remove this and let users use ==% CGPointZero
     var isFuzzyZero: Bool {
         get {
             return self ==% CGPointZero
-            }
         }
+    }
 }
 
 public func atan2(point:CGPoint) -> CGFloat {   // (-M_PI, M_PI]
@@ -214,6 +214,10 @@ public func round(value:CGPoint) -> CGPoint {
     return value.map { round($0) }
 }
 
+public func round(value:CGPoint, decimal:Int) -> CGPoint {
+    return value.map { round($0, decimal) }
+}
+
 // MARK: Distance and angle between two points or vectors
 
 public extension CGPoint {
@@ -223,7 +227,27 @@ public extension CGPoint {
     }
     
     func distanceTo(p1:CGPoint, p2:CGPoint) -> CGFloat {
-        return (p2-p1).crossProduct(self-p1)
+        return distanceToBeeline(p1, p2:p2).0
+    }
+    
+    func distanceToBeeline(p1:CGPoint, p2:CGPoint) -> (CGFloat, CGPoint) {
+        if p1 == p2 {
+            return (distanceTo(p1), p1)
+        }
+        if p1.x == p2.x {
+            return (abs(p1.x - self.x), CGPoint(x:p1.x, y:self.y))
+        }
+        if p1.y == p2.y {
+            return (abs(p1.y - self.y), CGPoint(x:self.x, y:p1.y))
+        }
+        
+        let t1 = (p2.y - p1.y) / (p2.x - p1.x)
+        let t2 = -1 / t1
+        let numerator = self.y - p1.y + p1.x * t1 - self.x * t2
+        let perpx = numerator / (t1 - t2)
+        let perp = CGPoint(x: perpx, y: p1.y + (perpx - p1.x) * t1)
+        
+        return (distanceTo(perp), perp)
     }
 
     func angleTo(vec:CGPoint) -> CGFloat {       // [-M_PI, M_PI)
@@ -247,10 +271,16 @@ public func collinear(a:CGPoint, b:CGPoint, c:CGPoint) -> Bool {
     return (b.x - a.x) * (c.y - a.y) ==% (c.x - a.x) * (b.y - a.y)
 }
 
+/**
+ Return true if c is near to the beeline a b.
+ */
+public func collinear(a:CGPoint, b:CGPoint, c:CGPoint, tol:CGFloat) -> Bool {
+    return c.distanceTo(a, p2:b) <= tol
+}
+
+/**
+ Return the included angle between vertex-p1 and vertex-vertex.
+ */
 public func angle(vertex:CGPoint, p1:CGPoint, p2:CGPoint) -> CGFloat {
-    let x10 = p1.x - vertex.x
-    let y10 = p1.y - vertex.y
-    let x20 = p2.x - vertex.x
-    let y20 = p2.y - vertex.y
-    return atan2(abs(x10 * y20 - y10 * x20), x10 * x20 + y10 * y20);
-    }
+    return abs((p1 - vertex).angleTo(p2 - vertex))
+}

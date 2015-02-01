@@ -55,6 +55,26 @@ class CGPointTests: XCTestCase {
         XCTAssertEqual(CGPoint(x:50, y:-50).clamped(r), CGPoint(x:50, y:0))
         XCTAssertEqual(CGPoint(x:50, y:250).clamped(r), CGPoint(x:50, y:200))
     }
+    
+    func testRound() {
+        XCTAssertEqual(round(CGPoint((100.1, 100.5)), 0), CGPoint(x:100, y:101))
+        XCTAssertEqual(round(CGPoint((-10.1, -10.5)), 0), CGPoint(x:-10, y:-10))
+        XCTAssertEqual(round(CGPoint((14.49, 15.44999)), 1), CGPoint(x:14.5, y:15.4))
+        XCTAssertEqual(round(CGPoint((14.99999, 15.0)), -1), CGPoint(x:10, y:20))
+    }
+    
+    func testCollinear() {
+        XCTAssert( collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 0))))
+        XCTAssert(!collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 1e-5))))
+        XCTAssert( collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 1e-5)), 1e-4))
+    }
+    
+    func testAngle() {
+        XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 0))), CGFloat(0))
+        XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((-5, 0))), CGFloat(M_PI))
+        XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((10, 10))), CGFloat(M_PI_4))
+        XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((10, -10))), CGFloat(M_PI_4))
+    }
 
 //    func testDotProduct() {
 //
