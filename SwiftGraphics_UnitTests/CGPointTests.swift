@@ -68,6 +68,13 @@ class CGPointTests: XCTestCase {
         XCTAssert(!collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 1e-5))))
         XCTAssert( collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 1e-5)), 1e-4))
     }
+    
+    func testAngle() {
+        XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 0))), CGFloat(0))
+        XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((-5, 0))), CGFloat(M_PI))
+        XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((10, 10))), CGFloat(M_PI_4))
+        XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((10, -10))), CGFloat(M_PI_4))
+    }
 
 //    func testDotProduct() {
 //

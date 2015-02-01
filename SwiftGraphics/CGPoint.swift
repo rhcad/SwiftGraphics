@@ -275,13 +275,12 @@ public func collinear(a:CGPoint, b:CGPoint, c:CGPoint) -> Bool {
  Return true if c is near to the beeline a b.
  */
 public func collinear(a:CGPoint, b:CGPoint, c:CGPoint, tol:CGFloat) -> Bool {
-    return abs(c.distanceTo(a, p2:b)) <= tol
+    return c.distanceTo(a, p2:b) <= tol
 }
 
+/**
+ Return the included angle between vertex-p1 and vertex-vertex.
+ */
 public func angle(vertex:CGPoint, p1:CGPoint, p2:CGPoint) -> CGFloat {
-    let x10 = p1.x - vertex.x
-    let y10 = p1.y - vertex.y
-    let x20 = p2.x - vertex.x
-    let y20 = p2.y - vertex.y
-    return atan2(abs(x10 * y20 - y10 * x20), x10 * x20 + y10 * y20);
-    }
+    return abs((p1 - vertex).angleTo(p2 - vertex))
+}
