@@ -62,6 +62,12 @@ class CGPointTests: XCTestCase {
         XCTAssertEqual(round(CGPoint((14.49, 15.44999)), 1), CGPoint(x:14.5, y:15.4))
         XCTAssertEqual(round(CGPoint((14.99999, 15.0)), -1), CGPoint(x:10, y:20))
     }
+    
+    func testCollinear() {
+        XCTAssert( collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 0))))
+        XCTAssert(!collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 1e-5))))
+        XCTAssert( collinear(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((5, 1e-5)), 1e-4))
+    }
 
 //    func testDotProduct() {
 //

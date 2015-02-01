@@ -227,7 +227,23 @@ public extension CGPoint {
     }
     
     func distanceTo(p1:CGPoint, p2:CGPoint) -> CGFloat {
-        return (p2-p1).crossProduct(self-p1)
+        if p1 == p2 {
+            return distanceTo(p1)
+        }
+        if p1.x == p2.x {
+            return abs(p1.x - self.x)
+        }
+        if p1.y == p2.y {
+            return abs(p1.y - self.y)
+        }
+        
+        let t1 = (p2.y - p1.y) / (p2.x - p1.x)
+        let t2 = -1 / t1
+        let numerator = self.y - p1.y + p1.x * t1 - self.x * t2
+        let perpx = numerator / (t1 - t2)
+        let perp = CGPoint(x: perpx, y: p1.y + (perpx - p1.x) * t1)
+        
+        return distanceTo(perp)
     }
 
     func angleTo(vec:CGPoint) -> CGFloat {       // [-M_PI, M_PI)
@@ -249,6 +265,11 @@ public func ==% (lhs:CGPoint, rhs:CGPoint) -> Bool {
  */
 public func collinear(a:CGPoint, b:CGPoint, c:CGPoint) -> Bool {
     return (b.x - a.x) * (c.y - a.y) ==% (c.x - a.x) * (b.y - a.y)
+}
+
+public func collinear(a:CGPoint, b:CGPoint, c:CGPoint, tol:CGFloat) -> Bool {
+    let d = c.distanceTo(a, p2:b)
+    return abs(d) <= tol
 }
 
 public func angle(vertex:CGPoint, p1:CGPoint, p2:CGPoint) -> CGFloat {
