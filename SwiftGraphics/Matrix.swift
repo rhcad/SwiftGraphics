@@ -12,11 +12,16 @@ import Accelerate
 public struct Matrix {
     let data:NSData?
     var pointer:UnsafePointer <CGFloat>
-    let columns:Int
-    let rows:Int
+    public let columns:Int // TODO: Rename to columnCount? Or combined as a size
+    public let rows:Int // TODO: Rename to rowCount?
     let stride:Int = 1
 
-    init(data:NSData, columns:Int, rows:Int, start:Int = 0, stride:Int = 1) {
+    public init(data:NSData, columns:Int, rows:Int, start:Int = 0, stride:Int = 1) {
+        assert(columns >= 0)
+        assert(rows >= 0)
+        assert(stride >= 1)
+        assert(columns * rows * stride + start <= data.length / sizeof(CGFloat))
+
         self.data = data
         self.pointer = UnsafePointer <CGFloat> (data.bytes).advancedBy(start)
         self.columns = columns
@@ -24,20 +29,33 @@ public struct Matrix {
         self.stride = stride
     }
 
-    init(pointer:UnsafePointer <CGFloat>, columns:Int, rows:Int, start:Int = 0, stride:Int = 1) {
+    /**
+    Note this form is unsafe because there is no upper bound to pointer.
+    */
+    public init(pointer:UnsafePointer <CGFloat>, columns:Int, rows:Int, start:Int = 0, stride:Int = 1) {
+        assert(columns >= 0)
+        assert(rows >= 0)
+        assert(stride >= 1)
+
         self.pointer = pointer.advancedBy(start)
         self.columns = columns
         self.rows = rows
         self.stride = stride
     }
 
-    init(values:[CGFloat], columns:Int, rows:Int) {
-        data = NSData(bytes:values, length:values.count * sizeof(CGFloat))
-        self.pointer = UnsafePointer <CGFloat> (data!.bytes)
-        self.columns = columns
-        self.rows = rows
+    public subscript (cell:(column:Int, row:Int)) -> CGFloat {
+        assert(cell.column >= 0)
+        assert(cell.column < columns)
+        assert(cell.row >= 0)
+        assert(cell.row < rows)
+
+        let index = (cell.column + cell.row * columns) * stride
+        return pointer[index]
     }
+
 }
+
+// MARK: Arithmetic
 
 public func * (lhs:Matrix, rhs:Matrix) -> Matrix {
 
@@ -51,4 +69,87 @@ public func * (lhs:Matrix, rhs:Matrix) -> Matrix {
     vDSP_mmulD(UnsafePointer <Double> (lhs.pointer), lhs.stride, UnsafePointer <Double> (rhs.pointer), rhs.stride, resultPointer, 1, vDSP_Length(lhs.rows), vDSP_Length(rhs.columns), vDSP_Length(lhs.columns))
 
     return Matrix(data:resultData, columns:resultColumns, rows:resultRows, stride:1)
+}
+
+// MARK: Equatable
+
+extension Matrix: Equatable {
+}
+
+public func == (lhs:Matrix, rhs:Matrix) -> Bool {
+
+    // Fail early if size is not the same
+    if lhs.columns != rhs.columns || lhs.rows != rhs.rows {
+        return false
+    }
+
+    // Note: .values is a rather expensive operation but does take stride into consideration - which is good.
+    if lhs.values != rhs.values {
+        return false
+    }
+
+    return true
+}
+
+
+// MARK: Printable
+
+extension Matrix: Printable {
+    public var description:String {
+
+        let strings:[String] = (0..<rows).map() {
+            let strings:[String] = self.row($0).map() { $0.description }
+            let string = ", ".join(strings)
+            return "[\(string)]"
+        }
+
+        let string = "[" + ", ".join(strings) + "]"
+
+        return "Matrix(columns: \(columns), rows: \(rows), values: \(string))"
+    }
+}
+
+// MARK: Convenience inits
+
+public extension Matrix {
+    init(values:Array <CGFloat>, columns:Int, rows:Int) {
+        data = NSData(bytes:values, length:values.count * sizeof(CGFloat))
+        self.pointer = UnsafePointer <CGFloat> (data!.bytes)
+        self.columns = columns
+        self.rows = rows
+    }
+}
+
+// MARK: Special accessors.
+
+extension Matrix {
+
+    /// Get all values in matrix as a 1 dimensional array
+    public var values:[CGFloat] {
+        get {
+            var values:[CGFloat] = []
+            for rowIndex in 0..<rows {
+                for colIndex in 0..<columns {
+                    let value = self[(colIndex, rowIndex)]
+                    values.append(value)
+                }
+            }
+            return values
+        }
+    }
+
+    /**
+    Get a row of values from the matrix as an array of CGFloats
+    */
+    public func row(rowIndex:Int) -> [CGFloat] {
+        assert(rowIndex >= 0)
+        assert(rowIndex < rows)
+
+        var row:[CGFloat] = []
+        for colIndex in 0..<columns {
+            let value = self[(colIndex, rowIndex)]
+            row.append(value)
+        }
+        return row
+    }
 }
