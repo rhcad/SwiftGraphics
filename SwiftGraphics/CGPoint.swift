@@ -112,13 +112,22 @@ public extension CGPoint {
 
 // MARK: dotProduct and crossProduct
 
+public func dotProduct(lhs:CGPoint, rhs:CGPoint) -> CGFloat {
+    return lhs.x * rhs.x + lhs.y * rhs.y
+}
+
+public func crossProduct(lhs:CGPoint, rhs:CGPoint) -> CGFloat {
+    return lhs.x * rhs.y - lhs.y * rhs.x
+}
+
+// TODO: Depecate in favour of the function
 public extension CGPoint {
     func dotProduct(v:CGPoint) -> CGFloat {
-        return x * v.x + y * v.y
+        return SwiftGraphics.dotProduct(self, v)
     }
 
     func crossProduct(v:CGPoint) -> CGFloat {
-        return x * v.y - y * v.x
+        return SwiftGraphics.crossProduct(self, v)
     }
 }
 
@@ -142,7 +151,7 @@ public extension CGPoint {
         y = sin(direction) * magnitude
     }
 
-    var magnitude : CGFloat {
+    var magnitude: CGFloat {
         get {
             return sqrt(x ** 2 + y ** 2)
         }
@@ -151,7 +160,13 @@ public extension CGPoint {
         }
     }
 
-    var direction : CGFloat {
+    var magnitudeSquared: CGFloat {
+        get {
+            return x ** 2 + y ** 2
+        }
+    }
+
+    var direction: CGFloat {
         get {
             return atan2(self)
         }
@@ -160,7 +175,7 @@ public extension CGPoint {
         }
     }
 
-    var square : CGFloat {
+    var square: CGFloat {
         get {
             return x ** 2 + y ** 2
         }
