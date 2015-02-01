@@ -58,15 +58,19 @@ public struct Matrix {
 // MARK: Arithmetic
 
 public func * (lhs:Matrix, rhs:Matrix) -> Matrix {
-
     let resultRows = lhs.rows
     let resultColumns = rhs.columns
-
     var resultData = NSMutableData(length:resultRows * resultColumns * sizeof(CGFloat))!
 
+#if os(OSX)
     assert(sizeof(Double) == sizeof(CGFloat))
     var resultPointer = UnsafeMutablePointer <Double> (resultData.mutableBytes)
     vDSP_mmulD(UnsafePointer <Double> (lhs.pointer), lhs.stride, UnsafePointer <Double> (rhs.pointer), rhs.stride, resultPointer, 1, vDSP_Length(lhs.rows), vDSP_Length(rhs.columns), vDSP_Length(lhs.columns))
+#else
+    assert(sizeof(Float) == sizeof(CGFloat))
+    var resultPointer = UnsafeMutablePointer <Float> (resultData.mutableBytes)
+    vDSP_mmul(UnsafePointer <Float> (lhs.pointer), lhs.stride, UnsafePointer <Float> (rhs.pointer), rhs.stride, resultPointer, 1, vDSP_Length(lhs.rows), vDSP_Length(rhs.columns), vDSP_Length(lhs.columns))
+#endif
 
     return Matrix(data:resultData, columns:resultColumns, rows:resultRows, stride:1)
 }
