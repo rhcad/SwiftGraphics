@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 schwa.io. All rights reserved.
 //
 
-import CoreFoundation
+import CoreGraphics
 
 extension Line : Geometry {
 

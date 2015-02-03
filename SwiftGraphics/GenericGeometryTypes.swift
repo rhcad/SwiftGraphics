@@ -15,6 +15,8 @@
     Look for this comment to see places where I've had to do this: "(Unnecessarily specify CGFloat to prevent compiler from complaining about complexity while inferring type)"
 */
 
+import CoreGraphics
+
 public protocol ArithmeticType: Comparable {
     func +(lhs: Self, rhs: Self) -> Self
     func -(lhs: Self, rhs: Self) -> Self
