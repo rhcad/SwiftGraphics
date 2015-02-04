@@ -17,13 +17,13 @@ public func monotoneChain(var points:[CGPoint], presorted:Bool = false) -> [CGPo
 
     if presorted == false {
         points.sort {
-            return $0.y < $1.y ? true : ($0.y == $1.y ? ($0.x < $1.x ? true : false) : false)
+            return $0.x < $1.x ? true : ($0.x == $1.x ? ($0.y < $1.y ? true : false) : false)
         }
     }
 
     var lower:[CGPoint] = []
     for var i = 0; i < points.count; i++ {
-        while lower.count >= 2 && Turn(lower[lower.count - 2], lower[lower.count - 1], points[i]) == .Left {
+        while lower.count >= 2 && Turn(lower[lower.count - 2], lower[lower.count - 1], points[i]) != .Right {
             lower.removeLast()
         }
         lower.append(points[i])
@@ -31,7 +31,7 @@ public func monotoneChain(var points:[CGPoint], presorted:Bool = false) -> [CGPo
        
     var upper:[CGPoint] = []
     for var i = points.count - 1; i >= 0; i-- {
-        while upper.count >= 2 && Turn(upper[upper.count - 2], upper[upper.count - 1], points[i]) == .Left {
+        while upper.count >= 2 && Turn(upper[upper.count - 2], upper[upper.count - 1], points[i]) != .Right {
             upper.removeLast()
             }
         upper.append(points[i]);
