@@ -305,3 +305,33 @@ public extension CGPath {
         return ret
     }}
 }
+
+// MARK: End points and tangent vectors
+
+public extension CGPath {
+    
+    public var startPoint: CGPoint {
+        get {
+            return getPoint(0)!
+        }
+    }
+    
+    public var endPoint: CGPoint {
+        get {
+            return getPoint(pointCount - 1)!
+        }
+    }
+    
+    public var startTangent: CGPoint {
+        get {
+            return getPoint(1)! - getPoint(0)!
+        }
+    }
+    
+    public var endTangent: CGPoint {
+        get {
+            let n = pointCount
+            return getPoint(n - 1)! - getPoint(n - 2)!
+        }
+    }
+}
