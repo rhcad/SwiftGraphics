@@ -20,7 +20,7 @@ extension Turn {
     }
 
     static func turn(p:CGPoint, _ q:CGPoint, _ r:CGPoint) -> Turn {
-        let c = (q.x - p.x)*(r.y - p.y) - (r.x - p.x)*(q.y - p.y)
+        let c = (q.x - p.x) * (r.y - p.y) - (r.x - p.x) * (q.y - p.y)
         return c == 0 ? .None : (c > 0 ? .Left : .Right)
     }
 }

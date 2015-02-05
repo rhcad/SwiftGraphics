@@ -8,17 +8,24 @@
 
 import CoreGraphics
 
+public extension CGPoint {
+    static func compareXY(lhs:CGPoint, rhs:CGPoint) -> Bool {
+        return lhs.x < rhs.x ? true : (lhs.x == rhs.x ? (lhs.y < rhs.y ? true : false) : false)
+    }
+    static func compareYX(lhs:CGPoint, rhs:CGPoint) -> Bool {
+        return lhs.y < rhs.y ? true : (lhs.y == rhs.y ? (lhs.x < rhs.x ? true : false) : false)
+    }
+}
+
 // https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain
-public func monotoneChain(var points:[CGPoint], presorted:Bool = false) -> [CGPoint] {
+public func monotoneChain(var points:[CGPoint], sorted:Bool = false) -> [CGPoint] {
 
     if points.count <= 3 {
         return points
     }
 
-    if presorted == false {
-        points.sort {
-            return $0.x < $1.x ? true : ($0.x == $1.x ? ($0.y < $1.y ? true : false) : false)
-        }
+    if sorted == false {
+        points.sort(CGPoint.compareXY)
     }
 
     var lower:[CGPoint] = []
@@ -41,6 +48,8 @@ public func monotoneChain(var points:[CGPoint], presorted:Bool = false) -> [CGPo
     upper.removeLast()
 
     let hull = lower + upper
+
+    assert(hull.count <= points.count, "Ended up with more points in hull (\(hull.count)) than in origin set (\(points.count)).")
 
     return hull
 }
