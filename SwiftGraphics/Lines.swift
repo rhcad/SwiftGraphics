@@ -18,17 +18,18 @@ public struct Line {
     func lineSegment(# x0:CGFloat, x1:CGFloat) -> LineSegment {
         let start = CGPoint(x:x0, y:m * x0 + b)
         let end = CGPoint(x:x1, y:m * x1 + b)
-        return LineSegment(start: start, end: end)
+        return LineSegment(start, end)
     }
 }
 
 // MARK: LineSegment
 
 public struct LineSegment {
+    // TODO: Convert to tuple
     public let start:CGPoint
     public let end:CGPoint
 
-    public init(start:CGPoint, end:CGPoint) {
+    public init(_ start:CGPoint, _ end:CGPoint) {
         self.start = start
         self.end = end
     }
