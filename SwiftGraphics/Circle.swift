@@ -24,7 +24,9 @@ public struct Circle {
         self.center = center
         self.radius = diameter * 0.5
     }
-    
+}
+
+extension Circle: Geometry {
     public var frame : CGRect {
         get {
             return CGRect(center: center, diameter: diameter)

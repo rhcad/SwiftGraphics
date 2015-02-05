@@ -8,9 +8,9 @@
 
 import CoreGraphics
 
-public extension Ellipse {
+extension Ellipse: Markupable {
 
-    var markup:[Markup] {
+    public var markup:[Markup] {
         get {
             var markup:[Markup] = []
 
@@ -38,10 +38,10 @@ public extension Ellipse {
             markup.append(Marker(point: center + CGPoint(y:-b) * t, tag: "-b"))
             markup.append(Marker(point: center + CGPoint(y:+b) * t, tag: "+b"))
 
-            let A = LineSegment(start:center + CGPoint(x:-a) * t, end:center + CGPoint(x:+a) * t)
+            let A = LineSegment(center + CGPoint(x:-a) * t, center + CGPoint(x:+a) * t)
             markup.append(Guide(drawable:A, tag: "A"))
 
-            let B = LineSegment(start:center + CGPoint(y:-b) * t, end:center + CGPoint(y:+b) * t)
+            let B = LineSegment(center + CGPoint(y:-b) * t, center + CGPoint(y:+b) * t)
             markup.append(Guide(drawable:B, tag: "B"))
 
             let rect = Polygon(points: [corners.0, corners.1, corners.2, corners.3])

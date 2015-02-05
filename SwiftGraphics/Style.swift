@@ -64,18 +64,18 @@ var CGContext_Style_Key = 1
 public extension CGContext {
     var style: Style {
         get {
-            let style = getAssociatedObject(self, &CGContext_Style_Key) as Style?
+            let style = getAssociatedWrappedObject(self, &CGContext_Style_Key) as Style?
             if let style = style {
                 return style
             }
             else {
                 var style = Style.defaultStyle
-                setAssociatedObject(self, &CGContext_Style_Key, style)
+                setAssociatedWrappedObject(self, &CGContext_Style_Key, style)
                 return style
             }
         }
         set {
-            setAssociatedObject(self, &CGContext_Style_Key, newValue)
+            setAssociatedWrappedObject(self, &CGContext_Style_Key, newValue)
             apply(newValue)
         }
     }

@@ -8,8 +8,8 @@
 
 import Foundation
 
-public extension Triangle {
-    var markup:[Markup] {
+extension Triangle: Markupable {
+    public var markup:[Markup] {
         get {
             var markup:[Markup] = []
 

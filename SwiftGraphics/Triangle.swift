@@ -180,6 +180,7 @@ public extension Triangle {
     }
 }
 
+// Cartesian coordinates
 // TODO: Not quite working perfectly yet...
 public extension Triangle {
 
@@ -209,7 +210,6 @@ public extension Triangle {
     public func asCartesian(# alpha:CGFloat, beta:CGFloat, gamma:CGFloat) -> CGPoint {
         let a = asLocalCartesian(alpha:alpha, beta:beta, gamma:gamma)
         let delta = asLocalCartesian(alpha:0,beta:0, gamma:1)
-
         return points.0 + a - delta
     }    
 }
@@ -228,4 +228,13 @@ func equalities <T> (e:(T, T, T), test:((T, T) -> Bool)) -> Int {
         c++
     }
     return min(c, 3)
+}
+
+extension Triangle: Geometry {
+    public var frame:CGRect {
+        get {
+            // TODO faster to just do min/maxes
+            return CGRect.unionOfPoints([points.0, points.1, points.2])
+        }
+    }
 }

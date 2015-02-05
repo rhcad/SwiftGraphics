@@ -48,17 +48,6 @@ extension Circle : Drawable {
 // MARK: Triangle
 
 extension Triangle : Drawable {
-    public var frame : CGRect {
-        get {
-            let (a,b,c) = self.points
-            let points = [a,b,c]
-            let rects:[CGRect] = points.map {
-                return $0.frame
-            }
-            return CGRect.unionOfRects(rects)
-        }
-    }
-
     public func drawInContext(context:CGContext) {
         let path = CGPathCreateMutable()
         let points = pointsArray
