@@ -26,7 +26,7 @@ public func setAssociatedObject(object:AnyObject, key: UnsafePointer<Void>, valu
     }
 }
 
-public func getAssociatedObject(object:AnyObject, key: UnsafePointer<Void>) -> Any? {
+public func getAssociatedWrappedObject(object:AnyObject, key: UnsafePointer<Void>) -> Any? {
     let wrapper = objc_getAssociatedObject(object, key) as StructWrapper?
     if let wrapper = wrapper {
         return wrapper.wrapped
@@ -36,13 +36,13 @@ public func getAssociatedObject(object:AnyObject, key: UnsafePointer<Void>) -> A
     }
 }
 
-public func setAssociatedObject(object:AnyObject, key: UnsafePointer<Void>, value:Any) {
+public func setAssociatedWrappedObject(object:AnyObject, key: UnsafePointer<Void>, value:Any) {
     let wrapper = StructWrapper(wrapped:value)
     objc_setAssociatedObject(object, key, wrapper, UInt(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
 }
 
 
-public func getAssociatedObject <T> (object:AnyObject, key: UnsafePointer<Void>, defaultValue:T) -> T {
+public func getAssociatedWrappedObject <T> (object:AnyObject, key: UnsafePointer<Void>, defaultValue:T) -> T {
     let wrapper = objc_getAssociatedObject(object, key) as StructWrapper?
     if let wrapper = wrapper {
         return wrapper.wrapped as T
@@ -52,7 +52,7 @@ public func getAssociatedObject <T> (object:AnyObject, key: UnsafePointer<Void>,
     }
 }
 
-public func setAssociatedObject <T> (object:AnyObject, key: UnsafePointer<Void>, value:T) {
+public func setAssociatedWrappedObject <T> (object:AnyObject, key: UnsafePointer<Void>, value:T) {
     let wrapper = StructWrapper(wrapped:value)
     objc_setAssociatedObject(object, key, wrapper, UInt(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
 }
