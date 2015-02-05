@@ -42,8 +42,6 @@
 		2E0F5BDB1A69BBA600221BB0 /* QuadrantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F5BDA1A69BBA600221BB0 /* QuadrantTests.swift */; };
 		2E0F5BDD1A69C43A00221BB0 /* UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F5BDC1A69C43A00221BB0 /* UtilitiesTests.swift */; };
 		2E0F5BDF1A6A8FCA00221BB0 /* GrahamScanUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F5BDE1A6A8FCA00221BB0 /* GrahamScanUnitTests.swift */; };
-		450155841A62F9F600D7FB7B /* SwiftGraphicsPlayground_UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450155831A62F9F600D7FB7B /* SwiftGraphicsPlayground_UnitTests.swift */; };
-		450155851A62F9F600D7FB7B /* SwiftGraphicsPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454FE66219C77031002E4DEF /* SwiftGraphicsPlayground.framework */; };
 		45066CFA1A74347300F561E1 /* Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CF91A74347300F561E1 /* Lines.swift */; };
 		45066CFB1A74347300F561E1 /* Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CF91A74347300F561E1 /* Lines.swift */; };
 		45066CFD1A74349500F561E1 /* Lines+Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CFC1A74349500F561E1 /* Lines+Drawing.swift */; };
@@ -206,13 +204,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		450155861A62F9F600D7FB7B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 454FE66119C77031002E4DEF;
-			remoteInfo = SwiftGraphicsPlayground;
-		};
 		4514F5F81A61D2EE00CC9C26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
@@ -298,9 +289,6 @@
 		2E0F5BDA1A69BBA600221BB0 /* QuadrantTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadrantTests.swift; sourceTree = "<group>"; };
 		2E0F5BDC1A69C43A00221BB0 /* UtilitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilitiesTests.swift; sourceTree = "<group>"; };
 		2E0F5BDE1A6A8FCA00221BB0 /* GrahamScanUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrahamScanUnitTests.swift; sourceTree = "<group>"; };
-		4501557F1A62F9F600D7FB7B /* SwiftGraphicsPlayground_OSX_UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGraphicsPlayground_OSX_UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		450155821A62F9F600D7FB7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		450155831A62F9F600D7FB7B /* SwiftGraphicsPlayground_UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGraphicsPlayground_UnitTests.swift; sourceTree = "<group>"; };
 		45066CF91A74347300F561E1 /* Lines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lines.swift; sourceTree = "<group>"; };
 		45066CFC1A74349500F561E1 /* Lines+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lines+Drawing.swift"; sourceTree = "<group>"; };
 		45066CFF1A743BD400F561E1 /* Triangle+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Triangle+Markup.swift"; sourceTree = "<group>"; };
@@ -448,14 +436,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4501557C1A62F9F600D7FB7B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				450155851A62F9F600D7FB7B /* SwiftGraphicsPlayground.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		454D550319AA5CE6000E3EB3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -506,23 +486,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		450155801A62F9F600D7FB7B /* SwiftGraphicsPlayground_OSX_UnitTests */ = {
-			isa = PBXGroup;
-			children = (
-				450155831A62F9F600D7FB7B /* SwiftGraphicsPlayground_UnitTests.swift */,
-				450155811A62F9F600D7FB7B /* Supporting Files */,
-			);
-			path = SwiftGraphicsPlayground_OSX_UnitTests;
-			sourceTree = "<group>";
-		};
-		450155811A62F9F600D7FB7B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				450155821A62F9F600D7FB7B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		45066CF81A7428BA00F561E1 /* Drawable */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,7 +592,6 @@
 				45CFDC9F1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */,
 				455AC2C41A76130B00BCC373 /* SwiftGraphics_OSX_Scratch */,
 				454D551319AA5CE6000E3EB3 /* SwiftGraphics_UnitTests */,
-				450155801A62F9F600D7FB7B /* SwiftGraphicsPlayground_OSX_UnitTests */,
 				4514F5F71A61D2D800CC9C26 /* Frameworks */,
 				454D550819AA5CE6000E3EB3 /* Products */,
 			);
@@ -643,7 +605,6 @@
 				45DA4AC419AA62A800133F32 /* SwiftGraphics.framework */,
 				454FE66219C77031002E4DEF /* SwiftGraphicsPlayground.framework */,
 				45CFDC9E1A61CE3500053F96 /* SwiftGraphics_OSX_UITest.app */,
-				4501557F1A62F9F600D7FB7B /* SwiftGraphicsPlayground_OSX_UnitTests.xctest */,
 				455AC2C31A76130B00BCC373 /* SwiftGraphics_OSX_Scratch.app */,
 			);
 			name = Products;
@@ -985,24 +946,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4501557E1A62F9F600D7FB7B /* SwiftGraphicsPlayground_OSX_UnitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4501558A1A62F9F600D7FB7B /* Build configuration list for PBXNativeTarget "SwiftGraphicsPlayground_OSX_UnitTests" */;
-			buildPhases = (
-				4501557B1A62F9F600D7FB7B /* Sources */,
-				4501557C1A62F9F600D7FB7B /* Frameworks */,
-				4501557D1A62F9F600D7FB7B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				450155871A62F9F600D7FB7B /* PBXTargetDependency */,
-			);
-			name = SwiftGraphicsPlayground_OSX_UnitTests;
-			productName = SwiftGraphicsPlayground_OSX_UnitTests;
-			productReference = 4501557F1A62F9F600D7FB7B /* SwiftGraphicsPlayground_OSX_UnitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 454D551A19AA5CE6000E3EB3 /* Build configuration list for PBXNativeTarget "SwiftGraphics_OSX" */;
@@ -1123,9 +1066,6 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = schwa.io;
 				TargetAttributes = {
-					4501557E1A62F9F600D7FB7B = {
-						CreatedOnToolsVersion = 6.2;
-					};
 					454D550619AA5CE6000E3EB3 = {
 						CreatedOnToolsVersion = 6.0;
 					};
@@ -1169,19 +1109,11 @@
 				45CFDC9D1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */,
 				455AC2C21A76130B00BCC373 /* SwiftGraphics_OSX_Scratch */,
 				454D551119AA5CE6000E3EB3 /* SwiftGraphicsTests */,
-				4501557E1A62F9F600D7FB7B /* SwiftGraphicsPlayground_OSX_UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4501557D1A62F9F600D7FB7B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		454D550519AA5CE6000E3EB3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1233,14 +1165,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4501557B1A62F9F600D7FB7B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				450155841A62F9F600D7FB7B /* SwiftGraphicsPlayground_UnitTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		454D550219AA5CE6000E3EB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1445,11 +1369,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		450155871A62F9F600D7FB7B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 454FE66119C77031002E4DEF /* SwiftGraphicsPlayground */;
-			targetProxy = 450155861A62F9F600D7FB7B /* PBXContainerItemProxy */;
-		};
 		4514F5F91A61D2EE00CC9C26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 45CFDC9D1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */;
@@ -1522,38 +1441,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		450155881A62F9F600D7FB7B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SwiftGraphicsPlayground_OSX_UnitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		450155891A62F9F600D7FB7B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SwiftGraphicsPlayground_OSX_UnitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		454D551819AA5CE6000E3EB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1878,15 +1765,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4501558A1A62F9F600D7FB7B /* Build configuration list for PBXNativeTarget "SwiftGraphicsPlayground_OSX_UnitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				450155881A62F9F600D7FB7B /* Debug */,
-				450155891A62F9F600D7FB7B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		454D550119AA5CE6000E3EB3 /* Build configuration list for PBXProject "SwiftGraphics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
