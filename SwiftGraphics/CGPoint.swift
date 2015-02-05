@@ -107,7 +107,7 @@ public func /= (inout lhs:CGPoint, rhs:CGSize) {
 }
 
 public extension CGPoint {
-    var asSize : CGSize { get { return CGSize(w:x, h:y) } }
+    var asSize : CGSize { get { return CGSize(width:x, height:y) } }
 }
 
 // MARK: dotProduct and crossProduct
