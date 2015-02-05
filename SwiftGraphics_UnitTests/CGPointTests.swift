@@ -76,30 +76,28 @@ class CGPointTests: XCTestCase {
         XCTAssertEqual(angle(CGPoint((0, 0)), CGPoint((10, 0)), CGPoint((10, -10))), CGFloat(M_PI_4))
     }
 
-//    func testDotProduct() {
-//
-//        let p = CGPoint(x:100, y:50)
-//
-//        XCTAssertEqualWithAccuracy(p.magnitude, CGFloat(111.803), 0.01)
-//        XCTAssertEqual(dotProduct(p, p), p.magnitude ** 2)
-//    }
+    func testDotProduct() {
+        let p = CGPoint(x:100, y:50)
+        XCTAssertEqualWithAccuracy(p.magnitude, CGFloat(111.803), 0.01)
+        XCTAssertEqual(dotProduct(p, p), p.magnitude ** 2)
+    }
 
 
 // TODO: Casting problems in newest beta.
-//    func testTrig() {
-//        let theta = DegreesToRadians(30) as CGFloat
-//        let length = 100 as CGFloat
-//        
-//        let p = CGPoint(length:length, theta:theta)
-//        XCTAssertEqualWithAccuracy(p.x, 86.6025403784439, CGFloat(FLT_EPSILON))
-//        XCTAssertEqualWithAccuracy(p.y, 50, CGFloat(FLT_EPSILON))
-//
-//        XCTAssertEqualWithAccuracy(atan2(p), theta, CGFloat(FLT_EPSILON))
-//
-//        XCTAssertEqualWithAccuracy(p.length, length, CGFloat(FLT_EPSILON))
-//
-//        let n = p.normalized
-//        XCTAssertEqualWithAccuracy(n.x, 0.866025403784439, CGFloat(FLT_EPSILON))
-//        XCTAssertEqualWithAccuracy(n.y, 0.5, CGFloat(FLT_EPSILON))
-//    }
+    func testTrig() {
+        let theta = DegreesToRadians(30) as CGFloat
+        let length = 100 as CGFloat
+        
+        let p = CGPoint(magnitude:length, direction:theta)
+        XCTAssertEqualWithAccuracy(p.x, CGFloat(86.6025403784439), 0.01)
+        XCTAssertEqualWithAccuracy(p.y, CGFloat(50), 0.01)
+
+        XCTAssertEqualWithAccuracy(atan2(p), theta, 0.01)
+
+        XCTAssertEqualWithAccuracy(p.magnitude, length, 0.01)
+
+        let n = p.normalized
+        XCTAssertEqualWithAccuracy(n.x, CGFloat(0.866025403784439), 0.01)
+        XCTAssertEqualWithAccuracy(n.y, CGFloat(0.5), 0.01)
+    }
 }
