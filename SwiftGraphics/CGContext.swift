@@ -63,6 +63,14 @@ public extension CGContext {
         CGContextRestoreGState(self)
     }
 
+    func with(transform:CGAffineTransform, block:() -> Void) {
+        with() {
+            CGContextConcatCTM(self, transform)
+            block()
+        }
+    }
+
+    // TODO: Deprecate
     func withColor(color:CGColor, block:() -> Void) {
         with {
             self.setStrokeColor(color)
