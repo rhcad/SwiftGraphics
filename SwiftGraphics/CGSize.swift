@@ -93,9 +93,9 @@ public enum Orientation {
 }
 
 public extension CGSize {
-    var aspectRatio : CGFloat { get { return width / height } }
+    var aspectRatio: CGFloat { get { return width / height } }
 
-    var orientation : Orientation { get {
+    var orientation: Orientation { get {
         if abs(width) > abs(height) {
             return .Landscape
         }
@@ -114,7 +114,7 @@ public extension CGSize {
         (width, height) = v
     }
 
-    var asTuple : (CGFloat, CGFloat) { get { return (width, height) } }
+    var asTuple: (CGFloat, CGFloat) { get { return (width, height) } }
 }
 
 

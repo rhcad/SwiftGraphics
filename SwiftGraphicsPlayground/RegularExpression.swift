@@ -41,7 +41,7 @@ struct RegularExpression {
 
         typealias Groups = BlockBackedCollection <Group>
 
-        var groups : Groups {
+        var groups: Groups {
             get {
                 let count = result.numberOfRanges
                 let groups = Groups(count:count) {

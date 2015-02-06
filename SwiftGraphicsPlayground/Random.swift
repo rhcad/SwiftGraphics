@@ -13,7 +13,7 @@ import Darwin
 public protocol RandomProvider {
     func random() -> UInt32
     func random(uniform:UInt32) -> UInt32
-    var max : UInt32 { get }
+    var max: UInt32 { get }
 }
 
 // MARK: Random
@@ -25,7 +25,7 @@ public protocol RandomProvider {
  */
 public struct Random {
 
-    public let provider : RandomProvider!
+    public let provider: RandomProvider!
 
     public init(provider:RandomProvider) {
         self.provider = provider
@@ -167,7 +167,7 @@ public extension Random {
 
 // MARK: Arc4RandomProvider
 
-public struct Arc4RandomProvider : RandomProvider {
+public struct Arc4RandomProvider: RandomProvider {
     public func random() -> UInt32 {
         return arc4random()
     }
@@ -176,12 +176,12 @@ public struct Arc4RandomProvider : RandomProvider {
     }
 
     // From man-page: The arc4random() function returns pseudo-random pseudorandom random numbers in the range of 0 to (2**32)-1, and therefore has twice the range of rand(3) and random(3).
-    public let max : UInt32 = 4294967295
+    public let max: UInt32 = 4294967295
 }
 
 // MARK: OS Random() RandomProvider
 
-public struct SRandomProvider : RandomProvider {
+public struct SRandomProvider: RandomProvider {
 
     public var seed:UInt32 {
         didSet {
@@ -222,6 +222,6 @@ public struct SRandomProvider : RandomProvider {
     }
 
     // From man-page: "It returns successive pseudo-random numbers in the range from 0 to (2**31)-1"
-    public let max : UInt32 = 2147483647
+    public let max: UInt32 = 2147483647
 }
 

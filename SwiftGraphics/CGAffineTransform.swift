@@ -20,7 +20,7 @@ extension CGAffineTransform: Printable {
 
 // MARK: Equatable
 
-extension CGAffineTransform : Equatable {
+extension CGAffineTransform: Equatable {
 }
 
 public func == (lhs:CGAffineTransform, rhs:CGAffineTransform) -> Bool {

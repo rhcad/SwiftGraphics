@@ -20,7 +20,7 @@ public struct Path {
 
     public var elements:[PathElement] = []
     
-    public var currentPoint : CGPoint = CGPointZero
+    public var currentPoint: CGPoint = CGPointZero
 
     public init() {
     }

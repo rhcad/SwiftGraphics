@@ -27,7 +27,7 @@ public struct Circle {
 }
 
 extension Circle: Geometry {
-    public var frame : CGRect {
+    public var frame: CGRect {
         get {
             return CGRect(center: center, diameter: diameter)
         }

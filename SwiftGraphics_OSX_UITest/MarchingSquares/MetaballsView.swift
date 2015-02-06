@@ -16,7 +16,7 @@ class MetaballsView: NSView {
     var playing:Bool = false
     var resolution:CGFloat = 20
     var marchingSquares: MarchingSquares!
-    var bouncingBalls : BouncingBalls!
+    var bouncingBalls: BouncingBalls!
     var fps: Double = 0
     var fieldSize: IntSize! {
         didSet {

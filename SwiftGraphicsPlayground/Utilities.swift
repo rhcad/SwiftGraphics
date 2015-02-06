@@ -73,7 +73,7 @@ public extension NSColor {
 /**
  *  A struct that acts like an array but returns results from a block
  */
-public struct BlockBackedCollection <T> : CollectionType, SequenceType {
+public struct BlockBackedCollection <T>: CollectionType, SequenceType {
     public typealias Element = T
     public typealias Index = Int
     public typealias Block = (index:Index) -> T
@@ -99,7 +99,7 @@ public struct BlockBackedCollection <T> : CollectionType, SequenceType {
     }
 }
 
-public struct BlockBackedCollectionGenerator <T> : GeneratorType {
+public struct BlockBackedCollectionGenerator <T>: GeneratorType {
     public typealias Sequence = BlockBackedCollection <T>
     public typealias Element = Sequence.Element
     public typealias Index = Sequence.Index

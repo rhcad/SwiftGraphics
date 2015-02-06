@@ -11,14 +11,14 @@ import CoreGraphics
 // TODO - this is a "Point" quadtree - see http://www.codeproject.com/Articles/30535/A-Simple-QuadTree-Implementation-in-C for a discussion of point vs "region' quad tree
 
 private struct QuadTreeConfig {
-    let minimumNodeSize : CGSize
-    let maximumObjectsPerNode : Int
+    let minimumNodeSize: CGSize
+    let maximumObjectsPerNode: Int
 }
 
 public class QuadTree <T> {
-    public var frame : CGRect { get { return rootNode.frame } }
-    public var rootNode : QuadTreeNode <T>!
-    private let config : QuadTreeConfig
+    public var frame: CGRect { get { return rootNode.frame } }
+    public var rootNode: QuadTreeNode <T>!
+    private let config: QuadTreeConfig
 
     public required init(frame:CGRect, minimumNodeSize:CGSize = CGSize(w:1, h:1), maximumObjectsPerNode:Int = 8) {
         self.config = QuadTreeConfig(minimumNodeSize:minimumNodeSize, maximumObjectsPerNode:maximumObjectsPerNode)
@@ -40,18 +40,18 @@ public class QuadTreeNode <T> {
 
     typealias Item = (point:CGPoint, object:T)
 
-    public let frame : CGRect
-    private let config : QuadTreeConfig
-    public var subnodes : [QuadTreeNode]?
+    public let frame: CGRect
+    private let config: QuadTreeConfig
+    public var subnodes: [QuadTreeNode]?
 
-//    var topLeft : QuadTreeNode?
-//    var topRight : QuadTreeNode?
-//    var bottomLeft : QuadTreeNode?
-//    var bottomRight : QuadTreeNode?
+//    var topLeft: QuadTreeNode?
+//    var topRight: QuadTreeNode?
+//    var bottomLeft: QuadTreeNode?
+//    var bottomRight: QuadTreeNode?
 
     // Optional because this can be nil-ed out later.
-    public lazy var items : [Item]? = []
-    public var objects : [T]? {
+    public lazy var items: [Item]? = []
+    public var objects: [T]? {
         get { 
             if let items = items {
                 return items.map() { return $0.object }
@@ -62,8 +62,8 @@ public class QuadTreeNode <T> {
         }
     } 
 
-    internal var isLeaf : Bool { get { return subnodes == nil } }
-    internal var canExpand : Bool { get { return frame.size.width >= config.minimumNodeSize.width * 2.0 && frame.size.height >= config.minimumNodeSize.height * 2.0 } }
+    internal var isLeaf: Bool { get { return subnodes == nil } }
+    internal var canExpand: Bool { get { return frame.size.width >= config.minimumNodeSize.width * 2.0 && frame.size.height >= config.minimumNodeSize.height * 2.0 } }
 
     private init(config:QuadTreeConfig, frame:CGRect) {
         self.config = config

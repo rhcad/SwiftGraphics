@@ -23,8 +23,8 @@ class OmniGraffleDocumentModel {
     }
 }
 
-class OmniGraffleNode : Node {
-    weak var parent : Node?
+class OmniGraffleNode: Node {
+    weak var parent: Node?
     var dictionary: NSDictionary!
     var ID:Int { get { return dictionary["ID"]! as Int } }
 
@@ -32,21 +32,21 @@ class OmniGraffleNode : Node {
     }
 }
 
-class OmniGraffleGroup : OmniGraffleNode, GroupNode {
-    var children : [Node] = []
+class OmniGraffleGroup: OmniGraffleNode, GroupNode {
+    var children: [Node] = []
     
     init(children:[Node]) {
         self.children = children
     }
 }
 
-class OmniGraffleShape : OmniGraffleNode {
+class OmniGraffleShape: OmniGraffleNode {
     var shape:String { get { return dictionary["Shape"] as String } }
     var bounds:CGRect { get { return StringToRect(dictionary["Bounds"] as String) } }
     lazy var lines:[OmniGraffleLine] = []
 }
 
-class OmniGraffleLine : OmniGraffleNode {
+class OmniGraffleLine: OmniGraffleNode {
     var start:CGPoint {
         get {
             let strings = dictionary["Points"] as [String]
@@ -82,8 +82,8 @@ extension OmniGraffleDocumentModel {
             }
             for node in nodes {
                 let line = node as OmniGraffleLine
-                var headID : Int?
-                var tailID : Int?
+                var headID: Int?
+                var tailID: Int?
                 if let headDictionary = line.dictionary["Head"] as? NSDictionary {
                     headID = headDictionary["ID"] as? Int
                 }

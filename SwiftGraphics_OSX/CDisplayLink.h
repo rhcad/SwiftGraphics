@@ -10,7 +10,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-@interface CDisplayLink : NSObject
+@interface CDisplayLink: NSObject
 @property (readwrite, nonatomic, copy) void (^displayLinkBlock)(NSTimeInterval time, NSTimeInterval deltaTime, double fps);
 
 - (void)start;

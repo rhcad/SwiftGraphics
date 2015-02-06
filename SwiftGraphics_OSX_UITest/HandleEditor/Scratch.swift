@@ -14,18 +14,18 @@ protocol Drawable {
     func draw(context:CGContext)
 }
 
-extension Rectangle : Drawable {
+extension Rectangle: Drawable {
     func draw(context:CGContext) {
         context.strokeRect(self.frame)
     }
 }
 
-extension Line : Drawable {
+extension Line: Drawable {
     func draw(context:CGContext) {
     }
 }
 
-extension LineSegment : Drawable {
+extension LineSegment: Drawable {
     func draw(context:CGContext) {
         context.strokeLine(start, end)
     }

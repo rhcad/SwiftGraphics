@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-public enum Turn : Int {
+public enum Turn: Int {
     case Left = 1
     case None = 0
     case Right = -1
@@ -25,15 +25,15 @@ extension Turn {
     }
 }
 
-extension Turn : Comparable {
+extension Turn: Comparable {
 }
 
 public func < (lhs:Turn, rhs:Turn) -> Bool {
     return lhs.rawValue < rhs.rawValue
 }
 
-extension Turn : Printable {
-    public var description : String {
+extension Turn: Printable {
+    public var description: String {
         get {
             switch self {
                 case .None:

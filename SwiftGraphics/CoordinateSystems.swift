@@ -13,7 +13,7 @@ public enum GraphicsOrigin {
     case BottomLeft
     case Native
 
-    var resolved : GraphicsOrigin {
+    var resolved: GraphicsOrigin {
         get {
             switch self {
                 case .TopLeft, .BottomLeft:
@@ -28,7 +28,7 @@ public enum GraphicsOrigin {
         }
     }
 
-    var isNative : Bool {
+    var isNative: Bool {
         get {
             switch self {
                 case .TopLeft:

@@ -46,8 +46,8 @@ public extension RegularPolygon {
     public var inradius:CGFloat { get { return radius * cos(centralAngle / 2) } }
     public var circumRadius:CGFloat { get { return radius } }
     
-    public var circumcircle : Circle { get { return Circle(center:center, radius:radius) } }
-    public var incircle : Circle { get { return Circle(center:center, radius:inradius) } }
+    public var circumcircle: Circle { get { return Circle(center:center, radius:radius) } }
+    public var incircle: Circle { get { return Circle(center:center, radius:inradius) } }
     
     public var points:[CGPoint] { get {
         let s = startAngle, c = centralAngle, r = radius

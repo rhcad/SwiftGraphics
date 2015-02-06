@@ -73,19 +73,19 @@ public func * (lhs:CGFloat, rhs:CGRect) -> CGRect {
 
 public extension CGRect {
 
-    var mid : CGPoint { get { return midXMidY } }
+    var mid: CGPoint { get { return midXMidY } }
 
-    var minXMinY : CGPoint { get { return CGPoint(x:minX, y:minY) } }
-    var minXMidY : CGPoint { get { return CGPoint(x:minX, y:midY) } }
-    var minXMaxY : CGPoint { get { return CGPoint(x:minX, y:maxY) } }
+    var minXMinY: CGPoint { get { return CGPoint(x:minX, y:minY) } }
+    var minXMidY: CGPoint { get { return CGPoint(x:minX, y:midY) } }
+    var minXMaxY: CGPoint { get { return CGPoint(x:minX, y:maxY) } }
 
-    var midXMinY : CGPoint { get { return CGPoint(x:midX, y:minY) } }
-    var midXMidY : CGPoint { get { return CGPoint(x:midX, y:midY) } }
-    var midXMaxY : CGPoint { get { return CGPoint(x:midX, y:maxY) } }
+    var midXMinY: CGPoint { get { return CGPoint(x:midX, y:minY) } }
+    var midXMidY: CGPoint { get { return CGPoint(x:midX, y:midY) } }
+    var midXMaxY: CGPoint { get { return CGPoint(x:midX, y:maxY) } }
 
-    var maxXMinY : CGPoint { get { return CGPoint(x:maxX, y:minY) } }
-    var maxXMidY : CGPoint { get { return CGPoint(x:maxX, y:midY) } }
-    var maxXMaxY : CGPoint { get { return CGPoint(x:maxX, y:maxY) } }
+    var maxXMinY: CGPoint { get { return CGPoint(x:maxX, y:minY) } }
+    var maxXMidY: CGPoint { get { return CGPoint(x:maxX, y:midY) } }
+    var maxXMaxY: CGPoint { get { return CGPoint(x:maxX, y:maxY) } }
 
 }
 
@@ -119,7 +119,7 @@ public extension CGRect {
         }
 
 
-    var isFinite : Bool {
+    var isFinite: Bool {
         get {
             return CGRectIsNull(self) == false && CGRectIsInfinite(self) == false
         }
@@ -152,7 +152,7 @@ public extension CGRect {
         union(CGRect(center:point, radius:0.0))
     }
 
-    var asTuple : (CGFloat, CGFloat, CGFloat, CGFloat) { get { return (origin.x, origin.y, size.width, size.height) } }
+    var asTuple: (CGFloat, CGFloat, CGFloat, CGFloat) { get { return (origin.x, origin.y, size.width, size.height) } }
 
     func integral() -> CGRect {
         return CGRectIntegral(self)

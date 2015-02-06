@@ -37,7 +37,7 @@ public extension CGPathDrawingMode {
 
 public extension CGMutablePath {
 
-    var currentPoint : CGPoint { get { return CGPathGetCurrentPoint(self) } }
+    var currentPoint: CGPoint { get { return CGPathGetCurrentPoint(self) } }
 
     func move(point:CGPoint, relative:Bool = false) -> CGMutablePath {
         if relative {
@@ -144,7 +144,7 @@ public extension CGPath {
         
         CGPathApplyWithBlock(self) {
             (elementPtr:UnsafePointer<CGPathElement>) -> Void in
-            let element : CGPathElement = elementPtr.memory
+            let element: CGPathElement = elementPtr.memory
             
             switch element.type.value {
             case kCGPathElementMoveToPoint.value:
@@ -294,7 +294,7 @@ public extension CGPath {
         return ret
     }}
     
-    var isClosed : Bool { get {
+    var isClosed: Bool { get {
         var ret = false
         
         CGPathApplyWithBlock(self) { (elementPtr) -> Void in

@@ -24,11 +24,11 @@ public struct RGB {
     }
 }
 
-extension RGB : Printable {
+extension RGB: Printable {
     public var description: String { return "RGB(\(r), \(g), \(b))" }
 }
 
-extension RGB : Equatable {
+extension RGB: Equatable {
 
 }
 
@@ -64,11 +64,11 @@ public struct HSV {
     }
 }
 
-extension HSV : Printable {
+extension HSV: Printable {
     public var description: String { return "HSV(\(h), \(s), \(v))" }
 }
 
-extension HSV : Equatable {
+extension HSV: Equatable {
 }
 
 public func ==(lhs: HSV, rhs: HSV) -> Bool {

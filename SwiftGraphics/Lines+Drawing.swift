@@ -8,7 +8,7 @@
 
 import CoreGraphics
 
-extension Line : Geometry {
+extension Line: Geometry {
 
     public var frame:CGRect {
         get {
@@ -35,7 +35,7 @@ extension LineSegment: Geometry, Drawable {
     }
 }
 
-extension LineChain : Geometry, Drawable {
+extension LineChain: Geometry, Drawable {
     public var frame:CGRect {
         get {
             return CGRect.unionOfPoints(points)
@@ -47,7 +47,7 @@ extension LineChain : Geometry, Drawable {
     }
 }
 
-extension Polygon : Geometry, Drawable {
+extension Polygon: Geometry, Drawable {
     public var frame:CGRect {
         get {
             return CGRect.unionOfPoints(points)

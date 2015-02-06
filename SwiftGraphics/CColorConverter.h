@@ -40,7 +40,7 @@
  *  "0F0", "00FF00", "#00FF00", "rgb(0,100%,0), rgb(0,255,0), rgba(0,255,0,1.0), hsl(120,100%,100%)"
  *
  */
-@interface CColorConverter : NSObject
+@interface CColorConverter: NSObject
 
 + (instancetype)sharedInstance;
 

@@ -10,11 +10,11 @@ import CoreGraphics
 
 // MARK: CGPoint
 
-extension CGPoint : Geometry {
+extension CGPoint: Geometry {
     public var frame:CGRect { get { return CGRect(center:self, diameter:0) } }
 }
 
-extension CGPoint : Drawable {
+extension CGPoint: Drawable {
     public func drawInContext(ctx:CGContext) {
         ctx.plotPoints([self])
     }
@@ -37,7 +37,7 @@ extension BezierCurve: Drawable {
 
 // MARK: Circle
 
-extension Circle : Drawable {
+extension Circle: Drawable {
     public func drawInContext(context:CGContext) {
         CGContextAddEllipseInRect(context, self.frame)
         let mode = CGPathDrawingMode(strokeColor:context.strokeColor, fillColor:context.fillColor)
@@ -47,7 +47,7 @@ extension Circle : Drawable {
 
 // MARK: Triangle
 
-extension Triangle : Drawable {
+extension Triangle: Drawable {
     public func drawInContext(context:CGContext) {
         let path = CGPathCreateMutable()
         let points = pointsArray

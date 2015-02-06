@@ -50,11 +50,11 @@ extension Array {
 /**
  *  Generator that "walks" through another generator two elements at a time.
  */
-struct SlidingWindow <T> : GeneratorType {
+struct SlidingWindow <T>: GeneratorType {
     typealias Element = (T, T?)
 
-    var g : Array<T>.Generator
-    var e : T?
+    var g: Array<T>.Generator
+    var e: T?
 
     init(_ a:Array <T>) {
         g = a.generate()

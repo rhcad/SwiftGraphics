@@ -114,7 +114,7 @@ public extension Ellipse {
 }
 
 public extension Ellipse {
-    var asCircle : Circle? {
+    var asCircle: Circle? {
         get {
             if e == 0.0 {
                 assert(a == b)
