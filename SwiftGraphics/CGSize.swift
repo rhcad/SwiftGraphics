@@ -63,6 +63,28 @@ public func /= (inout lhs:CGSize, rhs:CGFloat) {
     lhs = lhs / rhs
 }
 
+
+public extension CGSize {
+    init(point:CGPoint) {
+        width = point.x
+        height = point.y
+    }
+
+
+    var area:CGFloat {
+        get {
+            return abs(width) * abs(height)
+        }
+    }
+
+    var signedArea:CGFloat {
+        get {
+            return width * height
+        }
+    }
+}
+
+
 // TODO: Move elsewhere? Rename AreaOrientation?
 public enum Orientation {
     case Square

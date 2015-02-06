@@ -72,11 +72,11 @@ public extension CGPoint {
     
     //! Returns whether this vector is perpendicular to another vector.
     func isPerpendicularTo(vec:CGPoint) -> Bool {
-        let sinfz = abs(crossProduct(vec))
+        let sinfz = abs(crossProduct(self, vec))
         if sinfz == 0 {
             return false
         }
-        let cosfz = abs(dotProduct(vec))
+        let cosfz = abs(dotProduct(self, vec))
         return cosfz <= sinfz * CGPoint.vectorTolerance
     }
     
@@ -88,13 +88,13 @@ public extension CGPoint {
      */
     func distanceToVector(xAxis:CGPoint) -> CGFloat {
         let len = xAxis.magnitude
-        return len == 0 ? magnitude : xAxis.crossProduct(self) / len
+        return len == 0 ? magnitude : crossProduct(xAxis, self) / len
     }
     
     //! Returns the proportion of the projection vector onto xAxis, projection==xAxis * proportion
     func projectScaleToVector(xAxis:CGPoint) -> CGFloat {
-        let d2 = xAxis.square
-        return d2 == 0 ? 0.0 : dotProduct(xAxis) / d2
+        let d2 = xAxis.magnitudeSquared
+        return d2 == 0 ? 0.0 : dotProduct(self, xAxis) / d2
     }
     
     //! Returns the projection vector and perpendicular vector, self==proj+perp
@@ -106,11 +106,11 @@ public extension CGPoint {
     
     //! Vector decomposition onto two vectors: self==u*uAxis + v*vAxis
     func resolveVector(uAxis:CGPoint, vAxis:CGPoint) -> (CGFloat, CGFloat) {
-        let denom = uAxis.crossProduct(vAxis)
+        let denom = crossProduct(uAxis, vAxis)
         if denom == 0 {
             return (0, 0)
         }
-        let c = uAxis.crossProduct(self)
-        return (crossProduct(vAxis) / denom, c / denom)  // (u,v)
+        let c = crossProduct(uAxis, self)
+        return (crossProduct(self, vAxis) / denom, c / denom)  // (u,v)
     }
 }

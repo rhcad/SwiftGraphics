@@ -12,23 +12,40 @@ import SwiftGraphics
 
 class CGPointTests: XCTestCase {
 
-    func testInit() {
-        XCTAssertEqual(CGPoint((100, 100)), CGPoint(x:100, y:100))
-//        XCTAssertEqual(CGPoint(100, 100), CGPoint(x:100, y:0))
+    func testSingleAxisInitializers() {
         XCTAssertEqual(CGPoint(x:100), CGPoint(x:100, y:0))
         XCTAssertEqual(CGPoint(y:100), CGPoint(x:0, y:100))
     }
-        
-    func testArithmeticOperators() {        
-        XCTAssertEqual(CGPoint(x:1, y:1) + CGPoint(x:1, y:1), CGPoint(x:2, y:2))
-        XCTAssertEqual(CGPoint(x:2, y:2) - CGPoint(x:1, y:1), CGPoint(x:1, y:1))
-        XCTAssertEqual(CGPoint(x:1, y:1) * 2, CGPoint(x:2, y:2))
-        XCTAssertEqual(2 * CGPoint(x:1, y:1), CGPoint(x:2, y:2))
-        XCTAssertEqual(CGPoint(x:1, y:1) / 2, CGPoint(x:0.5, y:0.5))
-//        XCTAssertEqual(CGPoint(x:2, y:2) * CGPoint(x:2, y:2), CGPoint(x:4, y:4))
+
+    func testTuples() {
+
+        let pt = CGPoint((100, 200))
+        XCTAssertEqual(pt, CGPoint(x:100, y:200))
+
+
+        let ptt = pt.asTuple
+        XCTAssertEqual(pt.asTuple.0, CGFloat(100))
+        XCTAssertEqual(pt.asTuple.1, CGFloat(200))
     }
 
-    func testAssignmentOperators() {        
+    func testUnaryOperators() {
+        XCTAssertEqual(+CGPoint(x:10, y:20), CGPoint(x:10, y:20))
+        XCTAssertEqual(-CGPoint(x:10, y:20), CGPoint(x:-10, y:-20))
+    }
+
+
+    func testArithmeticOperators() {        
+        XCTAssertEqual(CGPoint(x:10, y:20) + CGPoint(x:1, y:2), CGPoint(x:11, y:22))
+        XCTAssertEqual(CGPoint(x:10, y:20) - CGPoint(x:1, y:2), CGPoint(x:9, y:18))
+    }
+
+    func testArithmeticOperatorsWithScalar() {
+        XCTAssertEqual(CGPoint(x:10, y:20) * 2, CGPoint(x:20, y:40))
+        XCTAssertEqual(2 * CGPoint(x:10, y:20), CGPoint(x:20, y:40))
+        XCTAssertEqual(CGPoint(x:10, y:20) / 2, CGPoint(x:5, y:10))
+    }
+
+    func testArithmeticAssignmentOperators() {
         var p = CGPoint(x:10, y:10)
         p += CGPoint(x:1, y:1)
         XCTAssertEqual(p, CGPoint(x:11, y:11))
@@ -45,6 +62,8 @@ class CGPointTests: XCTestCase {
         p /= 2
         XCTAssertEqual(p, CGPoint(x:5, y:5))
     }
+
+
 
     func testClamped() {
         let r = CGRect(size:CGSize(width:100, height:200))

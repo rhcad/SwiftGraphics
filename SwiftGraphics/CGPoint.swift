@@ -10,7 +10,7 @@ import CoreGraphics
 
 // MARK: CGPoint
 
-extension CGPoint : Printable {
+extension CGPoint: Printable {
     public var description: String { get { return "\(x), \(y)" } }
 }
 
@@ -35,10 +35,10 @@ public extension CGPoint {
     init(_ v:(CGFloat, CGFloat)) {
         (x, y) = v
     }
-    var asTuple : (CGFloat, CGFloat) { get { return (x, y) } }
+    var asTuple: (CGFloat, CGFloat) { get { return (x, y) } }
 }
 
-// MARK: Arithmetic
+// MARK: Unary Operators
 
 public prefix func + (p:CGPoint) -> CGPoint {
     return p
@@ -47,6 +47,8 @@ public prefix func + (p:CGPoint) -> CGPoint {
 public prefix func - (p:CGPoint) -> CGPoint {
     return CGPoint(x:-p.x, y:-p.y)
 }
+
+// MARK: Arthimetic Operators
 
 public func + (lhs:CGPoint, rhs:CGPoint) -> CGPoint {
     return CGPoint(x:lhs.x + rhs.x, y:lhs.y + rhs.y)
@@ -88,7 +90,7 @@ public func /= (inout lhs:CGPoint, rhs:CGFloat) {
     lhs = lhs / rhs
 }
 
-// MARK: Arithmetic (with scalar of CGSize)
+// MARK: Arithmetic (with CGSize)
 
 public func * (lhs:CGPoint, rhs:CGSize) -> CGPoint {
     return CGPoint(x:lhs.x * rhs.width, y:lhs.y * rhs.height)
@@ -106,10 +108,6 @@ public func /= (inout lhs:CGPoint, rhs:CGSize) {
     lhs = lhs / rhs
 }
 
-public extension CGPoint {
-    var asSize : CGSize { get { return CGSize(width:x, height:y) } }
-}
-
 // MARK: dotProduct and crossProduct
 
 public func dotProduct(lhs:CGPoint, rhs:CGPoint) -> CGFloat {
@@ -120,29 +118,7 @@ public func crossProduct(lhs:CGPoint, rhs:CGPoint) -> CGFloat {
     return lhs.x * rhs.y - lhs.y * rhs.x
 }
 
-// TODO: Depecate in favour of the function
-public extension CGPoint {
-    func dotProduct(v:CGPoint) -> CGFloat {
-        return SwiftGraphics.dotProduct(self, v)
-    }
-
-    func crossProduct(v:CGPoint) -> CGFloat {
-        return SwiftGraphics.crossProduct(self, v)
-    }
-}
-
-// MARK: Misc
-
-public extension CGPoint {
-    func clamped(rect:CGRect) -> CGPoint {
-        return CGPoint(
-            x:clamp(x, rect.minX, rect.maxX),
-            y:clamp(y, rect.minY, rect.maxY)
-        )
-    }
-}
-
-// MARK: Trig
+// MARK: Trigonometry
 
 public extension CGPoint {
 
@@ -153,7 +129,7 @@ public extension CGPoint {
 
     var magnitude: CGFloat {
         get {
-            return sqrt(x ** 2 + y ** 2)
+            return sqrt(x * x + y * y)
         }
         set(v) {
             self = CGPoint(magnitude:v, direction:direction)
@@ -162,7 +138,7 @@ public extension CGPoint {
 
     var magnitudeSquared: CGFloat {
         get {
-            return x ** 2 + y ** 2
+            return x * x + y * y
         }
     }
 
@@ -175,22 +151,34 @@ public extension CGPoint {
         }
     }
 
-    var square: CGFloat {
+    var normalized: CGPoint {
         get {
-            return x ** 2 + y ** 2
+            let len = magnitude
+            return len ==% 0 ? self : CGPoint(x:x / len, y:y / len)
         }
     }
 
-    var normalized : CGPoint { get {
-        let len = magnitude
-        return len ==% 0 ? self : CGPoint(x:x / len, y:y / len)
-        }}
-
-    var orthogonal : CGPoint {
+    var orthogonal: CGPoint {
         get {
             return CGPoint(x:-y, y:x)
         }
     }
+
+    var transposed:CGPoint {
+        get {
+            return CGPoint(x:y, y:x)
+        }
+    }
+
+}
+
+public func atan2(point:CGPoint) -> CGFloat {   // (-M_PI, M_PI]
+    return atan2(point.y, point.x)
+}
+
+// MARK: Misc
+
+public extension CGPoint {
 
     var isZero: Bool {
         get {
@@ -204,18 +192,28 @@ public extension CGPoint {
             return self ==% CGPointZero
         }
     }
-}
 
-public func atan2(point:CGPoint) -> CGFloat {   // (-M_PI, M_PI]
-    return atan2(point.y, point.x)
-}
+    func clamped(rect:CGRect) -> CGPoint {
+        return CGPoint(
+            x:clamp(x, rect.minX, rect.maxX),
+            y:clamp(y, rect.minY, rect.maxY)
+        )
+    }
 
-
-public extension CGPoint {
     func map(transform: CGFloat -> CGFloat) -> CGPoint {
         return CGPoint(x:transform(x), y:transform(y))
     }
 }
+
+public extension CGPoint {
+    init(size:CGSize) {
+        self.x = size.width
+        self.y = size.height
+    }
+}
+
+
+// MARK: Rounding
 
 public func floor(value:CGPoint) -> CGPoint {
     return value.map { floor($0) }
@@ -266,13 +264,13 @@ public extension CGPoint {
     }
 
     func angleTo(vec:CGPoint) -> CGFloat {       // [-M_PI, M_PI)
-        return atan2(crossProduct(vec), dotProduct(vec))
+        return atan2(crossProduct(self, vec), dotProduct(self, vec))
     }
 }
 
 // MARK: Equatable
 
-extension CGPoint : FuzzyEquatable {
+extension CGPoint: FuzzyEquatable {
 }
 
 public func ==% (lhs:CGPoint, rhs:CGPoint) -> Bool {
