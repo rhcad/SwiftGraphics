@@ -48,6 +48,7 @@
 		45066D011A743BD400F561E1 /* Triangle+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CFF1A743BD400F561E1 /* Triangle+Markup.swift */; };
 		450717071A6B7EBA00E86EB4 /* Bitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450717061A6B7EBA00E86EB4 /* Bitmap.swift */; };
 		450717091A6B7F0700E86EB4 /* CGTypes+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450717081A6B7F0700E86EB4 /* CGTypes+String.swift */; };
+		450C7EC51A849326003A8AD2 /* CGPointSwiftDocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C7EC41A849326003A8AD2 /* CGPointSwiftDocTests.swift */; };
 		4514F60E1A61D4C400CC9C26 /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F5FB1A61D4C400CC9C26 /* ArcView.swift */; };
 		4514F60F1A61D4C400CC9C26 /* ArcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F5FC1A61D4C400CC9C26 /* ArcViewController.swift */; };
 		4514F6101A61D4C400CC9C26 /* DemoSVGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F5FE1A61D4C400CC9C26 /* DemoSVGViewController.swift */; };
@@ -293,6 +294,7 @@
 		45066CFF1A743BD400F561E1 /* Triangle+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Triangle+Markup.swift"; sourceTree = "<group>"; };
 		450717061A6B7EBA00E86EB4 /* Bitmap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitmap.swift; sourceTree = "<group>"; };
 		450717081A6B7F0700E86EB4 /* CGTypes+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGTypes+String.swift"; sourceTree = "<group>"; };
+		450C7EC41A849326003A8AD2 /* CGPointSwiftDocTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointSwiftDocTests.swift; sourceTree = "<group>"; };
 		4514F5FB1A61D4C400CC9C26 /* ArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcView.swift; sourceTree = "<group>"; };
 		4514F5FC1A61D4C400CC9C26 /* ArcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcViewController.swift; sourceTree = "<group>"; };
 		4514F5FD1A61D4C400CC9C26 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
@@ -506,6 +508,14 @@
 			name = "Non-Graphics";
 			sourceTree = "<group>";
 		};
+		450C7EC31A849326003A8AD2 /* SwiftDocTests */ = {
+			isa = PBXGroup;
+			children = (
+				450C7EC41A849326003A8AD2 /* CGPointSwiftDocTests.swift */,
+			);
+			path = SwiftDocTests;
+			sourceTree = "<group>";
+		};
 		4514F5F71A61D2D800CC9C26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -633,6 +643,7 @@
 		454D551319AA5CE6000E3EB3 /* SwiftGraphics_UnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				450C7EC31A849326003A8AD2 /* SwiftDocTests */,
 				02C9D0251A724D9C00B9696E /* RegularPolygonTests.swift */,
 				4537991919AA6C37004DF99E /* CGPointTests.swift */,
 				4537991C19AA788B004DF99E /* CGSizeTests.swift */,
@@ -1244,6 +1255,7 @@
 				2E0F5BD91A6986DA00221BB0 /* ColorTests.swift in Sources */,
 				4537991D19AA788B004DF99E /* CGSizeTests.swift in Sources */,
 				02C9D0261A724D9C00B9696E /* RegularPolygonTests.swift in Sources */,
+				450C7EC51A849326003A8AD2 /* CGPointSwiftDocTests.swift in Sources */,
 				453F7C0A1A7D7188002CE3A6 /* MatrixTests.swift in Sources */,
 				2E0F5BDD1A69C43A00221BB0 /* UtilitiesTests.swift in Sources */,
 				4537991A19AA6C37004DF99E /* CGPointTests.swift in Sources */,

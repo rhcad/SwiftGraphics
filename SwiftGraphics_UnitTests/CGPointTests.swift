@@ -68,11 +68,11 @@ class CGPointTests: XCTestCase {
     func testClamped() {
         let r = CGRect(size:CGSize(width:100, height:200))
 
-        XCTAssertEqual(CGPoint(x:50, y:100).clamped(r), CGPoint(x:50, y:100))
-        XCTAssertEqual(CGPoint(x:-50, y:100).clamped(r), CGPoint(x:0, y:100))
-        XCTAssertEqual(CGPoint(x:150, y:100).clamped(r), CGPoint(x:100, y:100))
-        XCTAssertEqual(CGPoint(x:50, y:-50).clamped(r), CGPoint(x:50, y:0))
-        XCTAssertEqual(CGPoint(x:50, y:250).clamped(r), CGPoint(x:50, y:200))
+        XCTAssertEqual(CGPoint(x:50, y:100).clampedTo(r), CGPoint(x:50, y:100))
+        XCTAssertEqual(CGPoint(x:-50, y:100).clampedTo(r), CGPoint(x:0, y:100))
+        XCTAssertEqual(CGPoint(x:150, y:100).clampedTo(r), CGPoint(x:100, y:100))
+        XCTAssertEqual(CGPoint(x:50, y:-50).clampedTo(r), CGPoint(x:50, y:0))
+        XCTAssertEqual(CGPoint(x:50, y:250).clampedTo(r), CGPoint(x:50, y:200))
     }
     
     func testRound() {

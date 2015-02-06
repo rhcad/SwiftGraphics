@@ -50,10 +50,22 @@ public prefix func - (p:CGPoint) -> CGPoint {
 
 // MARK: Arthimetic Operators
 
+/**
+ Addition operator (CGPoint + CGPoint)
+
+ :test:   CGPoint(x:1, y:2) + CGPoint(x:10, y:20)
+ :result: CGPoint(x:11, y:22)
+ */
 public func + (lhs:CGPoint, rhs:CGPoint) -> CGPoint {
     return CGPoint(x:lhs.x + rhs.x, y:lhs.y + rhs.y)
 }
 
+/**
+ Subtraction operator (CGPoint - CGPoint)
+
+ :test:   CGPoint(x:11, y:22) - CGPoint(x:10, y:20)
+ :result: CGPoint(x:1, y:2)
+ */
 public func - (lhs:CGPoint, rhs:CGPoint) -> CGPoint {
     return CGPoint(x:lhs.x - rhs.x, y:lhs.y - rhs.y)
 }
@@ -112,13 +124,29 @@ public func /= (inout lhs:CGPoint, rhs:CGSize) {
 
 public extension CGPoint {
 
+    /**
+     :test:   CGPoint(x:0, y:0).isZero
+     :result: true
+     :test:   CGPoint(x:1, y:0).isZero
+     :result: false
+     */
     var isZero: Bool {
         get {
             return x == 0 && y == 0
         }
     }
 
-    func clamped(rect:CGRect) -> CGPoint {
+    /**
+     :test:   CGPoint(x:50, y:50).clampedTo(CGRect(x:10, y:20, w:100, h:100))
+     :result: CGPoint(x:50, y:50)
+     :test:   CGPoint(x:150, y:50).clampedTo(CGRect(x:10, y:20, w:100, h:100))
+     :result: CGPoint(x:110, y:50)
+     :test:   CGPoint(x:0, y:50).clampedTo(CGRect(x:10, y:20, w:100, h:100))
+     :result: CGPoint(x:10, y:50)
+     :test:   CGPoint(x:50, y:00).clampedTo(CGRect(x:10, y:20, w:100, h:100))
+     :result: CGPoint(x:50, y:20)
+     */
+    func clampedTo(rect:CGRect) -> CGPoint {
         return CGPoint(
             x:clamp(x, rect.minX, rect.maxX),
             y:clamp(y, rect.minY, rect.maxY)
@@ -140,18 +168,34 @@ public extension CGPoint {
 
 // MARK: Rounding
 
+/**
+ :test:   floor(CGPoint(x:10.9, y:-10.5))
+ :result: CGPoint(x:10, y:-11)
+*/
 public func floor(value:CGPoint) -> CGPoint {
-    return value.map { floor($0) }
+    return value.map(floor)
 }
 
+/**
+ :test:   ceil(CGPoint(x:10.9, y:-10.5))
+ :result: CGPoint(x:11, y:-10)
+*/
 public func ceil(value:CGPoint) -> CGPoint {
-    return value.map { ceil($0) }
+    return value.map(ceil)
 }
 
+/**
+ :test:   round(CGPoint(x:10.9, y:-10.6))
+ :result: CGPoint(x:11, y:-11)
+*/
 public func round(value:CGPoint) -> CGPoint {
-    return value.map { round($0) }
+    return value.map(round)
 }
 
+/**
+ :test:   floor(CGPoint(x:10.09, y:-10.95))
+ :result: CGPoint(x:10, y:-11)
+*/
 public func round(value:CGPoint, decimal:Int) -> CGPoint {
     return value.map { round($0, decimal) }
 }
