@@ -14,25 +14,25 @@ import CoreGraphics
 public extension CGPoint {
     
     /**
-     * Calculate a point with polar angle and radius based on this point.
-     *
-     * @param angle polar angle in radians.
-     * @param radius the length of the polar radius
-     *
-     * @return the point relative to this point.
+     Calculate a point with polar angle and radius based on this point.
+     
+     :param: angle polar angle in radians.
+     :param: radius the length of the polar radius
+     
+     :returns: the point relative to this point.
      */
     func polarPoint(angle:CGFloat, radius:CGFloat) -> CGPoint {
         return CGPoint(x: x + radius * cos(angle), y: y + radius * sin(angle));
     }
     
     /**
-     * Calculate a point along the direction from this point to 'dir' point.
-     *
-     * @param dir the direction point.
-     * @param dx the distance from this point to the result point.
-     *           The negative value represents along the opposite direction.
-     *
-     * @return the point relative to this point.
+     Calculate a point along the direction from this point to 'dir' point.
+     
+     :param: dir the direction point.
+     :param: dx the distance from this point to the result point.
+               The negative value represents along the opposite direction.
+     
+     :returns: the point relative to this point.
      */
     func rulerPoint(dir:CGPoint, dx:CGFloat) -> CGPoint {
         let len = distanceTo(dir)
@@ -44,14 +44,14 @@ public extension CGPoint {
     }
     
     /**
-     * Calculate a point along the direction from this point to 'dir' point.
-     * dx and dy may be negative which represents along the opposite direction.
-     *
-     * @param dir the direction point.
-     * @param dx the projection distance along the direction from this point to 'dir' point.
-     * @param dy the perpendicular distance from the result point to the line of this point to 'dir' point.
-     *
-     * @return the point relative to this point.
+     Calculate a point along the direction from this point to 'dir' point.
+     dx and dy may be negative which represents along the opposite direction.
+     
+     :param: dir the direction point.
+     :param: dx the projection distance along the direction from this point to 'dir' point.
+     :param: dy the perpendicular distance from the result point to the line of this point to 'dir' point.
+     
+     :returns: the point relative to this point.
      */
     func rulerPoint(dir:CGPoint, dx:CGFloat, dy:CGFloat) -> CGPoint {
         let len = distanceTo(dir)
@@ -79,12 +79,12 @@ public extension CGPoint {
         let cosfz = abs(dotProduct(self, vec))
         return cosfz <= sinfz * CGPoint.vectorTolerance
     }
-    
+
     /**
-     * Returns the length of the vector which perpendicular to the projection of this vector onto xAxis vector.
-     *
-     * @param xAxis projection target vector.
-     * @return the perpendicular distance which is positive if this vector is in the CCW direction of xAxis and negative if clockwise.
+     Returns the length of the vector which perpendicular to the projection of this vector onto xAxis vector.
+     
+     :param:   xAxis projection target vector.
+     :returns: perpendicular distance which is positive if this vector is in the CCW direction of xAxis and negative if clockwise.
      */
     func distanceToVector(xAxis:CGPoint) -> CGFloat {
         let len = xAxis.magnitude

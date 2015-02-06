@@ -213,9 +213,9 @@ static CColorConverter *gSharedInstance = NULL;
  * will not produce or process negative numbers except 
  * to signal error.
  * 
- * @param hex without decoration, case insensative. 
+ * :param: hex without decoration, case insensative. 
  * 
- * @return -1 on error, or result (max sizeof(long)-1 bits)
+ * :returns: -1 on error, or result (max sizeof(long)-1 bits)
  */
 static int hexdec(const char *hex, int len)
     {
