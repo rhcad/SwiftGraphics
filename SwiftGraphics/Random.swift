@@ -223,3 +223,11 @@ public struct SRandomProvider: RandomProvider {
     public let max: UInt32 = 2147483647
 }
 
+// MARK: Random array generator
+
+/// Generate random points within the range.
+public func arrayOfRandomPoints(count:Int, range:CGRect) -> [CGPoint] {
+    return Array <CGPoint> (count:count) {
+        return Random.rng.random(range)
+    }
+}

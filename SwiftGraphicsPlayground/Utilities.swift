@@ -10,21 +10,6 @@ import CoreGraphics
 
 import SwiftGraphics
 
-extension Array {
-    init(count:Int, block:(Void) -> T) {
-        self.init()
-        for N in 0..<count {
-            append(block())
-        }
-    }
-}
-
-public func arrayOfRandomPoints(count:Int, range:CGRect) -> Array <CGPoint> {
-    return Array <CGPoint> (count:count) {
-        return Random.rng.random(range)
-    }
-}
-
 extension UInt32 {
     func asHex() -> String {
         var s = ""
