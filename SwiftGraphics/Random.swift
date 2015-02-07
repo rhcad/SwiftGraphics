@@ -8,6 +8,8 @@
 
 // MARK: Random Provider Protocol
 
+import CoreGraphics
+
 public protocol RandomProvider {
     func random() -> UInt32
     func random(uniform:UInt32) -> UInt32
@@ -196,7 +198,7 @@ public struct SRandomProvider: RandomProvider {
     }
 
     public func random() -> UInt32 {
-        return UInt32(Darwin.random())
+        return UInt32(random())
     }
 
     public func random(uniform:UInt32) -> UInt32 {
