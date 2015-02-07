@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 schwa.io. All rights reserved.
 //
 
-import Darwin
-
 // MARK: Random Provider Protocol
 
 public protocol RandomProvider {

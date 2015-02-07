@@ -36,6 +36,8 @@
 		02C9D0121A71D12F00B9696E /* RegularPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9D0111A71D12F00B9696E /* RegularPolygon.swift */; };
 		02C9D0131A71D12F00B9696E /* RegularPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9D0111A71D12F00B9696E /* RegularPolygon.swift */; };
 		02C9D0261A724D9C00B9696E /* RegularPolygonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9D0251A724D9C00B9696E /* RegularPolygonTests.swift */; };
+		02E8FBC41A8615B90061D101 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8FBC31A8615B90061D101 /* Random.swift */; };
+		02E8FBC51A8615B90061D101 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8FBC31A8615B90061D101 /* Random.swift */; };
 		2E0F5BD91A6986DA00221BB0 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F5BD81A6986DA00221BB0 /* ColorTests.swift */; };
 		2E0F5BDB1A69BBA600221BB0 /* QuadrantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F5BDA1A69BBA600221BB0 /* QuadrantTests.swift */; };
 		2E0F5BDD1A69C43A00221BB0 /* UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F5BDC1A69C43A00221BB0 /* UtilitiesTests.swift */; };
@@ -158,7 +160,6 @@
 		45B32D511A637EE7004FD3FB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B32D501A637EE7004FD3FB /* Utilities.swift */; };
 		45B32D531A637F10004FD3FB /* OmniGraffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B32D521A637F10004FD3FB /* OmniGraffle.swift */; };
 		45B78E631A7702F80058B3A0 /* Scratch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B78E621A7702F80058B3A0 /* Scratch.swift */; };
-		45B8787C1A634F1F00CE168E /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B8787B1A634F1F00CE168E /* Random.swift */; };
 		45B8AE8E19BCE4ED00C61A3F /* CColorConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45563F2D19B1047E003B1639 /* CColorConverter.m */; };
 		45BA25B819CA112E00B612B7 /* MonotoneChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA25B719CA112E00B612B7 /* MonotoneChain.swift */; };
 		45BA25BD19CA1E8A00B612B7 /* ConvexHullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA25BC19CA1E8A00B612B7 /* ConvexHullTests.swift */; };
@@ -285,6 +286,7 @@
 		02BF437D1A64FACB00132343 /* BezierCurve+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BezierCurve+Extensions.swift"; sourceTree = "<group>"; };
 		02C9D0111A71D12F00B9696E /* RegularPolygon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularPolygon.swift; sourceTree = "<group>"; };
 		02C9D0251A724D9C00B9696E /* RegularPolygonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularPolygonTests.swift; sourceTree = "<group>"; };
+		02E8FBC31A8615B90061D101 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		2E0F5BD81A6986DA00221BB0 /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
 		2E0F5BDA1A69BBA600221BB0 /* QuadrantTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadrantTests.swift; sourceTree = "<group>"; };
 		2E0F5BDC1A69C43A00221BB0 /* UtilitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilitiesTests.swift; sourceTree = "<group>"; };
@@ -395,7 +397,6 @@
 		45B32D501A637EE7004FD3FB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		45B32D521A637F10004FD3FB /* OmniGraffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmniGraffle.swift; sourceTree = "<group>"; };
 		45B78E621A7702F80058B3A0 /* Scratch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scratch.swift; sourceTree = "<group>"; };
-		45B8787B1A634F1F00CE168E /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		45BA25B719CA112E00B612B7 /* MonotoneChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonotoneChain.swift; sourceTree = "<group>"; };
 		45BA25BB19CA156800B612B7 /* Triangle.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Triangle.playground; sourceTree = "<group>"; };
 		45BA25BC19CA1E8A00B612B7 /* ConvexHullTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvexHullTests.swift; sourceTree = "<group>"; };
@@ -502,7 +503,6 @@
 			isa = PBXGroup;
 			children = (
 				45CFDC651A61CA0700053F96 /* Utilities.swift */,
-				45B8787B1A634F1F00CE168E /* Random.swift */,
 				45B32D4E1A637ECC004FD3FB /* RegularExpression.swift */,
 			);
 			name = "Non-Graphics";
@@ -784,6 +784,7 @@
 		458C59031A740A7D00E993A6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				02E8FBC31A8615B90061D101 /* Random.swift */,
 				4515825B19C9F21000856C91 /* Turn.swift */,
 				459EE5E519AEC5130012E023 /* Scaling.swift */,
 				456877E119B6857B004BEFD6 /* CoordinateSystems.swift */,
@@ -1214,6 +1215,7 @@
 				45563F2F19B1047E003B1639 /* CColorConverter.m in Sources */,
 				02C9D0121A71D12F00B9696E /* RegularPolygon.swift in Sources */,
 				45066D001A743BD400F561E1 /* Triangle+Markup.swift in Sources */,
+				02E8FBC41A8615B90061D101 /* Random.swift in Sources */,
 				45FA46511A7F3DBB000473B5 /* Rectangle+Markup.swift in Sources */,
 				459EE5F919AEC5130012E023 /* Scaling.swift in Sources */,
 				459EE5F719AEC5130012E023 /* Quadrant.swift in Sources */,
@@ -1272,7 +1274,6 @@
 				45CFDC661A61CA0700053F96 /* Utilities.swift in Sources */,
 				45B32D4F1A637ECD004FD3FB /* RegularExpression.swift in Sources */,
 				45B32D4A1A637DF3004FD3FB /* Sketch.swift in Sources */,
-				45B8787C1A634F1F00CE168E /* Random.swift in Sources */,
 				45B32D481A637DF3004FD3FB /* Arc.swift in Sources */,
 				453A8FBD1A69DFC000D7EAD0 /* Silly.swift in Sources */,
 				450717091A6B7F0700E86EB4 /* CGTypes+String.swift in Sources */,
@@ -1360,6 +1361,7 @@
 				45F5CE211A74094000F4B15D /* AssociatedObjects+Private.swift in Sources */,
 				02AAA8EE1A7A16A5001898E2 /* Gradient.swift in Sources */,
 				458C590C1A74121600E993A6 /* CGContext+Drawing.swift in Sources */,
+				02E8FBC51A8615B90061D101 /* Random.swift in Sources */,
 				4563EFDA1A7E9B7000019643 /* Matrix.swift in Sources */,
 				459EE5FA19AEC5130012E023 /* Scaling.swift in Sources */,
 				459EE5F819AEC5130012E023 /* Quadrant.swift in Sources */,
