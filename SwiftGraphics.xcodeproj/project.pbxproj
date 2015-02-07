@@ -13,6 +13,7 @@
 			buildPhases = (
 			);
 			dependencies = (
+				02B1D63E1A864D0D00734945 /* PBXTargetDependency */,
 				4514F5F91A61D2EE00CC9C26 /* PBXTargetDependency */,
 				454FE67C19C77094002E4DEF /* PBXTargetDependency */,
 				45B8AE9419BCE57900C61A3F /* PBXTargetDependency */,
@@ -206,6 +207,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		02B1D63D1A864D0D00734945 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 455AC2C21A76130B00BCC373;
+			remoteInfo = SwiftGraphics_OSX_Scratch;
+		};
 		4514F5F81A61D2EE00CC9C26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
@@ -1391,6 +1399,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		02B1D63E1A864D0D00734945 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 455AC2C21A76130B00BCC373 /* SwiftGraphics_OSX_Scratch */;
+			targetProxy = 02B1D63D1A864D0D00734945 /* PBXContainerItemProxy */;
+		};
 		4514F5F91A61D2EE00CC9C26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 45CFDC9D1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */;
