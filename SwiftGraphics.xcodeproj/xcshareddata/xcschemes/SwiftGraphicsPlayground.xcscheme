@@ -20,20 +20,6 @@
                ReferencedContainer = "container:SwiftGraphics.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4501557E1A62F9F600D7FB7B"
-               BuildableName = "SwiftGraphicsPlayground_OSX_UnitTests.xctest"
-               BlueprintName = "SwiftGraphicsPlayground_OSX_UnitTests"
-               ReferencedContainer = "container:SwiftGraphics.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,16 +35,6 @@
                BlueprintIdentifier = "454D551119AA5CE6000E3EB3"
                BuildableName = "SwiftGraphicsTests.xctest"
                BlueprintName = "SwiftGraphicsTests"
-               ReferencedContainer = "container:SwiftGraphics.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4501557E1A62F9F600D7FB7B"
-               BuildableName = "SwiftGraphicsPlayground_OSX_UnitTests.xctest"
-               BlueprintName = "SwiftGraphicsPlayground_OSX_UnitTests"
                ReferencedContainer = "container:SwiftGraphics.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -53,7 +53,7 @@ class ScratchWindowController: NSWindowController {
         let view = contentViewController!.view
         mouseLocation = view.convertPoint(mouseLocation, fromView: nil)
 
-        mouseLocation = mouseLocation.clamped(view.bounds.insetted(dx: 50, dy: 50))
+        mouseLocation = mouseLocation.clampedTo(view.bounds.insetted(dx: 50, dy: 50))
 
         let thing = Thing(model:model, geometry:geometry)
         thing.center = mouseLocation
