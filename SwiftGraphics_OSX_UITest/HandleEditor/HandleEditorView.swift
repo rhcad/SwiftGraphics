@@ -154,7 +154,7 @@ class LineSegmentObject {
     var lineSegment:LineSegment
 
     init(start:CGPoint, end:CGPoint) {
-        lineSegment = LineSegment(start: start, end: end)
+        lineSegment = LineSegment(start, end)
     }
 }
 
@@ -163,12 +163,12 @@ extension LineSegmentObject : Interactive {
         let startHandle = Handle(position: self.lineSegment.start)
         startHandle.didMove = {
             position in
-            self.lineSegment = LineSegment(start:position, end:self.lineSegment.end)
+            self.lineSegment = LineSegment(position, self.lineSegment.end)
         }
         let endHandle = Handle(position: self.lineSegment.end)
         endHandle.didMove = {
             position in
-            self.lineSegment = LineSegment(start:self.lineSegment.start, end:position)
+            self.lineSegment = LineSegment(self.lineSegment.start, position)
         }
         return [startHandle, endHandle]
     }

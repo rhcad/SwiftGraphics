@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 schwa.io. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
 // TODO: Deprecate. Most of this will be deprecated and replaced by the Drawable API. #deprecate #simplify
 public extension CGContext {

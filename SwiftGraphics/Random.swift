@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 schwa.io. All rights reserved.
 //
 
-import Darwin
-
 // MARK: Random Provider Protocol
+
+import CoreGraphics
 
 public protocol RandomProvider {
     func random() -> UInt32
@@ -198,7 +198,7 @@ public struct SRandomProvider: RandomProvider {
     }
 
     public func random() -> UInt32 {
-        return UInt32(Darwin.random())
+        return UInt32(random())
     }
 
     public func random(uniform:UInt32) -> UInt32 {
@@ -225,3 +225,11 @@ public struct SRandomProvider: RandomProvider {
     public let max: UInt32 = 2147483647
 }
 
+// MARK: Random array generator
+
+/// Generate random points within the range.
+public func arrayOfRandomPoints(count:Int, range:CGRect) -> [CGPoint] {
+    return Array <CGPoint> (count:count) {
+        return Random.rng.random(range)
+    }
+}

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 schwa.io. All rights reserved.
 //
 
-import Foundation
+import CoreGraphics
 
 public protocol Geometry {
     var frame:CGRect { get }
