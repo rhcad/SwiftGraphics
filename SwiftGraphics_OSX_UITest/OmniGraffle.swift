@@ -23,16 +23,16 @@ class OmniGraffleDocumentModel {
     }
 }
 
-class OmniGraffleNode: Node {
+@objc class OmniGraffleNode: Node {
     weak var parent: Node?
     var dictionary: NSDictionary!
-    var ID:Int { get { return dictionary["ID"]! as Int } }
+    var ID:Int { get { return dictionary["ID"] as! Int } }
 
     init() {
     }
 }
 
-class OmniGraffleGroup: OmniGraffleNode, GroupNode {
+@objc class OmniGraffleGroup: OmniGraffleNode, GroupNode {
     var children: [Node] = []
     
     init(children:[Node]) {
@@ -40,22 +40,22 @@ class OmniGraffleGroup: OmniGraffleNode, GroupNode {
     }
 }
 
-class OmniGraffleShape: OmniGraffleNode {
-    var shape:String { get { return dictionary["Shape"] as String } }
-    var bounds:CGRect { get { return StringToRect(dictionary["Bounds"] as String) } }
+@objc class OmniGraffleShape: OmniGraffleNode {
+    var shape:String? { get { return dictionary["Shape"] as? String } }
+    var bounds:CGRect { get { return StringToRect(dictionary["Bounds"] as! String) } }
     lazy var lines:[OmniGraffleLine] = []
 }
 
-class OmniGraffleLine: OmniGraffleNode {
+@objc class OmniGraffleLine: OmniGraffleNode {
     var start:CGPoint {
         get {
-            let strings = dictionary["Points"] as [String]
+            let strings = dictionary["Points"] as! [String]
             return StringToPoint(strings[0])
         }
     }
     var end:CGPoint {
         get {
-            let strings = dictionary["Points"] as [String]
+            let strings = dictionary["Points"] as! [String]
             return StringToPoint(strings[1])
         }
     }
@@ -71,8 +71,8 @@ extension OmniGraffleDocumentModel {
         if let d = NSPropertyListSerialization.propertyListFromData(data, mutabilityOption: NSPropertyListMutabilityOptions(), format: nil, errorDescription:&error) as? NSDictionary {
         
             _processRoot(d)
-            let origin = StringToPoint(d["CanvasOrigin"] as String)
-            let size = StringToSize(d["CanvasSize"] as String)
+            let origin = StringToPoint(d["CanvasOrigin"] as! String)
+            let size = StringToSize(d["CanvasSize"] as! String)
             frame = CGRect(origin:origin, size:size)
 //            println(nodesByID)
             
@@ -81,7 +81,7 @@ extension OmniGraffleDocumentModel {
                 return node is OmniGraffleLine
             }
             for node in nodes {
-                let line = node as OmniGraffleLine
+                let line = node as! OmniGraffleLine
                 var headID: Int?
                 var tailID: Int?
                 if let headDictionary = line.dictionary["Head"] as? NSDictionary {
@@ -91,11 +91,11 @@ extension OmniGraffleDocumentModel {
                     tailID = tailDictionary["ID"] as? Int
                 }
                 if headID != nil && tailID != nil {
-                    let head = nodesByID[headID!] as OmniGraffleShape
+                    let head = nodesByID[headID!] as! OmniGraffleShape
                     line.head = head
                     head.lines.append(line)
 
-                    let tail = nodesByID[headID!] as OmniGraffleShape
+                    let tail = nodesByID[headID!] as! OmniGraffleShape
                     line.tail = tail
                     tail.lines.append(line)
                 }
@@ -104,7 +104,7 @@ extension OmniGraffleDocumentModel {
     }
     
     func _processRoot(d:NSDictionary) {
-        let graphicslist = d["GraphicsList"] as [NSDictionary]
+        let graphicslist = d["GraphicsList"] as! [NSDictionary]
         var children:[Node] = []
         for graphic in graphicslist {
             if let node = _processDictionary(graphic) {

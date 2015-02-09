@@ -15,11 +15,13 @@ class OmniGraffleLoader {
 
     let path:String
     let doc:OmniGraffleDocumentModel
-    let root:Node!
+    var root:Node!
     
     init(path:String) {
         self.path = path
         doc = OmniGraffleDocumentModel(path: path)
+
+// TODO: Swift 1.2
         root = convert(doc.rootNode)
     }
 
@@ -40,13 +42,13 @@ class OmniGraffleLoader {
         let group = GroupGeometryNode()
         group.children = input.children.map {
             (node:Node) -> Node in
-            return self.convert(node as OmniGraffleNode)
+            return self.convert(node as! OmniGraffleNode)
         }
         return group
     }
 
     internal func convert(input:OmniGraffleShape) -> Node! {
-        let shapeName = input.dictionary["Shape"] as String
+        let shapeName = input.dictionary["Shape"] as! String
         switch shapeName {
             case "Circle":
                 let bounds = input.bounds.flipped(.TopLeft, insideRect:doc.frame)

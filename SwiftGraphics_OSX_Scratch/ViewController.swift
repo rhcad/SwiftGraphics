@@ -11,9 +11,9 @@ import Cocoa
 class ViewController: NSViewController {
 
     var model:Model!
-    var scratchView:ScratchView {
+    var scratchView:ScratchView? {
         get {
-            return view as ScratchView
+            return view as? ScratchView
         }
     }
 
@@ -23,8 +23,8 @@ class ViewController: NSViewController {
 
     override var representedObject: AnyObject? {
         didSet {
-            model = representedObject as Model
-            scratchView.model = model
+            model = representedObject as? Model
+            scratchView?.model = model
         }
     }
 

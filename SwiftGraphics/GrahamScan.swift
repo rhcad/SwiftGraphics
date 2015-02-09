@@ -19,7 +19,7 @@ public func grahamOrdered(var points:[CGPoint]) -> [CGPoint] {
 
     points.removeAtIndex(lowest.index)
     points.sort {
-        return Turn(lowest.point, $0, $1) <= .None
+        return Turn.turn(lowest.point, $0, $1) <= .None
     }
     points.insert(lowest.point, atIndex:0)
     return points
@@ -38,14 +38,14 @@ public func grahamScan(var points:[CGPoint], preordered:Bool = false) -> [CGPoin
 
     for index in 2..<points.count {
         
-        var t = Turn.Left
+        var t:Turn = Turn.Left
         do {
             let p_index = hull[hull.count - 2]
             let p = points[p_index]
             let q_index = hull[hull.count - 1]
             let q = points[q_index]
             let r = points[index]
-            t = Turn(p, q, r)
+            t = Turn.turn(p, q, r)
             if t != .Right {
                 hull.removeLast()
             }

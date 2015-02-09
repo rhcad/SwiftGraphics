@@ -19,7 +19,7 @@ class SketchView: NSView {
 
         let path = NSBundle.mainBundle().pathForResource("Test", ofType:"graffle")
         let converter = OmniGraffleLoader(path:path!)
-        rootNode = converter.root as GroupGeometryNode
+        rootNode = converter.root as! GroupGeometryNode
 
         super.init(coder:coder)
     }

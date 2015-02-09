@@ -15,11 +15,12 @@ public enum Turn: Int {
 }
 
 extension Turn {
-    public init(_ p:CGPoint, _ q:CGPoint, _ r:CGPoint) {
+    public init(p:CGPoint, q:CGPoint, r:CGPoint) {
         self = Turn.turn(p,q,r)
     }
 
-    static func turn(p:CGPoint, _ q:CGPoint, _ r:CGPoint) -> Turn {
+    // TODO: Deprecate.
+    public static func turn(p:CGPoint, _ q:CGPoint, _ r:CGPoint) -> Turn {
         let c = (q.x - p.x) * (r.y - p.y) - (r.x - p.x) * (q.y - p.y)
         return c == 0 ? .None : (c > 0 ? .Left : .Right)
     }

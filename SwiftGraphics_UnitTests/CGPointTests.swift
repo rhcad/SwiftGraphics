@@ -104,7 +104,7 @@ class CGPointTests: XCTestCase {
 
 // TODO: Casting problems in newest beta.
     func testTrig() {
-        let theta = DegreesToRadians(30) as CGFloat
+        let theta:CGFloat = DegreesToRadians(30)
         let length = 100 as CGFloat
         
         let p = CGPoint(magnitude:length, direction:theta)

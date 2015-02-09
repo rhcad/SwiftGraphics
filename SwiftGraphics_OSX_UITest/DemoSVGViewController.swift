@@ -12,7 +12,7 @@ import SwiftGraphics
 
 class DemoSVGViewController: NSViewController {
 
-    var svgView:SVGView! { get { return view as SVGView } }
+    var svgView:SVGView! { get { return view as! SVGView } }
 
     override func viewDidLoad() {
         super.viewDidLoad()
