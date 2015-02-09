@@ -57,7 +57,7 @@ public extension Random {
     }
 
     func random(uniform:Int) -> Int {
-        assert(uniform <= Int(provider.max) && uniform >= 0)
+        assert(UInt32(uniform) <= provider.max && uniform >= 0)
         let value:UInt32 = random(UInt32(uniform))
         return Int(value)
     }

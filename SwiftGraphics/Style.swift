@@ -100,10 +100,11 @@ public extension CGContext {
             setMiterLimit(miterLimit)
         }
         if let lineDash = newStyle.lineDash {
-            setLineDash(lineDash, phase: 0.0)
-        }
-        if let lineDashPhase = newStyle.lineDashPhase {
-            // TODO
+            if let lineDashPhase = newStyle.lineDashPhase {
+                setLineDash(lineDash, phase: lineDashPhase)
+            } else {
+                setLineDash(lineDash, phase: 0.0)
+            }
         }
         if let flatness = newStyle.flatness {
             setFlatness(flatness)
