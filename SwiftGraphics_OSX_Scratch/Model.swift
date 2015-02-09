@@ -11,6 +11,7 @@ import Foundation
 import SwiftGraphics
 
 class Model: NSObject {
+    // TODO: Swift 1.2 Dynamic doesn't work with Swift 1.2
     dynamic var objects:[Thing] = []
     var selectedObjectIndices:NSMutableIndexSet = NSMutableIndexSet()
     var selectedObjects:[Thing] {
