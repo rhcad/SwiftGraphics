@@ -64,7 +64,7 @@ var CGContext_Style_Key = 1
 public extension CGContext {
     var style: Style {
         get {
-            let style = getAssociatedWrappedObject(self, &CGContext_Style_Key) as Style?
+            let style = getAssociatedWrappedObject(self, &CGContext_Style_Key) as! Style?
             if let style = style {
                 return style
             }
@@ -283,7 +283,7 @@ public extension CGContext {
 
     func with(elements:[StyleElement], block:() -> Void) {
         let style = Style(elements: elements)
-        with(style, block)
+        with(style, block: block)
     }
 
     func with(style:Style, block:() -> Void) {
