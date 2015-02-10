@@ -143,8 +143,8 @@ public extension Triangle {
 //            )
 //            return signedArea
             // TODO: Swift 1.2: Simplified for "expression was too complex to be solved in reasonable time; consider breaking up the expression into distinct sub-expressions"
-            let signedArea = (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y))
-            return signedArea * 0.5
+            let signedArea = (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)) * CGFloat(0.5)
+            return signedArea
         }
     }
     
@@ -156,8 +156,7 @@ public extension Triangle {
             let (a, b, c) = points
 //            let D = 2 * (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y))
             // TODO: Swift 1.2: Simplified for "expression was too complex to be solved in reasonable time; consider breaking up the expression into distinct sub-expressions"
-            var D = (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y))
-            D *= 2
+            let D = (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)) * CGFloat(2.0)
             
             let a2 = a.x ** 2 + a.y ** 2
             let b2 = b.x ** 2 + b.y ** 2
