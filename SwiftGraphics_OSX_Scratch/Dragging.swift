@@ -25,6 +25,11 @@ class Dragging: NSObject {
 
         clickGestureRecogniser = NSClickGestureRecognizer(target: self, action: Selector("click:"))
         panGestureRecognizer = NSPanGestureRecognizer(target: self, action: Selector("pan:"))
+        panGestureRecognizer.addCallback() { println("Drag") }
+//        panGestureRecognizer = NSPanGestureRecognizer(callback: nil)
+//        panGestureRecognizer.addCallback() {
+//            self.pan(self.panGestureRecognizer)
+//        }
     }
 
     var view:NSView! {
@@ -69,11 +74,11 @@ class Dragging: NSObject {
 
     func pan(gestureRecognizer:NSPanGestureRecognizer) {
         let location = gestureRecognizer.locationInView(view)
-        sharedMagicConsole.logValue("location", value: location)
 
         switch gestureRecognizer.state {
             case .Began:
                 dragBeganLocation = location
+                sharedMagicConsole.logValue("dragBeganLocation", value: dragBeganLocation!)
                 if let (index, thing) = hitTest(location) {
                     unselectAll()
                     draggedObject = thing
@@ -87,6 +92,8 @@ class Dragging: NSObject {
 
                 }
             case .Changed:
+                sharedMagicConsole.logValue("location", value: location)
+                sharedMagicConsole.logValue("angle", value: RadiansToDegrees(dragBeganLocation!.angleTo(location)))
                 if let draggedObject = draggedObject {
                     draggedObject.center = location - offset
                 }
