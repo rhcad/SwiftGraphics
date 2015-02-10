@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "454D551119AA5CE6000E3EB3"
-               BuildableName = "SwiftGraphicsTests.xctest"
-               BlueprintName = "SwiftGraphicsTests"
+               BuildableName = "SwiftGraphics_OSX_UnitTests.xctest"
+               BlueprintName = "SwiftGraphics_OSX_UnitTests"
                ReferencedContainer = "container:SwiftGraphics.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "454D551119AA5CE6000E3EB3"
-               BuildableName = "SwiftGraphicsTests.xctest"
-               BlueprintName = "SwiftGraphicsTests"
+               BuildableName = "SwiftGraphics_OSX_UnitTests.xctest"
+               BlueprintName = "SwiftGraphics_OSX_UnitTests"
                ReferencedContainer = "container:SwiftGraphics.xcodeproj">
             </BuildableReference>
          </TestableReference>

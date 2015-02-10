@@ -13,10 +13,10 @@
 			buildPhases = (
 			);
 			dependencies = (
-				02B1D63E1A864D0D00734945 /* PBXTargetDependency */,
-				4514F5F91A61D2EE00CC9C26 /* PBXTargetDependency */,
-				454FE67C19C77094002E4DEF /* PBXTargetDependency */,
 				45B8AE9419BCE57900C61A3F /* PBXTargetDependency */,
+				454FE67C19C77094002E4DEF /* PBXTargetDependency */,
+				4514F5F91A61D2EE00CC9C26 /* PBXTargetDependency */,
+				02B1D63E1A864D0D00734945 /* PBXTargetDependency */,
 				45B8AE9619BCE57900C61A3F /* PBXTargetDependency */,
 			);
 			name = All;
@@ -77,6 +77,21 @@
 		451835E31A73072E006B123B /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451835E11A73072E006B123B /* Lerp.swift */; };
 		451908941A8A8131006894B4 /* CGPath+Intersects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451908921A8A8131006894B4 /* CGPath+Intersects.swift */; };
 		451908951A8A8131006894B4 /* GeometryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451908931A8A8131006894B4 /* GeometryExtensions.swift */; };
+		451D290F1A8A911F00209FE3 /* SwiftGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DA4AC419AA62A800133F32 /* SwiftGraphics.framework */; };
+		451D29151A8A917400209FE3 /* CColorConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45563F2C19B1047E003B1639 /* CColorConverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		451D29161A8A920800209FE3 /* RegularPolygonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9D0251A724D9C00B9696E /* RegularPolygonTests.swift */; };
+		451D29171A8A920800209FE3 /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537991919AA6C37004DF99E /* CGPointTests.swift */; };
+		451D29181A8A920800209FE3 /* CGSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537991C19AA788B004DF99E /* CGSizeTests.swift */; };
+		451D29191A8A920800209FE3 /* TurnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515825E19C9F6A600856C91 /* TurnTests.swift */; };
+		451D291A1A8A920800209FE3 /* TransformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C6DC741A13E59C004C4693 /* TransformTests.swift */; };
+		451D291B1A8A920800209FE3 /* ConvexHullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA25BC19CA1E8A00B612B7 /* ConvexHullTests.swift */; };
+		451D291C1A8A920800209FE3 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F5BD81A6986DA00221BB0 /* ColorTests.swift */; };
+		451D291D1A8A920800209FE3 /* QuadrantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F5BDA1A69BBA600221BB0 /* QuadrantTests.swift */; };
+		451D291E1A8A920800209FE3 /* UtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F5BDC1A69C43A00221BB0 /* UtilitiesTests.swift */; };
+		451D291F1A8A920800209FE3 /* GrahamScanUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F5BDE1A6A8FCA00221BB0 /* GrahamScanUnitTests.swift */; };
+		451D29201A8A920800209FE3 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4C35B1A7DA8EF0036EE2B /* ProjectTests.swift */; };
+		451D29211A8A920800209FE3 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F7C091A7D7188002CE3A6 /* MatrixTests.swift */; };
+		451D29221A8A920800209FE3 /* BezierPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F7C0B1A7D71AC002CE3A6 /* BezierPathTests.swift */; };
 		452F09181A81D2DD00334A4E /* SelectionMarquee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F09171A81D2DD00334A4E /* SelectionMarquee.swift */; };
 		4537991A19AA6C37004DF99E /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537991919AA6C37004DF99E /* CGPointTests.swift */; };
 		4537991D19AA788B004DF99E /* CGSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537991C19AA788B004DF99E /* CGSizeTests.swift */; };
@@ -225,6 +240,13 @@
 			remoteGlobalIDString = 45CFDC9D1A61CE3500053F96;
 			remoteInfo = SwiftGraphics_OSX_UITest;
 		};
+		451D29101A8A911F00209FE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45DA4AC319AA62A800133F32;
+			remoteInfo = SwiftGraphics_iOS;
+		};
 		453997BB1A61F20A00572E47 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
@@ -334,6 +356,8 @@
 		451908931A8A8131006894B4 /* GeometryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryExtensions.swift; sourceTree = "<group>"; };
 		451CE9F31A61D73B006F721B /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ScratchPad.playground; sourceTree = "<group>"; };
 		451CE9F41A61D73C006F721B /* SwiftGraphicsTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftGraphicsTest.playground; sourceTree = "<group>"; };
+		451D29091A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGraphics_iOS_UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		451D290C1A8A911F00209FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		452F09171A81D2DD00334A4E /* SelectionMarquee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionMarquee.swift; sourceTree = "<group>"; };
 		4537990419AA671E004DF99E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4537990519AA671E004DF99E /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
@@ -352,7 +376,7 @@
 		454D550719AA5CE6000E3EB3 /* SwiftGraphics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftGraphics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		454D550B19AA5CE6000E3EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		454D550C19AA5CE6000E3EB3 /* SwiftGraphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftGraphics.h; sourceTree = "<group>"; };
-		454D551219AA5CE6000E3EB3 /* SwiftGraphicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGraphicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		454D551219AA5CE6000E3EB3 /* SwiftGraphics_OSX_UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGraphics_OSX_UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		454D551519AA5CE6000E3EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		454FE65C19C7700E002E4DEF /* ConvexHull.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ConvexHull.playground; sourceTree = "<group>"; };
 		454FE66219C77031002E4DEF /* SwiftGraphicsPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftGraphicsPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -457,6 +481,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		451D29061A8A911F00209FE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451D290F1A8A911F00209FE3 /* SwiftGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		454D550319AA5CE6000E3EB3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -553,6 +585,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		451D290A1A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				451D290C1A8A911F00209FE3 /* Info.plist */,
+			);
+			path = SwiftGraphics_iOS_UnitTests;
+			sourceTree = "<group>";
+		};
 		453997BD1A61F2B700572E47 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,6 +669,8 @@
 				45CFDC9F1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */,
 				455AC2C41A76130B00BCC373 /* SwiftGraphics_OSX_Scratch */,
 				454D551319AA5CE6000E3EB3 /* SwiftGraphics_UnitTests */,
+				454D551419AA5CE6000E3EB3 /* SwiftGraphics_OSX_UnitTests */,
+				451D290A1A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests */,
 				4514F5F71A61D2D800CC9C26 /* Frameworks */,
 				454D550819AA5CE6000E3EB3 /* Products */,
 			);
@@ -638,11 +680,12 @@
 			isa = PBXGroup;
 			children = (
 				454D550719AA5CE6000E3EB3 /* SwiftGraphics.framework */,
-				454D551219AA5CE6000E3EB3 /* SwiftGraphicsTests.xctest */,
+				454D551219AA5CE6000E3EB3 /* SwiftGraphics_OSX_UnitTests.xctest */,
 				45DA4AC419AA62A800133F32 /* SwiftGraphics.framework */,
 				454FE66219C77031002E4DEF /* SwiftGraphicsPlayground.framework */,
 				45CFDC9E1A61CE3500053F96 /* SwiftGraphics_OSX_UITest.app */,
 				455AC2C31A76130B00BCC373 /* SwiftGraphics_OSX_Scratch.app */,
+				451D29091A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -677,7 +720,6 @@
 				4515825E19C9F6A600856C91 /* TurnTests.swift */,
 				45C6DC741A13E59C004C4693 /* TransformTests.swift */,
 				45BA25BC19CA1E8A00B612B7 /* ConvexHullTests.swift */,
-				454D551419AA5CE6000E3EB3 /* Supporting Files */,
 				2E0F5BD81A6986DA00221BB0 /* ColorTests.swift */,
 				2E0F5BDA1A69BBA600221BB0 /* QuadrantTests.swift */,
 				2E0F5BDC1A69C43A00221BB0 /* UtilitiesTests.swift */,
@@ -689,12 +731,13 @@
 			path = SwiftGraphics_UnitTests;
 			sourceTree = "<group>";
 		};
-		454D551419AA5CE6000E3EB3 /* Supporting Files */ = {
+		454D551419AA5CE6000E3EB3 /* SwiftGraphics_OSX_UnitTests */ = {
 			isa = PBXGroup;
 			children = (
 				454D551519AA5CE6000E3EB3 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			name = SwiftGraphics_OSX_UnitTests;
+			path = SwiftGraphics_UnitTests;
 			sourceTree = "<group>";
 		};
 		454FE65B19C77001002E4DEF /* Playgrounds */ = {
@@ -1001,12 +1044,31 @@
 			files = (
 				45DA4AC919AA62A800133F32 /* SwiftGraphics.h in Headers */,
 				4594B08A19AEDC2100101EB4 /* SwiftGraphicsHelper.h in Headers */,
+				451D29151A8A917400209FE3 /* CColorConverter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		451D29081A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 451D29121A8A911F00209FE3 /* Build configuration list for PBXNativeTarget "SwiftGraphics_iOS_UnitTests" */;
+			buildPhases = (
+				451D29051A8A911F00209FE3 /* Sources */,
+				451D29061A8A911F00209FE3 /* Frameworks */,
+				451D29071A8A911F00209FE3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				451D29111A8A911F00209FE3 /* PBXTargetDependency */,
+			);
+			name = SwiftGraphics_iOS_UnitTests;
+			productName = SwiftGraphics_iOS_UnitTests;
+			productReference = 451D29091A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 454D551A19AA5CE6000E3EB3 /* Build configuration list for PBXNativeTarget "SwiftGraphics_OSX" */;
@@ -1025,9 +1087,9 @@
 			productReference = 454D550719AA5CE6000E3EB3 /* SwiftGraphics.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		454D551119AA5CE6000E3EB3 /* SwiftGraphicsTests */ = {
+		454D551119AA5CE6000E3EB3 /* SwiftGraphics_OSX_UnitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 454D551D19AA5CE6000E3EB3 /* Build configuration list for PBXNativeTarget "SwiftGraphicsTests" */;
+			buildConfigurationList = 454D551D19AA5CE6000E3EB3 /* Build configuration list for PBXNativeTarget "SwiftGraphics_OSX_UnitTests" */;
 			buildPhases = (
 				454D550E19AA5CE6000E3EB3 /* Sources */,
 				454D550F19AA5CE6000E3EB3 /* Frameworks */,
@@ -1038,9 +1100,9 @@
 			dependencies = (
 				4582DB7919AA7A6700B7F5B4 /* PBXTargetDependency */,
 			);
-			name = SwiftGraphicsTests;
+			name = SwiftGraphics_OSX_UnitTests;
 			productName = SwiftGraphicsTests;
-			productReference = 454D551219AA5CE6000E3EB3 /* SwiftGraphicsTests.xctest */;
+			productReference = 454D551219AA5CE6000E3EB3 /* SwiftGraphics_OSX_UnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */ = {
@@ -1127,6 +1189,9 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = schwa.io;
 				TargetAttributes = {
+					451D29081A8A911F00209FE3 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 					454D550619AA5CE6000E3EB3 = {
 						CreatedOnToolsVersion = 6.0;
 					};
@@ -1169,12 +1234,20 @@
 				454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */,
 				45CFDC9D1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */,
 				455AC2C21A76130B00BCC373 /* SwiftGraphics_OSX_Scratch */,
-				454D551119AA5CE6000E3EB3 /* SwiftGraphicsTests */,
+				454D551119AA5CE6000E3EB3 /* SwiftGraphics_OSX_UnitTests */,
+				451D29081A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		451D29071A8A911F00209FE3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		454D550519AA5CE6000E3EB3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1227,6 +1300,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		451D29051A8A911F00209FE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451D29211A8A920800209FE3 /* MatrixTests.swift in Sources */,
+				451D29171A8A920800209FE3 /* CGPointTests.swift in Sources */,
+				451D291D1A8A920800209FE3 /* QuadrantTests.swift in Sources */,
+				451D29201A8A920800209FE3 /* ProjectTests.swift in Sources */,
+				451D29181A8A920800209FE3 /* CGSizeTests.swift in Sources */,
+				451D29191A8A920800209FE3 /* TurnTests.swift in Sources */,
+				451D29221A8A920800209FE3 /* BezierPathTests.swift in Sources */,
+				451D291F1A8A920800209FE3 /* GrahamScanUnitTests.swift in Sources */,
+				451D291A1A8A920800209FE3 /* TransformTests.swift in Sources */,
+				451D291E1A8A920800209FE3 /* UtilitiesTests.swift in Sources */,
+				451D29161A8A920800209FE3 /* RegularPolygonTests.swift in Sources */,
+				451D291C1A8A920800209FE3 /* ColorTests.swift in Sources */,
+				451D291B1A8A920800209FE3 /* ConvexHullTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		454D550219AA5CE6000E3EB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1446,6 +1539,11 @@
 			target = 45CFDC9D1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */;
 			targetProxy = 4514F5F81A61D2EE00CC9C26 /* PBXContainerItemProxy */;
 		};
+		451D29111A8A911F00209FE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45DA4AC319AA62A800133F32 /* SwiftGraphics_iOS */;
+			targetProxy = 451D29101A8A911F00209FE3 /* PBXContainerItemProxy */;
+		};
 		453997BC1A61F20A00572E47 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */;
@@ -1513,6 +1611,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		451D29131A8A911F00209FE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwiftGraphics_iOS_UnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		451D29141A8A911F00209FE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwiftGraphics_iOS_UnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		454D551819AA5CE6000E3EB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1847,6 +1982,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		451D29121A8A911F00209FE3 /* Build configuration list for PBXNativeTarget "SwiftGraphics_iOS_UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				451D29131A8A911F00209FE3 /* Debug */,
+				451D29141A8A911F00209FE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		454D550119AA5CE6000E3EB3 /* Build configuration list for PBXProject "SwiftGraphics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1865,7 +2009,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		454D551D19AA5CE6000E3EB3 /* Build configuration list for PBXNativeTarget "SwiftGraphicsTests" */ = {
+		454D551D19AA5CE6000E3EB3 /* Build configuration list for PBXNativeTarget "SwiftGraphics_OSX_UnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				454D551E19AA5CE6000E3EB3 /* Debug */,

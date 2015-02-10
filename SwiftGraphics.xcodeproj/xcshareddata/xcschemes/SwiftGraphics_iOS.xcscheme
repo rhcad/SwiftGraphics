@@ -28,7 +28,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Release">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "451D29081A8A911F00209FE3"
+               BuildableName = "SwiftGraphics_iOS_UnitTests.xctest"
+               BlueprintName = "SwiftGraphics_iOS_UnitTests"
+               ReferencedContainer = "container:SwiftGraphics.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "45DA4AC319AA62A800133F32"
+            BuildableName = "SwiftGraphics.framework"
+            BlueprintName = "SwiftGraphics_iOS"
+            ReferencedContainer = "container:SwiftGraphics.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"

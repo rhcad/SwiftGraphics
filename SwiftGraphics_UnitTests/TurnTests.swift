@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 schwa.io. All rights reserved.
 //
 
-import Cocoa
 import XCTest
 import SwiftGraphics
 
