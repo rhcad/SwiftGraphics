@@ -14,13 +14,18 @@ public enum Turn: Int {
     case Right = -1
 }
 
-extension Turn {
-    public init(p:CGPoint, q:CGPoint, r:CGPoint) {
-        self = Turn.turn(p,q,r)
+
+public extension Turn {
+
+    // TODO: Swift 1.2 - can no longer init() enums via custom init methods it seems.
+    public init(_ p:CGPoint, _ q:CGPoint, _ r:CGPoint) {
+        let c = (q.x - p.x) * (r.y - p.y) - (r.x - p.x) * (q.y - p.y)
+        let turn:Turn = c == 0 ? .None : (c > 0 ? .Left : .Right)
+        self = turn
     }
 
     // TODO: Deprecate.
-    public static func turn(p:CGPoint, _ q:CGPoint, _ r:CGPoint) -> Turn {
+    static func turn(p:CGPoint, _ q:CGPoint, _ r:CGPoint) -> Turn {
         let c = (q.x - p.x) * (r.y - p.y) - (r.x - p.x) * (q.y - p.y)
         return c == 0 ? .None : (c > 0 ? .Left : .Right)
     }
