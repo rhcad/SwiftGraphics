@@ -17,17 +17,11 @@ public enum Turn: Int {
 
 public extension Turn {
 
-    // TODO: Swift 1.2 - can no longer init() enums via custom init methods it seems.
-    public init(_ p:CGPoint, _ q:CGPoint, _ r:CGPoint) {
+    // TODO: Swift 1.2 - can no longer init() enums via custom init methods. Workaround is to make the init failable. Fix this in fufture.
+    public init?(_ p:CGPoint, _ q:CGPoint, _ r:CGPoint) {
         let c = (q.x - p.x) * (r.y - p.y) - (r.x - p.x) * (q.y - p.y)
         let turn:Turn = c == 0 ? .None : (c > 0 ? .Left : .Right)
         self = turn
-    }
-
-    // TODO: Deprecate.
-    static func turn(p:CGPoint, _ q:CGPoint, _ r:CGPoint) -> Turn {
-        let c = (q.x - p.x) * (r.y - p.y) - (r.x - p.x) * (q.y - p.y)
-        return c == 0 ? .None : (c > 0 ? .Left : .Right)
     }
 }
 
