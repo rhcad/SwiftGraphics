@@ -69,6 +69,7 @@ class Dragging: NSObject {
 
     func pan(gestureRecognizer:NSPanGestureRecognizer) {
         let location = gestureRecognizer.locationInView(view)
+        sharedMagicConsole.logValue("location", value: location)
 
         switch gestureRecognizer.state {
             case .Began:

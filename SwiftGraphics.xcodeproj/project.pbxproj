@@ -52,6 +52,8 @@
 		450717071A6B7EBA00E86EB4 /* Bitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450717061A6B7EBA00E86EB4 /* Bitmap.swift */; };
 		450717091A6B7F0700E86EB4 /* CGTypes+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450717081A6B7F0700E86EB4 /* CGTypes+String.swift */; };
 		450C7EC51A849326003A8AD2 /* CGPointSwiftDocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C7EC41A849326003A8AD2 /* CGPointSwiftDocTests.swift */; };
+		45124C9C1A89E18F000F5ABB /* MagicConsole.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45124C9B1A89E18F000F5ABB /* MagicConsole.storyboard */; };
+		45124C9E1A89E1C7000F5ABB /* MagicConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45124C9D1A89E1C7000F5ABB /* MagicConsole.swift */; };
 		4514F60E1A61D4C400CC9C26 /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F5FB1A61D4C400CC9C26 /* ArcView.swift */; };
 		4514F60F1A61D4C400CC9C26 /* ArcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F5FC1A61D4C400CC9C26 /* ArcViewController.swift */; };
 		4514F6101A61D4C400CC9C26 /* DemoSVGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F5FE1A61D4C400CC9C26 /* DemoSVGViewController.swift */; };
@@ -305,6 +307,8 @@
 		450717061A6B7EBA00E86EB4 /* Bitmap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitmap.swift; sourceTree = "<group>"; };
 		450717081A6B7F0700E86EB4 /* CGTypes+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGTypes+String.swift"; sourceTree = "<group>"; };
 		450C7EC41A849326003A8AD2 /* CGPointSwiftDocTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointSwiftDocTests.swift; sourceTree = "<group>"; };
+		45124C9B1A89E18F000F5ABB /* MagicConsole.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MagicConsole.storyboard; sourceTree = "<group>"; };
+		45124C9D1A89E1C7000F5ABB /* MagicConsole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicConsole.swift; sourceTree = "<group>"; };
 		4514F5FB1A61D4C400CC9C26 /* ArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcView.swift; sourceTree = "<group>"; };
 		4514F5FC1A61D4C400CC9C26 /* ArcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcViewController.swift; sourceTree = "<group>"; };
 		4514F5FD1A61D4C400CC9C26 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
@@ -524,6 +528,15 @@
 			path = SwiftDocTests;
 			sourceTree = "<group>";
 		};
+		45124C9A1A89E16F000F5ABB /* MagicConsole */ = {
+			isa = PBXGroup;
+			children = (
+				45124C9B1A89E18F000F5ABB /* MagicConsole.storyboard */,
+				45124C9D1A89E1C7000F5ABB /* MagicConsole.swift */,
+			);
+			name = MagicConsole;
+			sourceTree = "<group>";
+		};
 		4514F5F71A61D2D800CC9C26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -734,6 +747,7 @@
 		455AC2C41A76130B00BCC373 /* SwiftGraphics_OSX_Scratch */ = {
 			isa = PBXGroup;
 			children = (
+				45124C9A1A89E16F000F5ABB /* MagicConsole */,
 				45DF79861A81456500C19B76 /* ToolbarIcons.sketch */,
 				459673E81A819F2700BDF9D5 /* CGPath+Intersects.swift */,
 				459673EB1A81B37C00BDF9D5 /* GeometryExtensions.swift */,
@@ -1170,6 +1184,7 @@
 			files = (
 				455AC2CC1A76130B00BCC373 /* Images.xcassets in Resources */,
 				455AC2CF1A76130B00BCC373 /* Main.storyboard in Resources */,
+				45124C9C1A89E18F000F5ABB /* MagicConsole.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1295,6 +1310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45124C9E1A89E1C7000F5ABB /* MagicConsole.swift in Sources */,
 				45CA2A621A7EF4AE008DC058 /* Model.swift in Sources */,
 				459673EC1A81B37C00BDF9D5 /* GeometryExtensions.swift in Sources */,
 				45B78E631A7702F80058B3A0 /* Scratch.swift in Sources */,

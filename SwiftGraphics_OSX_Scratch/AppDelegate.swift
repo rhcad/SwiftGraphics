@@ -11,6 +11,18 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+
+    var magicConsoleWindowController: NSWindowController?
+    @IBAction func showHideMagicConsole(sender:AnyObject?) {
+        if magicConsoleWindowController == nil {
+            let storyboard = NSStoryboard(name: "MagicConsole", bundle: nil)
+            magicConsoleWindowController = storyboard?.instantiateInitialController() as? NSWindowController
+        }
+        magicConsoleWindowController?.window?.makeKeyAndOrderFront(self)
+
+    }
+
+
     @IBAction func dumpResponderChain(sender:AnyObject?) {
         let window = NSApplication.sharedApplication().mainWindow
         let firstResponder = window?.firstResponder
