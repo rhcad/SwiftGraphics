@@ -154,13 +154,14 @@ extension Circle: HitTestable {
         let Cy = center.y
 
         // compute the triangle area times 2 (area = area2/2)
-        let area2 = abs((Bx-Ax) * (Cy-Ay) - (Cx-Ax) * (By-Ay))
+        let area2 = (Bx-Ax) * (Cy-Ay) - (Cx-Ax) * (By-Ay)
+        let abs_area2 = abs(area2)
 
         // compute the AB segment length
         let LAB = sqrt((Bx-Ax) ** 2 + (By-Ay) ** 2)
 
         // compute the triangle height
-        let h = area2 / LAB
+        let h = abs_area2 / LAB
 
         let R = radius
 
