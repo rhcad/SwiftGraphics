@@ -606,7 +606,7 @@
 				459EE5DB19AEC5130012E023 /* SwiftGraphics */,
 				454D550919AA5CE6000E3EB3 /* SwiftGraphics_OSX */,
 				45DA4AC519AA62A800133F32 /* SwiftGraphics_iOS */,
-				454FE66319C77031002E4DEF /* SwiftGraphicsPlayground */,
+				454FE66319C77031002E4DEF /* SwiftGraphics_OSX_Playground */,
 				45CFDC9F1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */,
 				455AC2C41A76130B00BCC373 /* SwiftGraphics_OSX_Scratch */,
 				454D551319AA5CE6000E3EB3 /* SwiftGraphics_UnitTests */,
@@ -699,7 +699,7 @@
 			path = Playgrounds;
 			sourceTree = "<group>";
 		};
-		454FE66319C77031002E4DEF /* SwiftGraphicsPlayground */ = {
+		454FE66319C77031002E4DEF /* SwiftGraphics_OSX_Playground */ = {
 			isa = PBXGroup;
 			children = (
 				454FE67F19C77455002E4DEF /* SwiftGraphicsPlayground.swift */,
@@ -708,6 +708,7 @@
 				450717051A6B7EA100E86EB4 /* Non-Graphics */,
 				454FE66419C77031002E4DEF /* Supporting Files */,
 			);
+			name = SwiftGraphics_OSX_Playground;
 			path = SwiftGraphicsPlayground;
 			sourceTree = "<group>";
 		};
@@ -1010,9 +1011,9 @@
 			productReference = 454D551219AA5CE6000E3EB3 /* SwiftGraphicsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		454FE66119C77031002E4DEF /* SwiftGraphicsPlayground */ = {
+		454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 454FE67519C77031002E4DEF /* Build configuration list for PBXNativeTarget "SwiftGraphicsPlayground" */;
+			buildConfigurationList = 454FE67519C77031002E4DEF /* Build configuration list for PBXNativeTarget "SwiftGraphics_OSX_Playground" */;
 			buildPhases = (
 				454FE65D19C77031002E4DEF /* Sources */,
 				454FE65E19C77031002E4DEF /* Frameworks */,
@@ -1024,7 +1025,7 @@
 			dependencies = (
 				454FE68219C77993002E4DEF /* PBXTargetDependency */,
 			);
-			name = SwiftGraphicsPlayground;
+			name = SwiftGraphics_OSX_Playground;
 			productName = SwiftGraphicsPlayground;
 			productReference = 454FE66219C77031002E4DEF /* SwiftGraphicsPlayground.framework */;
 			productType = "com.apple.product-type.framework";
@@ -1133,7 +1134,7 @@
 				45B8AE8F19BCE56E00C61A3F /* All */,
 				454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */,
 				45DA4AC319AA62A800133F32 /* SwiftGraphics_iOS */,
-				454FE66119C77031002E4DEF /* SwiftGraphicsPlayground */,
+				454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */,
 				45CFDC9D1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */,
 				455AC2C21A76130B00BCC373 /* SwiftGraphics_OSX_Scratch */,
 				454D551119AA5CE6000E3EB3 /* SwiftGraphicsTests */,
@@ -1411,12 +1412,12 @@
 		};
 		453997BC1A61F20A00572E47 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 454FE66119C77031002E4DEF /* SwiftGraphicsPlayground */;
+			target = 454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */;
 			targetProxy = 453997BB1A61F20A00572E47 /* PBXContainerItemProxy */;
 		};
 		454FE67C19C77094002E4DEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 454FE66119C77031002E4DEF /* SwiftGraphicsPlayground */;
+			target = 454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */;
 			targetProxy = 454FE67B19C77094002E4DEF /* PBXContainerItemProxy */;
 		};
 		454FE68219C77993002E4DEF /* PBXTargetDependency */ = {
@@ -1431,7 +1432,7 @@
 		};
 		455AC2E51A76133500BCC373 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 454FE66119C77031002E4DEF /* SwiftGraphicsPlayground */;
+			target = 454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */;
 			targetProxy = 455AC2E41A76133500BCC373 /* PBXContainerItemProxy */;
 		};
 		4582DB7919AA7A6700B7F5B4 /* PBXTargetDependency */ = {
@@ -1654,7 +1655,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftGraphicsPlayground;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1674,7 +1675,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SwiftGraphicsPlayground;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1833,7 +1834,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		454FE67519C77031002E4DEF /* Build configuration list for PBXNativeTarget "SwiftGraphicsPlayground" */ = {
+		454FE67519C77031002E4DEF /* Build configuration list for PBXNativeTarget "SwiftGraphics_OSX_Playground" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				454FE67619C77031002E4DEF /* Debug */,

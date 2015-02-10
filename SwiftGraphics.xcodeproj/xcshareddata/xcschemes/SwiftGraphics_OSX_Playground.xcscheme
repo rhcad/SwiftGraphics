@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "454FE66119C77031002E4DEF"
-               BuildableName = "SwiftGraphicsPlayground.framework"
-               BlueprintName = "SwiftGraphicsPlayground"
+               BuildableName = "SwiftGraphics_OSX_Playground.framework"
+               BlueprintName = "SwiftGraphics_OSX_Playground"
                ReferencedContainer = "container:SwiftGraphics.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "454FE66119C77031002E4DEF"
-            BuildableName = "SwiftGraphicsPlayground.framework"
-            BlueprintName = "SwiftGraphicsPlayground"
+            BuildableName = "SwiftGraphics_OSX_Playground.framework"
+            BlueprintName = "SwiftGraphics_OSX_Playground"
             ReferencedContainer = "container:SwiftGraphics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "454FE66119C77031002E4DEF"
-            BuildableName = "SwiftGraphicsPlayground.framework"
-            BlueprintName = "SwiftGraphicsPlayground"
+            BuildableName = "SwiftGraphics_OSX_Playground.framework"
+            BlueprintName = "SwiftGraphics_OSX_Playground"
             ReferencedContainer = "container:SwiftGraphics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "454FE66119C77031002E4DEF"
-            BuildableName = "SwiftGraphicsPlayground.framework"
-            BlueprintName = "SwiftGraphicsPlayground"
+            BuildableName = "SwiftGraphics_OSX_Playground.framework"
+            BlueprintName = "SwiftGraphics_OSX_Playground"
             ReferencedContainer = "container:SwiftGraphics.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
