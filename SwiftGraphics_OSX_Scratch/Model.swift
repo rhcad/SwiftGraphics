@@ -11,8 +11,7 @@ import Foundation
 import SwiftGraphics
 
 class Model: NSObject {
-    // TODO: Swift 1.2 Dynamic doesn't work with Swift 1.2
-    dynamic var objects:[Thing] = []
+    @objc var objects:[Thing] = []
     var selectedObjectIndices:NSMutableIndexSet = NSMutableIndexSet()
     var selectedObjects:[Thing] {
         get {
@@ -56,12 +55,16 @@ class Model: NSObject {
 
 
     func addObject(object:Thing) {
+        self.willChangeValueForKey("objects")
         self.objects.append(object)
+        self.didChangeValueForKey("objects")
     }
 
     func removeObject(object:Thing) {
+        self.willChangeValueForKey("objects")
         let index = find(objects, object)
         removeObjectAtIndex(index!)
+        self.didChangeValueForKey("objects")
     }
 
     func removeObjectAtIndex(index:Int) {
