@@ -75,6 +75,8 @@
 		4515826219C9F83300856C91 /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515826019C9F83300856C91 /* Private.swift */; };
 		451835E21A73072E006B123B /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451835E11A73072E006B123B /* Lerp.swift */; };
 		451835E31A73072E006B123B /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451835E11A73072E006B123B /* Lerp.swift */; };
+		451908941A8A8131006894B4 /* CGPath+Intersects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451908921A8A8131006894B4 /* CGPath+Intersects.swift */; };
+		451908951A8A8131006894B4 /* GeometryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451908931A8A8131006894B4 /* GeometryExtensions.swift */; };
 		452F09181A81D2DD00334A4E /* SelectionMarquee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F09171A81D2DD00334A4E /* SelectionMarquee.swift */; };
 		4537991A19AA6C37004DF99E /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537991919AA6C37004DF99E /* CGPointTests.swift */; };
 		4537991D19AA788B004DF99E /* CGSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537991C19AA788B004DF99E /* CGSizeTests.swift */; };
@@ -123,8 +125,6 @@
 		458C590F1A74136000E993A6 /* Insidedness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C590D1A74136000E993A6 /* Insidedness.swift */; };
 		458E377D1A8A658D0042F750 /* NSGestureRecognizer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458E377C1A8A658D0042F750 /* NSGestureRecognizer+Extensions.swift */; };
 		458E37811A8A70460042F750 /* NSObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 458E37801A8A70460042F750 /* NSObject+Extensions.m */; };
-		458E37871A8A73690042F750 /* GeometryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459673EB1A81B37C00BDF9D5 /* GeometryExtensions.swift */; };
-		458E378A1A8A73800042F750 /* CGPath+Intersects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459673E81A819F2700BDF9D5 /* CGPath+Intersects.swift */; };
 		4594B08919AEDC2100101EB4 /* SwiftGraphicsHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4594B08719AEDC2100101EB4 /* SwiftGraphicsHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4594B08A19AEDC2100101EB4 /* SwiftGraphicsHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4594B08719AEDC2100101EB4 /* SwiftGraphicsHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4594B08B19AEDC2100101EB4 /* SwiftGraphicsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4594B08819AEDC2100101EB4 /* SwiftGraphicsHelper.m */; };
@@ -330,6 +330,8 @@
 		4515825E19C9F6A600856C91 /* TurnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnTests.swift; sourceTree = "<group>"; };
 		4515826019C9F83300856C91 /* Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 		451835E11A73072E006B123B /* Lerp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lerp.swift; sourceTree = "<group>"; };
+		451908921A8A8131006894B4 /* CGPath+Intersects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPath+Intersects.swift"; sourceTree = "<group>"; };
+		451908931A8A8131006894B4 /* GeometryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryExtensions.swift; sourceTree = "<group>"; };
 		451CE9F31A61D73B006F721B /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ScratchPad.playground; sourceTree = "<group>"; };
 		451CE9F41A61D73C006F721B /* SwiftGraphicsTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftGraphicsTest.playground; sourceTree = "<group>"; };
 		452F09171A81D2DD00334A4E /* SelectionMarquee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionMarquee.swift; sourceTree = "<group>"; };
@@ -393,9 +395,7 @@
 		4594B08719AEDC2100101EB4 /* SwiftGraphicsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftGraphicsHelper.h; sourceTree = "<group>"; };
 		4594B08819AEDC2100101EB4 /* SwiftGraphicsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftGraphicsHelper.m; sourceTree = "<group>"; };
 		4594B09119AEE31E00101EB4 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
-		459673E81A819F2700BDF9D5 /* CGPath+Intersects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPath+Intersects.swift"; sourceTree = "<group>"; };
 		459673EA1A81A0CE00BDF9D5 /* Scratch.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Scratch.playground; sourceTree = "<group>"; };
-		459673EB1A81B37C00BDF9D5 /* GeometryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryExtensions.swift; sourceTree = "<group>"; };
 		459A4C4B1A69913600E87608 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		459EE5DC19AEC5130012E023 /* BezierCurve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierCurve.swift; sourceTree = "<group>"; };
 		459EE5DD19AEC5130012E023 /* CGAffineTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGAffineTransform.swift; sourceTree = "<group>"; };
@@ -607,15 +607,6 @@
 			path = MarchingSquares;
 			sourceTree = "<group>";
 		};
-		453ABBB41A8A7FDE009B3A85 /* Move to SwiftGraphics */ = {
-			isa = PBXGroup;
-			children = (
-				459673E81A819F2700BDF9D5 /* CGPath+Intersects.swift */,
-				459673EB1A81B37C00BDF9D5 /* GeometryExtensions.swift */,
-			);
-			name = "Move to SwiftGraphics";
-			sourceTree = "<group>";
-		};
 		453F7C051A7D6FC5002CE3A6 /* Generic Types */ = {
 			isa = PBXGroup;
 			children = (
@@ -762,7 +753,6 @@
 		455AC2C41A76130B00BCC373 /* SwiftGraphics_OSX_Scratch */ = {
 			isa = PBXGroup;
 			children = (
-				453ABBB41A8A7FDE009B3A85 /* Move to SwiftGraphics */,
 				45124C9A1A89E16F000F5ABB /* MagicConsole */,
 				45DF79861A81456500C19B76 /* ToolbarIcons.sketch */,
 				455AC2C71A76130B00BCC373 /* AppDelegate.swift */,
@@ -864,6 +854,8 @@
 				45066CF81A7428BA00F561E1 /* Drawable */,
 				45E38D201A74235800EC672A /* Style.swift */,
 				02AAA8EC1A7A16A5001898E2 /* Gradient.swift */,
+				451908921A8A8131006894B4 /* CGPath+Intersects.swift */,
+				451908931A8A8131006894B4 /* GeometryExtensions.swift */,
 				45E38D301A74249000EC672A /* Markup */,
 			);
 			path = SwiftGraphics;
@@ -1244,6 +1236,7 @@
 				451835E21A73072E006B123B /* Lerp.swift in Sources */,
 				029651AC1A6366FA0099DA1C /* CDisplayLink.m in Sources */,
 				45FA46541A7F3EA9000473B5 /* Circle+Markup.swift in Sources */,
+				451908951A8A8131006894B4 /* GeometryExtensions.swift in Sources */,
 				02BF437E1A64FACB00132343 /* BezierCurve+Extensions.swift in Sources */,
 				456C315C19C65B0E003AA1DF /* Ellipse.swift in Sources */,
 				4574C0251A64604900454DE5 /* CGContext_OSX.swift in Sources */,
@@ -1268,6 +1261,7 @@
 				02E8FBC41A8615B90061D101 /* Random.swift in Sources */,
 				45FA46511A7F3DBB000473B5 /* Rectangle+Markup.swift in Sources */,
 				459EE5F919AEC5130012E023 /* Scaling.swift in Sources */,
+				451908941A8A8131006894B4 /* CGPath+Intersects.swift in Sources */,
 				459EE5F719AEC5130012E023 /* Quadrant.swift in Sources */,
 				459A4C4C1A69913600E87608 /* Circle.swift in Sources */,
 				459EE5F319AEC5130012E023 /* CGSize.swift in Sources */,
@@ -1346,9 +1340,7 @@
 				452F09181A81D2DD00334A4E /* SelectionMarquee.swift in Sources */,
 				455AC2C81A76130B00BCC373 /* AppDelegate.swift in Sources */,
 				45CA2A681A7EFC83008DC058 /* ScratchWindowController.swift in Sources */,
-				458E378A1A8A73800042F750 /* CGPath+Intersects.swift in Sources */,
 				455AC2E91A76135600BCC373 /* ScratchView.swift in Sources */,
-				458E37871A8A73690042F750 /* GeometryExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
