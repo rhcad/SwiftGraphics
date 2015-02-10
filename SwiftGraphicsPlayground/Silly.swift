@@ -9,7 +9,7 @@
 import SwiftGraphics
 
 // TODO: This needs a much better name.
-public func tiled(context:CGContext, tileSize:CGSize, dimension:IntSize, origin:CGPoint = CGPoint(x:0.5, y:0.5), block:CGContext -> Void) {
+public func tiled(context:CGContext, tileSize:CGSize, dimension:IntSize, origin:CGPoint = CGPoint(x:0.5, y:0.5), @noescape block:CGContext -> Void) {
 
     for y in 0..<dimension.height {
         for x in 0..<dimension.width {

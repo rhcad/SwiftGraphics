@@ -143,7 +143,7 @@ public extension Random {
         return random_array(source.count, initial:source[0]) { source[$0] }
     }
 
-    func random_array <T> (count:Int, initial:T, block:Int -> T) -> Array <T> {
+    func random_array <T> (count:Int, initial:T, @noescape block:Int -> T) -> Array <T> {
         //To initialize an array a of n elements to a randomly shuffled copy of source, both 0-based:
         //  for i from 0 to n − 1 do
         //      j ← random integer with 0 ≤ j ≤ i

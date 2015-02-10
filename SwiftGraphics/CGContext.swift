@@ -57,13 +57,13 @@ public extension CGContext {
 
 public extension CGContext {
 
-    func with(block:() -> Void) {
+    func with(@noescape block:() -> Void) {
         CGContextSaveGState(self)
         block()
         CGContextRestoreGState(self)
     }
 
-    func with(transform:CGAffineTransform, block:() -> Void) {
+    func with(transform:CGAffineTransform, @noescape block:() -> Void) {
         with() {
             CGContextConcatCTM(self, transform)
             block()
@@ -71,7 +71,7 @@ public extension CGContext {
     }
 
     // TODO: Deprecate
-    func withColor(color:CGColor, block:() -> Void) {
+    func withColor(color:CGColor, @noescape block:() -> Void) {
         with {
             self.setStrokeColor(color)
             self.setFillColor(color)

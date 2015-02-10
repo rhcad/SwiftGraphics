@@ -138,10 +138,11 @@ public extension CGMutablePath {
 // MARK: Enumerate path elements
 
 public extension CGPath {
-    func enumerate(block:(type:CGPathElementType, points:[CGPoint]) -> Void) {
+    func enumerate(/*@noescape*/ block:(type:CGPathElementType, points:[CGPoint]) -> Void) {
         var curpt = CGPoint()
         var start = curpt
-        
+
+        // TODO: This is limiting noescape
         CGPathApplyWithBlock(self) {
             (elementPtr:UnsafePointer<CGPathElement>) -> Void in
             let element: CGPathElement = elementPtr.memory

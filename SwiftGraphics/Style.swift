@@ -281,12 +281,12 @@ public extension Style {
 
 public extension CGContext {
 
-    func with(elements:[StyleElement], block:() -> Void) {
+    func with(elements:[StyleElement], @noescape block:() -> Void) {
         let style = Style(elements: elements)
         with(style, block: block)
     }
 
-    func with(style:Style, block:() -> Void) {
+    func with(style:Style, @noescape block:() -> Void) {
         let savedStyle = self.style
         self.style = style
         with() {
