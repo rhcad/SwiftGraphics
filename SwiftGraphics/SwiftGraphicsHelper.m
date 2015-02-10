@@ -10,7 +10,7 @@
 
 static void MyCGPathApplierFunction(void *info, const CGPathElement *element);
 
-void CGPathApplyWithBlock(CGPathRef inPath, CGPathApplierBlock block) {
+void CGPathApplyWithBlock (CGPathRef inPath, __attribute__((noescape)) CGPathApplierBlock block) {
     CGPathApply(inPath, (__bridge void *)block, MyCGPathApplierFunction);
 }
     
