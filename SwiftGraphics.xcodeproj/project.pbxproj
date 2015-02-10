@@ -607,6 +607,15 @@
 			path = MarchingSquares;
 			sourceTree = "<group>";
 		};
+		453ABBB41A8A7FDE009B3A85 /* Move to SwiftGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				459673E81A819F2700BDF9D5 /* CGPath+Intersects.swift */,
+				459673EB1A81B37C00BDF9D5 /* GeometryExtensions.swift */,
+			);
+			name = "Move to SwiftGraphics";
+			sourceTree = "<group>";
+		};
 		453F7C051A7D6FC5002CE3A6 /* Generic Types */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,20 +762,16 @@
 		455AC2C41A76130B00BCC373 /* SwiftGraphics_OSX_Scratch */ = {
 			isa = PBXGroup;
 			children = (
+				453ABBB41A8A7FDE009B3A85 /* Move to SwiftGraphics */,
 				45124C9A1A89E16F000F5ABB /* MagicConsole */,
 				45DF79861A81456500C19B76 /* ToolbarIcons.sketch */,
-				459673E81A819F2700BDF9D5 /* CGPath+Intersects.swift */,
-				459673EB1A81B37C00BDF9D5 /* GeometryExtensions.swift */,
 				455AC2C71A76130B00BCC373 /* AppDelegate.swift */,
 				45CA2A671A7EFC83008DC058 /* ScratchWindowController.swift */,
 				455AC2C91A76130B00BCC373 /* ViewController.swift */,
 				45CA2A611A7EF4AE008DC058 /* Model.swift */,
 				455AC2E81A76135600BCC373 /* ScratchView.swift */,
 				45C545571A815FEA00C60723 /* Dragging.swift */,
-				458E377C1A8A658D0042F750 /* NSGestureRecognizer+Extensions.swift */,
-				458E377F1A8A70460042F750 /* NSObject+Extensions.h */,
-				458E37801A8A70460042F750 /* NSObject+Extensions.m */,
-				45B78E621A7702F80058B3A0 /* Scratch.swift */,
+				45BA16371A8A7FA300120AD2 /* Utilities */,
 				452F09171A81D2DD00334A4E /* SelectionMarquee.swift */,
 				455AC2CB1A76130B00BCC373 /* Images.xcassets */,
 				455AC2CD1A76130B00BCC373 /* Main.storyboard */,
@@ -862,6 +867,17 @@
 				45E38D301A74249000EC672A /* Markup */,
 			);
 			path = SwiftGraphics;
+			sourceTree = "<group>";
+		};
+		45BA16371A8A7FA300120AD2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				458E377C1A8A658D0042F750 /* NSGestureRecognizer+Extensions.swift */,
+				458E377F1A8A70460042F750 /* NSObject+Extensions.h */,
+				458E37801A8A70460042F750 /* NSObject+Extensions.m */,
+				45B78E621A7702F80058B3A0 /* Scratch.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		45CFDC9F1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */ = {
