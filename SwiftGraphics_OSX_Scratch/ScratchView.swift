@@ -51,6 +51,53 @@ class ScratchView: NSView {
             }
             thing.drawInContext(context)
         }
+
+//        context.plotPoints(locations)
+        if let startLocation = startLocation, currentLocation = currentLocation {
+            context.strokeColor = CGColor.redColor()
+            context.lineWidth = 1.0
+            context.lineDash = [10, 10]
+            context.strokeLine(startLocation, currentLocation)
+            context.lineDash = []
+        }
+    }
+
+    var locations:[CGPoint] = []
+    var startLocation:CGPoint?
+    var currentLocation:CGPoint?
+
+
+    override func addGestureRecognizer(gestureRecognizer: NSGestureRecognizer) {
+        super.addGestureRecognizer(gestureRecognizer)
+
+        if gestureRecognizer.isKindOfClass(NSPanGestureRecognizer.self) {
+            gestureRecognizer.addCallback() {
+                [unowned self] in
+                let location = gestureRecognizer.locationInView(self)
+
+
+                switch gestureRecognizer.state {
+                    case .Began:
+                        self.startLocation = location
+                        MagicLog("startLocation", location)
+                    case .Changed:
+                        MagicLog("location", location)
+                        let delta = location - self.startLocation!
+                        MagicLog("delta", location - delta)
+
+                        let angle = atan2(delta)
+//                        self.startLocation!.angleTo(location))
+
+                        MagicLog("angle", RadiansToDegrees(angle))
+
+                        self.currentLocation = location
+                    default:
+                        break
+                }
+                self.locations.append(location)
+                self.needsDisplay = true
+            }
+        }
     }
 
     override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject: AnyObject], context: UnsafeMutablePointer<Void>) {

@@ -26,7 +26,6 @@ class MagicConsole: NSObject {
 
     override init() {
         super.init()
-        logValue("test", value: "value")
     }
 
     func logValue(key:String, value:Printable) {
@@ -45,6 +44,10 @@ class MagicConsole: NSObject {
             rowsForKey[key] = row
         }
     }
+}
+
+func MagicLog(name:String, value:Printable) {
+    sharedMagicConsole.logValue(name, value: value)
 }
 
 let sharedMagicConsole = MagicConsole()
