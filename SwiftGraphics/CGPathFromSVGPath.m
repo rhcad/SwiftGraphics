@@ -273,13 +273,29 @@ static void svg_pathApplier(void *info, const CGPathElement *element)
     int n = 0;
     
     switch (element->type) {
-        case kCGPathElementAddLineToPoint: n = 1; break;
-        case kCGPathElementAddQuadCurveToPoint: n = 2; break;
-        case kCGPathElementAddCurveToPoint: n = 3; break;
-        default: break;
+        case kCGPathElementMoveToPoint:
+            pts[0] = element->points[0];
+            pts[1] = pts[0];
+            n = 1;
+            break;
+        case kCGPathElementAddLineToPoint:
+            pts[1] = pts[0];                // last point
+            pts[0] = element->points[0];
+            n = 1;
+            break;
+        case kCGPathElementAddQuadCurveToPoint:
+            n = 2;
+            break;
+        case kCGPathElementAddCurveToPoint:
+            n = 3;
+            break;
+        default:
+            break;
     }
-    for (int i = 0; i < n; ++i) {
-        pts[i] = element->points[n - i - 1];
+    if (n > 1) {
+        for (int i = 0; i < n; ++i) {       // pts[0]: end point
+            pts[i] = element->points[n - i - 1];
+        }
     }
 }
 
@@ -301,6 +317,7 @@ void CGPathFromSVGPath(CGMutablePathRef path, const char* s)
     CGFloat args[10] = { 0, 0, 0, 0, 0, 0 };
     int nargs = 0;
     int rargs = 0;
+    CGPoint end;
     
     while (*s) {
         s = svg_getNextPathItem(s, item);
@@ -316,11 +333,11 @@ void CGPathFromSVGPath(CGMutablePathRef path, const char* s)
             if (nargs < 10)
                 args[nargs++] = atof(item);
             if (nargs >= rargs) {
-                CGPoint end = CGPathGetCurrentPoint(path);
                 switch (cmd) {
                     case 'm':
                     case 'M':
                         if (cmd == 'm') {
+                            end = CGPathGetCurrentPoint(path);
                             CGPathMoveToPoint(path, nil, args[0]+end.x, args[1]+end.y);
                         } else {
                             CGPathMoveToPoint(path, nil, args[0], args[1]);
@@ -333,6 +350,7 @@ void CGPathFromSVGPath(CGMutablePathRef path, const char* s)
                     case 'l':
                     case 'L':
                         if (cmd == 'l') {
+                            end = CGPathGetCurrentPoint(path);
                             CGPathAddLineToPoint(path, nil, args[0]+end.x, args[1]+end.y);
                         } else {
                             CGPathAddLineToPoint(path, nil, args[0], args[1]);
@@ -340,15 +358,18 @@ void CGPathFromSVGPath(CGMutablePathRef path, const char* s)
                         break;
                     case 'H':
                     case 'h':
+                        end = CGPathGetCurrentPoint(path);
                         CGPathAddLineToPoint(path, nil, cmd == 'h' ? args[0] + end.x : args[0], end.y);
                         break;
                     case 'V':
                     case 'v':
+                        end = CGPathGetCurrentPoint(path);
                         CGPathAddLineToPoint(path, nil, end.x, cmd == 'v' ? args[0] + end.y : args[0]);
                         break;
                     case 'C':
                     case 'c':
                         if (cmd == 'c') {
+                            end = CGPathGetCurrentPoint(path);
                             CGPathAddCurveToPoint(path, nil, args[0]+end.x, args[1]+end.y,
                                                   args[2]+end.x, args[3]+end.y, args[4]+end.x, args[5]+end.y);
                         } else {
@@ -359,6 +380,7 @@ void CGPathFromSVGPath(CGMutablePathRef path, const char* s)
                     case 's': {
                         CGPoint cp1 = svg_outControlPoint(path);
                         if (cmd == 's') {
+                            end = CGPathGetCurrentPoint(path);
                             CGPathAddCurveToPoint(path, nil, cp1.x, cp1.y, args[0]+end.x, args[1]+end.y,
                                                   args[2]+end.x, args[3]+end.y);
                         } else {
@@ -369,6 +391,7 @@ void CGPathFromSVGPath(CGMutablePathRef path, const char* s)
                     case 'Q':
                     case 'q':
                         if (cmd == 'q') {
+                            end = CGPathGetCurrentPoint(path);
                             CGPathAddQuadCurveToPoint(path, nil, args[0]+end.x, args[1]+end.y,
                                                       args[2]+end.x, args[3]+end.y);
                         } else {
@@ -378,7 +401,8 @@ void CGPathFromSVGPath(CGMutablePathRef path, const char* s)
                     case 'T':
                     case 't': {
                         CGPoint cp1 = svg_outControlPoint(path);
-                        if (cmd == 's') {
+                        if (cmd == 't') {
+                            end = CGPathGetCurrentPoint(path);
                             CGPathAddQuadCurveToPoint(path, nil, cp1.x, cp1.y, args[0]+end.x, args[1]+end.y);
                         } else {
                             CGPathAddQuadCurveToPoint(path, nil, cp1.x, cp1.y, args[0], args[1]);
