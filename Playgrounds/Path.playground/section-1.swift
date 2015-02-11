@@ -17,25 +17,12 @@ path.addLine(CGPoint(x:-100, y:0), relative:true)
 path.addCubicCurveToPoint(CGPoint(x:100, y:100), control1:CGPoint(x:50, y:0), control2:CGPoint(x:150, y:0))
 path.close()
 
-path.dump()
+CGContextAddPath(context, path)
+CGContextStrokePath(context)
 
-//CGContextAddPath(context, path)
-path.enumerate() {
-    (type:CGPathElementType, points:[CGPoint]) -> Void in
-    switch type.value {
-    case kCGPathElementMoveToPoint.value:
-        CGContextMoveToPoint(context, points[0].x, points[0].y)
-    case kCGPathElementAddLineToPoint.value:
-        CGContextAddLineToPoint(context, points[1].x, points[1].y)
-    case kCGPathElementAddCurveToPoint.value:
-        CGContextAddCurveToPoint(context, points[1].x, points[1].y, points[2].x, points[2].y, points[3].x, points[3].y)
-    case kCGPathElementCloseSubpath.value:
-        CGContextClosePath(context)
-    default:
-        println("default")
-    }
-}
-
+path = CGPathFromSVGPath("M100,120h20t40,20Q150 200 100 140Z")
+context.strokeColor = CGColor.blueColor()
+CGContextAddPath(context, path)
 CGContextStrokePath(context)
 
 context.nsimage
