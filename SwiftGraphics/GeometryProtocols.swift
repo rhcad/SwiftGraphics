@@ -12,3 +12,13 @@ public protocol Geometry {
     var frame:CGRect { get }
 }
 
+public protocol CGPathable {
+    var cgpath:CGPath { get }
+}
+
+// TODO: Rename to Intersectionable? ICK
+public protocol HitTestable {
+    func contains(point:CGPoint) -> Bool
+    func intersects(rect:CGRect) -> Bool
+    func intersects(path:CGPath) -> Bool
+}

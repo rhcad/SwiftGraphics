@@ -7,19 +7,18 @@
 //
 
 import QuartzCore
-import SwiftGraphics
 
-class SelectionMarquee {
-    enum Mode {
+public class SelectionMarquee {
+    public enum Mode {
         case rectangular
         case polygonal
     }
-    enum Value {
+    public enum Value {
         case empty
         case rect(CGRect)
-        case polygon(SwiftGraphics.Polygon)
+        case polygon(Polygon)
 
-        var polygon:SwiftGraphics.Polygon? {
+        var polygon:Polygon? {
             get {
                 switch self {
                     case .polygon(let polygon):
@@ -31,12 +30,12 @@ class SelectionMarquee {
         }
     }
 
-    var mode = Mode.polygonal
-    var value = Value.empty
+    public var mode = Mode.polygonal
+    public var value = Value.empty
 
-    var layer:CAShapeLayer
+    public var layer:CAShapeLayer
 
-    init() {
+    public init() {
         active = false
         layer = CAShapeLayer()
         layer.fillColor = CGColor.blueColor().withAlpha(0.1)
@@ -44,7 +43,7 @@ class SelectionMarquee {
         layer.lineWidth = 1.0
     }
 
-    var active:Bool {
+    public var active:Bool {
         didSet {
             if active == false {
                 panBeganLocation = nil
@@ -55,8 +54,8 @@ class SelectionMarquee {
         }
     }
 
-    var panBeganLocation:CGPoint!
-    var panLocation:CGPoint! {
+    public var panBeganLocation:CGPoint!
+    public var panLocation:CGPoint! {
         didSet {
             if active == false {
                 return
@@ -83,7 +82,7 @@ class SelectionMarquee {
                     points.append(panLocation)
                     points = monotoneChain(points, sorted:false)
 
-                    let new_polygon = SwiftGraphics.Polygon(points:points)
+                    let new_polygon = Polygon(points:points)
                     value = Value.polygon(new_polygon)
                     newPath = new_polygon.cgpath
                     newFrame = CGRect(x:0, y:0, w:1000, h:1000) // TODO: Total hack

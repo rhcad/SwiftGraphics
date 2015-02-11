@@ -7,11 +7,9 @@
 //
 
 import CoreGraphics
-
-import SwiftGraphics
 import Accelerate
 
-extension CGPath {
+public extension CGPath {
 
     func intersects(drawing:CGContext -> Void) -> Bool {
         let boundingBox = CGPathGetBoundingBox(self)
@@ -51,7 +49,7 @@ extension CGPath {
     }
 
 
-    func intersects(path:CGPath) -> Bool {
+    public func intersects(path:CGPath) -> Bool {
 
         let boundingBox = CGPathGetBoundingBox(self)
 
@@ -62,7 +60,7 @@ extension CGPath {
         return intersects() { CGContextAddPath($0, path); CGContextFillPath($0) }
     }
 
-    func intersects(rect:CGRect) -> Bool {
+    public func intersects(rect:CGRect) -> Bool {
 
         let boundingBox = CGPathGetBoundingBox(self)
 
