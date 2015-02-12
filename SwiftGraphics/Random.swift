@@ -181,7 +181,7 @@ public struct Arc4RandomProvider: RandomProvider {
 
 // MARK: OS Random() RandomProvider
 
-public struct SRandomProvider: RandomProvider {
+public struct DarwinRandRandomProvider: RandomProvider {
 
     public var seed:UInt32 {
         didSet {
