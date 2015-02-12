@@ -2,12 +2,18 @@
 
 import Cocoa
 
-import SwiftGraphics
+struct Foo {
+    var bar:Int {
+        didSet {
+            println("DIDSET \(bar)")
+        }
+    }
 
-let context = CGContext.bitmapContext(CGRect(x:100, y:100, w:100, h:100), color:CGColor.redColor())
+    init() {
+        bar = 100
+    }
 
+}
 
-context.fillColor = CGColor.blueColor()
-context.fillRect(CGRect(x:110, y:110, w:80, h:80))
-
-context.nsimage
+var f = Foo()
+f.bar = 200

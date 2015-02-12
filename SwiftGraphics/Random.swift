@@ -9,11 +9,18 @@
 // MARK: Random Provider Protocol
 
 import CoreGraphics
+import Darwin
 
 public protocol RandomProvider {
     func random() -> UInt32
     func random(uniform:UInt32) -> UInt32
     var max: UInt32 { get }
+}
+
+public protocol RandomProvider64 {
+    func random() -> UInt64
+    func random(uniform:UInt64) -> UInt64
+    var max: UInt64 { get }
 }
 
 // MARK: Random
@@ -185,19 +192,19 @@ public struct DarwinRandRandomProvider: RandomProvider {
 
     public var seed:UInt32 {
         didSet {
-            srandom(seed)
+            Darwin.srandom(seed)
         }
     }
 
     public init() {
         seed = arc4random()
-        srandom(seed)
+        Darwin.srandom(seed)
 
     }
 
     public init(seed:UInt32) {
         self.seed = seed
-        srandom(seed)
+        Darwin.srandom(seed)
     }
 
     public func random() -> UInt32 {
@@ -226,6 +233,55 @@ public struct DarwinRandRandomProvider: RandomProvider {
 
     // From man-page: "It returns successive pseudo-random numbers in the range from 0 to (2**31)-1"
     public let max: UInt32 = UInt32(RAND_MAX)
+}
+
+// MARK: -
+
+public struct MT19937RandomProvider: RandomProvider64 {
+
+    public var seed:UInt64 {
+        didSet {
+            mt19937_64_srand(seed)
+        }
+    }
+
+    public init() {
+        // TODO: NO
+        seed = UInt64(arc4random())
+        mt19937_64_srand(seed)
+    }
+
+    public init(seed:UInt64) {
+        self.seed = seed
+        mt19937_64_srand(seed)
+    }
+
+    public func random() -> UInt64 {
+        return mt19937_64_rand()
+    }
+
+    public func random(uniform:UInt64) -> UInt64 {
+        switch uniform {
+            case 0:
+                return 0
+            case 1:
+                return 1
+            case max:
+                return random()
+            default:
+                let n = uniform
+                let remainder = max % n
+                var x:UInt64 = 0
+                do {
+                    x = random()
+                }
+                while x >= max - remainder
+                return x % n
+        }
+    }
+
+    // From man-page: "It returns successive pseudo-random numbers in the range from 0 to (2**31)-1"
+    public let max: UInt64 = UInt64.max
 }
 
 // MARK: Random array generator

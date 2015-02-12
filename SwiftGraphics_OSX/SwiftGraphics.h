@@ -18,5 +18,6 @@ FOUNDATION_EXPORT const unsigned char SwiftGraphicsVersionString[];
 
 #import <SwiftGraphics/SwiftGraphicsHelper.h>
 #import <SwiftGraphics/CColorConverter.h>
+#import <SwiftGraphics/CPPRandom.h>
 
 #import <SwiftGraphics/CDisplayLink.h>
