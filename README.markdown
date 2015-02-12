@@ -6,6 +6,10 @@ All development happens on the [develop][develop] branch. Code is merged back on
 
 [develop]: https://github.com/schwa/SwiftGraphics/tree/develop
 
+Also note this project is moving to Swift 1.2, which requires Xcode 6.3 and Mac OS X 10.10. Note that this changes breaks [Travis CI][issue58].
+
+[issue58]:https://github.com/schwa/SwiftGraphics/issues/58
+
 ## Bringing Swift goodness to Quartz.
 
 [![Travis][travis_img]][travis]
