@@ -51,6 +51,7 @@
 		45066D011A743BD400F561E1 /* Triangle+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CFF1A743BD400F561E1 /* Triangle+Markup.swift */; };
 		450717071A6B7EBA00E86EB4 /* Bitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450717061A6B7EBA00E86EB4 /* Bitmap.swift */; };
 		450717091A6B7F0700E86EB4 /* CGTypes+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450717081A6B7F0700E86EB4 /* CGTypes+String.swift */; };
+		4508FAE11A8C5C7D00E648D5 /* Handleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4508FAE01A8C5C7D00E648D5 /* Handleable.swift */; };
 		450C7EC51A849326003A8AD2 /* CGPointSwiftDocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C7EC41A849326003A8AD2 /* CGPointSwiftDocTests.swift */; };
 		45124C9C1A89E18F000F5ABB /* MagicConsole.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45124C9B1A89E18F000F5ABB /* MagicConsole.storyboard */; };
 		45124C9E1A89E1C7000F5ABB /* MagicConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45124C9D1A89E1C7000F5ABB /* MagicConsole.swift */; };
@@ -330,6 +331,7 @@
 		45066CFF1A743BD400F561E1 /* Triangle+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Triangle+Markup.swift"; sourceTree = "<group>"; };
 		450717061A6B7EBA00E86EB4 /* Bitmap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitmap.swift; sourceTree = "<group>"; };
 		450717081A6B7F0700E86EB4 /* CGTypes+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGTypes+String.swift"; sourceTree = "<group>"; };
+		4508FAE01A8C5C7D00E648D5 /* Handleable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Handleable.swift; sourceTree = "<group>"; };
 		450C7EC41A849326003A8AD2 /* CGPointSwiftDocTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointSwiftDocTests.swift; sourceTree = "<group>"; };
 		45124C9B1A89E18F000F5ABB /* MagicConsole.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MagicConsole.storyboard; sourceTree = "<group>"; };
 		45124C9D1A89E1C7000F5ABB /* MagicConsole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicConsole.swift; sourceTree = "<group>"; };
@@ -797,8 +799,8 @@
 			isa = PBXGroup;
 			children = (
 				45124C9A1A89E16F000F5ABB /* MagicConsole */,
-				45DF79861A81456500C19B76 /* ToolbarIcons.sketch */,
 				455AC2C71A76130B00BCC373 /* AppDelegate.swift */,
+				4508FAE01A8C5C7D00E648D5 /* Handleable.swift */,
 				45CA2A671A7EFC83008DC058 /* ScratchWindowController.swift */,
 				455AC2C91A76130B00BCC373 /* ViewController.swift */,
 				45CA2A611A7EF4AE008DC058 /* Model.swift */,
@@ -809,7 +811,6 @@
 				455AC2CB1A76130B00BCC373 /* Images.xcassets */,
 				455AC2CD1A76130B00BCC373 /* Main.storyboard */,
 				455AC2C51A76130B00BCC373 /* Supporting Files */,
-				458E377E1A8A70460042F750 /* SwiftGraphics_OSX_Scratch-Bridging-Header.h */,
 			);
 			path = SwiftGraphics_OSX_Scratch;
 			sourceTree = "<group>";
@@ -817,6 +818,8 @@
 		455AC2C51A76130B00BCC373 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				45DF79861A81456500C19B76 /* ToolbarIcons.sketch */,
+				458E377E1A8A70460042F750 /* SwiftGraphics_OSX_Scratch-Bridging-Header.h */,
 				455AC2C61A76130B00BCC373 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -1434,6 +1437,7 @@
 				455AC2C81A76130B00BCC373 /* AppDelegate.swift in Sources */,
 				45CA2A681A7EFC83008DC058 /* ScratchWindowController.swift in Sources */,
 				455AC2E91A76135600BCC373 /* ScratchView.swift in Sources */,
+				4508FAE11A8C5C7D00E648D5 /* Handleable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

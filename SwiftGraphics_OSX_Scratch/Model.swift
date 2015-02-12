@@ -38,7 +38,7 @@ class Model: NSObject {
     }
 
 
-    func objectselected(thing:Thing) -> Bool {
+    func objectSelected(thing:Thing) -> Bool {
         let index = find(objects, thing)
         return selectedObjectIndices.containsIndex(index!)
     }
@@ -93,7 +93,7 @@ class Thing: HitTestable, Drawable, Equatable {
 
     var selected: Bool {
         get {
-            return model!.objectselected(self)
+            return model!.objectSelected(self)
         }
     }
 
@@ -125,8 +125,8 @@ class Thing: HitTestable, Drawable, Equatable {
                 context.strokeColor = CGColor.blueColor()
                 self.geometry.drawInContext(context)
 
-                let markup = self.geometry.markup
-                context.draw(markup)
+//                let markup = self.geometry.markup
+//                context.draw(markup)
             }
         }
     }
