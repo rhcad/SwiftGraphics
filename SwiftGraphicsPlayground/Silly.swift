@@ -38,7 +38,7 @@ public func tiled(context:CGContext, tileSize:CGSize, dimension:IntSize, origin:
 
 public func stylesForMarkup(markup:[Markup]) -> [String:SwiftGraphics.Style] {
 
-    let rng = Random(provider: DarwinRandRandomProvider(seed: 42))
+    let rng = Random(provider: MersenneTwisterRandomProvider(seed: 42))
 
     var styles:[String:SwiftGraphics.Style] = [:]
     for item in markup {

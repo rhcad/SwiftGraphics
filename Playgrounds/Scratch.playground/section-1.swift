@@ -2,18 +2,10 @@
 
 import Cocoa
 
-struct Foo {
-    var bar:Int {
-        didSet {
-            println("DIDSET \(bar)")
-        }
-    }
+import SwiftGraphics
 
-    init() {
-        bar = 100
-    }
+let rng = Random.rng
 
-}
+rng.random(100)
 
-var f = Foo()
-f.bar = 200
+

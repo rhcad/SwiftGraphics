@@ -12,15 +12,13 @@ import CoreGraphics
 import Darwin
 
 public protocol RandomProvider {
-    func random() -> UInt32
-    func random(uniform:UInt32) -> UInt32
-    var max: UInt32 { get }
-}
-
-public protocol RandomProvider64 {
+    var seedless: Bool { get }
+    var max: UInt64 { get }
+    var seed: UInt64 { get }
+    init()
+    init(seed:UInt64)
     func random() -> UInt64
     func random(uniform:UInt64) -> UInt64
-    var max: UInt64 { get }
 }
 
 // MARK: Random
@@ -34,24 +32,37 @@ public struct Random {
 
     public let provider: RandomProvider!
 
+
+    public var max: UInt64 {
+        get {
+            return provider.max
+        }
+    }
+
+    public var seed: UInt64 {
+        get {
+            return provider.seed
+        }
+    }
+
     public init(provider:RandomProvider) {
         self.provider = provider
     }
 
-    public func random() -> UInt32 {
+    public func random() -> UInt64 {
         return provider.random()
     }
 
-    public func random(uniform:UInt32) -> UInt32 {
+    public func random(uniform:UInt64) -> UInt64 {
         return provider.random(uniform)
     }
 
-    public func random(range:ClosedInterval<UInt32>) -> UInt32 {
+    public func random(range:ClosedInterval<UInt64>) -> UInt64 {
         return random(range.end - range.start) + range.start
     }
 
     /// Default random number generator. Uses arc4random
-    public static var rng: Random = Random(provider: Arc4RandomProvider())
+    public static var rng: Random = Random(provider: MersenneTwisterRandomProvider())
 }
 
 // MARK: Ints
@@ -59,13 +70,13 @@ public struct Random {
 public extension Random {
 
     func random() -> Int {
-        let value:UInt32 = random()
+        let value:UInt64 = random()
         return Int(value)
     }
 
     func random(uniform:Int) -> Int {
-        assert(UInt32(uniform) <= provider.max && uniform >= 0)
-        let value:UInt32 = random(UInt32(uniform))
+        assert(UInt64(uniform) <= provider.max && uniform >= 0)
+        let value:UInt64 = random(UInt64(uniform))
         return Int(value)
     }
 
@@ -74,20 +85,19 @@ public extension Random {
     }
 }
 
-
 // MARK: Doubles
 
 public extension Random {
 
     func random() -> Double {
         typealias Type = Double
-        let value:UInt32 = random()
+        let value:UInt64 = random()
         return Type(value) / Type(provider.max)
     }
 
     func random(uniform:Double) -> Double {
         typealias Type = Double
-        let value:UInt32 = random()
+        let value:UInt64 = random()
         return Type(value) / Type(provider.max - 1) * uniform
     }
 
@@ -103,13 +113,13 @@ public extension Random {
 
     func random() -> CGFloat {
         typealias Type = CGFloat
-        let value:UInt32 = random()
+        let value:UInt64 = random()
         return Type(value) / Type(provider.max)
     }
 
     func random(uniform:CGFloat) -> CGFloat {
         typealias Type = CGFloat
-        let value:UInt32 = random()
+        let value:UInt64 = random()
         return Type(value) / Type(provider.max - 1) * uniform
     }
 
@@ -172,123 +182,47 @@ public extension Random {
     }
 }
 
-// MARK: Arc4RandomProvider
-
-public struct Arc4RandomProvider: RandomProvider {
-    public func random() -> UInt32 {
-        return arc4random()
-    }
-    public func random(uniform:UInt32) -> UInt32 {
-        return arc4random_uniform(uniform)
-    }
-
-    // From man-page: The arc4random() function returns pseudo-random pseudorandom random numbers in the range of 0 to (2**32)-1, and therefore has twice the range of rand(3) and random(3).
-    public let max: UInt32 = 4294967295
-}
-
-// MARK: OS Random() RandomProvider
-
-public struct DarwinRandRandomProvider: RandomProvider {
-
-    public var seed:UInt32 {
-        didSet {
-            Darwin.srandom(seed)
-        }
-    }
-
-    public init() {
-        seed = arc4random()
-        Darwin.srandom(seed)
-
-    }
-
-    public init(seed:UInt32) {
-        self.seed = seed
-        Darwin.srandom(seed)
-    }
-
-    public func random() -> UInt32 {
-        return UInt32(random())
-    }
-
-    public func random(uniform:UInt32) -> UInt32 {
-        switch uniform {
-            case 0:
-                return 0
-            case 1:
-                return 1
-            case max:
-                return random()
-            default:
-                let n = uniform
-                let remainder = max % n
-                var x:UInt32 = 0
-                do {
-                    x = random()
-                }
-                while x >= max - remainder
-                return x % n
-        }
-    }
-
-    // From man-page: "It returns successive pseudo-random numbers in the range from 0 to (2**31)-1"
-    public let max: UInt32 = UInt32(RAND_MAX)
-}
-
 // MARK: -
 
-public struct MT19937RandomProvider: RandomProvider64 {
+public typealias MersenneTwisterRandomProvider = MT19937RandomProvider
 
-    public var seed:UInt64 {
-        didSet {
-            mt19937_64_srand(seed)
-        }
+public class MT19937RandomProvider: RandomProvider {
+
+    public let seedless: Bool = false
+    public let max: UInt64 = UInt64.max
+    public let seed:UInt64
+
+    public var engine: UnsafeMutablePointer<Void>
+
+    public convenience required init() {
+        let seed = UInt64(arc4random()) << 32 | UInt64(arc4random())
+        self.init(seed:seed)
     }
 
-    public init() {
-        // TODO: NO
-        seed = UInt64(arc4random())
-        mt19937_64_srand(seed)
-    }
-
-    public init(seed:UInt64) {
+    public required init(seed:UInt64) {
         self.seed = seed
-        mt19937_64_srand(seed)
+        engine = NewMT19937Engine(seed)
+    }
+
+    deinit {
+        DeallocMT19937Engine(engine)
     }
 
     public func random() -> UInt64 {
-        return mt19937_64_rand()
+        return MT19937EngineGenerate(engine, 0, max)
     }
 
     public func random(uniform:UInt64) -> UInt64 {
-        switch uniform {
-            case 0:
-                return 0
-            case 1:
-                return 1
-            case max:
-                return random()
-            default:
-                let n = uniform
-                let remainder = max % n
-                var x:UInt64 = 0
-                do {
-                    x = random()
-                }
-                while x >= max - remainder
-                return x % n
-        }
+        return MT19937EngineGenerate(engine, 0, uniform)
     }
 
-    // From man-page: "It returns successive pseudo-random numbers in the range from 0 to (2**31)-1"
-    public let max: UInt64 = UInt64.max
 }
 
 // MARK: Random array generator
 
 /// Generate random points within the range.
-public func arrayOfRandomPoints(count:Int, range:CGRect) -> [CGPoint] {
+public func arrayOfRandomPoints(count:Int, range:CGRect, rng:Random = Random.rng) -> [CGPoint] {
     return Array <CGPoint> (count:count) {
-        return Random.rng.random(range)
+        return rng.random(range)
     }
 }

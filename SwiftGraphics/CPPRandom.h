@@ -12,8 +12,10 @@
 #if defined(__cplusplus)
 extern "C" {
 #endif
-    void mt19937_64_srand(UInt64 seed);
-    UInt64 mt19937_64_rand(void);
+
+    void *NewMT19937Engine(UInt64 seed);
+    void DeallocMT19937Engine(void *MT19937Engine);
+    UInt64 MT19937EngineGenerate(void *MT19937Engine, UInt64 lower, UInt64 upper);
 #if defined(__cplusplus)
 }
 #endif

@@ -16,12 +16,9 @@ let bad_points = [
 ]
 let bad_hull = monotoneChain(bad_points)
 
+let rng = Random(provider: MersenneTwisterRandomProvider(seed: 42))
 
-
-
-
-
-var points = arrayOfRandomPoints(50, CGRect(w:480, h:320))
+var points = arrayOfRandomPoints(50, CGRect(w:480, h:320), rng:rng)
 points.count
 
 //let hull = grahamScan(points)
