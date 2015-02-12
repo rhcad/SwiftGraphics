@@ -173,8 +173,7 @@ public extension CGPath {
             
             case kCGPathElementCloseSubpath.value:
                 block(type:kCGPathElementCloseSubpath, points:[curpt, start])
-            default:
-                println("default")
+            default: ()
             }
         }
     }
@@ -198,10 +197,7 @@ public extension CGPath {
                     pt = points[index - i + 1]
                 }
                 i = i + 3
-            case kCGPathElementCloseSubpath.value:
-                println("kCGPathElementCloseSubpath")
-            default:
-                println("default")
+            default: ()
             }
         }
         return pt
@@ -221,7 +217,7 @@ public extension CGPath {
             case kCGPathElementCloseSubpath.value:
                 println("kCGPathElementCloseSubpath (\(points[0].x),\(points[0].y))-(\(points[1].x),\(points[1].y))")
             default:
-                println("default")
+                assert(false)
             }
         }
     }
@@ -242,8 +238,7 @@ public extension CGPath {
                 ret += points[0].distanceTo(points[1])
             case kCGPathElementAddCurveToPoint.value:
                 ret += BezierCurve(points:points).length
-            default:
-                assert(false)
+            default: ()
             }
         }
         return ret
