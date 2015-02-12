@@ -191,10 +191,13 @@ public struct DarwinRandRandomProvider: RandomProvider {
 
     public init() {
         seed = arc4random()
+        srandom(seed)
+
     }
 
     public init(seed:UInt32) {
         self.seed = seed
+        srandom(seed)
     }
 
     public func random() -> UInt32 {
