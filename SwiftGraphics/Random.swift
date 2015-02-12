@@ -222,7 +222,7 @@ public struct SRandomProvider: RandomProvider {
     }
 
     // From man-page: "It returns successive pseudo-random numbers in the range from 0 to (2**31)-1"
-    public let max: UInt32 = 2147483647
+    public let max: UInt32 = UInt32(RAND_MAX)
 }
 
 // MARK: Random array generator
