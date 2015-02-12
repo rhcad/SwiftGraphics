@@ -95,7 +95,6 @@ extension Rectangle: HitTestable {
     }
 
     public func intersects(path:CGPath) -> Bool {
-        println("here")
         return path.intersects(frame)
     }
 }
