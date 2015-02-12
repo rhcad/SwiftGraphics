@@ -73,20 +73,76 @@ public func * (lhs:CGFloat, rhs:CGRect) -> CGRect {
 
 public extension CGRect {
 
-    var mid: CGPoint { get { return midXMidY } }
+    var mid: CGPoint {
+        get {
+            return midXMidY
+        }
+    }
 
-    var minXMinY: CGPoint { get { return CGPoint(x:minX, y:minY) } }
-    var minXMidY: CGPoint { get { return CGPoint(x:minX, y:midY) } }
-    var minXMaxY: CGPoint { get { return CGPoint(x:minX, y:maxY) } }
+    var minXMinY: CGPoint {
+        get {
+            return CGPoint(x:minX, y:minY)
+        }
+        set {
+            self = CGRect(p1:minXMinY, p2:maxXMaxY)
+        }
+    }
 
-    var midXMinY: CGPoint { get { return CGPoint(x:midX, y:minY) } }
-    var midXMidY: CGPoint { get { return CGPoint(x:midX, y:midY) } }
-    var midXMaxY: CGPoint { get { return CGPoint(x:midX, y:maxY) } }
+    var minXMidY: CGPoint {
+        get {
+            return CGPoint(x:minX, y:midY)
+        }
+    }
+    var minXMaxY: CGPoint {
+        get {
+            return CGPoint(x:minX, y:maxY)
+        }
+        set {
+            self = CGRect(p1:minXMaxY, p2:maxXMinY)
+        }
+    }
 
-    var maxXMinY: CGPoint { get { return CGPoint(x:maxX, y:minY) } }
-    var maxXMidY: CGPoint { get { return CGPoint(x:maxX, y:midY) } }
-    var maxXMaxY: CGPoint { get { return CGPoint(x:maxX, y:maxY) } }
+    var midXMinY: CGPoint {
+        get {
+            return CGPoint(x:midX, y:minY)
+        }
+    }
 
+    var midXMidY: CGPoint {
+        get {
+            return CGPoint(x:midX, y:midY)
+        }
+    }
+
+    var midXMaxY: CGPoint {
+        get {
+            return CGPoint(x:midX, y:maxY)
+        }
+    }
+
+    var maxXMinY: CGPoint {
+        get {
+            return CGPoint(x:maxX, y:minY)
+        }
+        set {
+            self = CGRect(p1:maxXMinY, p2:minXMaxY)
+        }
+    }
+
+    var maxXMidY: CGPoint {
+        get {
+            return CGPoint(x:maxX, y:midY)
+        }
+    }
+
+    var maxXMaxY: CGPoint {
+        get {
+            return CGPoint(x:maxX, y:maxY)
+        }
+        set {
+            self = CGRect(p1:maxXMaxY, p2:minXMinY)
+        }
+    }
 }
 
 // MARK: Misc. CGRect utilities.
