@@ -12,14 +12,25 @@ import CoreGraphics
 
 // TODO: Why not just make a typealias for CGRect? #question #help-wanted
 public struct Rectangle {
-    public let frame:CGRect
+    public var origin:CGPoint
+    public var size:CGSize
 
     public init(frame:CGRect) {
-        self.frame = frame
+        origin = frame.origin
+        size = frame.size
     }
 }
 
 extension Rectangle: Geometry {
+    public var frame: CGRect {
+        get {
+            return CGRect(origin:origin, size:size)
+        }
+        set {
+            origin = newValue.origin
+            size = newValue.size
+        }
+    }
 }
 
 // TODO: This cannot live in other file due to swiftc problems.
