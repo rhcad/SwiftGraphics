@@ -37,7 +37,7 @@ public extension CGContext {
             }
         }
         if let style = style {
-            with(style, block)
+            with(style, block: block)
         }
         else {
             block()

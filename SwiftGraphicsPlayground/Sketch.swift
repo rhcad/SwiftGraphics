@@ -30,12 +30,12 @@ import SwiftGraphics
     var name : String? { get }
 }
 
-public class GroupGeometryNode : GroupNode, GeometryNode {
+@objc public class GroupGeometryNode : GroupNode, GeometryNode {
     public var parent : Node?
     public var children : [Node] = []
     public var name : String?
     public var frame : CGRect { get {
-        let geometryChildren = children as [GeometryNode]
+        let geometryChildren = children as! [GeometryNode]
         
         let rects = geometryChildren.map {
             (child:GeometryNode) -> CGRect in
@@ -49,7 +49,7 @@ public class GroupGeometryNode : GroupNode, GeometryNode {
     }
 }
 
-public class CircleNode : Shape, Node, GeometryNode {
+@objc public class CircleNode : Shape, Node, GeometryNode {
     public var frame : CGRect { get { return CGRect(center:center, radius:radius) } }
 
     public var center : CGPoint
@@ -62,7 +62,7 @@ public class CircleNode : Shape, Node, GeometryNode {
     }
 }
 
-public class LineSegmentNode : Shape, Node, GeometryNode {
+@objc public class LineSegmentNode : Shape, Node, GeometryNode {
     public var frame : CGRect { get { return CGRect(p1:start, p2:end) } }
 
     public var start : CGPoint
@@ -75,7 +75,7 @@ public class LineSegmentNode : Shape, Node, GeometryNode {
     }
 }
 
-public class RectangleNode : Shape, Node, GeometryNode {
+@objc public class RectangleNode : Shape, Node, GeometryNode {
     public var frame : CGRect
 
     public var parent : Node?

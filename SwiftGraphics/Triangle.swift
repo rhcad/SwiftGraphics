@@ -136,11 +136,14 @@ public extension Triangle {
     public var signedArea: CGFloat {
         get {
             let (a, b, c) = points
-            let signedArea = 0.5 * (
-                a.x * (b.y - c.y) +
-                b.x * (c.y - a.y) +
-                c.x * (a.y - b.y)
-            )
+//            let signedArea = 0.5 * (
+//                a.x * (b.y - c.y) +
+//                b.x * (c.y - a.y) +
+//                c.x * (a.y - b.y)
+//            )
+//            return signedArea
+            // TODO: Swift 1.2: Simplified for "expression was too complex to be solved in reasonable time; consider breaking up the expression into distinct sub-expressions"
+            let signedArea = (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)) * CGFloat(0.5)
             return signedArea
         }
     }
@@ -151,7 +154,9 @@ public extension Triangle {
     public var circumcenter : CGPoint {
         get {
             let (a, b, c) = points
-            let D = 2 * (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y))
+//            let D = 2 * (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y))
+            // TODO: Swift 1.2: Simplified for "expression was too complex to be solved in reasonable time; consider breaking up the expression into distinct sub-expressions"
+            let D = (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)) * CGFloat(2.0)
             
             let a2 = a.x ** 2 + a.y ** 2
             let b2 = b.x ** 2 + b.y ** 2

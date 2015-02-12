@@ -14,14 +14,14 @@ public enum Turn: Int {
     case Right = -1
 }
 
-extension Turn {
-    public init(_ p:CGPoint, _ q:CGPoint, _ r:CGPoint) {
-        self = Turn.turn(p,q,r)
-    }
 
-    static func turn(p:CGPoint, _ q:CGPoint, _ r:CGPoint) -> Turn {
+public extension Turn {
+
+    // TODO: Swift 1.2 - can no longer init() enums via custom init methods. Workaround is to make the init failable. Fix this in fufture.
+    public init?(_ p:CGPoint, _ q:CGPoint, _ r:CGPoint) {
         let c = (q.x - p.x) * (r.y - p.y) - (r.x - p.x) * (q.y - p.y)
-        return c == 0 ? .None : (c > 0 ? .Left : .Right)
+        let turn:Turn = c == 0 ? .None : (c > 0 ? .Left : .Right)
+        self = turn
     }
 }
 

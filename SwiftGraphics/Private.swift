@@ -26,7 +26,7 @@ func ordered <T:Comparable> (tuple:(T, T)) -> (T, T) {
 
 
 extension Array {
-    init(count:Int, block:(Void) -> T) {
+    init(count:Int, @noescape block:(Void) -> T) {
         self.init()
         for N in 0..<count {
             self.append(block())

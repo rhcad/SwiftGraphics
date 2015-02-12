@@ -50,11 +50,8 @@ public struct Edge {
 }
 
 public struct Polygon {
-    public let edges:[Edge] = []
+    public let edges:[Edge]
 
-    public init() {
-    }
-    
     public init(edges:[Edge]) {
         self.edges = edges
     }

@@ -17,3 +17,4 @@ FOUNDATION_EXPORT const unsigned char SwiftGraphics_iOSVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <SwiftGraphics_iOS/PublicHeader.h>
 
 #import <SwiftGraphics/SwiftGraphicsHelper.h>
+#import <SwiftGraphics/CColorConverter.h>

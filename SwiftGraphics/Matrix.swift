@@ -14,7 +14,7 @@ public struct Matrix {
     var pointer:UnsafePointer <CGFloat>
     public let columns:Int // TODO: Rename to columnCount? Or combined as a size
     public let rows:Int // TODO: Rename to rowCount?
-    let stride:Int = 1
+    let stride:Int
 
     public init(data:NSData, columns:Int, rows:Int, start:Int = 0, stride:Int = 1) {
         assert(columns >= 0)
@@ -37,6 +37,7 @@ public struct Matrix {
         assert(rows >= 0)
         assert(stride >= 1)
 
+        self.data = nil
         self.pointer = pointer.advancedBy(start)
         self.columns = columns
         self.rows = rows
@@ -122,10 +123,8 @@ extension Matrix: Printable {
 
 public extension Matrix {
     init(values:Array <CGFloat>, columns:Int, rows:Int) {
-        data = NSData(bytes:values, length:values.count * sizeof(CGFloat))
-        self.pointer = UnsafePointer <CGFloat> (data!.bytes)
-        self.columns = columns
-        self.rows = rows
+        let data = NSData(bytes:values, length:values.count * sizeof(CGFloat))
+        self.init(data:data, columns:columns, rows:rows)
     }
 }
 

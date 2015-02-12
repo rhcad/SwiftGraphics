@@ -8,11 +8,9 @@
 
 import CoreGraphics
 
-import SwiftGraphics
-
 // MARK: -
 
-protocol CGPathable {
+public protocol CGPathable {
     var cgpath:CGPath { get }
 }
 
@@ -26,7 +24,7 @@ public protocol HitTestable {
 // MARK: -
 
 extension Rectangle: CGPathable {
-    var cgpath:CGPath {
+    public var cgpath:CGPath {
         get {
             return CGPathCreateWithRect(frame, nil)
         }
@@ -34,7 +32,7 @@ extension Rectangle: CGPathable {
 }
 
 extension Circle: CGPathable {
-    var cgpath:CGPath {
+    public var cgpath:CGPath {
         get {
             return CGPathCreateWithEllipseInRect(frame, nil)
         }
@@ -42,7 +40,7 @@ extension Circle: CGPathable {
 }
 
 extension Ellipse: CGPathable {
-    var cgpath:CGPath {
+    public var cgpath:CGPath {
         get {
             let path = CGPathCreateMutable()
             let (b1, b2, b3, b4) = self.asBezierCurves
@@ -59,7 +57,7 @@ extension Ellipse: CGPathable {
 }
 
 extension Triangle: CGPathable {
-    var cgpath:CGPath {
+    public var cgpath:CGPath {
         get {
             var path = CGPathCreateMutable()
             path.move(points.0)
@@ -72,7 +70,7 @@ extension Triangle: CGPathable {
 }
 
 extension SwiftGraphics.Polygon: CGPathable {
-    var cgpath:CGPath {
+    public var cgpath:CGPath {
         get {
             var path = CGPathCreateMutable()
             path.move(points[0])
@@ -154,13 +152,14 @@ extension Circle: HitTestable {
         let Cy = center.y
 
         // compute the triangle area times 2 (area = area2/2)
-        let area2 = abs((Bx-Ax) * (Cy-Ay) - (Cx-Ax) * (By-Ay))
+        let area2 = (Bx-Ax) * (Cy-Ay) - (Cx-Ax) * (By-Ay)
+        let abs_area2 = abs(area2)
 
         // compute the AB segment length
         let LAB = sqrt((Bx-Ax) ** 2 + (By-Ay) ** 2)
 
         // compute the triangle height
-        let h = area2 / LAB
+        let h = abs_area2 / LAB
 
         let R = radius
 

@@ -11,7 +11,7 @@ import Foundation
 import SwiftGraphics
 
 class Model: NSObject {
-    dynamic var objects:[Thing] = []
+    @objc var objects:[Thing] = []
     var selectedObjectIndices:NSMutableIndexSet = NSMutableIndexSet()
     var selectedObjects:[Thing] {
         get {
@@ -55,12 +55,16 @@ class Model: NSObject {
 
 
     func addObject(object:Thing) {
+        self.willChangeValueForKey("objects")
         self.objects.append(object)
+        self.didChangeValueForKey("objects")
     }
 
     func removeObject(object:Thing) {
+        self.willChangeValueForKey("objects")
         let index = find(objects, object)
         removeObjectAtIndex(index!)
+        self.didChangeValueForKey("objects")
     }
 
     func removeObjectAtIndex(index:Int) {

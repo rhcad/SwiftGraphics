@@ -17,7 +17,7 @@ import UIKit
 extension CGColor: Printable {
     public var description: String {
         get {
-            return CFCopyDescription(self)
+            return CFCopyDescription(self) as! String
         }
     }
 }
@@ -75,7 +75,7 @@ public extension CGColor {
 public extension CGColorSpace {
 #if os(OSX)
     var name:String {
-        return CGColorSpaceCopyName(self)
+        return CGColorSpaceCopyName(self) as! String
     }
 #endif
 }

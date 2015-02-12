@@ -58,7 +58,7 @@ class HandleEditor {
 
         drag.objectDidChange = {
             draggable in
-            let handle = draggable as Handle
+            let handle = draggable as! Handle
             handle.didMove?(position:handle.position)
             self.handleDidUpdate?()
             return

@@ -8,13 +8,13 @@
 
 import CoreGraphics
 
-import SwiftGraphics
-import Accelerate
-
-extension CGPath {
+public extension CGPath {
 
     func intersects(drawing:CGContext -> Void) -> Bool {
         let boundingBox = CGPathGetBoundingBox(self)
+        if boundingBox.size.area < 1 {
+            return false
+        }
 
         var context = CGContext.bitmapContext(boundingBox, color:CGColor.blackColor())
         CGContextSetAllowsAntialiasing(context, false)

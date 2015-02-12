@@ -45,9 +45,9 @@ public extension RGB {
 // MARK: HSV
 
 public struct HSV {
-    public let h:CGFloat = 0.0
-    public let s:CGFloat = 0.0
-    public let v:CGFloat = 0.0
+    public let h:CGFloat
+    public let s:CGFloat
+    public let v:CGFloat
 
     public init(h:CGFloat = 0.0, s:CGFloat = 0.0, v:CGFloat = 0.0) {
         (self.h, self.s, self.v) = (h,s,v)

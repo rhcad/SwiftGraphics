@@ -106,6 +106,7 @@ public extension CGPoint {
         return (distanceTo(perp), perp)
     }
 
+    // TODO: This should be identical to atan2() and it isn't!
     func angleTo(vec:CGPoint) -> CGFloat {       // [-M_PI, M_PI)
         return atan2(crossProduct(self, vec), dotProduct(self, vec))
     }

@@ -89,7 +89,6 @@ class SelectionMarquee {
                     newFrame = CGRect(x:0, y:0, w:1000, h:1000) // TODO: Total hack
             }
 
-
             CATransaction.begin()
             CATransaction.setDisableActions(true)
             layer.path = newPath

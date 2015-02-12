@@ -13,7 +13,7 @@ import AppKit
 
 public extension CGContext {
     func draw(string:String, point:CGPoint, attributes:NSDictionary?) {
-        string._bridgeToObjectiveC().drawAtPoint(point, withAttributes:attributes)
+        string._bridgeToObjectiveC().drawAtPoint(point, withAttributes:attributes as? [NSObject : AnyObject])
     }
 
     func drawLabel(string:String, point:CGPoint, size:CGFloat) {
