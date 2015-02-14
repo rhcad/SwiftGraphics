@@ -34,6 +34,8 @@
 		02AAA8EE1A7A16A5001898E2 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AAA8EC1A7A16A5001898E2 /* Gradient.swift */; };
 		02BF437E1A64FACB00132343 /* BezierCurve+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF437D1A64FACB00132343 /* BezierCurve+Extensions.swift */; };
 		02BF437F1A64FACB00132343 /* BezierCurve+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BF437D1A64FACB00132343 /* BezierCurve+Extensions.swift */; };
+		02C754921A8EEFB300936717 /* CGPath+Intersects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451908921A8A8131006894B4 /* CGPath+Intersects.swift */; };
+		02C754931A8EEFB700936717 /* GeometryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451908931A8A8131006894B4 /* GeometryExtensions.swift */; };
 		02C9D0121A71D12F00B9696E /* RegularPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9D0111A71D12F00B9696E /* RegularPolygon.swift */; };
 		02C9D0131A71D12F00B9696E /* RegularPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9D0111A71D12F00B9696E /* RegularPolygon.swift */; };
 		02C9D0261A724D9C00B9696E /* RegularPolygonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9D0251A724D9C00B9696E /* RegularPolygonTests.swift */; };
@@ -1508,10 +1510,12 @@
 				459EE5F419AEC5130012E023 /* CGSize.swift in Sources */,
 				459EE5EE19AEC5130012E023 /* CGPath.swift in Sources */,
 				45F32C761A64590E00E3DA68 /* Color.swift in Sources */,
+				02C754931A8EEFB700936717 /* GeometryExtensions.swift in Sources */,
 				458C59091A7410A500E993A6 /* GeometryProtocols.swift in Sources */,
 				459EE5F619AEC5130012E023 /* BasicGeometry.swift in Sources */,
 				459EE5F019AEC5130012E023 /* CGPoint.swift in Sources */,
 				45CFDC6A1A61CB4500053F96 /* GrahamScan.swift in Sources */,
+				02C754921A8EEFB300936717 /* CGPath+Intersects.swift in Sources */,
 				45E298751A69B2F6006FE740 /* BezierCurveChain.swift in Sources */,
 				45B8AE8E19BCE4ED00C61A3F /* CColorConverter.m in Sources */,
 				4594B09319AEE31E00101EB4 /* Path.swift in Sources */,
