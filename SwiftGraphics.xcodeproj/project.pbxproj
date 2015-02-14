@@ -37,6 +37,10 @@
 		02C9D0121A71D12F00B9696E /* RegularPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9D0111A71D12F00B9696E /* RegularPolygon.swift */; };
 		02C9D0131A71D12F00B9696E /* RegularPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9D0111A71D12F00B9696E /* RegularPolygon.swift */; };
 		02C9D0261A724D9C00B9696E /* RegularPolygonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C9D0251A724D9C00B9696E /* RegularPolygonTests.swift */; };
+		02DABB641A8F110F000C8D9F /* CGPathFromSVGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DABB621A8F110F000C8D9F /* CGPathFromSVGPath.m */; };
+		02DABB651A8F110F000C8D9F /* CGPathFromSVGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DABB621A8F110F000C8D9F /* CGPathFromSVGPath.m */; };
+		02DABB661A8F110F000C8D9F /* CGPathFromSVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DABB631A8F110F000C8D9F /* CGPathFromSVGPath.swift */; };
+		02DABB671A8F110F000C8D9F /* CGPathFromSVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DABB631A8F110F000C8D9F /* CGPathFromSVGPath.swift */; };
 		02E8FBC41A8615B90061D101 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8FBC31A8615B90061D101 /* Random.swift */; };
 		02E8FBC51A8615B90061D101 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8FBC31A8615B90061D101 /* Random.swift */; };
 		2E0F5BD91A6986DA00221BB0 /* ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0F5BD81A6986DA00221BB0 /* ColorTests.swift */; };
@@ -320,6 +324,8 @@
 		02BF437D1A64FACB00132343 /* BezierCurve+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BezierCurve+Extensions.swift"; sourceTree = "<group>"; };
 		02C9D0111A71D12F00B9696E /* RegularPolygon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularPolygon.swift; sourceTree = "<group>"; };
 		02C9D0251A724D9C00B9696E /* RegularPolygonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularPolygonTests.swift; sourceTree = "<group>"; };
+		02DABB621A8F110F000C8D9F /* CGPathFromSVGPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPathFromSVGPath.m; sourceTree = "<group>"; };
+		02DABB631A8F110F000C8D9F /* CGPathFromSVGPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPathFromSVGPath.swift; sourceTree = "<group>"; };
 		02E8FBC31A8615B90061D101 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		2E0F5BD81A6986DA00221BB0 /* ColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTests.swift; sourceTree = "<group>"; };
 		2E0F5BDA1A69BBA600221BB0 /* QuadrantTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadrantTests.swift; sourceTree = "<group>"; };
@@ -970,6 +976,8 @@
 				458C590A1A74121600E993A6 /* CGContext+Drawing.swift */,
 				4574C0261A64613A00454DE5 /* CGContext+BitmapContexts.swift */,
 				459EE5DF19AEC5130012E023 /* CGPath.swift */,
+				02DABB631A8F110F000C8D9F /* CGPathFromSVGPath.swift */,
+				02DABB621A8F110F000C8D9F /* CGPathFromSVGPath.m */,
 			);
 			name = Quartz;
 			sourceTree = "<group>";
@@ -1342,6 +1350,7 @@
 				458C59081A7410A500E993A6 /* GeometryProtocols.swift in Sources */,
 				45E38D2C1A74242E00EC672A /* Ellipse+Markup.swift in Sources */,
 				02AAA8ED1A7A16A5001898E2 /* Gradient.swift in Sources */,
+				02DABB661A8F110F000C8D9F /* CGPathFromSVGPath.swift in Sources */,
 				4563EFD91A7E9B7000019643 /* Matrix.swift in Sources */,
 				4594B08B19AEDC2100101EB4 /* SwiftGraphicsHelper.m in Sources */,
 				459EE5F119AEC5130012E023 /* CGRect.swift in Sources */,
@@ -1367,6 +1376,7 @@
 				458C590E1A74136000E993A6 /* Insidedness.swift in Sources */,
 				459EE5ED19AEC5130012E023 /* CGPath.swift in Sources */,
 				45E38D251A74235800EC672A /* Style.swift in Sources */,
+				02DABB641A8F110F000C8D9F /* CGPathFromSVGPath.m in Sources */,
 				456877E219B6857B004BEFD6 /* CoordinateSystems.swift in Sources */,
 				45E38D2E1A74242E00EC672A /* Markup.swift in Sources */,
 				45F32C721A6455BB00E3DA68 /* CGColor.swift in Sources */,
@@ -1485,6 +1495,7 @@
 				458A6D3B1A8455D900DEFBFA /* CGPoint+Trigonometry.swift in Sources */,
 				45F32C731A6455BB00E3DA68 /* CGColor.swift in Sources */,
 				45066CFB1A74347300F561E1 /* Lines.swift in Sources */,
+				02DABB671A8F110F000C8D9F /* CGPathFromSVGPath.swift in Sources */,
 				45E38D2B1A74242E00EC672A /* BezierPath+Markup.swift in Sources */,
 				459EE5FC19AEC5130012E023 /* Utilities.swift in Sources */,
 				4515825D19C9F21800856C91 /* Turn.swift in Sources */,
@@ -1517,6 +1528,7 @@
 				4594B09319AEE31E00101EB4 /* Path.swift in Sources */,
 				45E38D241A74235800EC672A /* Geometry+Drawable.swift in Sources */,
 				459EE5EA19AEC5130012E023 /* CGAffineTransform.swift in Sources */,
+				02DABB651A8F110F000C8D9F /* CGPathFromSVGPath.m in Sources */,
 				45066CFE1A74349500F561E1 /* Lines+Drawing.swift in Sources */,
 				45E38D2D1A74242E00EC672A /* Ellipse+Markup.swift in Sources */,
 				456C315D19C65B0E003AA1DF /* Ellipse.swift in Sources */,
