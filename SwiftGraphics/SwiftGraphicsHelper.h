@@ -11,3 +11,5 @@
 typedef void (^CGPathApplierBlock)(const CGPathElement *element);
 
 extern void CGPathApplyWithBlock(CGPathRef inPath, CGPathApplierBlock block);
+
+extern void CGPathFromSVGPath(CGMutablePathRef inPath, const char* s);
