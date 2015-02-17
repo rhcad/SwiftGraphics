@@ -25,6 +25,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0235A28D1A92CAA400F40948 /* CPPRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 4598FD951A8D250300F48BF7 /* CPPRandom.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		026F21041A5FB23E00A52D0E /* Fuzzy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B0D5619CA9E7F00044B7C /* Fuzzy.swift */; };
 		026F21051A5FB25800A52D0E /* CoordinateSystems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456877E119B6857B004BEFD6 /* CoordinateSystems.swift */; };
 		026F21061A5FB26600A52D0E /* MonotoneChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BA25B719CA112E00B612B7 /* MonotoneChain.swift */; };
@@ -1064,6 +1065,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45DA4AC919AA62A800133F32 /* SwiftGraphics.h in Headers */,
+				0235A28D1A92CAA400F40948 /* CPPRandom.h in Headers */,
 				4594B08A19AEDC2100101EB4 /* SwiftGraphicsHelper.h in Headers */,
 				451D29151A8A917400209FE3 /* CColorConverter.h in Headers */,
 			);
