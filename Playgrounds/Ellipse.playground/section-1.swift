@@ -7,19 +7,18 @@ import SwiftGraphicsPlayground
 var ellipses = [
     Ellipse(
         center:CGPointZero,
-        semiMajorAxis:150.0,
+        semiMajorAxis:300.0,
         eccentricity:0.9,
         rotation:DegreesToRadians(45)
     ),
-//    Ellipse(
-//        center:CGPointZero,
-//        semiMajorAxis:150.0,
-//        semiMinorAxis:65.3834841531101,
-//        rotation:DegreesToRadians(45)
-//        ),
-//    Ellipse(frame:CGRect(center:CGPointZero, size:CGSize(w:300, h:65.3834841531101 * 2))),
-//    Ellipse(frame:CGRect(center:CGPointZero, size:CGSize(w:300, h:200))),
-//    Ellipse(frame:CGRect(center:CGPointZero, size:CGSize(w:200, h:300))),
+    Ellipse(
+        center:CGPointZero,
+        semiMajorAxis:300.0,
+        semiMinorAxis:65.3834841531101 * 2,
+        rotation:DegreesToRadians(0)
+        ),
+    Ellipse(frame:CGRect(center:CGPointZero, size:CGSize(w:600, h:65.3834841531101 * 4))),
+    Ellipse(frame:CGRect(center:CGPointZero, size:CGSize(w:400, h:400))),
 ]
 
 let s = Int(ceil(sqrt(Double(ellipses.count))))
@@ -51,22 +50,44 @@ let styles = [
     ]
 
 
+let cgpath = CGPathCreateWithEllipseInRect(CGRect(center:CGPointZero, radius:1.0), nil)
+cgpath.dump()
+
+
 
 var generator = ellipses.generate()
 
-let tileSize = CGSize(w:400, h:400)
+let tileSize = CGSize(w:800, h:800)
 let bitmapSize = tileSize * CGFloat(s)
 
 let cgimage = CGContextRef.imageWithBlock(bitmapSize, color:CGColor.lightGrayColor(), origin:CGPointZero) {
     (context:CGContext) -> Void in
+
+    CGContextSetShouldAntialias(context, false)
 
     tiled(context, tileSize, IntSize(width:s, height:s), origin:CGPoint(x:0.5, y:0.5)) {
         (context:CGContext) -> Void in
 
         if let ellipse = generator.next() {
 
+            var c:CGFloat = 0.551915024494
 
-            context.stroke(ellipse.asBezierChain)
+            context.strokeColor = CGColor.greenColor()
+
+            var curves = ellipse.asBezierCurves(c:c)
+            context.stroke(curves.0)
+            context.stroke(curves.1)
+            context.stroke(curves.2)
+            context.stroke(curves.3)
+
+            context.strokeColor = CGColor.redColor()
+
+            c = 4.0 * (sqrt(2.0) - 1.0) / 3.0 // 0.5522847498307936
+            curves = ellipse.asBezierCurves(c:c)
+            context.stroke(curves.0)
+            context.stroke(curves.1)
+            context.stroke(curves.2)
+            context.stroke(curves.3)
 
             let markup = ellipse.markup
             context.draw(markup, styles:styles)

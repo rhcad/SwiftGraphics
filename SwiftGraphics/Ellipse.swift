@@ -132,19 +132,20 @@ public extension Ellipse {
 
     var asBezierChain:(BezierCurveChain) {
         get {
-            let curves = asBezierCurves
+            let curves = asBezierCurves()
             let curvesArray = [curves.0, curves.1, curves.2, curves.3]
             return BezierCurveChain(curves:curvesArray)
         }
     }
 
-    var asBezierCurves:(BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
-        get {
+    // From http://spencermortensen.com/articles/bezier-circle/ (via @iamdavidhart)
+    static let c:CGFloat = 0.551915024494
 
+    func asBezierCurves(c:CGFloat = Ellipse.c) -> (BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
             let t = CGAffineTransform(rotation: rotation)
 
-            let da = a * 4.0 * (sqrt(2.0) - 1.0) / 3.0
-            let db = b * 4.0 * (sqrt(2.0) - 1.0) / 3.0
+            let da = a * c
+            let db = b * c
 
             let curve0 = BezierCurve(
                 start:    center + CGPoint(x:0, y:b) * t,
@@ -172,6 +173,13 @@ public extension Ellipse {
             )
 
         return (curve0, curve1, curve2, curve3)
+    }
+
+    var asBezierCurves:(BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
+        get {
+//            let c:CGFloat = 0.551915024494
+//            let c:CGFloat = 4.0 * (sqrt(2.0) - 1.0) / 3.0 // 0.5522847498307936
+            return asBezierCurves()
         }
     }
 }
