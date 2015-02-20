@@ -88,7 +88,7 @@ class SketchView: NSView {
             (context:CGContext, node:Node) -> Void in
 
             // TODO: Random is good enough for a demo - not good enough for production.
-            let colorInt:UInt32 = Random.rng.random(0...0xFFFFFF) << 8 | 0xFF
+            let colorInt:UInt32 = UInt32(Random.rng.random(0...0xFFFFFF)) << 8 | 0xFF
             let color = NSColor(rgba:colorInt)
             colors[colorInt] = node
 //            println("DEFINING: \(colorInt.asHex()) \(color)")
