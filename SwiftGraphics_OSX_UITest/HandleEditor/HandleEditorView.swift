@@ -100,7 +100,7 @@ class BoxObject {
 
 extension BoxObject : Drawable {
     func draw(context:CGContext) {
-        self.draw(context)
+//        self.draw(context)
     }
 }
 

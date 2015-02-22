@@ -62,16 +62,11 @@
 		450C7EC51A849326003A8AD2 /* CGPointSwiftDocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C7EC41A849326003A8AD2 /* CGPointSwiftDocTests.swift */; };
 		45124C9C1A89E18F000F5ABB /* MagicConsole.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45124C9B1A89E18F000F5ABB /* MagicConsole.storyboard */; };
 		45124C9E1A89E1C7000F5ABB /* MagicConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45124C9D1A89E1C7000F5ABB /* MagicConsole.swift */; };
-		4514F60E1A61D4C400CC9C26 /* ArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F5FB1A61D4C400CC9C26 /* ArcView.swift */; };
-		4514F60F1A61D4C400CC9C26 /* ArcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F5FC1A61D4C400CC9C26 /* ArcViewController.swift */; };
-		4514F6101A61D4C400CC9C26 /* DemoSVGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F5FE1A61D4C400CC9C26 /* DemoSVGViewController.swift */; };
 		4514F6111A61D4C400CC9C26 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F5FF1A61D4C400CC9C26 /* DemoView.swift */; };
-		4514F6121A61D4C400CC9C26 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F6001A61D4C400CC9C26 /* EditorView.swift */; };
 		4514F6131A61D4C400CC9C26 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F6011A61D4C400CC9C26 /* main.swift */; };
 		4514F6151A61D4C400CC9C26 /* QuadTreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F6031A61D4C400CC9C26 /* QuadTreeView.swift */; };
 		4514F6181A61D4C400CC9C26 /* SketchOmniGraffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F6061A61D4C400CC9C26 /* SketchOmniGraffle.swift */; };
 		4514F6191A61D4C400CC9C26 /* SketchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F6071A61D4C400CC9C26 /* SketchView.swift */; };
-		4514F61A1A61D4C400CC9C26 /* SVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F6081A61D4C400CC9C26 /* SVGView.swift */; };
 		4514F61B1A61D4C400CC9C26 /* SwiftOutline.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4514F6091A61D4C400CC9C26 /* SwiftOutline.svg */; };
 		4514F61C1A61D4C400CC9C26 /* Test.graffle in Resources */ = {isa = PBXBuildFile; fileRef = 4514F60A1A61D4C400CC9C26 /* Test.graffle */; };
 		4514F61D1A61D4C400CC9C26 /* TestArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F60B1A61D4C400CC9C26 /* TestArc.swift */; };
@@ -206,7 +201,6 @@
 		45CFDC6C1A61CB6800053F96 /* ConvexHull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDC6B1A61CB6800053F96 /* ConvexHull.swift */; };
 		45CFDC6D1A61CB6800053F96 /* ConvexHull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDC6B1A61CB6800053F96 /* ConvexHull.swift */; };
 		45CFDCA31A61CE3500053F96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDCA21A61CE3500053F96 /* AppDelegate.swift */; };
-		45CFDCA51A61CE3500053F96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CFDCA41A61CE3500053F96 /* ViewController.swift */; };
 		45CFDCA71A61CE3500053F96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45CFDCA61A61CE3500053F96 /* Images.xcassets */; };
 		45CFDCAA1A61CE3500053F96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CFDCA81A61CE3500053F96 /* Main.storyboard */; };
 		45DA4AC919AA62A800133F32 /* SwiftGraphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DA4AC819AA62A800133F32 /* SwiftGraphics.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -347,17 +341,12 @@
 		450C7EC41A849326003A8AD2 /* CGPointSwiftDocTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointSwiftDocTests.swift; sourceTree = "<group>"; };
 		45124C9B1A89E18F000F5ABB /* MagicConsole.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MagicConsole.storyboard; sourceTree = "<group>"; };
 		45124C9D1A89E1C7000F5ABB /* MagicConsole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicConsole.swift; sourceTree = "<group>"; };
-		4514F5FB1A61D4C400CC9C26 /* ArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcView.swift; sourceTree = "<group>"; };
-		4514F5FC1A61D4C400CC9C26 /* ArcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcViewController.swift; sourceTree = "<group>"; };
 		4514F5FD1A61D4C400CC9C26 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
-		4514F5FE1A61D4C400CC9C26 /* DemoSVGViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoSVGViewController.swift; sourceTree = "<group>"; };
 		4514F5FF1A61D4C400CC9C26 /* DemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
-		4514F6001A61D4C400CC9C26 /* EditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		4514F6011A61D4C400CC9C26 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4514F6031A61D4C400CC9C26 /* QuadTreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadTreeView.swift; sourceTree = "<group>"; };
 		4514F6061A61D4C400CC9C26 /* SketchOmniGraffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchOmniGraffle.swift; sourceTree = "<group>"; };
 		4514F6071A61D4C400CC9C26 /* SketchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SketchView.swift; sourceTree = "<group>"; };
-		4514F6081A61D4C400CC9C26 /* SVGView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SVGView.swift; sourceTree = "<group>"; };
 		4514F6091A61D4C400CC9C26 /* SwiftOutline.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SwiftOutline.svg; sourceTree = "<group>"; };
 		4514F60A1A61D4C400CC9C26 /* Test.graffle */ = {isa = PBXFileReference; lastKnownFileType = file; path = Test.graffle; sourceTree = "<group>"; };
 		4514F60B1A61D4C400CC9C26 /* TestArc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestArc.swift; sourceTree = "<group>"; };
@@ -473,7 +462,6 @@
 		45CFDC9E1A61CE3500053F96 /* SwiftGraphics_OSX_UITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftGraphics_OSX_UITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CFDCA11A61CE3500053F96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45CFDCA21A61CE3500053F96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		45CFDCA41A61CE3500053F96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		45CFDCA61A61CE3500053F96 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		45CFDCA91A61CE3500053F96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45DA4AC419AA62A800133F32 /* SwiftGraphics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftGraphics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -637,15 +625,9 @@
 		453997BF1A61F2DB00572E47 /* View & ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				45CFDCA41A61CE3500053F96 /* ViewController.swift */,
-				4514F5FC1A61D4C400CC9C26 /* ArcViewController.swift */,
-				4514F5FB1A61D4C400CC9C26 /* ArcView.swift */,
 				4514F5FF1A61D4C400CC9C26 /* DemoView.swift */,
-				4514F6001A61D4C400CC9C26 /* EditorView.swift */,
 				4514F6031A61D4C400CC9C26 /* QuadTreeView.swift */,
 				4514F6071A61D4C400CC9C26 /* SketchView.swift */,
-				4514F5FE1A61D4C400CC9C26 /* DemoSVGViewController.swift */,
-				4514F6081A61D4C400CC9C26 /* SVGView.swift */,
 				45B32D501A637EE7004FD3FB /* Utilities.swift */,
 			);
 			name = "View & ViewControllers";
@@ -1469,24 +1451,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				455621931A6A2EAC00EB181E /* Dragging.swift in Sources */,
-				45CFDCA51A61CE3500053F96 /* ViewController.swift in Sources */,
 				453997C91A61F89F00572E47 /* BouncingBalls.swift in Sources */,
-				4514F60E1A61D4C400CC9C26 /* ArcView.swift in Sources */,
 				453997CA1A61F89F00572E47 /* Grid.swift in Sources */,
 				455621911A6A2DD800EB181E /* Scratch.swift in Sources */,
 				4514F6151A61D4C400CC9C26 /* QuadTreeView.swift in Sources */,
 				4514F61D1A61D4C400CC9C26 /* TestArc.swift in Sources */,
 				45B32D531A637F10004FD3FB /* OmniGraffle.swift in Sources */,
-				4514F61A1A61D4C400CC9C26 /* SVGView.swift in Sources */,
 				453997CD1A61F89F00572E47 /* Polygon.swift in Sources */,
 				4514F6131A61D4C400CC9C26 /* main.swift in Sources */,
 				45CFDCA31A61CE3500053F96 /* AppDelegate.swift in Sources */,
-				4514F60F1A61D4C400CC9C26 /* ArcViewController.swift in Sources */,
-				4514F6101A61D4C400CC9C26 /* DemoSVGViewController.swift in Sources */,
 				453997CB1A61F89F00572E47 /* MarchingSquares.swift in Sources */,
 				4514F6191A61D4C400CC9C26 /* SketchView.swift in Sources */,
 				4514F6181A61D4C400CC9C26 /* SketchOmniGraffle.swift in Sources */,
-				4514F6121A61D4C400CC9C26 /* EditorView.swift in Sources */,
 				453997CC1A61F89F00572E47 /* MetaballsView.swift in Sources */,
 				45B32D511A637EE7004FD3FB /* Utilities.swift in Sources */,
 				4514F6111A61D4C400CC9C26 /* DemoView.swift in Sources */,
