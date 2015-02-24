@@ -18,7 +18,7 @@ public extension CGContext {
 
         let colorspace = CGColorSpaceCreateDeviceRGB()
         var bitmapInfo = CGBitmapInfo(CGImageAlphaInfo.PremultipliedFirst.rawValue)
-        let context = CGBitmapContextCreate(nil, UInt(bounds.size.width), UInt(bounds.size.height), 8, UInt(bounds.size.width) * 4, colorspace, bitmapInfo)
+        let context = CGBitmapContextCreate(nil, Int(bounds.size.width), Int(bounds.size.height), 8, Int(bounds.size.width) * 4, colorspace, bitmapInfo)
 
         CGContextTranslateCTM(context, -bounds.origin.x, -bounds.origin.y)
 
@@ -35,7 +35,7 @@ public extension CGContext {
 
         let colorspace = CGColorSpaceCreateDeviceRGB()
         var bitmapInfo = CGBitmapInfo(CGImageAlphaInfo.PremultipliedFirst.rawValue)
-        let context = CGBitmapContextCreate(nil, UInt(size.width), UInt(size.height), 8, UInt(size.width) * 4, colorspace, bitmapInfo)
+        let context = CGBitmapContextCreate(nil, Int(size.width), Int(size.height), 8, Int(size.width) * 4, colorspace, bitmapInfo)
 
         context.with {
             context.setFillColor(color)

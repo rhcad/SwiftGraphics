@@ -36,7 +36,7 @@ public extension CGContext {
     func setLineDash(lengths:[CGFloat], phase:CGFloat = 0.0) {
         lengths.withUnsafeBufferPointer {
             (buffer:UnsafeBufferPointer<CGFloat>) -> Void in
-            CGContextSetLineDash(self, phase, buffer.baseAddress, UInt(lengths.count))
+            CGContextSetLineDash(self, phase, buffer.baseAddress, lengths.count)
         }
     }
 

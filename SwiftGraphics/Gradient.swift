@@ -69,9 +69,9 @@ public struct Gradient {
             }
             if valid {
                 if let locations = locations {
-                    cached = CGGradientCreateWithColorComponents(colorspace, components, locations, UInt(colors.count))
+                    cached = CGGradientCreateWithColorComponents(colorspace, components, locations, Int(colors.count))
                 } else {
-                    cached = CGGradientCreateWithColorComponents(colorspace, components, nil, UInt(colors.count))
+                    cached = CGGradientCreateWithColorComponents(colorspace, components, nil, Int(colors.count))
                 }
                 return cached
             }

@@ -31,7 +31,7 @@ public extension CGContext {
     func strokeLines(points:[CGPoint]) {
         points.withUnsafeBufferPointer {
             (p:UnsafeBufferPointer<CGPoint>) -> Void in
-            CGContextStrokeLineSegments(self, p.baseAddress, UInt(points.count))
+            CGContextStrokeLineSegments(self, p.baseAddress, points.count)
         }
     }
 

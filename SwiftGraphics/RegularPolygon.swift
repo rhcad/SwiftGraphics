@@ -95,7 +95,7 @@ public extension RegularPolygon {
     //! Returns new polygon whose two adjacent vertexes moved to the specified locations.
     public func twoPointsMoved(v1:(Int, CGPoint), _ v2:(Int, CGPoint)) -> RegularPolygon {
         func isBeside(i1:Int, i2:Int) -> Bool {
-            return i1 >= 0 && i1 < i2 && i2 < nside && (i1 == i2 - 1 || (i1 == 0 && i2 == nside - 1))
+            return i1 >= 0 && i1 < i2 && i2 < self.nside && (i1 == i2 - 1 || (i1 == 0 && i2 == self.nside - 1))
         }
         if isBeside(min(v1.0, v2.0), max(v1.0, v2.0)) && v1.1 !=% v2.1 {
             let xf = CGAffineTransform(from1:getPoint(v1.0), from2:getPoint(v2.0), to1:v1.1, to2:v2.1)
