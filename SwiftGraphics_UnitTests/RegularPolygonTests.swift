@@ -37,7 +37,6 @@ class RegularPolygonTests: XCTestCase {
         
         XCTAssertEqualWithAccuracy(p.center.x, t.circumcenter.x, tolerance)
         XCTAssertEqualWithAccuracy(p.center.y, t.circumcenter.y, tolerance)
-        XCTAssertEqualWithAccuracy(p.length, {let s=t.lengths; return s.0+s.1+s.2}(), tolerance)
         
         // TODO: There are some issues in Triangle class, so comment the following lines.
         XCTAssertEqualWithAccuracy(p.area, t.area, tolerance)
@@ -45,6 +44,8 @@ class RegularPolygonTests: XCTestCase {
         XCTAssertEqualWithAccuracy(p.inradius, t.inradius, tolerance)
         //XCTAssertEqualWithAccuracy(p.center.x, t.incenter.x, tolerance)
         //XCTAssertEqualWithAccuracy(p.center.y, t.incenter.y, tolerance)
+// TODO: Comment out the following line to crash Swift 1.2b2 (Apple Swift version 1.2)
+//        XCTAssertEqualWithAccuracy(p.length, {let s=t.lengths; return s.0+s.1+s.2}(), tolerance)
     }
 
 }
