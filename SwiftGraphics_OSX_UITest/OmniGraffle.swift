@@ -67,9 +67,8 @@ extension OmniGraffleDocumentModel {
 
     func load() {
         let data = NSData(contentsOfCompressedFile:path)
-        var error:NSString?
-        if let d = NSPropertyListSerialization.propertyListFromData(data, mutabilityOption: NSPropertyListMutabilityOptions(), format: nil, errorDescription:&error) as? NSDictionary {
-        
+        var error:NSError?
+        if let d = NSPropertyListSerialization.propertyListWithData(data, options:NSPropertyListReadOptions(), format: nil, error:&error) as? NSDictionary {
             _processRoot(d)
             let origin = StringToPoint(d["CanvasOrigin"] as! String)
             let size = StringToSize(d["CanvasSize"] as! String)
