@@ -7,7 +7,8 @@
 //
 
 #import <CoreGraphics/CoreGraphics.h>
-#include <math.h>
+
+#include <tgmath.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -105,22 +106,8 @@ static int svg_getArgsPerElement(char cmd)
     return 0;
 }
 
-#if CGFLOAT_IS_DOUBLE
-#define sqrt_ sqrt
-#define acos_ acos
-#define sin_  sin
-#define cos_  cos
-#define fabs_ fabs
-#else
-#define sqrt_ sqrtf
-#define acos_ acosf
-#define sin_  sinf
-#define cos_  cos
-#define fabs_ fabsf
-#endif
-
 static CGFloat svg_sqr(CGFloat x) { return x*x; }
-static CGFloat svg_vmag(CGFloat x, CGFloat y) { return sqrt_(x*x + y*y); }
+static CGFloat svg_vmag(CGFloat x, CGFloat y) { return sqrt(x*x + y*y); }
 
 static CGFloat svg_vecrat(CGFloat ux, CGFloat uy, CGFloat vx, CGFloat vy)
 {
@@ -132,7 +119,7 @@ static CGFloat svg_vecang(CGFloat ux, CGFloat uy, CGFloat vx, CGFloat vy)
     CGFloat r = svg_vecrat(ux,uy, vx,vy);
     if (r < -1.0f) r = -1.0f;
     if (r > 1.0f) r = 1.0f;
-    return ((ux*vy < uy*vx) ? -1.0f : 1.0f) * acos_(r);
+    return ((ux*vy < uy*vx) ? -1.0f : 1.0f) * acos(r);
 }
 
 static void svg_xformPoint(CGFloat* dx, CGFloat* dy, CGFloat x, CGFloat y, const CGFloat* t)
@@ -161,11 +148,11 @@ static void svg_pathArcTo(CGMutablePathRef path, const CGFloat* args, bool rel)
     CGFloat hda, kappa;
     CGPoint end = CGPathGetCurrentPoint(path);
     
-    rx = fabs_(args[0]);				// y radius
-    ry = fabs_(args[1]);				// x radius
+    rx = fabs(args[0]);				// y radius
+    ry = fabs(args[1]);				// x radius
     rotx = args[2] * M_PI / 180.f;      // x rotation engle
-    fa = fabs_(args[3]) > 1e-6 ? 1 : 0;	// Large arc
-    fs = fabs_(args[4]) > 1e-6 ? 1 : 0;	// Sweep direction
+    fa = fabs(args[3]) > 1e-6 ? 1 : 0;	// Large arc
+    fs = fabs(args[4]) > 1e-6 ? 1 : 0;	// Sweep direction
     x1 = end.x;                          // start point
     y1 = end.y;
     if (rel) {							// end point
@@ -178,15 +165,15 @@ static void svg_pathArcTo(CGMutablePathRef path, const CGFloat* args, bool rel)
     
     dx = x1 - x2;
     dy = y1 - y2;
-    d = sqrt_(dx*dx + dy*dy);
+    d = sqrt(dx*dx + dy*dy);
     if (d < 1e-6f || rx < 1e-6f || ry < 1e-6f) {
         // The arc degenerates to a line
         CGPathAddLineToPoint(path, nil, x2, y2);
         return;
     }
     
-    sinrx = sin_(rotx);
-    cosrx = cos_(rotx);
+    sinrx = sin(rotx);
+    cosrx = cos(rotx);
     
     // Convert to center point parameterization.
     // http://www.w3.org/TR/SVG11/implnote.html#ArcImplementationNotes
@@ -195,7 +182,7 @@ static void svg_pathArcTo(CGMutablePathRef path, const CGFloat* args, bool rel)
     y1p = -sinrx * dx / 2.0f + cosrx * dy / 2.0f;
     d = svg_sqr(x1p)/svg_sqr(rx) + svg_sqr(y1p)/svg_sqr(ry);
     if (d > 1) {
-        d = sqrt_(d);
+        d = sqrt(d);
         rx *= d;
         ry *= d;
     }
@@ -205,7 +192,7 @@ static void svg_pathArcTo(CGMutablePathRef path, const CGFloat* args, bool rel)
     sb = svg_sqr(rx)*svg_sqr(y1p) + svg_sqr(ry)*svg_sqr(x1p);
     if (sa < 0.0f) sa = 0.0f;
     if (sb > 0.0f)
-        s = sqrt_(sa / sb);
+        s = sqrt(sa / sb);
     if (fa == fs)
         s = -s;
     cxp = s * rx * y1p / ry;
@@ -240,16 +227,16 @@ static void svg_pathArcTo(CGMutablePathRef path, const CGFloat* args, bool rel)
     t[4] = cx; t[5] = cy;
     
     // Split arc into max 90 degree segments.
-    ndivs = (int)(fabs_(da) / M_PI_2 + 0.5f);
+    ndivs = (int)(fabs(da) / M_PI_2 + 0.5f);
     hda = (da / (CGFloat)ndivs) / 2.0f;
-    kappa = fabs_(4.0f / 3.0f * (1.0f - cos_(hda)) / sin_(hda));
+    kappa = fabs(4.0f / 3.0f * (1.0f - cos(hda)) / sin(hda));
     if (da < 0.0f)
         kappa = -kappa;
     
     for (i = 0; i <= ndivs; i++) {
         a = a1 + da * (i/(CGFloat)ndivs);
-        dx = cos_(a);
-        dy = sin_(a);
+        dx = cos(a);
+        dy = sin(a);
         svg_xformPoint(&x, &y, dx*rx, dy*ry, t); // position
         svg_xformVec(&tanx, &tany, -dy*rx * kappa, dx*ry * kappa, t); // tangent
         if (i > 0) {
