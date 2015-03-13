@@ -16,6 +16,11 @@ public extension CGContext {
         CGContextStrokePath(self)
     }
 
+    func fillPath(path:CGPath) {
+        CGContextAddPath(self, path)
+        CGContextFillPath(self)
+    }
+
     func fillRect(rect:CGRect) {
         CGContextFillRect(self, rect)
     }

@@ -96,6 +96,8 @@
 		451D29211A8A920800209FE3 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F7C091A7D7188002CE3A6 /* MatrixTests.swift */; };
 		451D29221A8A920800209FE3 /* BezierPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F7C0B1A7D71AC002CE3A6 /* BezierPathTests.swift */; };
 		452F09181A81D2DD00334A4E /* SelectionMarquee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F09171A81D2DD00334A4E /* SelectionMarquee.swift */; };
+		4535BD601AB260F3005A04A5 /* BezierCurve+Transforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4535BD5F1AB260F3005A04A5 /* BezierCurve+Transforms.swift */; };
+		4535BD611AB260F3005A04A5 /* BezierCurve+Transforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4535BD5F1AB260F3005A04A5 /* BezierCurve+Transforms.swift */; };
 		4537991A19AA6C37004DF99E /* CGPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537991919AA6C37004DF99E /* CGPointTests.swift */; };
 		4537991D19AA788B004DF99E /* CGSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537991C19AA788B004DF99E /* CGSizeTests.swift */; };
 		453997C91A61F89F00572E47 /* BouncingBalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453997C31A61F89F00572E47 /* BouncingBalls.swift */; };
@@ -362,6 +364,7 @@
 		451D29091A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGraphics_iOS_UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		451D290C1A8A911F00209FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		452F09171A81D2DD00334A4E /* SelectionMarquee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionMarquee.swift; sourceTree = "<group>"; };
+		4535BD5F1AB260F3005A04A5 /* BezierCurve+Transforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BezierCurve+Transforms.swift"; sourceTree = "<group>"; };
 		4537990419AA671E004DF99E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4537990519AA671E004DF99E /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 		4537991919AA6C37004DF99E /* CGPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointTests.swift; sourceTree = "<group>"; };
@@ -595,6 +598,17 @@
 				451D290C1A8A911F00209FE3 /* Info.plist */,
 			);
 			path = SwiftGraphics_iOS_UnitTests;
+			sourceTree = "<group>";
+		};
+		4535BD5E1AB260B0005A04A5 /* BezierCurve */ = {
+			isa = PBXGroup;
+			children = (
+				459EE5DC19AEC5130012E023 /* BezierCurve.swift */,
+				02BF437D1A64FACB00132343 /* BezierCurve+Extensions.swift */,
+				45E298721A69B2DC006FE740 /* BezierCurveChain.swift */,
+				4535BD5F1AB260F3005A04A5 /* BezierCurve+Transforms.swift */,
+			);
+			name = BezierCurve;
 			sourceTree = "<group>";
 		};
 		453997BD1A61F2B700572E47 /* Misc */ = {
@@ -890,6 +904,7 @@
 				458A6D381A8454AD00DEFBFA /* CoreTypes */,
 				453F7C051A7D6FC5002CE3A6 /* Generic Types */,
 				45DC21761A6979DD00A25EC9 /* Geometry */,
+				4535BD5E1AB260B0005A04A5 /* BezierCurve */,
 				45DC21771A697A2600A25EC9 /* Quartz */,
 				45DC21781A697A4100A25EC9 /* Color */,
 				458C59031A740A7D00E993A6 /* Utilities */,
@@ -951,9 +966,6 @@
 				458C59071A7410A500E993A6 /* GeometryProtocols.swift */,
 				459EE5E319AEC5130012E023 /* BasicGeometry.swift */,
 				45066CF91A74347300F561E1 /* Lines.swift */,
-				459EE5DC19AEC5130012E023 /* BezierCurve.swift */,
-				02BF437D1A64FACB00132343 /* BezierCurve+Extensions.swift */,
-				45E298721A69B2DC006FE740 /* BezierCurveChain.swift */,
 				459A4C4B1A69913600E87608 /* Circle.swift */,
 				456C315B19C65B0E003AA1DF /* Ellipse.swift */,
 				02C9D0111A71D12F00B9696E /* RegularPolygon.swift */,
@@ -1364,6 +1376,7 @@
 				451908941A8A8131006894B4 /* CGPath+Intersects.swift in Sources */,
 				459EE5F719AEC5130012E023 /* Quadrant.swift in Sources */,
 				459A4C4C1A69913600E87608 /* Circle.swift in Sources */,
+				4535BD601AB260F3005A04A5 /* BezierCurve+Transforms.swift in Sources */,
 				459EE5F319AEC5130012E023 /* CGSize.swift in Sources */,
 				4574C0271A64613A00454DE5 /* CGContext+BitmapContexts.swift in Sources */,
 				45BA25B819CA112E00B612B7 /* MonotoneChain.swift in Sources */,
@@ -1519,6 +1532,7 @@
 				459EE5F019AEC5130012E023 /* CGPoint.swift in Sources */,
 				45CFDC6A1A61CB4500053F96 /* GrahamScan.swift in Sources */,
 				02C754921A8EEFB300936717 /* CGPath+Intersects.swift in Sources */,
+				4535BD611AB260F3005A04A5 /* BezierCurve+Transforms.swift in Sources */,
 				45E298751A69B2F6006FE740 /* BezierCurveChain.swift in Sources */,
 				45B8AE8E19BCE4ED00C61A3F /* CColorConverter.m in Sources */,
 				4594B09319AEE31E00101EB4 /* Path.swift in Sources */,
