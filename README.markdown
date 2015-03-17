@@ -61,6 +61,35 @@ SwiftGraphics is made up of:
 * A Mac OS X testbed app “SwiftGraphics_OSX_UITest” that highlights some of the more interactive code
 * Unit Test Targets
 
+## Installation
+
+You can add SwiftGraphics in your project as one of the following ways:
+
+- Add SwiftGraphics.xcodeproj to your project and set up your dependencies appropriately.
+  You can add SwiftGraphics as a submodule by opening the Terminal, trying to enter the command:
+  
+  ```sh
+  git submodule add https://github.com/schwa/SwiftGraphics.git
+  ```
+
+- Install with CocoaPods [v0.36.0+][CocoaPods beta] and add the following to your project Podfile:
+
+  ```
+  platform :ios, '8.0'
+  use_frameworks!
+  pod 'SwiftGraphics/iOS'
+  ```
+  
+  or
+  
+  ```
+  platform :osx, '10.9'
+  use_frameworks!
+  pod 'SwiftGraphics/OSX'
+  ```
+
+[CocoaPods beta]: https://github.com/CocoaPods/swift
+
 ## Usage
 
 SwiftGraphics builds iOS and OS X frameworks. Just add SwiftGraphics.xcodeproj to your project and set up your dependencies appropriately.
