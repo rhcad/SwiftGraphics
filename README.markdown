@@ -13,9 +13,14 @@ Also note this project is moving to Swift 1.2, which requires Xcode 6.3 and Mac 
 ## Bringing Swift goodness to Quartz.
 
 [![Travis][travis_img]][travis]
+[![Version][podver_img]][podver_url]
+[![Platform][platform_img]][podver_url]
 
 [travis]: https://travis-ci.org/schwa/SwiftGraphics
 [travis_img]: https://travis-ci.org/schwa/SwiftGraphics.svg?branch=master
+[podver_url]: http://cocoadocs.org/docsets/SwiftGraphics
+[podver_img]: https://img.shields.io/cocoapods/v/SwiftGraphics.svg
+[platform_img]: https://img.shields.io/cocoapods/p/SwiftGraphics.svg
 
 See "Help Wanted" section of this document for how you can contribute to SwiftGraphics.
 
@@ -60,6 +65,35 @@ SwiftGraphics is made up of:
 * A directory of Playground files
 * A Mac OS X testbed app “SwiftGraphics_OSX_UITest” that highlights some of the more interactive code
 * Unit Test Targets
+
+## Installation
+
+You can add SwiftGraphics in your project as one of the following ways:
+
+- Add SwiftGraphics.xcodeproj to your project and set up your dependencies appropriately.
+  You can add SwiftGraphics as a submodule by opening the Terminal, trying to enter the command:
+  
+  ```sh
+  git submodule add https://github.com/schwa/SwiftGraphics.git
+  ```
+
+- Install with CocoaPods [v0.36.0+][CocoaPods beta] and add the following to your project Podfile:
+
+  ```
+  platform :ios, '8.0'
+  use_frameworks!
+  pod 'SwiftGraphics/iOS'
+  ```
+  
+  or
+  
+  ```
+  platform :osx, '10.9'
+  use_frameworks!
+  pod 'SwiftGraphics/OSX'
+  ```
+
+[CocoaPods beta]: https://github.com/CocoaPods/swift
 
 ## Usage
 
