@@ -13,9 +13,14 @@ Also note this project is moving to Swift 1.2, which requires Xcode 6.3 and Mac 
 ## Bringing Swift goodness to Quartz.
 
 [![Travis][travis_img]][travis]
+[![Version][podver_img]][podver_url]
+[![Platform][platform_img]][podver_url]
 
 [travis]: https://travis-ci.org/schwa/SwiftGraphics
 [travis_img]: https://travis-ci.org/schwa/SwiftGraphics.svg?branch=master
+[podver_url]: http://cocoadocs.org/docsets/SwiftGraphics
+[podver_img]: https://img.shields.io/cocoapods/v/SwiftGraphics.svg
+[platform_img]: https://img.shields.io/cocoapods/p/SwiftGraphics.svg
 
 See "Help Wanted" section of this document for how you can contribute to SwiftGraphics.
 
