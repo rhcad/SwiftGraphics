@@ -14,7 +14,7 @@ public struct Matrix {
     var pointer:UnsafePointer <CGFloat>
     public let columns:Int // TODO: Rename to columnCount? Or combined as a size
     public let rows:Int // TODO: Rename to rowCount?
-    let stride:Int = 1
+    let stride:Int
 
     public init(data:NSData, columns:Int, rows:Int, start:Int = 0, stride:Int = 1) {
         assert(columns >= 0)
@@ -37,6 +37,7 @@ public struct Matrix {
         assert(rows >= 0)
         assert(stride >= 1)
 
+        self.data = nil
         self.pointer = pointer.advancedBy(start)
         self.columns = columns
         self.rows = rows
@@ -75,7 +76,8 @@ public func * (lhs:Matrix, rhs:Matrix) -> Matrix {
     // See: http://stackoverflow.com/questions/26519169/matrix-multiplication-in-swift-using-accelerate-framework-32-bit-vs-64-bit
     // See cblas_sgemm
 
-    fatalError("vDSP_mmul not defined for i386 Simulator")
+    // Comment the following line due to the compiler error "a call to a noreturn function" and "return will never be executed"
+    // fatalError("vDSP_mmul not defined for i386 Simulator")
 #endif
     return Matrix(data:resultData, columns:resultColumns, rows:resultRows, stride:1)
 }
@@ -122,10 +124,8 @@ extension Matrix: Printable {
 
 public extension Matrix {
     init(values:Array <CGFloat>, columns:Int, rows:Int) {
-        data = NSData(bytes:values, length:values.count * sizeof(CGFloat))
-        self.pointer = UnsafePointer <CGFloat> (data!.bytes)
-        self.columns = columns
-        self.rows = rows
+        let data = NSData(bytes:values, length:values.count * sizeof(CGFloat))
+        self.init(data:data, columns:columns, rows:rows)
     }
 }
 

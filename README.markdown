@@ -2,16 +2,25 @@
 
 ## **IMPORTANT**
 
-All development happens on the [develop][develop] branch. Code is merged back on master branch infrequently.
+This branch is used only for Xcode 6.1 and Swift 1.1
+The newest development happens on the [develop][develop] branch.
 
 [develop]: https://github.com/schwa/SwiftGraphics/tree/develop
 
 ## Bringing Swift goodness to Quartz.
 
 [![Travis][travis_img]][travis]
+[![Version][podver_img]][podver_url]
+[![Platform][platform_img]][podver_url]
+[![Carthage][carthage_img]][carthage_url]
 
-[travis]: https://travis-ci.org/schwa/SwiftGraphics
-[travis_img]: https://travis-ci.org/schwa/SwiftGraphics.svg?branch=master
+[travis]: https://travis-ci.org/rhcad/SwiftGraphics
+[travis_img]: https://travis-ci.org/rhcad/SwiftGraphics.svg?branch=xcode61
+[podver_url]: http://cocoadocs.org/docsets/SwiftGraphics
+[podver_img]: https://img.shields.io/cocoapods/v/SwiftGraphics.svg
+[platform_img]: https://img.shields.io/cocoapods/p/SwiftGraphics.svg
+[carthage_img]: https://img.shields.io/badge/Carthage-compatible-4BC51D.svg
+[carthage_url]: https://github.com/Carthage/Carthage
 
 See "Help Wanted" section of this document for how you can contribute to SwiftGraphics.
 
@@ -56,6 +65,41 @@ SwiftGraphics is made up of:
 * A directory of Playground files
 * A Mac OS X testbed app “SwiftGraphics_OSX_UITest” that highlights some of the more interactive code
 * Unit Test Targets
+
+## Installation
+
+You can add SwiftGraphics in your project as one of the following ways:
+
+- Add SwiftGraphics.xcodeproj to your project and set up your dependencies appropriately.
+  You can add SwiftGraphics as a submodule by opening the Terminal, trying to enter the command:
+  
+  ```sh
+  git submodule add https://github.com/rhcad/SwiftGraphics.git
+  ```
+
+- Install with [Carthage][carthage_url] (Recommended):
+ 
+  1. Add `github "rhcad/SwiftGraphics"` to your project Cartfile.
+  2. Run `carthage update` to download and build SwiftGraphics.
+  3. Drag SwiftGraphics.framework to your project and link it.
+
+- Install with CocoaPods [v0.36.0+][CocoaPods beta] and add the following to your project Podfile:
+
+  ```
+  platform :ios, '8.0'
+  use_frameworks!
+  pod 'SwiftGraphics/iOS'
+  ```
+  
+  or
+  
+  ```
+  platform :osx, '10.9'
+  use_frameworks!
+  pod 'SwiftGraphics/OSX'
+  ```
+
+[CocoaPods beta]: https://github.com/CocoaPods/swift
 
 ## Usage
 
