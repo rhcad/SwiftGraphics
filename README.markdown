@@ -15,12 +15,15 @@ Also note this project is moving to Swift 1.2, which requires Xcode 6.3 and Mac 
 [![Travis][travis_img]][travis]
 [![Version][podver_img]][podver_url]
 [![Platform][platform_img]][podver_url]
+[![Carthage][carthage_img]][carthage_url]
 
 [travis]: https://travis-ci.org/schwa/SwiftGraphics
 [travis_img]: https://travis-ci.org/schwa/SwiftGraphics.svg?branch=master
 [podver_url]: http://cocoadocs.org/docsets/SwiftGraphics
 [podver_img]: https://img.shields.io/cocoapods/v/SwiftGraphics.svg
 [platform_img]: https://img.shields.io/cocoapods/p/SwiftGraphics.svg
+[carthage_img]: https://img.shields.io/badge/Carthage-compatible-4BC51D.svg
+[carthage_url]: https://github.com/Carthage/Carthage
 
 See "Help Wanted" section of this document for how you can contribute to SwiftGraphics.
 
@@ -76,6 +79,12 @@ You can add SwiftGraphics in your project as one of the following ways:
   ```sh
   git submodule add https://github.com/schwa/SwiftGraphics.git
   ```
+
+- Install with [Carthage][carthage_url] (Recommended):
+ 
+  1. Add `github "schwa/SwiftGraphics"` to your project Cartfile.
+  2. Run `carthage update` to download and build SwiftGraphics.
+  3. Drag SwiftGraphics.framework to your project and link it.
 
 - Install with CocoaPods [v0.36.0+][CocoaPods beta] and add the following to your project Podfile:
 
