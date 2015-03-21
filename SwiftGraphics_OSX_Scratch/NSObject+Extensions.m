@@ -15,7 +15,13 @@
     __weak id weak_self = self;
 
     selector_block_t block = ^{
+
+// TODO: Obviously telling clang to "stop your whining" is not a good idea.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         [weak_self performSelector:inSelector withObject:inObjact];
+#pragma clang diagnostic pop
+
     };
     return block;
 }
