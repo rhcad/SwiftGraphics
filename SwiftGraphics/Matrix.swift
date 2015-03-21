@@ -76,7 +76,7 @@ public func * (lhs:Matrix, rhs:Matrix) -> Matrix {
     // See: http://stackoverflow.com/questions/26519169/matrix-multiplication-in-swift-using-accelerate-framework-32-bit-vs-64-bit
     // See cblas_sgemm
 
-    fatalError("vDSP_mmul not defined for i386 Simulator")
+    preconditionFailure("vDSP_mmul not defined for i386 Simulator")
 #endif
     return Matrix(data:resultData, columns:resultColumns, rows:resultRows, stride:1)
 }
