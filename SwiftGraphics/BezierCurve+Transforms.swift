@@ -9,10 +9,15 @@
 import Foundation
 
 public func * (lhs:BezierCurve, rhs:CGAffineTransform) -> BezierCurve {
-    let transformedPoints = lhs.points.map() {
+    let controls = lhs.controls.map() {
         return $0 * rhs
     }
-    return BezierCurve(points: transformedPoints)
+    if let start = lhs.start {
+        return BezierCurve(start:start * rhs, controls: controls, end: lhs.end * rhs)
+    }
+    else {
+        return BezierCurve(controls: controls, end: lhs.end * rhs)
+    }
 }
 
 //public func *= (inout lhs:CGPoint, rhs:CGAffineTransform) {

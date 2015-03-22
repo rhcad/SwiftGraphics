@@ -42,14 +42,27 @@ extension BezierCurveChain: Printable {
     }
 }
 
-public extension CGContext {
-    func stroke(chain:BezierCurveChain) {
+
+extension BezierCurveChain: Drawable {
+
+    public func drawInContext(context:CGContextRef) {
+
         // Stroke all curves as a single path
-        let start = chain.curves[0].start
-        CGContextMoveToPoint(self, start!.x, start!.y)
-        for curve in chain.curves {
-            addToPath(curve)
+        let start = curves[0].start
+        CGContextMoveToPoint(context, start!.x, start!.y)
+        for curve in curves {
+            context.addToPath(curve)
         }
-        CGContextStrokePath(self)
+        CGContextStrokePath(context)
     }
+}
+
+// TODO: Transformable protocol?
+
+public func * (lhs:BezierCurveChain, rhs:CGAffineTransform) -> BezierCurveChain {
+
+    let transformedCurves = lhs.curves.map() {
+        return $0 * rhs
+    }
+    return BezierCurveChain(curves: transformedCurves)
 }
