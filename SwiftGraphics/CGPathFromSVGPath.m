@@ -305,6 +305,7 @@ void CGPathFromSVGPath(CGMutablePathRef path, const char* s)
     int nargs = 0;
     int rargs = 0;
     CGPoint end;
+    BOOL hasCurrent = NO;
     
     while (*s) {
         s = svg_getNextPathItem(s, item);
@@ -323,11 +324,12 @@ void CGPathFromSVGPath(CGMutablePathRef path, const char* s)
                 switch (cmd) {
                     case 'm':
                     case 'M':
-                        if (cmd == 'm') {
+                        if (cmd == 'm' && hasCurrent == YES) {
                             end = CGPathGetCurrentPoint(path);
                             CGPathMoveToPoint(path, nil, args[0]+end.x, args[1]+end.y);
                         } else {
                             CGPathMoveToPoint(path, nil, args[0], args[1]);
+                            hasCurrent = YES;
                         }
                         // Moveto can be followed by multiple coordinate pairs,
                         // which should be treated as linetos.
