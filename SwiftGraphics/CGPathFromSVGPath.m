@@ -7,6 +7,7 @@
 //
 
 #import <CoreGraphics/CoreGraphics.h>
+#import <Foundation/Foundation.h>
 
 #include <tgmath.h>
 #include <string.h>
