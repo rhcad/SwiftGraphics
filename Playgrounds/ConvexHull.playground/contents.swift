@@ -4,6 +4,7 @@ import Cocoa
 import SwiftGraphics
 import SwiftGraphicsPlayground
 import XCPlayground
+import SwiftUtilities
 
 let context = CGContextRef.bitmapContext(CGSize(w:480, h:320), origin:CGPoint(x:0.0, y:0.0))
 context.style
@@ -16,7 +17,7 @@ let bad_points = [
 ]
 let bad_hull = monotoneChain(bad_points)
 
-let rng = Random(provider: MersenneTwisterRandomProvider(seed: 42))
+let rng = SwiftUtilities.random
 
 var points = arrayOfRandomPoints(50, range: CGRect(w:480, h:320), rng:rng)
 points.count
@@ -33,3 +34,4 @@ hull.count
 context.strokeLine(hull, closed:true)
 
 context.nsimage
+

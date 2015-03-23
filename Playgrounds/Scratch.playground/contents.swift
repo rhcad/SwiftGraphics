@@ -20,4 +20,3 @@ let arc = Arc.arcWithSVGDefinition(parameters)
 context.nsimage
 
 
-

@@ -4,6 +4,7 @@ import Cocoa
 import SwiftGraphics
 import SwiftGraphicsPlayground
 import XCPlayground
+import SwiftUtilities
 
 func dump(t:Triangle) -> String {
     var s = ""

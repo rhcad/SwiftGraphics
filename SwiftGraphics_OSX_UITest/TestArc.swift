@@ -9,6 +9,7 @@
 import CoreGraphics
 
 import SwiftGraphics
+import SwiftUtilities
 
 class ARCHandle : NSObject {
     dynamic var position : CGPoint = CGPointZero {

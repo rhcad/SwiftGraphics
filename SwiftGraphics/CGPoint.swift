@@ -8,6 +8,8 @@
 
 import CoreGraphics
 
+import SwiftUtilities
+
 // MARK: CGPoint
 
 extension CGPoint: CustomStringConvertible {

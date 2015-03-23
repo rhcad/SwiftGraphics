@@ -5,6 +5,7 @@ import Cocoa
 import SwiftGraphics
 import SwiftGraphicsPlayground
 import XCPlayground
+import SwiftUtilities
 
 // See: http://zulko.github.io/blog/2014/09/20/vector-animations-with-python/
 

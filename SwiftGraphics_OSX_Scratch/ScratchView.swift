@@ -9,6 +9,7 @@
 import Cocoa
 
 import SwiftGraphics
+import SwiftUtilities
 
 class ScratchView: NSView {
 

@@ -8,6 +8,8 @@
 
 import CoreGraphics
 
+import SwiftUtilities
+
 public struct Style {
     public var fillColor:CGColor?
     public var strokeColor:CGColor?
@@ -62,18 +64,18 @@ var CGContext_Style_Key = 1
 public extension CGContext {
     var style: Style {
         get {
-            let style = getAssociatedWrappedObject(self, key: &CGContext_Style_Key) as! Style?
+            let style = getAssociatedWrappedObject(self, &CGContext_Style_Key) as! Style?
             if let style = style {
                 return style
             }
             else {
                 let style = Style.defaultStyle
-                setAssociatedWrappedObject(self, key: &CGContext_Style_Key, value: style)
+                setAssociatedWrappedObject(self, &CGContext_Style_Key, style)
                 return style
             }
         }
         set {
-            setAssociatedWrappedObject(self, key: &CGContext_Style_Key, value: newValue)
+            setAssociatedWrappedObject(self, &CGContext_Style_Key, newValue)
             apply(newValue)
         }
     }

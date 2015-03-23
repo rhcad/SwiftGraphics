@@ -10,6 +10,7 @@ import Cocoa
 
 import SwiftGraphics
 import SwiftGraphicsPlayground
+import SwiftUtilities
 
 class SketchView: NSView {
 
@@ -88,7 +89,7 @@ class SketchView: NSView {
             (context:CGContext, node:Node) -> Void in
 
             // TODO: Random is good enough for a demo - not good enough for production.
-            let colorInt:UInt32 = UInt32(Random.rng.random(0...0xFFFFFF)) << 8 | 0xFF
+            let colorInt:UInt32 = UInt32(random.random(0...0xFFFFFF)) << 8 | 0xFF
             let color = NSColor(rgba:colorInt)
             colors[colorInt] = node
 //            print("DEFINING: \(colorInt.toHex()) \(color)")
@@ -117,3 +118,25 @@ class SketchView: NSView {
     }
 }
 
+
+
+public extension NSColor {
+    convenience init(rgba:UInt32, bgra:Bool = true) {
+        let (rs, gs, bs) = bgra ? (8, 16, 24) : (24, 16, 8)
+        let r = CGFloat((Int(rgba) >> rs) & 0xFF) / 255
+        let g = CGFloat((Int(rgba) >> gs) & 0xFF) / 255
+        let b = CGFloat((Int(rgba) >> bs) & 0xFF) / 255
+        let a = CGFloat(rgba & 0b1111_1111) / 255
+        self.init(deviceRed:r, green:g, blue:b, alpha:a)
+    }
+    
+    var asUInt32:UInt32 {
+        get {
+            let r = UInt32(redComponent * 255)
+            let g = UInt32(greenComponent * 255)
+            let b = UInt32(blueComponent * 255)
+            let a = UInt32(alphaComponent * 255)
+            return r << 24 | g << 16 | b << 8 | a
+        }
+    }
+}

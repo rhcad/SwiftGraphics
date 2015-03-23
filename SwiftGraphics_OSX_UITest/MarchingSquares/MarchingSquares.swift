@@ -8,6 +8,7 @@
 
 import Cocoa
 import SwiftGraphics
+import SwiftUtilities
 
 func NOP() {
 }

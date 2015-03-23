@@ -8,6 +8,8 @@
 
 import CoreGraphics
 
+import SwiftUtilities
+
 public struct Triangle {
     // TODO: Rename -> vertex
     public let points: (CGPoint, CGPoint, CGPoint)

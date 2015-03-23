@@ -8,6 +8,8 @@
 
 import CoreGraphics
 
+import SwiftUtilities
+
 // MARK: Regular Polygon
 
 public struct RegularPolygon {

@@ -7,6 +7,7 @@
 //
 
 import SwiftGraphics
+import SwiftUtilities
 
 // MARK: -
 
@@ -15,11 +16,11 @@ var kUserInfoKey:Int = 0
 extension NSToolbarItem {
     var userInfo:AnyObject? {
         get {
-            return getAssociatedObject(self, key: &kUserInfoKey)
+            return getAssociatedObject(self, &kUserInfoKey)
         }
         set {
             // TODO: What about nil
-            setAssociatedObject(self, key: &kUserInfoKey, value: newValue!)
+            setAssociatedObject(self, &kUserInfoKey, newValue!)
         }
     }
 }
@@ -27,11 +28,11 @@ extension NSToolbarItem {
 extension NSMenuItem {
     var userInfo:AnyObject? {
         get {
-            return getAssociatedObject(self, key: &kUserInfoKey)
+            return getAssociatedObject(self, &kUserInfoKey)
         }
         set {
             // TODO: What about nil
-            setAssociatedObject(self, key: &kUserInfoKey, value: newValue!)
+            setAssociatedObject(self, &kUserInfoKey, newValue!)
         }
     }
 }
@@ -109,7 +110,7 @@ extension NSIndexSet {
 
     func with(maxCount:Int = 512, block:UnsafeBufferPointer <Int> -> Void) {
 
-        var range = NSRange(location:0, length:self.count)
+        var range = NSMakeRange(0, count)
         var indices = Array <Int> (count:maxCount, repeatedValue: NSNotFound)
         indices.withUnsafeMutableBufferPointer() {
             (inout buffer:UnsafeMutableBufferPointer<Int>) -> Void in

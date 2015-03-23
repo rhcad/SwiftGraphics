@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-import SwiftGraphics
+import SwiftUtilities
 
 extension NSGestureRecognizer {
 
@@ -23,7 +23,7 @@ extension NSGestureRecognizer {
 
     var callbacks:[Callback] {
         get {
-            let callbacks = getAssociatedWrappedObject(self, key: &callbackKey) as? [Callback]
+            let callbacks = getAssociatedWrappedObject(self, &callbackKey) as? [Callback]
             if let callbacks = callbacks {
                 return callbacks
             }
@@ -32,7 +32,7 @@ extension NSGestureRecognizer {
             }
         }
         set {
-            setAssociatedWrappedObject(self, key: &callbackKey, value: newValue)
+            setAssociatedWrappedObject(self, &callbackKey, newValue)
         }
     }
 

@@ -8,6 +8,8 @@
 
 import CoreGraphics
 
+import SwiftUtilities
+
 public struct Ellipse {
     public let center:CGPoint
     public let a:CGFloat // Semi major axis

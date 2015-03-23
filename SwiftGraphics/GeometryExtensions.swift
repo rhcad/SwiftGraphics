@@ -8,6 +8,8 @@
 
 import CoreGraphics
 
+import SwiftUtilities
+
 // MARK: -
 
 public protocol CGPathable {

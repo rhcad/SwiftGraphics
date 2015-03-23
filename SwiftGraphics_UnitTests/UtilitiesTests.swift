@@ -8,6 +8,7 @@
 
 import XCTest
 import SwiftGraphics
+import SwiftUtilities
 
 class UtilitesTests: XCTestCase {
 
