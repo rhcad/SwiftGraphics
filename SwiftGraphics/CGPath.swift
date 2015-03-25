@@ -22,7 +22,7 @@ public extension CGPathDrawingMode {
             case (0, 1, 1):
                 self = kCGPathEOFill
             default:
-                assertionFailure("Invalid combination (stroke:\(hasStroke), fill:\(hasFill), evenOdd:\(evenOdd))")
+                preconditionFailure("Invalid combination (stroke:\(hasStroke), fill:\(hasFill), evenOdd:\(evenOdd))")
         }
     }
 
