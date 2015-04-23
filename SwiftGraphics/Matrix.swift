@@ -67,10 +67,12 @@ public func * (lhs:Matrix, rhs:Matrix) -> Matrix {
     assert(sizeof(Double) == sizeof(CGFloat))
     var resultPointer = UnsafeMutablePointer <Double> (resultData.mutableBytes)
     vDSP_mmulD(UnsafePointer <Double> (lhs.pointer), lhs.stride, UnsafePointer <Double> (rhs.pointer), rhs.stride, resultPointer, 1, vDSP_Length(lhs.rows), vDSP_Length(rhs.columns), vDSP_Length(lhs.columns))
+    return Matrix(data:resultData, columns:resultColumns, rows:resultRows, stride:1)
 #elseif os(iOS) && (arch(arm64) || arch(x86_64))
     assert(sizeof(Float) == sizeof(CGFloat))
     var resultPointer = UnsafeMutablePointer <Float> (resultData.mutableBytes)
     vDSP_mmul(UnsafePointer <Float> (lhs.pointer), lhs.stride, UnsafePointer <Float> (rhs.pointer), rhs.stride, resultPointer, 1, vDSP_Length(lhs.rows), vDSP_Length(rhs.columns), vDSP_Length(lhs.columns))
+    return Matrix(data:resultData, columns:resultColumns, rows:resultRows, stride:1)
 #else
     // Reported as https://github.com/schwa/SwiftGraphics/issues/49
     // See: http://stackoverflow.com/questions/26519169/matrix-multiplication-in-swift-using-accelerate-framework-32-bit-vs-64-bit
@@ -78,7 +80,6 @@ public func * (lhs:Matrix, rhs:Matrix) -> Matrix {
 
     preconditionFailure("vDSP_mmul not defined for i386 Simulator")
 #endif
-    return Matrix(data:resultData, columns:resultColumns, rows:resultRows, stride:1)
 }
 
 // MARK: Equatable
