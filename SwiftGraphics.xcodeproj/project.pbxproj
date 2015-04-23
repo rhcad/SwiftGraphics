@@ -145,6 +145,7 @@
 		458C590F1A74136000E993A6 /* Insidedness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458C590D1A74136000E993A6 /* Insidedness.swift */; };
 		458E377D1A8A658D0042F750 /* NSGestureRecognizer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458E377C1A8A658D0042F750 /* NSGestureRecognizer+Extensions.swift */; };
 		458E37811A8A70460042F750 /* NSObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 458E37801A8A70460042F750 /* NSObject+Extensions.m */; };
+		459128C31AE8B93C007C52BC /* bsearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAD0D61AE7EFA000437792 /* bsearch.swift */; };
 		4594B08919AEDC2100101EB4 /* SwiftGraphicsHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4594B08719AEDC2100101EB4 /* SwiftGraphicsHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4594B08A19AEDC2100101EB4 /* SwiftGraphicsHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4594B08719AEDC2100101EB4 /* SwiftGraphicsHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4594B08B19AEDC2100101EB4 /* SwiftGraphicsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4594B08819AEDC2100101EB4 /* SwiftGraphicsHelper.m */; };
@@ -362,7 +363,6 @@
 		451CE9F31A61D73B006F721B /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ScratchPad.playground; sourceTree = "<group>"; };
 		451CE9F41A61D73C006F721B /* SwiftGraphicsTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftGraphicsTest.playground; sourceTree = "<group>"; };
 		451D29091A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGraphics_iOS_UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		451D290C1A8A911F00209FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		452F09171A81D2DD00334A4E /* SelectionMarquee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionMarquee.swift; sourceTree = "<group>"; };
 		4535BD5F1AB260F3005A04A5 /* BezierCurve+Transforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BezierCurve+Transforms.swift"; sourceTree = "<group>"; };
 		4537990419AA671E004DF99E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -593,14 +593,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		451D290A1A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests */ = {
-			isa = PBXGroup;
-			children = (
-				451D290C1A8A911F00209FE3 /* Info.plist */,
-			);
-			path = SwiftGraphics_iOS_UnitTests;
-			sourceTree = "<group>";
-		};
 		4535BD5E1AB260B0005A04A5 /* BezierCurve */ = {
 			isa = PBXGroup;
 			children = (
@@ -682,8 +674,6 @@
 				45CFDC9F1A61CE3500053F96 /* SwiftGraphics_OSX_UITest */,
 				455AC2C41A76130B00BCC373 /* SwiftGraphics_OSX_Scratch */,
 				454D551319AA5CE6000E3EB3 /* SwiftGraphics_UnitTests */,
-				454D551419AA5CE6000E3EB3 /* SwiftGraphics_OSX_UnitTests */,
-				451D290A1A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests */,
 				4514F5F71A61D2D800CC9C26 /* Frameworks */,
 				454D550819AA5CE6000E3EB3 /* Products */,
 			);
@@ -740,16 +730,8 @@
 				45C4C35B1A7DA8EF0036EE2B /* ProjectTests.swift */,
 				453F7C091A7D7188002CE3A6 /* MatrixTests.swift */,
 				453F7C0B1A7D71AC002CE3A6 /* BezierPathTests.swift */,
-			);
-			path = SwiftGraphics_UnitTests;
-			sourceTree = "<group>";
-		};
-		454D551419AA5CE6000E3EB3 /* SwiftGraphics_OSX_UnitTests */ = {
-			isa = PBXGroup;
-			children = (
 				454D551519AA5CE6000E3EB3 /* Info.plist */,
 			);
-			name = SwiftGraphics_OSX_UnitTests;
 			path = SwiftGraphics_UnitTests;
 			sourceTree = "<group>";
 		};
@@ -1491,6 +1473,7 @@
 			files = (
 				026F21061A5FB26600A52D0E /* MonotoneChain.swift in Sources */,
 				026F21051A5FB25800A52D0E /* CoordinateSystems.swift in Sources */,
+				459128C31AE8B93C007C52BC /* bsearch.swift in Sources */,
 				026F21041A5FB23E00A52D0E /* Fuzzy.swift in Sources */,
 				45CFDC6D1A61CB6800053F96 /* ConvexHull.swift in Sources */,
 				459EE5EC19AEC5130012E023 /* CGContext.swift in Sources */,
@@ -1647,7 +1630,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SwiftGraphics_iOS_UnitTests/Info.plist;
+				INFOPLIST_FILE = SwiftGraphics_UnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1663,7 +1646,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SwiftGraphics_iOS_UnitTests/Info.plist;
+				INFOPLIST_FILE = SwiftGraphics_UnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
