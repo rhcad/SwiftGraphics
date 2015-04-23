@@ -756,10 +756,7 @@
 		454FE65B19C77001002E4DEF /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				02A969E21A6744C3006DDF62 /* RulerPoint.playground */,
 				454FE65C19C7700E002E4DEF /* ConvexHull.playground */,
-				45FAC0661A16C4CA00A3F1D3 /* Animations.playground */,
-				45BF1EBF1A61FED300DE8AE5 /* Random.playground */,
 				457DEBD41A649689003E4363 /* Path.playground */,
 				45ECEC301A6561D60018F7C6 /* BezierPath.playground */,
 				45BF4CAC1A69929C00F260B0 /* Ellipse.playground */,
@@ -1017,6 +1014,9 @@
 		45E38D311A7424F600EC672A /* Broken or Limited Usefulness */ = {
 			isa = PBXGroup;
 			children = (
+				45BF1EBF1A61FED300DE8AE5 /* Random.playground */,
+				02A969E21A6744C3006DDF62 /* RulerPoint.playground */,
+				45FAC0661A16C4CA00A3F1D3 /* Animations.playground */,
 				45592F501A61B65200F496D2 /* TransformTest.playground */,
 				451CE9F31A61D73B006F721B /* ScratchPad.playground */,
 				451CE9F41A61D73C006F721B /* SwiftGraphicsTest.playground */,
