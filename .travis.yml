@@ -1,7 +1,6 @@
-#language: objective-c
-#osx_image: xcode61
-#script:
-#    - xctool -project SwiftGraphics.xcodeproj -scheme SwiftGraphics_OSX build test
-#    - xctool -project SwiftGraphics.xcodeproj -scheme SwiftGraphics_iOS -sdk iphonesimulator build test
-## Travis is still running on 10.9 - which means it cannot compile 10.10 storyboards.
-##    - xctool -project SwiftGraphics.xcodeproj -scheme SwiftGraphics_OSX_UITest build test
+language: objective-c
+osx_image: beta-xcode6.3
+script:
+   - xctool -project SwiftGraphics.xcodeproj -scheme SwiftGraphics_OSX build test
+   - xctool -project SwiftGraphics.xcodeproj -scheme SwiftGraphics_iOS -sdk iphonesimulator build test
+   - xctool -project SwiftGraphics.xcodeproj -scheme SwiftGraphics_OSX_UITest build test
