@@ -67,7 +67,7 @@ public extension Path {
 public extension Path {
     var cgPath:CGPath {
         get {
-            var CGPath = CGPathCreateMutable()
+            let CGPath = CGPathCreateMutable()
 
             for element in elements {
                 switch element {
@@ -99,8 +99,6 @@ public extension Path {
                         break
                     case .close():
                         CGPathCloseSubpath(CGPath)
-                        break
-                    default:
                         break
                 }
             }

@@ -12,15 +12,15 @@ public extension CGPathDrawingMode {
     public init(hasStroke:Bool, hasFill:Bool, evenOdd:Bool = false) {
         switch (Int(hasStroke), Int(hasFill), Int(evenOdd)) {
             case (1, 1, 0):
-                self = kCGPathFillStroke
+                self = .FillStroke
             case (0, 1, 0):
-                self = kCGPathFill
+                self = .Fill
             case (1, 0, 0):
-                self = kCGPathStroke
+                self = .Stroke
             case (1, 1, 1):
-                self = kCGPathEOFillStroke
+                self = .EOFillStroke
             case (0, 1, 1):
-                self = kCGPathEOFill
+                self = .EOFill
             default:
                 preconditionFailure("Invalid combination (stroke:\(hasStroke), fill:\(hasFill), evenOdd:\(evenOdd))")
         }
@@ -147,33 +147,33 @@ public extension CGPath {
             (elementPtr:UnsafePointer<CGPathElement>) -> Void in
             let element: CGPathElement = elementPtr.memory
             
-            switch element.type.value {
-            case kCGPathElementMoveToPoint.value:
+            switch element.type.rawValue {
+            case CGPathElementType.MoveToPoint.rawValue:
                 curpt = element.points.memory
                 start = curpt
-                block(type:kCGPathElementMoveToPoint, points:[curpt])
+                block(type:CGPathElementType.MoveToPoint, points:[curpt])
                 
-            case kCGPathElementAddLineToPoint.value:
+            case CGPathElementType.AddLineToPoint.rawValue:
                 let points = [curpt, element.points.memory]
                 curpt = points[1]
-                block(type:kCGPathElementAddLineToPoint, points:points)
+                block(type:CGPathElementType.AddLineToPoint, points:points)
                 
-            case kCGPathElementAddQuadCurveToPoint.value:
+            case CGPathElementType.AddQuadCurveToPoint.rawValue:
                 let cp = element.points.memory
                 let end = element.points.advancedBy(1).memory
                 let points = [curpt, (curpt + 2 * cp) / 3, (end + 2 * cp) / 3, end]
-                block(type:kCGPathElementAddCurveToPoint, points:points)
+                block(type:CGPathElementType.AddCurveToPoint, points:points)
                 curpt = end
                 
-            case kCGPathElementAddCurveToPoint.value:
+            case CGPathElementType.AddCurveToPoint.rawValue:
                 let points = [curpt, element.points.memory,
                     element.points.advancedBy(1).memory,
                     element.points.advancedBy(2).memory]
-                block(type:kCGPathElementAddCurveToPoint, points:points)
+                block(type:CGPathElementType.AddCurveToPoint, points:points)
                 curpt = points[3]
             
-            case kCGPathElementCloseSubpath.value:
-                block(type:kCGPathElementCloseSubpath, points:[curpt, start])
+            case CGPathElementType.CloseSubpath.rawValue:
+                block(type:CGPathElementType.CloseSubpath, points:[curpt, start])
             default: ()
             }
         }
@@ -184,16 +184,16 @@ public extension CGPath {
         var i = 0
         
         enumerate() { (type, points) -> Void in
-            switch type.value {
-            case kCGPathElementMoveToPoint.value:
+            switch type.rawValue {
+            case CGPathElementType.MoveToPoint.rawValue:
                 if index == i++ {
                     pt = points[0]
                 }
-            case kCGPathElementAddLineToPoint.value:
+            case CGPathElementType.AddLineToPoint.rawValue:
                 if index == i++ {
                     pt = points[1]
                 }
-            case kCGPathElementAddCurveToPoint.value:
+            case CGPathElementType.AddCurveToPoint.rawValue:
                 if index >= i && index - i < 3 {
                     pt = points[index - i + 1]
                 }
@@ -207,16 +207,16 @@ public extension CGPath {
     func dump() {
         enumerate() {
             (type:CGPathElementType, points:[CGPoint]) -> Void in
-            switch type.value {
-            case kCGPathElementMoveToPoint.value:
-                println("kCGPathElementMoveToPoint (\(points[0].x),\(points[0].y))")
-            case kCGPathElementAddLineToPoint.value:
-                println("kCGPathElementAddLineToPoint (\(points[0].x),\(points[0].y))-(\(points[1].x),\(points[1].y))")
-            case kCGPathElementAddCurveToPoint.value:
-                println("kCGPathElementAddCurveToPoint (\(points[0].x),\(points[0].y))-(\(points[1].x),\(points[1].y))"
+            switch type.rawValue {
+            case CGPathElementType.MoveToPoint.rawValue:
+                print("kCGPathElementMoveToPoint (\(points[0].x),\(points[0].y))")
+            case CGPathElementType.AddLineToPoint.rawValue:
+                print("kCGPathElementAddLineToPoint (\(points[0].x),\(points[0].y))-(\(points[1].x),\(points[1].y))")
+            case CGPathElementType.AddCurveToPoint.rawValue:
+                print("kCGPathElementAddCurveToPoint (\(points[0].x),\(points[0].y))-(\(points[1].x),\(points[1].y))"
                     + ", (\(points[2].x),\(points[2].y))-(\(points[3].x),\(points[3].y))")
-            case kCGPathElementCloseSubpath.value:
-                println("kCGPathElementCloseSubpath (\(points[0].x),\(points[0].y))-(\(points[1].x),\(points[1].y))")
+            case CGPathElementType.CloseSubpath.rawValue:
+                print("kCGPathElementCloseSubpath (\(points[0].x),\(points[0].y))-(\(points[1].x),\(points[1].y))")
             default:
                 assert(false)
             }
@@ -234,10 +234,10 @@ public extension CGPath {
         var ret:CGFloat = 0.0
         enumerate() {
             (type:CGPathElementType, points:[CGPoint]) -> Void in
-            switch type.value {
-            case kCGPathElementAddLineToPoint.value, kCGPathElementCloseSubpath.value:
+            switch type.rawValue {
+            case CGPathElementType.AddLineToPoint.rawValue, CGPathElementType.CloseSubpath.rawValue:
                 ret += points[0].distanceTo(points[1])
-            case kCGPathElementAddCurveToPoint.value:
+            case CGPathElementType.AddCurveToPoint.rawValue:
                 ret += BezierCurve(points:points).length
             default: ()
             }
@@ -254,12 +254,12 @@ public extension CGPath {
         var ret:[CGPoint] = []
         
         enumerate() { (type, points) -> Void in
-            switch type.value {
-            case kCGPathElementMoveToPoint.value:
+            switch type.rawValue {
+            case CGPathElementType.MoveToPoint.rawValue:
                 ret.append(points[0])
-            case kCGPathElementAddLineToPoint.value:
+            case CGPathElementType.AddLineToPoint.rawValue:
                 ret.append(points[1])
-            case kCGPathElementAddCurveToPoint.value:
+            case CGPathElementType.AddCurveToPoint.rawValue:
                 [1, 2, 3].map { ret.append(points[$0]) }
             default: ()
             }
@@ -271,12 +271,12 @@ public extension CGPath {
         var ret = 0
         
         enumerate() { (type, points) -> Void in
-            switch type.value {
-            case kCGPathElementMoveToPoint.value:
+            switch type.rawValue {
+            case CGPathElementType.MoveToPoint.rawValue:
                 ret = ret + 1
-            case kCGPathElementAddLineToPoint.value:
+            case CGPathElementType.AddLineToPoint.rawValue:
                 ret = ret + 1
-            case kCGPathElementAddCurveToPoint.value:
+            case CGPathElementType.AddCurveToPoint.rawValue:
                 ret = ret + 3
             default: ()
             }
@@ -288,7 +288,7 @@ public extension CGPath {
         var ret = false
         
         CGPathApplyWithBlock(self) { (elementPtr) -> Void in
-            if elementPtr.memory.type.value == kCGPathElementCloseSubpath.value {
+            if elementPtr.memory.type.rawValue == CGPathElementType.CloseSubpath.rawValue {
                 ret = true
             }
         }

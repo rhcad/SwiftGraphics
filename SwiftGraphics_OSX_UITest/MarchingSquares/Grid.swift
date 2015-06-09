@@ -43,7 +43,7 @@ class Grid_Buffer <T> {
         
         count = width * height
         
-        var memory = sizeof(T) * count
+        let memory = sizeof(T) * count
         bytes = UnsafeMutablePointer<T>(malloc(memory))
         buffer2 = UnsafeMutableBufferPointer <T>(start:bytes, count:count)
         for N in 0..<count {

@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func showHideMagicConsole(sender:AnyObject?) {
         if magicConsoleWindowController == nil {
             let storyboard = NSStoryboard(name: "MagicConsole", bundle: nil)
-            magicConsoleWindowController = storyboard?.instantiateInitialController() as? NSWindowController
+            magicConsoleWindowController = storyboard.instantiateInitialController() as? NSWindowController
         }
         magicConsoleWindowController?.window?.makeKeyAndOrderFront(self)
 
@@ -29,9 +29,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let contentView = window?.contentViewController?.view
         var responder:NSResponder? = contentView
         while responder != nil {
-            println(responder!)
+            print(responder!)
             if responder === firstResponder {
-                println("^ FIRST RESPONDER")
+                print("^ FIRST RESPONDER")
             }
             responder = responder!.nextResponder
         }

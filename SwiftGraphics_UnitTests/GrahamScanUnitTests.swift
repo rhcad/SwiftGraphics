@@ -16,7 +16,7 @@ class GrahamScanUnitTests: XCTestCase {
     }
     
     func testGrahamScan() {
-        var points = [
+        let points = [
             CGPointMake(100, 100),
             CGPointMake(10, 300),
             CGPointMake(30, 30),

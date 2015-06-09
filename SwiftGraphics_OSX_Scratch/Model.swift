@@ -16,7 +16,7 @@ class Model: NSObject {
     var selectedObjects:[Thing] {
         get {
             var objects:[Thing] = []
-            selectedObjectIndices.with(maxCount: 512) {
+            selectedObjectIndices.with(512) {
                 for N in $0 {
                     objects.append(self.objects[N])
                 }
@@ -29,7 +29,7 @@ class Model: NSObject {
     }
 
     func hitTest(location:CGPoint) -> (Int, Thing)? {
-        for (index, thing) in enumerate(objects) {
+        for (index, thing) in objects.enumerate() {
             if thing.contains(location) {
                 return (index, thing)
             }
@@ -39,17 +39,17 @@ class Model: NSObject {
 
 
     func objectSelected(thing:Thing) -> Bool {
-        let index = find(objects, thing)
+        let index = objects.indexOf(thing)
         return selectedObjectIndices.containsIndex(index!)
     }
 
     func selectObject(object:Thing) {
-        let index = find(objects, object)
+        let index = objects.indexOf(object)
         selectedObjectIndices.addIndex(index!)
     }
 
     func unselectObject(object:Thing) {
-        let index = find(objects, object)
+        let index = objects.indexOf(object)
         selectedObjectIndices.removeIndex(index!)
     }
 
@@ -62,7 +62,7 @@ class Model: NSObject {
 
     func removeObject(object:Thing) {
         self.willChangeValueForKey("objects")
-        let index = find(objects, object)
+        let index = objects.indexOf(object)
         removeObjectAtIndex(index!)
         self.didChangeValueForKey("objects")
     }
@@ -107,7 +107,7 @@ class Thing: HitTestable, Drawable, Equatable {
 
     var center:CGPoint = CGPointZero
 
-    var frame:CGRect { get { return CGRect(center:center, size:bounds.size) } }
+    var frame:CGRect { get { return CGRect(origin:center, size:bounds.size) } }
 
     func drawInContext(context:CGContextRef) {
         let localTransform = CGAffineTransform(translation: frame.origin)
@@ -145,7 +145,7 @@ class Thing: HitTestable, Drawable, Equatable {
         var transform = CGAffineTransform(translation: -frame.origin)
 //        let ptr = UnsafePointer <CGAffineTransform> (transform)
         let path = CGPathCreateCopyByTransformingPath(path, &transform)
-        return geometry.intersects(path)
+        return geometry.intersects(path!)
     }
 
 }

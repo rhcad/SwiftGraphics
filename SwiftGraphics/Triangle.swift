@@ -79,19 +79,19 @@ public extension Triangle {
     
     public var isEquilateral: Bool {
         get {
-            return equalities(self.lengths, { $0 ==% $1 }) == 3
+            return equalities(self.lengths, test: { $0 ==% $1 }) == 3
         }
     }
     
     public var isIsosceles: Bool {
         get {
-            return equalities(self.lengths, { $0 ==% $1 }) == 2
+            return equalities(self.lengths, test: { $0 ==% $1 }) == 2
         }
     }
     
     public var isScalene: Bool {
         get {
-            return equalities(self.lengths, { $0 ==% $1 }) == 1
+            return equalities(self.lengths, test: { $0 ==% $1 }) == 1
         }
     }
     
@@ -198,7 +198,7 @@ public extension Triangle {
     // converts trilinear coordinates to Cartesian coordinates relative
     // to the incenter; thus, the incenter has coordinates (0.0, 0.0)
     // TODO: THis seems broken!
-    public func asLocalCartesian(# alpha:CGFloat, beta:CGFloat, gamma:CGFloat) -> CGPoint {
+    public func asLocalCartesian(alpha  alpha:CGFloat, beta:CGFloat, gamma:CGFloat) -> CGPoint {
         let area = self.area
         let (a,b,c) = lengths
         let r = 2 * area / (a + b + c)
@@ -212,7 +212,7 @@ public extension Triangle {
     }    
 
     // TODO: This seems broken!
-    public func asCartesian(# alpha:CGFloat, beta:CGFloat, gamma:CGFloat) -> CGPoint {
+    public func asCartesian(alpha  alpha:CGFloat, beta:CGFloat, gamma:CGFloat) -> CGPoint {
         let a = asLocalCartesian(alpha:alpha, beta:beta, gamma:gamma)
         let delta = asLocalCartesian(alpha:0,beta:0, gamma:1)
         return points.0 + a - delta

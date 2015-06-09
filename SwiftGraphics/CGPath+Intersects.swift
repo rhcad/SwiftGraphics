@@ -16,7 +16,7 @@ public extension CGPath {
             return false
         }
 
-        var context = CGContext.bitmapContext(boundingBox, color:CGColor.blackColor())
+        let context = CGContext.bitmapContext(boundingBox, color:CGColor.blackColor())
         CGContextSetAllowsAntialiasing(context, false)
 
 #if arch(i386) || arch(arm)
@@ -32,7 +32,6 @@ public extension CGPath {
 // TODO: Deal with leftover
 //        assert(length % sizeof(WordType) == 0)
         let buffer = UnsafeBufferPointer <WordType> (start:data, count:length / sizeof(WordType))
-        let clear = buffer[0]
 
         CGContextAddPath(context, self)
         CGContextClip(context)

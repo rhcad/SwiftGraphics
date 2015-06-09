@@ -67,13 +67,13 @@ extension OmniGraffleDocumentModel {
 
     func load() {
         let data = NSData(contentsOfCompressedFile:path)
-        var error:NSError?
-        if let d = NSPropertyListSerialization.propertyListWithData(data, options:NSPropertyListReadOptions(), format: nil, error:&error) as? NSDictionary {
+        // TODO: Swift 2
+        if let d = try! NSPropertyListSerialization.propertyListWithData(data, options:NSPropertyListReadOptions(), format: nil) as? NSDictionary {
             _processRoot(d)
             let origin = StringToPoint(d["CanvasOrigin"] as! String)
             let size = StringToSize(d["CanvasSize"] as! String)
             frame = CGRect(origin:origin, size:size)
-//            println(nodesByID)
+//            print(nodesByID)
             
             let nodes = nodesByID.values.filter {
                 (node:Node) -> Bool in
@@ -120,7 +120,7 @@ extension OmniGraffleDocumentModel {
                 case "Group":
                     var children:[Node] = []
                     if let graphics = d["Graphics"] as? [NSDictionary] {
-                        children = map(graphics) {
+                        children = graphics.map {
                             (d:NSDictionary) -> OmniGraffleNode in
                             return self._processDictionary(d)
                         }
@@ -140,7 +140,7 @@ extension OmniGraffleDocumentModel {
                     nodesByID[line.ID] = line
                     return line
                 default:
-                    println("Unknown: \(className)")
+                    print("Unknown: \(className)")
             }
         }
         return nil

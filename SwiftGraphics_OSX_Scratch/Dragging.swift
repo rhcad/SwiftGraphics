@@ -46,7 +46,7 @@ class Dragging: NSObject {
         switch gestureRecognizer.state {
             case .Began:
                 let location = gestureRecognizer.locationInView(view)
-                if let (index, thing) = hitTest(location) {
+                if let (_, thing) = hitTest(location) {
                     unselectAll()
                     selectObject(thing)
                     needsDisplay = true
@@ -73,7 +73,7 @@ class Dragging: NSObject {
         switch gestureRecognizer.state {
             case .Began:
                 dragBeganLocation = location
-                if let (index, thing) = hitTest(location) {
+                if let (_, thing) = hitTest(location) {
                     unselectAll()
                     draggedObject = thing
                     selectObject(draggedObject!)

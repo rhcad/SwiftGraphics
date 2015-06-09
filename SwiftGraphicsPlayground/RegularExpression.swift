@@ -12,12 +12,12 @@ struct RegularExpression {
 
     let expression: NSRegularExpression
 
-    init(_ pattern:String, options:NSRegularExpressionOptions = NSRegularExpressionOptions()) {
-        var error:NSError?
-        let expression = NSRegularExpression(pattern:pattern, options:options, error:&error)
-        assert(error == nil)
-        self.expression = expression!
-        
+    init?(_ pattern:String, options:NSRegularExpressionOptions = NSRegularExpressionOptions()) {
+        do {
+            self.expression = try NSRegularExpression(pattern:pattern, options:options)
+        } catch {
+            return nil
+        }
     }
 
     func match(string:String, options:NSMatchingOptions = NSMatchingOptions()) -> Match? {
@@ -70,5 +70,5 @@ struct RegularExpression {
 //let groups = RegularExpression("([A-Za-z]+) ([A-Za-z]+)").match("Hello world").groups
 //
 //for f in groups {
-//    println(f.string)
+//    print(f.string)
 //}

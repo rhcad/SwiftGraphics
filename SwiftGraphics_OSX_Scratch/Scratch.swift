@@ -15,11 +15,11 @@ var kUserInfoKey:Int = 0
 extension NSToolbarItem {
     var userInfo:AnyObject? {
         get {
-            return getAssociatedObject(self, &kUserInfoKey)
+            return getAssociatedObject(self, key: &kUserInfoKey)
         }
         set {
             // TODO: What about nil
-            setAssociatedObject(self, &kUserInfoKey, newValue!)
+            setAssociatedObject(self, key: &kUserInfoKey, value: newValue!)
         }
     }
 }
@@ -27,18 +27,18 @@ extension NSToolbarItem {
 extension NSMenuItem {
     var userInfo:AnyObject? {
         get {
-            return getAssociatedObject(self, &kUserInfoKey)
+            return getAssociatedObject(self, key: &kUserInfoKey)
         }
         set {
             // TODO: What about nil
-            setAssociatedObject(self, &kUserInfoKey, newValue!)
+            setAssociatedObject(self, key: &kUserInfoKey, value: newValue!)
         }
     }
 }
 
 // MARK: -
 
-extension NSGestureRecognizerState: Printable {
+extension NSGestureRecognizerState: CustomStringConvertible {
     public var description:String {
         get {
             switch self {
@@ -63,7 +63,7 @@ extension NSGestureRecognizerState: Printable {
 
 extension Array {
     func isSorted(isEqual: (T, T) -> Bool, isOrderedBefore: (T, T) -> Bool) -> Bool {
-        let sortedCopy = sorted(isOrderedBefore)
+        let sortedCopy = sort(isOrderedBefore)
         for (lhs, rhs) in Zip2(self, sortedCopy) {
             if isEqual(lhs, rhs) == false {
                 return false
@@ -73,7 +73,7 @@ extension Array {
     }
 
     mutating func insert(newElement: T, orderedBefore: (T, T) -> Bool) {
-        for (index, element) in enumerate(self) {
+        for (index, element) in self.enumerate() {
             if orderedBefore(newElement, element) {
                 insert(newElement, atIndex: index)
                 return
@@ -99,7 +99,7 @@ extension Array {
 extension NSIndexSet {
 
     func with <T>(array:Array <T>, maxCount:Int = 512, block:Array <T> -> Void) {
-        with(maxCount:maxCount) {
+        with(maxCount) {
             (buffer:UnsafeBufferPointer<Int>) -> Void in
             var items:Array <T> = []
             for index in buffer {
@@ -117,7 +117,7 @@ extension NSIndexSet {
             (inout buffer:UnsafeMutableBufferPointer<Int>) -> Void in
 
             var count = 0
-            do  {
+            repeat  {
                 count = self.getIndexes(buffer.baseAddress, maxCount: maxCount, inIndexRange: &range)
                 if count > 0 {
                     let constrained_buffer = UnsafeBufferPointer<Int> (start: buffer.baseAddress, count: count)

@@ -54,7 +54,7 @@ public struct Gradient {
                     let a = CGColorGetComponents(c)
                     
                     if n == 2 { // CGColorSpaceCreateDeviceGray
-                        for i in 0..<3 {
+                        for _ in 0..<3 {
                             components.append(a[0])
                         }
                         components.append(a[1])
@@ -91,9 +91,9 @@ public extension CGContext {
                 let p2 = frame.origin + style.orientation!.1 * frame.size
                 if style.axial {
                     CGContextDrawRadialGradient(self, cgGradient,
-                        frame.mid, 0, frame.mid, max(frame.width, frame.height), 0)
+                        frame.mid, 0, frame.mid, max(frame.width, frame.height), CGGradientDrawingOptions())
                 } else {
-                    CGContextDrawLinearGradient(self, cgGradient, p1, p2, 0)
+                    CGContextDrawLinearGradient(self, cgGradient, p1, p2, CGGradientDrawingOptions())
                 }
                 return true
             }

@@ -70,7 +70,7 @@ let alphaInfo = CGImageAlphaInfo.NoneSkipLast
 let bitmapInfo = CGBitmapInfo() // CGBitmapInfo.FloatComponents
 typealias ComponentType = UInt8
 
-println(validParametersForBitmapContext(colorSpace:colorSpace, bitsPerPixel:sizeof(ComponentType) * 8 * 4, bitsPerComponent:sizeof(ComponentType) * 8, alphaInfo:alphaInfo, bitmapInfo:bitmapInfo))
+print(validParametersForBitmapContext(colorSpace:colorSpace, bitsPerPixel:sizeof(ComponentType) * 8 * 4, bitsPerComponent:sizeof(ComponentType) * 8, alphaInfo:alphaInfo, bitmapInfo:bitmapInfo))
 
 let context = CGContextRef.bitmapContext(size, bitsPerComponent:sizeof(ComponentType) * 8, colorSpace: colorSpace, alphaInfo: alphaInfo, bitmapInfo: bitmapInfo)
 

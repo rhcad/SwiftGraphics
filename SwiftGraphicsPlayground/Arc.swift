@@ -35,7 +35,7 @@ extension CGContextRef {
     
         CGContextConcatCTM(self, transform)
 
-//        println("\(arc.startAngle), \(arc.endAngle)")
+//        print("\(arc.startAngle), \(arc.endAngle)")
         CGContextAddArc(self, arc.center.x, arc.center.y, radius, arc.startAngle, arc.endAngle, 1)
         CGContextStrokePath(self)
 
@@ -76,7 +76,7 @@ public struct SVGArcParameters {
 extension Arc {
 
     public static func arcWithSVGDefinition(definition:SVGArcParameters) -> Arc! {
-        return computeArc(definition.x0, definition.y0, definition.rx, definition.ry, definition.angle, definition.largeArcFlag, definition.sweepFlag, definition.x, definition.y)
+        return computeArc(definition.x0, y0: definition.y0, rx: definition.rx, ry: definition.ry, angle: definition.angle, largeArcFlag: definition.largeArcFlag, sweepFlag: definition.sweepFlag, x: definition.x, y: definition.y)
     }
 
 
@@ -107,8 +107,8 @@ public func computeArc(x0:CGFloat, y0:CGFloat, rx:CGFloat, ry:CGFloat, angle:CGF
     var ry = abs(ry)
     var Prx = rx * rx
     var Pry = ry * ry
-    var Px1 = x1 * x1
-    var Py1 = y1 * y1
+    let Px1 = x1 * x1
+    let Py1 = y1 * y1
     // check that radii are large enough
     let radiiCheck = Px1 / Prx + Py1 / Pry
     if  radiiCheck > 1 {

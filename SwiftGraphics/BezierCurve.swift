@@ -57,7 +57,7 @@ public struct BezierCurve {
 
 // MARK: Good old Printable.
 
-extension BezierCurve: Printable {
+extension BezierCurve: CustomStringConvertible {
     public var description: String {
         get {
 
@@ -157,7 +157,7 @@ public extension CGContextRef {
                 CGContextAddQuadCurveToPoint(self, curve.controls[0].x, curve.controls[0].y, curve.end.x, curve.end.y)
             case .Cubic:
                 CGContextAddCurveToPoint(self, curve.controls[0].x, curve.controls[0].y, curve.controls[1].x, curve.controls[1].y, curve.end.x, curve.end.y)
-            case .OrderN(let order):
+            case .OrderN:
                 assert(false)
         }
     }

@@ -57,10 +57,10 @@ class OmniGraffleLoader {
                 let bounds = input.bounds.flipped(.TopLeft, insideRect:doc.frame)
                 return RectangleNode(frame:bounds)
     ////                    case "Bezier":
-    ////                        println(d)
+    ////                        print(d)
     //                        return nil
             default:
-                println("Unknown shape: \(shapeName)")
+                print("Unknown shape: \(shapeName)")
                 return nil
         }
     }

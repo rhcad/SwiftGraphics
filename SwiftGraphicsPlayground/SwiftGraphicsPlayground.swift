@@ -46,7 +46,7 @@ public class DemoView : NSView {
         drawBlock?(ctx:ctx, bounds:bounds)
     }
 
-    func tick(# time:NSTimeInterval, deltaTime:NSTimeInterval, fps:Double) {
+    func tick(time  time:NSTimeInterval, deltaTime:NSTimeInterval, fps:Double) {
         dispatch_async(dispatch_get_main_queue()) {
             self.tickBlock?(time:time, deltaTime: deltaTime, fps:fps)
             self.needsDisplay = true

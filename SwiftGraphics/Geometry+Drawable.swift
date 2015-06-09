@@ -50,7 +50,6 @@ extension Circle: Drawable {
 extension Triangle: Drawable {
     public func drawInContext(context:CGContext) {
         let path = CGPathCreateMutable()
-        let points = pointsArray
         path.move(pointsArray[0])
         path.addLines(pointsArray)
         path.close()

@@ -43,7 +43,7 @@ public func stylesForMarkup(markup:[Markup]) -> [String:SwiftGraphics.Style] {
     var styles:[String:SwiftGraphics.Style] = [:]
     for item in markup {
         if let tag = item.tag {
-            if let style = styles[tag] {
+            if let _ = styles[tag] {
                 // NOP
             }
             else {

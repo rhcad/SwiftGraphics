@@ -22,7 +22,7 @@ func dump(t:Triangle) -> String {
     return s    
 }
 
-func pt(x:CGFloat, y:CGFloat) -> CGPoint {
+func pt(x:CGFloat, _ y:CGFloat) -> CGPoint {
     return CGPoint(x:x, y:y)
 }
 
@@ -38,6 +38,3 @@ let styles = stylesForMarkup(t1.markup)
 context.draw(t1.markup, styles:styles)
 
 context.nsimage
-
-
-

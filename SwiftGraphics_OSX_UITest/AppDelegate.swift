@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        // Next line asplodes!
 //        let hull = grahamScan(points)
 //
-//        println(hull)
+//        print(hull)
 
 
     }

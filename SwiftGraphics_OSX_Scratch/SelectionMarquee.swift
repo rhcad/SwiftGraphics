@@ -86,7 +86,7 @@ class SelectionMarquee {
                     let new_polygon = SwiftGraphics.Polygon(points:points)
                     value = Value.polygon(new_polygon)
                     newPath = new_polygon.cgpath
-                    newFrame = CGRect(x:0, y:0, w:1000, h:1000) // TODO: Total hack
+                    newFrame = CGRect(x:0, y:0, width:1000, height:1000) // TODO: Total hack
             }
 
             CATransaction.begin()

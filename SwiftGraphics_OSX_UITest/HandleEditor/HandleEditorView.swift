@@ -27,7 +27,8 @@ class Marker {
     }
 }
 
-class Handle: Marker, Draggable, Equatable {
+// TODO: Swift 2.0 crasher
+class Handle: Marker, Equatable /*, Draggable */ {
     var didMove: ((position:CGPoint) -> Void)?
 
 }
@@ -46,15 +47,16 @@ class HandleEditor {
     init() {
         drag = Drag()
 
-        drag.objectForPoint = {
-            point in
-            for handle in self.handles {
-                if handle.frame.contains(point) {
-                    return handle
-                }
-            }
-            return nil
-            }
+// TODO: Swift 2.0 crasher
+//        drag.objectForPoint = {
+//            point in
+//            for handle in self.handles {
+//                if handle.frame.contains(point) {
+//                    return handle
+//                }
+//            }
+//            return nil
+//            }
 
         drag.objectDidChange = {
             draggable in
@@ -73,7 +75,7 @@ class HandleEditor {
         handles.append(handle)
     }
 
-    func addInteractive(var interactive:Interactive) {
+    func addInteractive(let interactive:Interactive) {
         let handles = interactive.makeHandles()
         for handle in handles {
             self.addHandle(handle)
@@ -113,7 +115,7 @@ extension BoxObject : Interactive {
             Handle(position: CGPoint(x:frame.maxX, y:frame.minY)),
             ]
 
-        for (index, handle) in enumerate(handles) {
+        for (index, handle) in handles.enumerate() {
             handle.didMove = {
                 position in
                 self.updateFromHandles(handles, activeHandleIndex:index)

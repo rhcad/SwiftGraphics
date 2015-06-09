@@ -59,7 +59,7 @@ extension Ellipse: CGPathable {
 extension Triangle: CGPathable {
     public var cgpath:CGPath {
         get {
-            var path = CGPathCreateMutable()
+            let path = CGPathCreateMutable()
             path.move(points.0)
             path.addLine(points.1)
             path.addLine(points.2)
@@ -72,7 +72,7 @@ extension Triangle: CGPathable {
 extension SwiftGraphics.Polygon: CGPathable {
     public var cgpath:CGPath {
         get {
-            var path = CGPathCreateMutable()
+            let path = CGPathCreateMutable()
             path.move(points[0])
             for point in points[1..<points.count] {
                 path.addLine(point)

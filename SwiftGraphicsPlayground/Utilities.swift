@@ -33,7 +33,7 @@ extension UInt32 {
 
 public extension NSColor {
     convenience init(rgba:UInt32, bgra:Bool = true) {
-        let (rs:UInt32, gs:UInt32, bs:UInt32) = bgra ? (8, 16, 24) : (24, 16, 8)
+        let (rs, gs, bs): (UInt32, UInt32, UInt32) = bgra ? (8, 16, 24) : (24, 16, 8)
     
     
         let r = CGFloat((rgba >> rs) & 0xFF) / 255

@@ -65,7 +65,7 @@ public func * (lhs:Matrix, rhs:Matrix) -> Matrix {
 
 #if os(OSX)
     assert(sizeof(Double) == sizeof(CGFloat))
-    var resultPointer = UnsafeMutablePointer <Double> (resultData.mutableBytes)
+    let resultPointer = UnsafeMutablePointer <Double> (resultData.mutableBytes)
     vDSP_mmulD(UnsafePointer <Double> (lhs.pointer), lhs.stride, UnsafePointer <Double> (rhs.pointer), rhs.stride, resultPointer, 1, vDSP_Length(lhs.rows), vDSP_Length(rhs.columns), vDSP_Length(lhs.columns))
     return Matrix(data:resultData, columns:resultColumns, rows:resultRows, stride:1)
 #elseif os(iOS) && (arch(arm64) || arch(x86_64))
@@ -105,7 +105,7 @@ public func == (lhs:Matrix, rhs:Matrix) -> Bool {
 
 // MARK: Printable
 
-extension Matrix: Printable {
+extension Matrix: CustomStringConvertible {
     public var description:String {
 
         let strings:[String] = (0..<rows).map() {

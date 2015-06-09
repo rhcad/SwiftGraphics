@@ -24,7 +24,7 @@ public struct RGB {
     }
 }
 
-extension RGB: Printable {
+extension RGB: CustomStringConvertible {
     public var description: String { return "RGB(\(r), \(g), \(b))" }
 }
 
@@ -64,7 +64,7 @@ public struct HSV {
     }
 }
 
-extension HSV: Printable {
+extension HSV: CustomStringConvertible {
     public var description: String { return "HSV(\(h), \(s), \(v))" }
 }
 

@@ -23,8 +23,8 @@ extension NSGestureRecognizer {
 
     var callbacks:[Callback] {
         get {
-            let callbacks = getAssociatedWrappedObject(self, &callbackKey) as? [Callback]
-            if var callbacks = callbacks {
+            let callbacks = getAssociatedWrappedObject(self, key: &callbackKey) as? [Callback]
+            if let callbacks = callbacks {
                 return callbacks
             }
             else {
@@ -32,7 +32,7 @@ extension NSGestureRecognizer {
             }
         }
         set {
-            setAssociatedWrappedObject(self, &callbackKey, newValue)
+            setAssociatedWrappedObject(self, key: &callbackKey, value: newValue)
         }
     }
 

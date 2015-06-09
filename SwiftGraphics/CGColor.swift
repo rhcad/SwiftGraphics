@@ -14,10 +14,10 @@ import AppKit
 import UIKit
 #endif
 
-extension CGColor: Printable {
+extension CGColor: CustomStringConvertible {
     public var description: String {
         get {
-            return CFCopyDescription(self) as! String
+            return CFCopyDescription(self) as String
         }
     }
 }
@@ -32,15 +32,14 @@ public extension CGColor {
 
 public extension CGColor {
 
-    class func color(# colorSpace:CGColorSpace, components:[CGFloat]) -> CGColor! {
-        let color = components.withUnsafeBufferPointer {
-            (buffer:UnsafeBufferPointer<CGFloat>) -> CGColorRef in
+    class func color(colorSpace colorSpace:CGColorSpace, components:[CGFloat]) -> CGColor! {
+        return components.withUnsafeBufferPointer {
+            (buffer:UnsafeBufferPointer<CGFloat>) -> CGColor! in
             return CGColorCreate(colorSpace, buffer.baseAddress)
         }
-        return color
     }
 
-    class func color(# red:CGFloat, green:CGFloat, blue:CGFloat, alpha:CGFloat = 1.0) -> CGColor! {
+    class func color(red  red:CGFloat, green:CGFloat, blue:CGFloat, alpha:CGFloat = 1.0) -> CGColor! {
 #if os(OSX)
         return NSColor(deviceRed:red, green:green, blue:blue, alpha:alpha).CGColor
 #else
@@ -48,7 +47,7 @@ public extension CGColor {
 #endif
     }
 
-    class func color(# white:CGFloat, alpha:CGFloat = 1.0) -> CGColor! {
+    class func color(white  white:CGFloat, alpha:CGFloat = 1.0) -> CGColor! {
 #if os(OSX)
         return NSColor(deviceWhite:white, alpha:alpha).CGColor
 #else
@@ -57,7 +56,7 @@ public extension CGColor {
     }
 
 
-    class func color(# hue:CGFloat, saturation:CGFloat, brightness:CGFloat, alpha:CGFloat) -> CGColor! {
+    class func color(hue  hue:CGFloat, saturation:CGFloat, brightness:CGFloat, alpha:CGFloat) -> CGColor! {
 #if os(OSX)
         return NSColor(deviceHue: hue, saturation: saturation, brightness: brightness, alpha: alpha).CGColor
 #else
@@ -68,7 +67,7 @@ public extension CGColor {
 
 public extension CGColor {
     func withAlpha(alpha:CGFloat) -> CGColor {
-        return CGColorCreateCopyWithAlpha(self, alpha)
+        return CGColorCreateCopyWithAlpha(self, alpha)!
     }
 }
 
@@ -84,7 +83,7 @@ public extension CGColor {
 
     var colorSpace:CGColorSpaceRef {
         get {
-            return CGColorGetColorSpace(self)
+            return CGColorGetColorSpace(self)!
         }
     }
 

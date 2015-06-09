@@ -12,8 +12,8 @@ import AppKit
 // MARK: Strings
 
 public extension CGContext {
-    func draw(string:String, point:CGPoint, attributes:NSDictionary?) {
-        string._bridgeToObjectiveC().drawAtPoint(point, withAttributes:attributes as? [NSObject : AnyObject])
+    func draw(string:String, point:CGPoint, attributes:[String : AnyObject]) {
+        (string as NSString).drawAtPoint(point, withAttributes: attributes)
     }
 
     func drawLabel(string:String, point:CGPoint, size:CGFloat) {

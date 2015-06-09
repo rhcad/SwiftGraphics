@@ -25,7 +25,7 @@ public func monotoneChain(var points:[CGPoint], sorted:Bool = false) -> [CGPoint
     }
 
     if sorted == false {
-        points.sort(CGPoint.compareXY)
+        points.sortInPlace(CGPoint.compareXY)
     }
 
     var lower:[CGPoint] = []

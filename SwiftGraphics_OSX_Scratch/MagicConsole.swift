@@ -28,14 +28,14 @@ class MagicConsole: NSObject {
         super.init()
     }
 
-    func logValue(key:String, value:Printable) {
+    func logValue(key:String, value:CustomStringConvertible) {
         if let row = rowsForKey[key] {
             row.willChangeValueForKey("stringValue")
             row.stringValue = value.description as NSString
             row.didChangeValueForKey("stringValue")
         }
         else {
-            var row = Row()
+            let row = Row()
             row.name = key as NSString
             row.stringValue = value.description as NSString
             self.willChangeValueForKey("rows")
@@ -46,7 +46,7 @@ class MagicConsole: NSObject {
     }
 }
 
-func MagicLog(name:String, value:Printable) {
+func MagicLog(name:String, _ value:CustomStringConvertible) {
     sharedMagicConsole.logValue(name, value: value)
 }
 

@@ -85,10 +85,11 @@ class MarchingSquares {
             for Y in 0..<(size.height - 1) {
                 let offset = CGPoint(x:CGFloat(X), y:CGFloat(Y)) * resolution
 
-                let A = magnitudeForCell(IntPoint(x:X, y:Y))
-                let B = magnitudeForCell(IntPoint(x:X + 1, y:Y))
-                let C = magnitudeForCell(IntPoint(x:X, y:Y + 1))
-                let D = magnitudeForCell(IntPoint(x:X + 1, y:Y + 1))
+// TODO: Swift 2 - dead code
+//                let A = magnitudeForCell(IntPoint(x:X, y:Y))
+//                let B = magnitudeForCell(IntPoint(x:X + 1, y:Y))
+//                let C = magnitudeForCell(IntPoint(x:X, y:Y + 1))
+//                let D = magnitudeForCell(IntPoint(x:X + 1, y:Y + 1))
 
 //                let CENTRUM = Int(magnitudeForPoint[(X + 0.5, Y + 0.5)] >= filter)
 

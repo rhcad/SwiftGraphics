@@ -10,7 +10,7 @@ import CoreGraphics
 
 // MARK: Printable
 
-extension CGAffineTransform: Printable {
+extension CGAffineTransform: CustomStringConvertible {
     public var description: String {
         get {
             return "CGAffineTransform(\(a), \(b), \(c), \(d), \(tx), \(ty))"
@@ -88,7 +88,7 @@ public extension CGAffineTransform {
     /**
      Rotation
 
-     :param: angle Rotation angle in radians.
+     - parameter angle: Rotation angle in radians.
      */
     init(rotation: CGFloat) {
         self = CGAffineTransformMakeRotation(rotation)
@@ -106,27 +106,27 @@ public extension CGAffineTransform {
 
 public extension CGAffineTransform {
 
-    func translated(# translation:CGPoint) -> CGAffineTransform {
+    func translated(translation  translation:CGPoint) -> CGAffineTransform {
         return CGAffineTransformTranslate(self, translation.x, translation.y)
     }
 
-    func translated(# tx:CGFloat, ty:CGFloat) -> CGAffineTransform {
+    func translated(tx  tx:CGFloat, ty:CGFloat) -> CGAffineTransform {
         return CGAffineTransformTranslate(self, tx, ty)
     }
 
-    func scaled(# scale:CGSize) -> CGAffineTransform  {
+    func scaled(scale  scale:CGSize) -> CGAffineTransform  {
         return CGAffineTransformScale(self, scale.width, scale.height)
     }
 
-    func scaled(# sx:CGFloat, sy:CGFloat) -> CGAffineTransform  {
+    func scaled(sx  sx:CGFloat, sy:CGFloat) -> CGAffineTransform  {
         return CGAffineTransformScale(self, sx, sy)
     }
 
-    func scaled(# scale:CGFloat) -> CGAffineTransform  {
+    func scaled(scale  scale:CGFloat) -> CGAffineTransform  {
         return CGAffineTransformScale(self, scale, scale)
     }
     
-    func scaled(# scale:CGFloat, origin:CGPoint) -> CGAffineTransform  {
+    func scaled(scale  scale:CGFloat, origin:CGPoint) -> CGAffineTransform  {
         return self + CGAffineTransform(scale:scale, origin:origin)
     }
 

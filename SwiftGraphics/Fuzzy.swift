@@ -10,15 +10,15 @@ import CoreGraphics
 
 // MARK:
 
-public func equal(lhs:CGFloat, rhs:CGFloat, # accuracy:CGFloat) -> Bool {
+public func equal(lhs:CGFloat, _ rhs:CGFloat, accuracy:CGFloat) -> Bool {
     return abs(rhs - lhs) <= accuracy
 }
 
-public func equal(lhs:Float, rhs:Float, # accuracy:Float) -> Bool {
+public func equal(lhs:Float, _ rhs:Float, accuracy:Float) -> Bool {
     return abs(rhs - lhs) <= accuracy
 }
 
-public func equal(lhs:Double, rhs:Double, # accuracy:Double) -> Bool {
+public func equal(lhs:Double, _ rhs:Double, accuracy:Double) -> Bool {
     return abs(rhs - lhs) <= accuracy
 }
 

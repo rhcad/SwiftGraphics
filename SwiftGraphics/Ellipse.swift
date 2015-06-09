@@ -53,7 +53,7 @@ public struct Ellipse {
 
 }
 
-extension Ellipse:Printable {
+extension Ellipse:CustomStringConvertible {
     public var description:String {
         get {
             return "Ellipse(center:\(center), semiMajorAxis:\(a) semiMinorAxis:\(b), eccentricity:\(e), rotation:\(rotation)"

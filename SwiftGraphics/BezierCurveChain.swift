@@ -23,7 +23,7 @@ public struct BezierCurveChain {
             var newCurve = curve
             if let previousEndPoint = previousCurve?.end {
                 if let start = curve.start {
-//                    assert(previousEndPoint == start)
+                    assert(previousEndPoint == start)
                     newCurve = BezierCurve(controls:curve.controls, end:curve.end)
                 }
             }
@@ -34,7 +34,7 @@ public struct BezierCurveChain {
     }
 }
 
-extension BezierCurveChain: Printable {
+extension BezierCurveChain: CustomStringConvertible {
     public var description: String {
         get {
             return ", ".join(curves.map() { $0.description })

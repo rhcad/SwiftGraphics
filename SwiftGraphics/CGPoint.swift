@@ -10,7 +10,7 @@ import CoreGraphics
 
 // MARK: CGPoint
 
-extension CGPoint: Printable {
+extension CGPoint: CustomStringConvertible {
     public var description: String { get { return "\(x), \(y)" } }
 }
 
@@ -196,7 +196,7 @@ public func round(value:CGPoint) -> CGPoint {
  :test:   floor(CGPoint(x:10.09, y:-10.95))
  :result: CGPoint(x:10, y:-11)
 */
-public func round(value:CGPoint, decimal:Int) -> CGPoint {
-    return value.map { round($0, decimal) }
+public func round(value:CGPoint, _ decimal:Int) -> CGPoint {
+    return value.map { round($0, decimal: decimal) }
 }
 

@@ -23,7 +23,6 @@ class DemoView: NSView {
 
         let context = NSGraphicsContext.currentContext()!.CGContext
 
-        let radius = CGFloat(2)
         for p in self.points {
             context.withColor(CGColor.blackColor()) {
                 context.strokeSaltire(CGRect(center:p, size:CGSize(w:4, h:4)))

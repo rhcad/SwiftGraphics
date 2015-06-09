@@ -32,7 +32,7 @@ public func < (lhs:Turn, rhs:Turn) -> Bool {
     return lhs.rawValue < rhs.rawValue
 }
 
-extension Turn: Printable {
+extension Turn: CustomStringConvertible {
     public var description: String {
         get {
             switch self {

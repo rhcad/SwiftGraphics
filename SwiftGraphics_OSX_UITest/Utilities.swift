@@ -10,7 +10,6 @@ import Foundation
 
 extension NSData {
     convenience init(contentsOfCompressedFile path:String) {
-        let data = NSData(contentsOfFile:path)
         let zipFile = gzopen(path, "rb")
         let unzippedData = NSMutableData(length:0)!
         while true {

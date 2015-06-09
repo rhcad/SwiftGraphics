@@ -33,7 +33,7 @@ class BouncingBalls {
 
     init(bounds:CGRect, numberOfBalls:Int) {
         self.bounds = bounds
-        for N in 0..<numberOfBalls {
+        for _ in 0..<numberOfBalls {
             let radius = Random.rng.random(CGFloat(10)...CGFloat(50))
             let velocity = Random.rng.random(CGRect(x:-100, y:-100, width:200, height:200))
             let positionRange = self.bounds.insetted(dx:radius, dy:radius)

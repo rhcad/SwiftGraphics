@@ -73,8 +73,8 @@ public extension Polygon {
             unconnectedEdges.removeAtIndex(0)
 
             var consumedIndexes:[Int] = []
-            for (index, edge) in enumerate(unconnectedEdges) {
-                println(edges.count >= 3 && edges[0].start == edges.last!.end)
+            for (index, edge) in unconnectedEdges.enumerate() {
+                print(edges.count >= 3 && edges[0].start == edges.last!.end)
 
                 var lastEdge = edges.last!
                 if  edge.start == lastEdge.end {
@@ -109,13 +109,13 @@ public extension Polygon {
             
             
             polygons.append(polygon)
-            println("Count \(edges.count)")
+            print("Count \(edges.count)")
 
 //            if consumedIndexes.count == unconnectedEdges.count {
 //                break
 //            }
 
-            consumedIndexes.sort(>)
+            consumedIndexes.sortInPlace(>)
             for index in consumedIndexes {
                 unconnectedEdges.removeAtIndex(index)
             }

@@ -70,7 +70,7 @@ public extension CGContext {
 
             item.drawInContext(self)
 
-            if let style = style {
+            if let _ = style {
                 CGContextRestoreGState(self)
             }
         }

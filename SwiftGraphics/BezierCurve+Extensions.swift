@@ -17,9 +17,9 @@ public extension BezierCurve {
     /**
      Return a point along the curve.
 
-     :param: t A value from 0 to 1
+     - parameter t: A value from 0 to 1
 
-     :returns: A CGPoint corresponding to the point along the curve.
+     - returns: A CGPoint corresponding to the point along the curve.
      */
     func pointAlongCurve(t:CGFloat) -> CGPoint {
         return BezierCurve.pointAlongCurveMatrix(points, t:t)
@@ -28,9 +28,9 @@ public extension BezierCurve {
     /**
      Splits the curve into two component curves
 
-     :param: t A ratio along the curve
+     - parameter t: A ratio along the curve
 
-     :returns: Two sub-curves
+     - returns: Two sub-curves
      */
     func split(t:CGFloat) -> (BezierCurve, BezierCurve) {
         return splitCurveDeCasteljaus(t)

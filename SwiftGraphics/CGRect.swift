@@ -26,7 +26,6 @@ public extension CGRect {
         self.size = CGSize(width:width, height:height)
     }
 
-
     init(w width:CGFloat, h height:CGFloat) {
         self.origin = CGPointZero
         self.size = CGSize(width:width, height:height)
@@ -149,7 +148,7 @@ public extension CGRect {
 
 public extension CGRect {
 
-    func offsetBy(# dx:CGFloat, dy:CGFloat) -> CGRect {
+    func offsetBy(dx  dx:CGFloat, dy:CGFloat) -> CGRect {
         var copy = self
         copy.offset(dx: dx, dy: dy)
         return copy
@@ -161,14 +160,14 @@ public extension CGRect {
         return copy
     }
 
-    func insetBy(# dx:CGFloat, dy:CGFloat) -> CGRect {
+    func insetBy(dx  dx:CGFloat, dy:CGFloat) -> CGRect {
         var copy = self
         copy.inset(dx:dx, dy:dy)
         return copy
         }
 
     // TODO: Deprecate
-    func insetted(# dx:CGFloat, dy:CGFloat) -> CGRect {
+    func insetted(dx  dx:CGFloat, dy:CGFloat) -> CGRect {
         var copy = self
         copy.inset(dx:dx, dy:dy)
         return copy

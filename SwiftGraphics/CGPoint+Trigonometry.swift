@@ -9,11 +9,11 @@
 
 import CoreGraphics
 
-public func dotProduct(lhs:CGPoint, rhs:CGPoint) -> CGFloat {
+public func dotProduct(lhs:CGPoint, _ rhs:CGPoint) -> CGFloat {
     return lhs.x * rhs.x + lhs.y * rhs.y
 }
 
-public func crossProduct(lhs:CGPoint, rhs:CGPoint) -> CGFloat {
+public func crossProduct(lhs:CGPoint, _ rhs:CGPoint) -> CGFloat {
     return lhs.x * rhs.y - lhs.y * rhs.x
 }
 
@@ -115,21 +115,21 @@ public extension CGPoint {
 /**
  Return true if a, b, and c all lie on the same line.
  */
-public func collinear(a:CGPoint, b:CGPoint, c:CGPoint) -> Bool {
+public func collinear(a:CGPoint, _ b:CGPoint, _ c:CGPoint) -> Bool {
     return (b.x - a.x) * (c.y - a.y) ==% (c.x - a.x) * (b.y - a.y)
 }
 
 /**
  Return true if c is near to the beeline a b.
  */
-public func collinear(a:CGPoint, b:CGPoint, c:CGPoint, tolerance:CGFloat) -> Bool {
+public func collinear(a:CGPoint, _ b:CGPoint, _ c:CGPoint, tolerance:CGFloat) -> Bool {
     return c.distanceTo(a, p2:b) <= tolerance
 }
 
 /**
  Return the angle between vertex-p1 and vertex-vertex.
  */
-public func angle(vertex:CGPoint, p1:CGPoint, p2:CGPoint) -> CGFloat {
+public func angle(vertex:CGPoint, _ p1:CGPoint, _ p2:CGPoint) -> CGFloat {
     return abs((p1 - vertex).angleTo(p2 - vertex))
 }
 
@@ -140,10 +140,10 @@ public extension CGPoint {
     /**
      Calculate a point with polar angle and radius based on this point.
      
-     :param: angle polar angle in radians.
-     :param: radius the length of the polar radius
+     - parameter angle: polar angle in radians.
+     - parameter radius: the length of the polar radius
      
-     :returns: the point relative to this point.
+     - returns: the point relative to this point.
      */
     func polarPoint(angle:CGFloat, radius:CGFloat) -> CGPoint {
         return CGPoint(x: x + radius * cos(angle), y: y + radius * sin(angle));
@@ -152,11 +152,11 @@ public extension CGPoint {
     /**
      Calculate a point along the direction from this point to 'dir' point.
      
-     :param: dir the direction point.
-     :param: dx the distance from this point to the result point.
+     - parameter dir: the direction point.
+     - parameter dx: the distance from this point to the result point.
                The negative value represents along the opposite direction.
      
-     :returns: the point relative to this point.
+     - returns: the point relative to this point.
      */
     func rulerPoint(dir:CGPoint, dx:CGFloat) -> CGPoint {
         let len = distanceTo(dir)
@@ -171,11 +171,11 @@ public extension CGPoint {
      Calculate a point along the direction from this point to 'dir' point.
      dx and dy may be negative which represents along the opposite direction.
      
-     :param: dir the direction point.
-     :param: dx the projection distance along the direction from this point to 'dir' point.
-     :param: dy the perpendicular distance from the result point to the line of this point to 'dir' point.
+     - parameter dir: the direction point.
+     - parameter dx: the projection distance along the direction from this point to 'dir' point.
+     - parameter dy: the perpendicular distance from the result point to the line of this point to 'dir' point.
      
-     :returns: the point relative to this point.
+     - returns: the point relative to this point.
      */
     func rulerPoint(dir:CGPoint, dx:CGFloat, dy:CGFloat) -> CGPoint {
         let len = distanceTo(dir)
@@ -207,8 +207,8 @@ public extension CGPoint {
     /**
      Returns the length of the vector which perpendicular to the projection of this vector onto xAxis vector.
      
-     :param:   xAxis projection target vector.
-     :returns: perpendicular distance which is positive if this vector is in the CCW direction of xAxis and negative if clockwise.
+     - parameter   xAxis: projection target vector.
+     - returns: perpendicular distance which is positive if this vector is in the CCW direction of xAxis and negative if clockwise.
      */
     func distanceToVector(xAxis:CGPoint) -> CGFloat {
         let len = xAxis.magnitude

@@ -57,7 +57,7 @@ cgpath.dump()
 
 var generator = ellipses.generate()
 
-let tileSize = CGSize(w:800, h:800)
+let tileSize = CGSize(width:800, height:800)
 let bitmapSize = tileSize * CGFloat(s)
 
 let cgimage = CGContextRef.imageWithBlock(bitmapSize, color:CGColor.lightGrayColor(), origin:CGPointZero) {
@@ -65,7 +65,7 @@ let cgimage = CGContextRef.imageWithBlock(bitmapSize, color:CGColor.lightGrayCol
 
     CGContextSetShouldAntialias(context, false)
 
-    tiled(context, tileSize, IntSize(width:s, height:s), origin:CGPoint(x:0.5, y:0.5)) {
+    tiled(context, tileSize: tileSize, dimension: IntSize(width:s, height:s), origin:CGPoint(x:0.5, y:0.5)) {
         (context:CGContext) -> Void in
 
         if let ellipse = generator.next() {
@@ -74,7 +74,7 @@ let cgimage = CGContextRef.imageWithBlock(bitmapSize, color:CGColor.lightGrayCol
 
             context.strokeColor = CGColor.greenColor()
 
-            var curves = ellipse.asBezierCurves(c:c)
+            var curves = ellipse.asBezierCurves(c)
             context.stroke(curves.0)
             context.stroke(curves.1)
             context.stroke(curves.2)
@@ -83,7 +83,7 @@ let cgimage = CGContextRef.imageWithBlock(bitmapSize, color:CGColor.lightGrayCol
             context.strokeColor = CGColor.redColor()
 
             c = 4.0 * (sqrt(2.0) - 1.0) / 3.0 // 0.5522847498307936
-            curves = ellipse.asBezierCurves(c:c)
+            curves = ellipse.asBezierCurves(c)
             context.stroke(curves.0)
             context.stroke(curves.1)
             context.stroke(curves.2)
@@ -95,4 +95,4 @@ let cgimage = CGContextRef.imageWithBlock(bitmapSize, color:CGColor.lightGrayCol
     }
 }
 
-let image = NSImage(CGImage: cgimage, size: cgimage.size)  
+let image = NSImage(CGImage: cgimage, size: cgimage.size)

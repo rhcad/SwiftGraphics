@@ -54,10 +54,10 @@ class SketchView: NSView {
                 context.strokeLine(node.start, node.end)
             case let node as RectangleNode:
                 context.strokeRect(node.frame)
-            case let node as GroupGeometryNode:
+            case  _ as GroupGeometryNode:
                 break
             default:
-                println("No renderer for \(node)")
+                print("No renderer for \(node)")
         }
         
         if let group = node as? GroupGeometryNode {
@@ -91,7 +91,7 @@ class SketchView: NSView {
             let colorInt:UInt32 = UInt32(Random.rng.random(0...0xFFFFFF)) << 8 | 0xFF
             let color = NSColor(rgba:colorInt)
             colors[colorInt] = node
-//            println("DEFINING: \(colorInt.asHex()) \(color)")
+//            print("DEFINING: \(colorInt.asHex()) \(color)")
             CGContextSetStrokeColorWithColor(context, color.CGColor)
             CGContextSetFillColorWithColor(context, color.CGColor)
             CGContextSetLineWidth(context, 4)
@@ -105,11 +105,11 @@ class SketchView: NSView {
             ptr:CGBitmapContextGetData(context))
         
         let colorInt = bitmap[UIntPoint(x:UInt(location.x - rect.origin.x), y:UInt(location.y - rect.origin.y))]
-        let color = NSColor(rgba: colorInt)
-//        println("SEARCH: \(colorInt.asHex()) \(color)")
+//        let color = NSColor(rgba: colorInt)
+//        print("SEARCH: \(colorInt.asHex()) \(color)")
 
         let node = colors[colorInt]
-        println(node)
+        Swift.print(node)
 
         
 //        let image = context.nsimage

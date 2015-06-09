@@ -28,7 +28,7 @@ public func ** (lhs:CGFloat, rhs:CGFloat) -> CGFloat {
 
 // MARK: Basics
 
-public func clamp <T:Comparable> (value:T, lower:T, upper:T) -> T {
+public func clamp <T:Comparable> (value:T, _ lower:T, _ upper:T) -> T {
     return max(min(value, upper), lower)
 }
 
