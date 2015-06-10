@@ -32,25 +32,21 @@ public struct BezierCurve {
     }
 
     public var order: Order {
-        get {
-            switch controls.count + 2 {
-                case 3:
-                    return .Quadratic
-                case 4:
-                    return .Cubic
-                default:
-                    return .OrderN(controls.count + 2)
-            }       
-        }
+        switch controls.count + 2 {
+            case 3:
+                return .Quadratic
+            case 4:
+                return .Cubic
+            default:
+                return .OrderN(controls.count + 2)
+        }       
     }
     public var points: [CGPoint] {
-        get {
-            if let start = start {
-                return [start] + controls + [end]
-            }
-            else {
-                return controls + [end]
-            }
+        if let start = start {
+            return [start] + controls + [end]
+        }
+        else {
+            return controls + [end]
         }
     }
 }
@@ -59,24 +55,21 @@ public struct BezierCurve {
 
 extension BezierCurve: CustomStringConvertible {
     public var description: String {
-        get {
+        let formatter = NSNumberFormatter()
 
-            let formatter = NSNumberFormatter()
+        let pointFormatter = {
+            (p:CGPoint) -> String in
+            let x = formatter.stringFromNumber(p.x)!
+            let y = formatter.stringFromNumber(p.y)!
+            return "(\(x), \(y))"
+        }
 
-            let pointFormatter = {
-                (p:CGPoint) -> String in
-                let x = formatter.stringFromNumber(p.x)!
-                let y = formatter.stringFromNumber(p.y)!
-                return "(\(x), \(y))"
-            }
-
-            let controlsString = ", ".join(controls.map() { pointFormatter($0) })
-            if let start = start {
-                return "BezierCurve(start:\(pointFormatter(start)), controls:\(controlsString), end:\(pointFormatter(end))"
-            }
-            else {
-                return "BezierCurve(controls:\(controlsString), end:\(pointFormatter(end))"
-            }
+        let controlsString = ", ".join(controls.map() { pointFormatter($0) })
+        if let start = start {
+            return "BezierCurve(start:\(pointFormatter(start)), controls:\(controlsString), end:\(pointFormatter(end))"
+        }
+        else {
+            return "BezierCurve(controls:\(controlsString), end:\(pointFormatter(end))"
         }
     }
 }

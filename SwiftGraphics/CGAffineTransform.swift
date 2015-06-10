@@ -12,9 +12,7 @@ import CoreGraphics
 
 extension CGAffineTransform: CustomStringConvertible {
     public var description: String {
-        get {
-            return "CGAffineTransform(\(a), \(b), \(c), \(d), \(tx), \(ty))"
-        }
+        return "CGAffineTransform(\(a), \(b), \(c), \(d), \(tx), \(ty))"
     }
 }
 
@@ -101,32 +99,34 @@ public extension CGAffineTransform {
         self = CGAffineTransform(translation:-origin) + CGAffineTransform(rotation:rotation) + CGAffineTransform(translation:origin)
     }
 
-    var isIdentity: Bool { get { return CGAffineTransformIsIdentity(self) } }
+    var isIdentity: Bool {
+        return CGAffineTransformIsIdentity(self)
+    }
 }
 
 public extension CGAffineTransform {
 
-    func translated(translation  translation:CGPoint) -> CGAffineTransform {
+    func translated(translation translation:CGPoint) -> CGAffineTransform {
         return CGAffineTransformTranslate(self, translation.x, translation.y)
     }
 
-    func translated(tx  tx:CGFloat, ty:CGFloat) -> CGAffineTransform {
+    func translated(tx tx:CGFloat, ty:CGFloat) -> CGAffineTransform {
         return CGAffineTransformTranslate(self, tx, ty)
     }
 
-    func scaled(scale  scale:CGSize) -> CGAffineTransform  {
+    func scaled(scale:CGSize) -> CGAffineTransform  {
         return CGAffineTransformScale(self, scale.width, scale.height)
     }
 
-    func scaled(sx  sx:CGFloat, sy:CGFloat) -> CGAffineTransform  {
+    func scaled(sx sx:CGFloat, sy:CGFloat) -> CGAffineTransform  {
         return CGAffineTransformScale(self, sx, sy)
     }
 
-    func scaled(scale  scale:CGFloat) -> CGAffineTransform  {
+    func scaled(scale:CGFloat) -> CGAffineTransform  {
         return CGAffineTransformScale(self, scale, scale)
     }
     
-    func scaled(scale  scale:CGFloat, origin:CGPoint) -> CGAffineTransform  {
+    func scaled(scale:CGFloat, origin:CGPoint) -> CGAffineTransform  {
         return self + CGAffineTransform(scale:scale, origin:origin)
     }
 
@@ -176,7 +176,7 @@ public extension CGAffineTransform {
     }
     
     mutating func scale(scale:CGFloat, origin:CGPoint) -> CGAffineTransform  {
-        self = scaled(scale:scale, origin:origin)
+        self = scaled(scale, origin:origin)
         return self
     }
 

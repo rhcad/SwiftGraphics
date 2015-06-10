@@ -40,21 +40,19 @@ extension NSMenuItem {
 
 extension NSGestureRecognizerState: CustomStringConvertible {
     public var description:String {
-        get {
-            switch self {
-                case .Possible:
-                    return "Possible"
-                case .Began:
-                    return "Began"
-                case .Changed:
-                    return "Changed"
-                case .Ended:
-                    return "Ended"
-                case .Cancelled:
-                    return "Cancelled"
-                case .Failed:
-                    return "Failed"
-            }
+        switch self {
+            case .Possible:
+                return "Possible"
+            case .Began:
+                return "Began"
+            case .Changed:
+                return "Changed"
+            case .Ended:
+                return "Ended"
+            case .Cancelled:
+                return "Cancelled"
+            case .Failed:
+                return "Failed"
         }
     }
 }

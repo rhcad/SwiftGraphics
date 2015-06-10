@@ -34,7 +34,7 @@ import SwiftGraphics
     public var parent : Node?
     public var children : [Node] = []
     public var name : String?
-    public var frame : CGRect { get {
+    public var frame : CGRect {
         let geometryChildren = children as! [GeometryNode]
         
         let rects = geometryChildren.map {
@@ -43,14 +43,14 @@ import SwiftGraphics
         }
 
         return CGRect.unionOfRects(rects)
-    } }
+    }
 
     public init() {
     }
 }
 
 @objc public class CircleNode : Shape, Node, GeometryNode {
-    public var frame : CGRect { get { return CGRect(center:center, radius:radius) } }
+    public var frame : CGRect { return CGRect(center:center, radius:radius) }
 
     public var center : CGPoint
     public var radius : CGFloat
@@ -63,7 +63,7 @@ import SwiftGraphics
 }
 
 @objc public class LineSegmentNode : Shape, Node, GeometryNode {
-    public var frame : CGRect { get { return CGRect(p1:start, p2:end) } }
+    public var frame : CGRect { return CGRect(p1:start, p2:end) }
 
     public var start : CGPoint
     public var end : CGPoint

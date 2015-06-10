@@ -11,7 +11,9 @@ import CoreGraphics
 // MARK: CGPoint
 
 extension CGPoint: Geometry {
-    public var frame:CGRect { get { return CGRect(center:self, diameter:0) } }
+    public var frame:CGRect {
+        return CGRect(center:self, diameter:0)
+    }
 }
 
 extension CGPoint: Drawable {
@@ -25,9 +27,7 @@ extension CGPoint: Drawable {
 extension BezierCurve: Drawable {
 
     public var frame:CGRect {
-        get {
-            return self.boundingBox
-        }
+        return self.boundingBox
     }
 
     public func drawInContext(context:CGContext) {
@@ -70,9 +70,7 @@ extension Triangle: Drawable {
 extension RegularPolygon: Drawable {
 
     public var frame:CGRect {
-        get {
-            return self.circumcircle.frame
-        }
+        return self.circumcircle.frame
     }
 
     public func drawInContext(context: CGContext) {

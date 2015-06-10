@@ -43,9 +43,7 @@ public struct Edge {
     }
     
     var flipped:Edge {
-        get {
-            return Edge(start:end, end:start)
-        }
+        return Edge(start:end, end:start)
     }
 }
 
@@ -57,9 +55,7 @@ public struct Polygon {
     }
     
     var connected:Bool {
-        get {
-            return edges.count >= 3 && edges[0].start == edges.last!.end
-        }
+        return edges.count >= 3 && edges[0].start == edges.last!.end
     }
 }
 

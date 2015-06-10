@@ -42,17 +42,15 @@ struct RegularExpression {
         typealias Groups = BlockBackedCollection <Group>
 
         var groups: Groups {
-            get {
-                let count = result.numberOfRanges
-                let groups = Groups(count:count) {
-                    (index:Int) -> Group in
-                    let range = self.result.rangeAtIndex(index)
-                    let string = self.string._bridgeToObjectiveC().substringWithRange(range)
-                    let group = Group(string:string, range:range)
-                    return group
-                    }
-                return groups
-            }
+            let count = result.numberOfRanges
+            let groups = Groups(count:count) {
+                (index:Int) -> Group in
+                let range = self.result.rangeAtIndex(index)
+                let string = self.string._bridgeToObjectiveC().substringWithRange(range)
+                let group = Group(string:string, range:range)
+                return group
+                }
+            return groups
         }
 
         struct Group {

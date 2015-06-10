@@ -37,7 +37,9 @@ public extension CGPathDrawingMode {
 
 public extension CGMutablePath {
 
-    var currentPoint: CGPoint { get { return CGPathGetCurrentPoint(self) } }
+    var currentPoint: CGPoint {
+        return CGPathGetCurrentPoint(self)
+    }
 
     func move(point:CGPoint, relative:Bool = false) -> CGMutablePath {
         if relative {
@@ -228,9 +230,11 @@ public extension CGPath {
 // MARK: Bounding box and length
 
 public extension CGPath {
-    public var boundingBox: CGRect { get { return CGPathGetPathBoundingBox(self) }}
+    public var boundingBox: CGRect {
+        return CGPathGetPathBoundingBox(self)
+    }
     
-    public var length: CGFloat { get {
+    public var length: CGFloat {
         var ret:CGFloat = 0.0
         enumerate() {
             (type:CGPathElementType, points:[CGPoint]) -> Void in
@@ -243,14 +247,14 @@ public extension CGPath {
             }
         }
         return ret
-    }}
+    }
 }
 
 // MARK: Get control points and endpoints of path segments
 
 public extension CGPath {
     
-    var points: [CGPoint] { get {
+    var points: [CGPoint] {
         var ret:[CGPoint] = []
         
         enumerate() { (type, points) -> Void in
@@ -265,9 +269,9 @@ public extension CGPath {
             }
         }
         return ret
-    }}
+    }
     
-    var pointCount: Int { get {
+    var pointCount: Int {
         var ret = 0
         
         enumerate() { (type, points) -> Void in
@@ -282,9 +286,9 @@ public extension CGPath {
             }
         }
         return ret
-    }}
+    }
     
-    var isClosed: Bool { get {
+    var isClosed: Bool {
         var ret = false
         
         CGPathApplyWithBlock(self) { (elementPtr) -> Void in
@@ -293,7 +297,7 @@ public extension CGPath {
             }
         }
         return ret
-    }}
+    }
 }
 
 // MARK: End points and tangent vectors
@@ -301,27 +305,19 @@ public extension CGPath {
 public extension CGPath {
     
     public var startPoint: CGPoint {
-        get {
-            return getPoint(0)!
-        }
+        return getPoint(0)!
     }
     
     public var endPoint: CGPoint {
-        get {
-            return getPoint(pointCount - 1)!
-        }
+        return getPoint(pointCount - 1)!
     }
     
     public var startTangent: CGPoint {
-        get {
-            return getPoint(1)! - getPoint(0)!
-        }
+        return getPoint(1)! - getPoint(0)!
     }
     
     public var endTangent: CGPoint {
-        get {
-            let n = pointCount
-            return getPoint(n - 1)! - getPoint(n - 2)!
-        }
+        let n = pointCount
+        return getPoint(n - 1)! - getPoint(n - 2)!
     }
 }

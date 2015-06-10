@@ -34,15 +34,13 @@ public func < (lhs:Turn, rhs:Turn) -> Bool {
 
 extension Turn: CustomStringConvertible {
     public var description: String {
-        get {
-            switch self {
-                case .None:
-                    return "None"
-                case .Left:
-                    return "Left"
-                case .Right:
-                    return "Right"
-            }
+        switch self {
+            case .None:
+                return "None"
+            case .Left:
+                return "Left"
+            case .Right:
+                return "Right"
         }
     }
 }

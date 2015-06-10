@@ -27,11 +27,10 @@ public struct Style {
 
 public extension Style {
     public static var defaultStyle:Style {
-        get {
-            var style = Style()
-            style.fillColor = nil
-            style.strokeColor = CGColor.blackColor()
-            style.lineWidth = 1.0
+        var style = Style()
+        style.fillColor = nil
+        style.strokeColor = CGColor.blackColor()
+        style.lineWidth = 1.0
 //            style.lineCap = kCGLineCapButt
 //            style.lineJoin = kCGLineJoinBevel
 //            style.miterLimit = 4.0
@@ -40,8 +39,7 @@ public extension Style {
 //            style.flatness = 4
 //            style.alpha = 1.0
 //            style.blendMode = kCGBlendModeNormal
-            return style
-        }
+        return style
     }
 }
 

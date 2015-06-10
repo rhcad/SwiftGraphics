@@ -73,9 +73,7 @@ public func * (lhs:CGFloat, rhs:CGRect) -> CGRect {
 public extension CGRect {
 
     var mid: CGPoint {
-        get {
-            return midXMidY
-        }
+        return midXMidY
     }
 
     var minXMinY: CGPoint {
@@ -88,9 +86,7 @@ public extension CGRect {
     }
 
     var minXMidY: CGPoint {
-        get {
-            return CGPoint(x:minX, y:midY)
-        }
+        return CGPoint(x:minX, y:midY)
     }
     var minXMaxY: CGPoint {
         get {
@@ -102,21 +98,15 @@ public extension CGRect {
     }
 
     var midXMinY: CGPoint {
-        get {
-            return CGPoint(x:midX, y:minY)
-        }
+        return CGPoint(x:midX, y:minY)
     }
 
     var midXMidY: CGPoint {
-        get {
-            return CGPoint(x:midX, y:midY)
-        }
+        return CGPoint(x:midX, y:midY)
     }
 
     var midXMaxY: CGPoint {
-        get {
-            return CGPoint(x:midX, y:maxY)
-        }
+        return CGPoint(x:midX, y:maxY)
     }
 
     var maxXMinY: CGPoint {
@@ -129,9 +119,7 @@ public extension CGRect {
     }
 
     var maxXMidY: CGPoint {
-        get {
-            return CGPoint(x:maxX, y:midY)
-        }
+        return CGPoint(x:maxX, y:midY)
     }
 
     var maxXMaxY: CGPoint {
@@ -175,9 +163,7 @@ public extension CGRect {
 
 
     var isFinite: Bool {
-        get {
-            return CGRectIsNull(self) == false && CGRectIsInfinite(self) == false
-        }
+        return CGRectIsNull(self) == false && CGRectIsInfinite(self) == false
     }
 
     static func unionOfRects(rects:[CGRect]) -> CGRect {
@@ -207,7 +193,9 @@ public extension CGRect {
         union(CGRect(center:point, radius:0.0))
     }
 
-    var toTuple: (CGFloat, CGFloat, CGFloat, CGFloat) { get { return (origin.x, origin.y, size.width, size.height) } }
+    var toTuple: (CGFloat, CGFloat, CGFloat, CGFloat) {
+        return (origin.x, origin.y, size.width, size.height)
+    }
 
     func integral() -> CGRect {
         return CGRectIntegral(self)

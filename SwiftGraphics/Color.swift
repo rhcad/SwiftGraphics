@@ -58,9 +58,7 @@ public struct HSV {
     }
 
     public var toTuple:(CGFloat, CGFloat, CGFloat) {
-        get {
-            return (h,s,v)
-        }
+        return (h,s,v)
     }
 }
 

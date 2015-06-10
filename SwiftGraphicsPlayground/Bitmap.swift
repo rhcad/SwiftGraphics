@@ -14,7 +14,9 @@ public struct Bitmap {
     public let bitsPerPixel: UInt
     public let bytesPerRow: UInt
     public let ptr: UnsafeMutablePointer<Void>
-    public var bytesPerPixel: UInt { get { return bitsPerPixel / 8 } }
+    public var bytesPerPixel: UInt {
+        return bitsPerPixel / 8
+    }
 
     public init(size:UIntSize, bitsPerComponent:UInt, bitsPerPixel:UInt, bytesPerRow:UInt, ptr:UnsafeMutablePointer <Void>) {
         self.size = size

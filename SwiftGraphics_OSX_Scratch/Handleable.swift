@@ -30,8 +30,7 @@ public struct Handle {
 
 extension Rectangle: Handleable {
     public var handles:[Handle] {
-        get {
-            return [
+        return [
 //                Handle(
 //                    positionGetter: { return frame.minXMinY },
 //                    positionSetter: { var newFrame = frame; newFrame.minXMinY = $0; frame = newFrame }
@@ -39,8 +38,7 @@ extension Rectangle: Handleable {
 //                Handle(position: self.frame.minXMaxY),
 //                Handle(position: self.frame.maxXMinY),
 //                Handle(position: self.frame.maxXMaxY),
-            ]
-        }
+        ]
     }
 }
 

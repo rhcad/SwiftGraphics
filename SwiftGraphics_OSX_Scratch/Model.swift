@@ -14,15 +14,13 @@ class Model: NSObject {
     @objc var objects:[Thing] = []
     var selectedObjectIndices:NSMutableIndexSet = NSMutableIndexSet()
     var selectedObjects:[Thing] {
-        get {
-            var objects:[Thing] = []
-            selectedObjectIndices.with(512) {
-                for N in $0 {
-                    objects.append(self.objects[N])
-                }
+        var objects:[Thing] = []
+        selectedObjectIndices.with(512) {
+            for N in $0 {
+                objects.append(self.objects[N])
             }
-            return objects
         }
+        return objects
     }
 
     override init() {
@@ -92,9 +90,7 @@ class Thing: HitTestable, Drawable, Equatable {
     let geometry:ThingType
 
     var selected: Bool {
-        get {
-            return model!.objectSelected(self)
-        }
+        return model!.objectSelected(self)
     }
 
     init(model:Model, geometry:ThingType) {
@@ -103,11 +99,11 @@ class Thing: HitTestable, Drawable, Equatable {
         self.center = geometry.frame.mid
     }
 
-    var bounds:CGRect { get { return geometry.frame } }
+    var bounds:CGRect { return geometry.frame }
 
     var center:CGPoint = CGPointZero
 
-    var frame:CGRect { get { return CGRect(origin:center, size:bounds.size) } }
+    var frame:CGRect { return CGRect(origin:center, size:bounds.size) }
 
     func drawInContext(context:CGContextRef) {
         let localTransform = CGAffineTransform(translation: frame.origin)

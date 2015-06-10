@@ -16,17 +16,13 @@ import UIKit
 
 extension CGColor: CustomStringConvertible {
     public var description: String {
-        get {
-            return CFCopyDescription(self) as String
-        }
+        return CFCopyDescription(self) as String
     }
 }
 
 public extension CGColor {
     public var alpha:CGFloat {
-        get {
-            return CGColorGetAlpha(self)
-        }
+        return CGColorGetAlpha(self)
     }
 }
 
@@ -82,9 +78,7 @@ public extension CGColorSpace {
 public extension CGColor {
 
     var colorSpace:CGColorSpaceRef {
-        get {
-            return CGColorGetColorSpace(self)!
-        }
+        return CGColorGetColorSpace(self)!
     }
 
     // There's a possibility that these colours dont match UIColor's or NSColor's version (although they are taken from the NSColor header file)

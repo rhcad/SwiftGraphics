@@ -135,16 +135,14 @@ extension Matrix {
 
     /// Get all values in matrix as a 1 dimensional array
     public var values:[CGFloat] {
-        get {
-            var values:[CGFloat] = []
-            for rowIndex in 0..<rows {
-                for colIndex in 0..<columns {
-                    let value = self[(colIndex, rowIndex)]
-                    values.append(value)
-                }
+        var values:[CGFloat] = []
+        for rowIndex in 0..<rows {
+            for colIndex in 0..<columns {
+                let value = self[(colIndex, rowIndex)]
+                values.append(value)
             }
-            return values
         }
+        return values
     }
 
     /**

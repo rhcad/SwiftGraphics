@@ -12,9 +12,7 @@ class ViewController: NSViewController {
 
     var model:Model!
     var scratchView:ScratchView? {
-        get {
-            return view as? ScratchView
-        }
+        return view as? ScratchView
     }
 
     override func viewDidLoad() {

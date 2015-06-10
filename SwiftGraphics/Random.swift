@@ -34,15 +34,11 @@ public struct Random {
 
 
     public var max: UInt64 {
-        get {
-            return provider.max
-        }
+        return provider.max
     }
 
     public var seed: UInt64 {
-        get {
-            return provider.seed
-        }
+        return provider.seed
     }
 
     public init(provider:RandomProvider) {

@@ -35,18 +35,14 @@ public struct LineSegment {
     }
 
     public var slope:CGFloat? {
-        get {
-            if end.x == start.x {
-                return nil
-            }
-            return (end.y - start.y) / (end.x - start.x)
+        if end.x == start.x {
+            return nil
         }
+        return (end.y - start.y) / (end.x - start.x)
     }
 
     public var angle:CGFloat {
-        get {
-            return atan2(end - start)
-        }
+        return atan2(end - start)
     }
 
     public func isParallel(other:LineSegment) -> Bool {

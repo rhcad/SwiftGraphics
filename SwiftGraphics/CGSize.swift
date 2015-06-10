@@ -70,17 +70,12 @@ public extension CGSize {
         height = point.y
     }
 
-
     var area:CGFloat {
-        get {
-            return abs(width) * abs(height)
-        }
+        return abs(width) * abs(height)
     }
 
     var signedArea:CGFloat {
-        get {
-            return width * height
-        }
+        return width * height
     }
 }
 
@@ -93,9 +88,11 @@ public enum Orientation {
 }
 
 public extension CGSize {
-    var topectRatio: CGFloat { get { return width / height } }
+    var topectRatio: CGFloat {
+        return width / height
+    }
 
-    var orientation: Orientation { get {
+    var orientation: Orientation {
         if abs(width) > abs(height) {
             return .Landscape
         }
@@ -105,7 +102,7 @@ public extension CGSize {
         else {
             return .Portrait
         }
-    } }
+    }
 }
 
 
@@ -114,7 +111,9 @@ public extension CGSize {
         (width, height) = v
     }
 
-    var toTuple: (CGFloat, CGFloat) { get { return (width, height) } }
+    var toTuple: (CGFloat, CGFloat) {
+        return (width, height)
+    }
 }
 
 

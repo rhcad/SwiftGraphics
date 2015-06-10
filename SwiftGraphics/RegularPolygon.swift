@@ -14,8 +14,8 @@ public struct RegularPolygon {
     public let nside:Int
     public let center:CGPoint
     public let vertex:CGPoint
-    public var radius:CGFloat { get { return center.distanceTo(vertex) } }
-    public var startAngle:CGFloat { get { return (vertex - center).direction } }
+    public var radius:CGFloat { return center.distanceTo(vertex) }
+    public var startAngle:CGFloat { return (vertex - center).direction }
     
     public init(nside:Int, center:CGPoint, vertex:CGPoint) {
         self.nside = nside
@@ -33,26 +33,26 @@ public struct RegularPolygon {
 }
 
 public extension RegularPolygon {
-    public var isDegenerate: Bool { get { return nside < 3 || center ==% vertex } }
+    public var isDegenerate: Bool { return nside < 3 || center ==% vertex }
     
-    public var centralAngle:CGFloat { get { return CGFloat(2 * M_PI / Double(nside)) } }
-    public var interiorAngle:CGFloat { get { return CGFloat(Double(nside - 2) * M_PI / Double(nside)) } }
-    public var exteriorAngle:CGFloat { get { return centralAngle } }
+    public var centralAngle:CGFloat { return CGFloat(2 * M_PI / Double(nside)) }
+    public var interiorAngle:CGFloat { return CGFloat(Double(nside - 2) * M_PI / Double(nside)) }
+    public var exteriorAngle:CGFloat { return centralAngle }
     
-    public var area: CGFloat { get { return CGFloat(radius ** 2 * sin(centralAngle) * CGFloat(nside) / 2) } }
-    public var length:CGFloat { get { return sideLength * CGFloat(nside) } }
-    public var sideLength:CGFloat { get { return CGFloat(2 * radius * sin(centralAngle / 2)) } }
+    public var area: CGFloat { return CGFloat(radius ** 2 * sin(centralAngle) * CGFloat(nside) / 2) }
+    public var length:CGFloat { return sideLength * CGFloat(nside) }
+    public var sideLength:CGFloat { return CGFloat(2 * radius * sin(centralAngle / 2)) }
     
-    public var inradius:CGFloat { get { return radius * cos(centralAngle / 2) } }
-    public var circumRadius:CGFloat { get { return radius } }
+    public var inradius:CGFloat { return radius * cos(centralAngle / 2) }
+    public var circumRadius:CGFloat { return radius }
     
-    public var circumcircle: Circle { get { return Circle(center:center, radius:radius) } }
-    public var incircle: Circle { get { return Circle(center:center, radius:inradius) } }
+    public var circumcircle: Circle { return Circle(center:center, radius:radius) }
+    public var incircle: Circle { return Circle(center:center, radius:inradius) }
     
-    public var points:[CGPoint] { get {
+    public var points:[CGPoint] {
         let s = startAngle, c = centralAngle, r = radius
         return (0..<nside).map { self.center.polarPoint(s + c * CGFloat($0), radius:r) }
-    }}
+    }
     
     public func getPoint(index:Int) -> CGPoint {
         return center.polarPoint(startAngle + centralAngle * CGFloat(index), radius:radius)

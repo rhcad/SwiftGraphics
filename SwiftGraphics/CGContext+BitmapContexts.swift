@@ -47,14 +47,14 @@ public extension CGContext {
     }
 
     var size: CGSize {
-        get {
-            return CGSize(w:CGFloat(CGBitmapContextGetWidth(self)), h:CGFloat(CGBitmapContextGetHeight(self)))
-        }
+        return CGSize(w:CGFloat(CGBitmapContextGetWidth(self)), h:CGFloat(CGBitmapContextGetHeight(self)))
     }
 }
 
 public extension CGImageRef {
-    var size: CGSize { get { return CGSize(width:CGFloat(CGImageGetWidth(self)), height:CGFloat(CGImageGetHeight(self))) } }
+    var size: CGSize {
+        return CGSize(width:CGFloat(CGImageGetWidth(self)), height:CGFloat(CGImageGetHeight(self)))
+    }
 }
 
 public extension CGContext {
@@ -70,13 +70,11 @@ public extension CGContext {
 public extension CGContext {
 #if os(OSX)
     var nsimage: NSImage {
-        get { 
-            // This assumes the context is a bitmap context
-            let cgimage = CGBitmapContextCreateImage(self)!
-            let size = CGSize(width:CGFloat(CGImageGetWidth(cgimage)), height:CGFloat(CGImageGetHeight(cgimage)))
-            let nsimage = NSImage(CGImage:cgimage, size:size)
-            return nsimage
-        }
+        // This assumes the context is a bitmap context
+        let cgimage = CGBitmapContextCreateImage(self)!
+        let size = CGSize(width:CGFloat(CGImageGetWidth(cgimage)), height:CGFloat(CGImageGetHeight(cgimage)))
+        let nsimage = NSImage(CGImage:cgimage, size:size)
+        return nsimage
     }
 #endif
 }

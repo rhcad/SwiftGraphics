@@ -10,15 +10,13 @@ import CoreGraphics
 
 extension Rectangle: Markupable {
     public var markup:[Markup] {
-        get {
-            var markup:[Markup] = []
+        var markup:[Markup] = []
 
-            markup.append(Marker(point: frame.minXMinY, tag: "vertex"))
-            markup.append(Marker(point: frame.minXMaxY, tag: "vertex"))
-            markup.append(Marker(point: frame.maxXMinY, tag: "vertex"))
-            markup.append(Marker(point: frame.maxXMaxY, tag: "vertex"))
+        markup.append(Marker(point: frame.minXMinY, tag: "vertex"))
+        markup.append(Marker(point: frame.minXMaxY, tag: "vertex"))
+        markup.append(Marker(point: frame.maxXMinY, tag: "vertex"))
+        markup.append(Marker(point: frame.maxXMaxY, tag: "vertex"))
 
-            return markup
-        }
+        return markup
     }
 }

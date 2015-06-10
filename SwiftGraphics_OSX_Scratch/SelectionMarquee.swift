@@ -20,13 +20,11 @@ class SelectionMarquee {
         case polygon(SwiftGraphics.Polygon)
 
         var polygon:SwiftGraphics.Polygon? {
-            get {
-                switch self {
-                    case .polygon(let polygon):
-                        return polygon
-                    default:
-                        return nil
-                }
+            switch self {
+                case .polygon(let polygon):
+                    return polygon
+                default:
+                    return nil
             }
         }
     }

@@ -16,7 +16,7 @@ private struct QuadTreeConfig {
 }
 
 public class QuadTree <T> {
-    public var frame: CGRect { get { return rootNode.frame } }
+    public var frame: CGRect { return rootNode.frame }
     public var rootNode: QuadTreeNode <T>!
     private let config: QuadTreeConfig
 
@@ -52,18 +52,16 @@ public class QuadTreeNode <T> {
     // Optional because this can be nil-ed out later.
     public lazy var items: [Item]? = []
     public var objects: [T]? {
-        get { 
-            if let items = items {
-                return items.map() { return $0.object }
-            }
-            else {
-                return nil
-            }
+        if let items = items {
+            return items.map() { return $0.object }
         }
-    } 
+        else {
+            return nil
+        }
+    }
 
-    internal var isLeaf: Bool { get { return subnodes == nil } }
-    internal var canExpand: Bool { get { return frame.size.width >= config.minimumNodeSize.width * 2.0 && frame.size.height >= config.minimumNodeSize.height * 2.0 } }
+    internal var isLeaf: Bool { return subnodes == nil }
+    internal var canExpand: Bool { return frame.size.width >= config.minimumNodeSize.width * 2.0 && frame.size.height >= config.minimumNodeSize.height * 2.0 }
 
     private init(config:QuadTreeConfig, frame:CGRect) {
         self.config = config

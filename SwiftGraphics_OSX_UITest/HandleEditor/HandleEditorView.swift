@@ -23,7 +23,7 @@ class Marker {
     }
 
     var frame:CGRect {
-        get { return CGRect(center:position, size:size) }
+        return CGRect(center:position, size:size)
     }
 }
 

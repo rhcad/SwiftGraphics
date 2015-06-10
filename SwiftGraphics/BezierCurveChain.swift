@@ -36,9 +36,7 @@ public struct BezierCurveChain {
 
 extension BezierCurveChain: CustomStringConvertible {
     public var description: String {
-        get {
-            return ", ".join(curves.map() { $0.description })
-        }
+        return ", ".join(curves.map() { $0.description })
     }
 }
 

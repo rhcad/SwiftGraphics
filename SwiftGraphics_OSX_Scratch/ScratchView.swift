@@ -27,9 +27,7 @@ class ScratchView: NSView {
     }
 
     override var acceptsFirstResponder:Bool {
-        get {
-            return true
-        }
+        return true
     }
 
     override func keyDown(theEvent: NSEvent) {

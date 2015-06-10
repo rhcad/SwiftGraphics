@@ -26,7 +26,7 @@ class OmniGraffleDocumentModel {
 @objc class OmniGraffleNode: Node {
     weak var parent: Node?
     var dictionary: NSDictionary!
-    var ID:Int { get { return dictionary["ID"] as! Int } }
+    var ID:Int { return dictionary["ID"] as! Int }
 
     init() {
     }
@@ -41,23 +41,19 @@ class OmniGraffleDocumentModel {
 }
 
 @objc class OmniGraffleShape: OmniGraffleNode {
-    var shape:String? { get { return dictionary["Shape"] as? String } }
-    var bounds:CGRect { get { return StringToRect(dictionary["Bounds"] as! String) } }
+    var shape:String? { return dictionary["Shape"] as? String }
+    var bounds:CGRect { return StringToRect(dictionary["Bounds"] as! String) }
     lazy var lines:[OmniGraffleLine] = []
 }
 
 @objc class OmniGraffleLine: OmniGraffleNode {
     var start:CGPoint {
-        get {
-            let strings = dictionary["Points"] as! [String]
-            return StringToPoint(strings[0])
-        }
+        let strings = dictionary["Points"] as! [String]
+        return StringToPoint(strings[0])
     }
     var end:CGPoint {
-        get {
-            let strings = dictionary["Points"] as! [String]
-            return StringToPoint(strings[1])
-        }
+        let strings = dictionary["Points"] as! [String]
+        return StringToPoint(strings[1])
     }
     var head:OmniGraffleNode?
     var tail:OmniGraffleNode?

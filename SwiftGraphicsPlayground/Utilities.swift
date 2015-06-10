@@ -44,13 +44,11 @@ public extension NSColor {
     }
     
     var toUInt32:UInt32 {
-        get {
-            let r = UInt32(redComponent * 255)
-            let g = UInt32(greenComponent * 255)
-            let b = UInt32(blueComponent * 255)
-            let a = UInt32(alphaComponent * 255)
-            return r << 24 | g << 16 | b << 8 | a
-        }
+        let r = UInt32(redComponent * 255)
+        let g = UInt32(greenComponent * 255)
+        let b = UInt32(blueComponent * 255)
+        let a = UInt32(alphaComponent * 255)
+        return r << 24 | g << 16 | b << 8 | a
     }
 }
 
@@ -64,8 +62,8 @@ public struct BlockBackedCollection <T>: CollectionType, SequenceType {
     public typealias Block = (index:Index) -> T
     public typealias Generator = BlockBackedCollectionGenerator <T>
 
-    public var startIndex: Index { get { return 0 } }
-    public var endIndex: Index { get { return count } }
+    public var startIndex: Index { return 0 }
+    public var endIndex: Index { return count }
     public let count: Int
     public let block: Block
 
@@ -91,7 +89,7 @@ public struct BlockBackedCollectionGenerator <T>: GeneratorType {
     public typealias Block = Sequence.Block
 
     public let startIndex: Index = 0
-    public var endIndex: Index { get { return count } }
+    public var endIndex: Index { return count }
     public let count: Int
     public let block: Block
     public var nextIndex: Index = 0

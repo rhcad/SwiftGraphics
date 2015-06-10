@@ -49,9 +49,7 @@ public extension Triangle {
     }
 
     public var pointsArray:[CGPoint] {
-        get {
-            return [points.0, points.1, points.2]
-        }
+        return [points.0, points.1, points.2]
     }
 
 }
@@ -59,129 +57,101 @@ public extension Triangle {
 public extension Triangle {
 
     public var lengths: (CGFloat, CGFloat, CGFloat) {
-        get {
-            return (
-                (points.0 - points.1).magnitude,
-                (points.1 - points.2).magnitude,
-                (points.2 - points.0).magnitude
-            )
-        }
+        return (
+            (points.0 - points.1).magnitude,
+            (points.1 - points.2).magnitude,
+            (points.2 - points.0).magnitude
+        )
     }
 
     public var angles: (CGFloat, CGFloat, CGFloat) {
-        get {
-            let a1 = angle(points.0, points.1, points.2)
-            let a2 = angle(points.1, points.2, points.0)
-            let a3 = DegreesToRadians(180) - a1 - a2
-            return (a1,a2,a3)
-        }
+        let a1 = angle(points.0, points.1, points.2)
+        let a2 = angle(points.1, points.2, points.0)
+        let a3 = DegreesToRadians(180) - a1 - a2
+        return (a1,a2,a3)
     }
     
     public var isEquilateral: Bool {
-        get {
-            return equalities(self.lengths, test: { $0 ==% $1 }) == 3
-        }
+        return equalities(self.lengths, test: { $0 ==% $1 }) == 3
     }
     
     public var isIsosceles: Bool {
-        get {
-            return equalities(self.lengths, test: { $0 ==% $1 }) == 2
-        }
+        return equalities(self.lengths, test: { $0 ==% $1 }) == 2
     }
     
     public var isScalene: Bool {
-        get {
-            return equalities(self.lengths, test: { $0 ==% $1 }) == 1
-        }
+        return equalities(self.lengths, test: { $0 ==% $1 }) == 1
     }
     
     public var isRightAngled: Bool {
-        get {
-            let a = self.angles
-            let rightAngle = CGFloat(0.5 * M_PI)
-            return a.0 ==% rightAngle || a.1 ==% rightAngle || a.2 ==% rightAngle
-        }
+        let a = self.angles
+        let rightAngle = CGFloat(0.5 * M_PI)
+        return a.0 ==% rightAngle || a.1 ==% rightAngle || a.2 ==% rightAngle
     }
     
     public var isOblique: Bool {
-        get {
-            return isRightAngled == false
-        }
+        return isRightAngled == false
     }
     
     public var isAcute: Bool {
-        get {
-            let a = self.angles
-            let rightAngle = CGFloat(0.5 * M_PI)
-            return a.0 < rightAngle && a.1 < rightAngle && a.2 < rightAngle
-        }
+        let a = self.angles
+        let rightAngle = CGFloat(0.5 * M_PI)
+        return a.0 < rightAngle && a.1 < rightAngle && a.2 < rightAngle
     }
 
     public var isObtuse: Bool {
-        get {
-            let a = self.angles
-            let rightAngle = CGFloat(0.5 * M_PI)
-            return a.0 > rightAngle || a.1 > rightAngle || a.2 > rightAngle
-        }
+        let a = self.angles
+        let rightAngle = CGFloat(0.5 * M_PI)
+        return a.0 > rightAngle || a.1 > rightAngle || a.2 > rightAngle
     }
 
     public var isDegenerate: Bool {
-        get {
-            let a = self.angles
-            let r180 = CGFloat(M_PI)
-            return a.0 ==% r180 || a.1 ==% r180 || a.2 ==% r180
-        }
+        let a = self.angles
+        let r180 = CGFloat(M_PI)
+        return a.0 ==% r180 || a.1 ==% r180 || a.2 ==% r180
     }
 
     public var signedArea: CGFloat {
-        get {
-            let (a, b, c) = points
+        let (a, b, c) = points
 //            let signedArea = 0.5 * (
 //                a.x * (b.y - c.y) +
 //                b.x * (c.y - a.y) +
 //                c.x * (a.y - b.y)
 //            )
 //            return signedArea
-            // TODO: Swift 1.2: Simplified for "expression was too complex to be solved in reasonable time; consider breaking up the expression into distinct sub-expressions"
-            let signedArea = (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)) * CGFloat(0.5)
-            return signedArea
-        }
+        // TODO: Swift 1.2: Simplified for "expression was too complex to be solved in reasonable time; consider breaking up the expression into distinct sub-expressions"
+        let signedArea = (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)) * CGFloat(0.5)
+        return signedArea
     }
     
-    public var area: CGFloat { get { return abs(signedArea) } }
+    public var area: CGFloat { return abs(signedArea) }
 
     // https://en.wikipedia.org/wiki/Circumscribed_circle  
     public var circumcenter : CGPoint {
-        get {
-            let (a, b, c) = points
+        let (a, b, c) = points
 //            let D = 2 * (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y))
-            // TODO: Swift 1.2: Simplified for "expression was too complex to be solved in reasonable time; consider breaking up the expression into distinct sub-expressions"
-            let D = (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)) * CGFloat(2.0)
-            
-            let a2 = a.x ** 2 + a.y ** 2
-            let b2 = b.x ** 2 + b.y ** 2
-            let c2 = c.x ** 2 + c.y ** 2
-            
-            let X = (a2 * (b.y - c.y) + b2 * (c.y - a.y) + c2 * (a.y - b.y)) / D
-            let Y = (a2 * (c.x - b.x) + b2 * (a.x - c.x) + c2 * (b.x - a.x)) / D
+        // TODO: Swift 1.2: Simplified for "expression was too complex to be solved in reasonable time; consider breaking up the expression into distinct sub-expressions"
+        let D = (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)) * CGFloat(2.0)
+        
+        let a2 = a.x ** 2 + a.y ** 2
+        let b2 = b.x ** 2 + b.y ** 2
+        let c2 = c.x ** 2 + c.y ** 2
+        
+        let X = (a2 * (b.y - c.y) + b2 * (c.y - a.y) + c2 * (a.y - b.y)) / D
+        let Y = (a2 * (c.x - b.x) + b2 * (a.x - c.x) + c2 * (b.x - a.x)) / D
 
-            return CGPoint(x:X, y:Y)
-        }
+        return CGPoint(x:X, y:Y)
     }
     
     public var circumcircle : Circle {
-        get {
-            let (a,b,c) = lengths
-            let diameter = (a * b * c) / (2 * area)
-            return Circle(center:circumcenter, diameter:diameter)
-        }
+        let (a,b,c) = lengths
+        let diameter = (a * b * c) / (2 * area)
+        return Circle(center:circumcenter, diameter:diameter)
     }
 
     public var inradius : CGFloat {
-        get {
-            let (a, b, c) = lengths
-            return 2 * area / (a + b + c)
-        }
+        let (a, b, c) = lengths
+        return 2 * area / (a + b + c)
     }
 }
 
@@ -190,9 +160,7 @@ public extension Triangle {
 public extension Triangle {
 
     public var incenter : CGPoint {
-        get {
-            return toCartesian(alpha:1, beta:1, gamma:1)
-        }
+        return toCartesian(alpha:1, beta:1, gamma:1)
     }
 
     // converts trilinear coordinates to Cartesian coordinates relative
@@ -237,9 +205,7 @@ func equalities <T> (e:(T, T, T), test:((T, T) -> Bool)) -> Int {
 
 extension Triangle: Geometry {
     public var frame:CGRect {
-        get {
-            // TODO faster to just do min/maxes
-            return CGRect.unionOfPoints([points.0, points.1, points.2])
-        }
+        // TODO faster to just do min/maxes
+        return CGRect.unionOfPoints([points.0, points.1, points.2])
     }
 }

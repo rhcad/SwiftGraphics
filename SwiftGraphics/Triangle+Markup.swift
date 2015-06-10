@@ -10,17 +10,16 @@ import Foundation
 
 extension Triangle: Markupable {
     public var markup:[Markup] {
-        get {
-            var markup:[Markup] = []
+        var markup:[Markup] = []
 
-            markup.append(Marker(point: points.0, tag: "vertex"))
-            markup.append(Marker(point: points.1, tag: "vertex"))
-            markup.append(Marker(point: points.2, tag: "vertex"))
-            markup.append(Marker(point: circumcenter, tag: "circumcenter"))
+        markup.append(Marker(point: points.0, tag: "vertex"))
+        markup.append(Marker(point: points.1, tag: "vertex"))
+        markup.append(Marker(point: points.2, tag: "vertex"))
+        markup.append(Marker(point: circumcenter, tag: "circumcenter"))
 
 
-            markup.append(Guide(drawable:circumcircle, tag:"circumcircle"))
-            markup.append(Guide(drawable:incenter, tag:"incenter"))
+        markup.append(Guide(drawable:circumcircle, tag:"circumcircle"))
+        markup.append(Guide(drawable:incenter, tag:"incenter"))
 
 //            for control in controls {
 //                markup.append(Marker(point: control, tag: "control"))
@@ -35,7 +34,6 @@ extension Triangle: Markupable {
 //            markup.append(Guide(type: .rectangle(Rectangle(frame: boundingBox)), tag: "boundingBox"))
 //
 //            markup.append(Guide(type: .rectangle(Rectangle(frame: boundingBox)), tag: "simpleBounds"))
-            return markup
-        }
+        return markup
     }
 }

@@ -66,44 +66,42 @@ public extension Path {
 
 public extension Path {
     var cgPath:CGPath {
-        get {
-            let CGPath = CGPathCreateMutable()
+        let CGPath = CGPathCreateMutable()
 
-            for element in elements {
-                switch element {
-                    case .move(let point):
-                        CGPathMoveToPoint(CGPath, nil, point.x, point.y)
-                        break
-                    case .addLine(let point):
-                        CGPathAddLineToPoint(CGPath, nil, point.x, point.y)
-                        break
-                    case .addCurve(let curve):
+        for element in elements {
+            switch element {
+                case .move(let point):
+                    CGPathMoveToPoint(CGPath, nil, point.x, point.y)
+                    break
+                case .addLine(let point):
+                    CGPathAddLineToPoint(CGPath, nil, point.x, point.y)
+                    break
+                case .addCurve(let curve):
 
-                        switch curve.order {
-                            case .Cubic:
-                                CGPathAddCurveToPoint(CGPath, nil,
-                                    curve.controls[0].x, curve.controls[0].y,
-                                    curve.controls[1].x, curve.controls[1].y,
-                                    curve.end.x, curve.end.y
-                                )
-                            case .Quadratic:
-                                CGPathAddQuadCurveToPoint(CGPath, nil,
-                                    curve.controls[0].x, curve.controls[0].y,
-                                    curve.end.x, curve.end.y
-                                )
-                            default:
-                                assertionFailure("Unsupport bezier curve order.")
-                                break
-                        }
+                    switch curve.order {
+                        case .Cubic:
+                            CGPathAddCurveToPoint(CGPath, nil,
+                                curve.controls[0].x, curve.controls[0].y,
+                                curve.controls[1].x, curve.controls[1].y,
+                                curve.end.x, curve.end.y
+                            )
+                        case .Quadratic:
+                            CGPathAddQuadCurveToPoint(CGPath, nil,
+                                curve.controls[0].x, curve.controls[0].y,
+                                curve.end.x, curve.end.y
+                            )
+                        default:
+                            assertionFailure("Unsupport bezier curve order.")
+                            break
+                    }
 
-                        break
-                    case .close():
-                        CGPathCloseSubpath(CGPath)
-                        break
-                }
+                    break
+                case .close():
+                    CGPathCloseSubpath(CGPath)
+                    break
             }
-
-            return CGPath
         }
+
+        return CGPath
     }
 }

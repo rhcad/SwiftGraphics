@@ -34,9 +34,7 @@ public extension CGPoint {
     }
 
     var magnitudeSquared: CGFloat {
-        get {
-            return x * x + y * y
-        }
+        return x * x + y * y
     }
 
     var direction: CGFloat {
@@ -49,22 +47,16 @@ public extension CGPoint {
     }
 
     var normalized: CGPoint {
-        get {
-            let len = magnitude
-            return len ==% 0 ? self : CGPoint(x:x / len, y:y / len)
-        }
+        let len = magnitude
+        return len ==% 0 ? self : CGPoint(x:x / len, y:y / len)
     }
 
     var orthogonal: CGPoint {
-        get {
-            return CGPoint(x:-y, y:x)
-        }
+        return CGPoint(x:-y, y:x)
     }
 
     var transposed: CGPoint {
-        get {
-            return CGPoint(x:y, y:x)
-        }
+        return CGPoint(x:y, y:x)
     }
 
 }

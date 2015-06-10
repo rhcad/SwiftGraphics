@@ -14,38 +14,34 @@ public enum GraphicsOrigin {
     case Native
 
     var resolved: GraphicsOrigin {
-        get {
-            switch self {
-                case .TopLeft, .BottomLeft:
-                    return self
-                case .Native:
-                    #if os(OSX)
-                    return .TopLeft
-                    #else
-                    return .BottomLeft
-                    #endif
-            }
+        switch self {
+            case .TopLeft, .BottomLeft:
+                return self
+            case .Native:
+                #if os(OSX)
+                return .TopLeft
+                #else
+                return .BottomLeft
+                #endif
         }
     }
 
     var isNative: Bool {
-        get {
-            switch self {
-                case .TopLeft:
-                    #if os(OSX)
-                    return false
-                    #else
-                    return true
-                    #endif
-                case .BottomLeft:
-                    #if os(OSX)
-                    return true
-                    #else
-                    return false
-                    #endif
-                case .Native:
-                    return true
-            }
+        switch self {
+            case .TopLeft:
+                #if os(OSX)
+                return false
+                #else
+                return true
+                #endif
+            case .BottomLeft:
+                #if os(OSX)
+                return true
+                #else
+                return false
+                #endif
+            case .Native:
+                return true
         }
     }
 }

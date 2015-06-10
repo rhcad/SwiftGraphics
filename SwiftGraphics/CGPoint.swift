@@ -11,7 +11,9 @@ import CoreGraphics
 // MARK: CGPoint
 
 extension CGPoint: CustomStringConvertible {
-    public var description: String { get { return "\(x), \(y)" } }
+    public var description: String {
+        return "\(x), \(y)"
+    }
 }
 
 // MARK: Convenience initializers
@@ -35,7 +37,9 @@ public extension CGPoint {
     init(_ v:(CGFloat, CGFloat)) {
         (x, y) = v
     }
-    var toTuple: (CGFloat, CGFloat) { get { return (x, y) } }
+    var toTuple: (CGFloat, CGFloat) {
+        return (x, y)
+    }
 }
 
 // MARK: Unary Operators
@@ -131,9 +135,7 @@ public extension CGPoint {
      :result: false
      */
     var isZero: Bool {
-        get {
-            return x == 0 && y == 0
-        }
+        return x == 0 && y == 0
     }
 
     /**
