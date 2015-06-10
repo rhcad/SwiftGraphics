@@ -68,7 +68,7 @@ context.draw(chain)
 
 extension BezierCurve {
 
-    public func asSwift() -> String {
+    public func toSwift() -> String {
         var lines:[String] = []
 
         if let start = start {
@@ -90,7 +90,7 @@ extension BezierCurve {
 
 var lines:[String] = []
 for curve in chain.curves {
-    lines.append(curve.asSwift())
+    lines.append(curve.toSwift())
 }
 
 "\n".join(lines)

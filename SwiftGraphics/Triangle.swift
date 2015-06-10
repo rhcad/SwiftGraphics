@@ -191,14 +191,14 @@ public extension Triangle {
 
     public var incenter : CGPoint {
         get {
-            return asCartesian(alpha:1, beta:1, gamma:1)
+            return toCartesian(alpha:1, beta:1, gamma:1)
         }
     }
 
     // converts trilinear coordinates to Cartesian coordinates relative
     // to the incenter; thus, the incenter has coordinates (0.0, 0.0)
     // TODO: THis seems broken!
-    public func asLocalCartesian(alpha  alpha:CGFloat, beta:CGFloat, gamma:CGFloat) -> CGPoint {
+    public func toLocalCartesian(alpha  alpha:CGFloat, beta:CGFloat, gamma:CGFloat) -> CGPoint {
         let area = self.area
         let (a,b,c) = lengths
         let r = 2 * area / (a + b + c)
@@ -212,9 +212,9 @@ public extension Triangle {
     }    
 
     // TODO: This seems broken!
-    public func asCartesian(alpha  alpha:CGFloat, beta:CGFloat, gamma:CGFloat) -> CGPoint {
-        let a = asLocalCartesian(alpha:alpha, beta:beta, gamma:gamma)
-        let delta = asLocalCartesian(alpha:0,beta:0, gamma:1)
+    public func toCartesian(alpha  alpha:CGFloat, beta:CGFloat, gamma:CGFloat) -> CGPoint {
+        let a = toLocalCartesian(alpha:alpha, beta:beta, gamma:gamma)
+        let delta = toLocalCartesian(alpha:0,beta:0, gamma:1)
         return points.0 + a - delta
     }    
 }

@@ -74,7 +74,7 @@ let cgimage = CGContextRef.imageWithBlock(bitmapSize, color:CGColor.lightGrayCol
 
             context.strokeColor = CGColor.greenColor()
 
-            var curves = ellipse.asBezierCurves(c)
+            var curves = ellipse.toBezierCurves(c)
             context.stroke(curves.0)
             context.stroke(curves.1)
             context.stroke(curves.2)
@@ -83,7 +83,7 @@ let cgimage = CGContextRef.imageWithBlock(bitmapSize, color:CGColor.lightGrayCol
             context.strokeColor = CGColor.redColor()
 
             c = 4.0 * (sqrt(2.0) - 1.0) / 3.0 // 0.5522847498307936
-            curves = ellipse.asBezierCurves(c)
+            curves = ellipse.toBezierCurves(c)
             context.stroke(curves.0)
             context.stroke(curves.1)
             context.stroke(curves.2)

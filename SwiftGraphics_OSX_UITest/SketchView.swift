@@ -91,7 +91,7 @@ class SketchView: NSView {
             let colorInt:UInt32 = UInt32(Random.rng.random(0...0xFFFFFF)) << 8 | 0xFF
             let color = NSColor(rgba:colorInt)
             colors[colorInt] = node
-//            print("DEFINING: \(colorInt.asHex()) \(color)")
+//            print("DEFINING: \(colorInt.toHex()) \(color)")
             CGContextSetStrokeColorWithColor(context, color.CGColor)
             CGContextSetFillColorWithColor(context, color.CGColor)
             CGContextSetLineWidth(context, 4)
@@ -106,7 +106,7 @@ class SketchView: NSView {
         
         let colorInt = bitmap[UIntPoint(x:UInt(location.x - rect.origin.x), y:UInt(location.y - rect.origin.y))]
 //        let color = NSColor(rgba: colorInt)
-//        print("SEARCH: \(colorInt.asHex()) \(color)")
+//        print("SEARCH: \(colorInt.toHex()) \(color)")
 
         let node = colors[colorInt]
         Swift.print(node)

@@ -100,7 +100,7 @@ public extension Ellipse {
     /// Smallest rect that can contain the ellipse.
     var boundingBox:CGRect {
         get {
-            let bezierCurves = asBezierCurves
+            let bezierCurves = toBezierCurves
             let rects = [
                 bezierCurves.0.boundingBox,
                 bezierCurves.1.boundingBox,
@@ -114,7 +114,7 @@ public extension Ellipse {
 }
 
 public extension Ellipse {
-    var asCircle: Circle? {
+    var toCircle: Circle? {
         get {
             if e == 0.0 {
                 assert(a == b)
@@ -130,9 +130,9 @@ public extension Ellipse {
 
 public extension Ellipse {
 
-    var asBezierChain:(BezierCurveChain) {
+    var toBezierChain:(BezierCurveChain) {
         get {
-            let curves = asBezierCurves()
+            let curves = toBezierCurves()
             let curvesArray = [curves.0, curves.1, curves.2, curves.3]
             return BezierCurveChain(curves:curvesArray)
         }
@@ -141,7 +141,7 @@ public extension Ellipse {
     // From http://spencermortensen.com/articles/bezier-circle/ (via @iamdavidhart)
     static let c:CGFloat = 0.551915024494
 
-    func asBezierCurves(c:CGFloat = Ellipse.c) -> (BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
+    func toBezierCurves(c:CGFloat = Ellipse.c) -> (BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
             let t = CGAffineTransform(rotation: rotation)
 
             let da = a * c
@@ -175,11 +175,11 @@ public extension Ellipse {
         return (curve0, curve1, curve2, curve3)
     }
 
-    var asBezierCurves:(BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
+    var toBezierCurves:(BezierCurve, BezierCurve, BezierCurve, BezierCurve) {
         get {
 //            let c:CGFloat = 0.551915024494
 //            let c:CGFloat = 4.0 * (sqrt(2.0) - 1.0) / 3.0 // 0.5522847498307936
-            return asBezierCurves()
+            return toBezierCurves()
         }
     }
 }

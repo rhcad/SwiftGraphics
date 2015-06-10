@@ -45,10 +45,10 @@ class QuadrantTests: XCTestCase {
     }
     
     func testQuadrantToPoint() {
-        XCTAssertEqual(p1, Quadrant.minXMinY.asPoint())
-        XCTAssertEqual(p2, Quadrant.minXMaxY.asPoint())
-        XCTAssertEqual(p3, Quadrant.maxXMinY.asPoint())
-        XCTAssertEqual(p4, Quadrant.maxXMaxY.asPoint())
+        XCTAssertEqual(p1, Quadrant.minXMinY.toPoint())
+        XCTAssertEqual(p2, Quadrant.minXMaxY.toPoint())
+        XCTAssertEqual(p3, Quadrant.maxXMinY.toPoint())
+        XCTAssertEqual(p4, Quadrant.maxXMaxY.toPoint())
     }
 
 }

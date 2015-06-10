@@ -8,5 +8,11 @@
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "#CharacterRangeLen=15&amp;CharacterRangeLoc=2813&amp;EndingColumnNumber=16&amp;EndingLineNumber=97&amp;StartingColumnNumber=1&amp;StartingLineNumber=97&amp;Timestamp=455596065.582245"
+         lockedSize = "{509, 472}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
    </TimelineItems>
 </Timeline>

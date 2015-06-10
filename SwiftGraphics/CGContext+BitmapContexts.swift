@@ -82,6 +82,7 @@ public extension CGContext {
 }
 
 
+#if os(OSX)
 public func validParametersForBitmapContext(colorSpace colorSpace:CGColorSpaceRef, bitsPerPixel:Int, bitsPerComponent:Int, alphaInfo:CGImageAlphaInfo, bitmapInfo:CGBitmapInfo) -> Bool {
 
     // TODO: Do the right thing on OSX and iOS
@@ -134,3 +135,4 @@ public func validParametersForBitmapContext(colorSpace colorSpace:CGColorSpaceRe
             return false
     }
 }
+#endif

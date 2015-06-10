@@ -35,7 +35,7 @@ public extension CGPoint {
     init(_ v:(CGFloat, CGFloat)) {
         (x, y) = v
     }
-    var asTuple: (CGFloat, CGFloat) { get { return (x, y) } }
+    var toTuple: (CGFloat, CGFloat) { get { return (x, y) } }
 }
 
 // MARK: Unary Operators

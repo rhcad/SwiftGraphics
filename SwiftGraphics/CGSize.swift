@@ -93,7 +93,7 @@ public enum Orientation {
 }
 
 public extension CGSize {
-    var aspectRatio: CGFloat { get { return width / height } }
+    var topectRatio: CGFloat { get { return width / height } }
 
     var orientation: Orientation { get {
         if abs(width) > abs(height) {
@@ -114,7 +114,7 @@ public extension CGSize {
         (width, height) = v
     }
 
-    var asTuple: (CGFloat, CGFloat) { get { return (width, height) } }
+    var toTuple: (CGFloat, CGFloat) { get { return (width, height) } }
 }
 
 

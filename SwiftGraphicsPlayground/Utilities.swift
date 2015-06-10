@@ -11,7 +11,7 @@ import CoreGraphics
 import SwiftGraphics
 
 extension UInt32 {
-    func asHex() -> String {
+    func toHex() -> String {
         var s = ""
         let characters:[Character] = [
             "0","1","2","3","4","5","6","7","8","9",
@@ -43,7 +43,7 @@ public extension NSColor {
         self.init(deviceRed:r, green:g, blue:b, alpha:a)
     }
     
-    var asUInt32:UInt32 {
+    var toUInt32:UInt32 {
         get {
             let r = UInt32(redComponent * 255)
             let g = UInt32(greenComponent * 255)

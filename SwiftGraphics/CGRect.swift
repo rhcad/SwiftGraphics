@@ -207,7 +207,7 @@ public extension CGRect {
         union(CGRect(center:point, radius:0.0))
     }
 
-    var asTuple: (CGFloat, CGFloat, CGFloat, CGFloat) { get { return (origin.x, origin.y, size.width, size.height) } }
+    var toTuple: (CGFloat, CGFloat, CGFloat, CGFloat) { get { return (origin.x, origin.y, size.width, size.height) } }
 
     func integral() -> CGRect {
         return CGRectIntegral(self)

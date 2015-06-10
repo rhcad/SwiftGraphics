@@ -20,8 +20,8 @@ class CGPointTests: XCTestCase {
 
         let pt = CGPoint((100, 200))
         XCTAssertEqual(pt, CGPoint(x:100, y:200))
-        XCTAssertEqual(pt.asTuple.0, CGFloat(100))
-        XCTAssertEqual(pt.asTuple.1, CGFloat(200))
+        XCTAssertEqual(pt.toTuple.0, CGFloat(100))
+        XCTAssertEqual(pt.toTuple.1, CGFloat(200))
     }
 
     func testUnaryOperators() {
