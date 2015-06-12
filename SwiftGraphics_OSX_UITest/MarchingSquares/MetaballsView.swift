@@ -15,7 +15,7 @@ class MetaballsView: NSView {
 
     var displayLink = CDisplayLink()
     var playing:Bool = false
-    var resolution:CGFloat = 20
+    var resolution:CGFloat = 10
     var marchingSquares: MarchingSquares!
     var bouncingBalls: BouncingBalls!
     var fps: Double = 0

@@ -40,13 +40,14 @@ class MarchingSquares {
             for Y in 0..<size.height {
                 let point = CGPoint(x:CGFloat(X), y:CGFloat(Y)) * resolution
                 let magnitude = magnitudeGrid[IntPoint(x:X,y:Y)]
+                if magnitude < 0.2 {
+                    continue
+                }
                 
                 let hue:CGFloat = magnitude >= threshold ? 1.0 : 0.8
                 
-                let color = CGColor.color(hue:hue, saturation:1.0, brightness:1.0, alpha:magnitude)
-                ctx.withColor(color) {
-                    ctx.fillCircle(center:point, radius:1.5)
-                }
+                ctx.fillColor = CGColor.color(hue:hue, saturation:1.0, brightness:1.0, alpha:magnitude)
+                ctx.fillCircle(center:point, radius:1.5)
             }
         }
     }
