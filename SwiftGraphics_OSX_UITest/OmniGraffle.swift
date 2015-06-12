@@ -8,8 +8,7 @@
 
 import CoreGraphics
 import Foundation
-
-import SwiftGraphicsPlayground
+import SwiftUtilities
 
 class OmniGraffleDocumentModel {
     let path: String

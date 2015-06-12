@@ -54,7 +54,6 @@
 		45066D001A743BD400F561E1 /* Triangle+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CFF1A743BD400F561E1 /* Triangle+Markup.swift */; };
 		45066D011A743BD400F561E1 /* Triangle+Markup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45066CFF1A743BD400F561E1 /* Triangle+Markup.swift */; };
 		450717071A6B7EBA00E86EB4 /* Bitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450717061A6B7EBA00E86EB4 /* Bitmap.swift */; };
-		450717091A6B7F0700E86EB4 /* CGTypes+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450717081A6B7F0700E86EB4 /* CGTypes+String.swift */; };
 		4508FAE11A8C5C7D00E648D5 /* Handleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4508FAE01A8C5C7D00E648D5 /* Handleable.swift */; };
 		450C7EC51A849326003A8AD2 /* CGPointSwiftDocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C7EC41A849326003A8AD2 /* CGPointSwiftDocTests.swift */; };
 		45124C9C1A89E18F000F5ABB /* MagicConsole.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45124C9B1A89E18F000F5ABB /* MagicConsole.storyboard */; };
@@ -105,6 +104,13 @@
 		453997CC1A61F89F00572E47 /* MetaballsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453997C61A61F89F00572E47 /* MetaballsView.swift */; };
 		453997CD1A61F89F00572E47 /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453997C71A61F89F00572E47 /* Polygon.swift */; };
 		453A8FBD1A69DFC000D7EAD0 /* Silly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A8FBC1A69DFC000D7EAD0 /* Silly.swift */; };
+		453E1F9B1B2B8BA4003FFFA8 /* SwiftGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454D550719AA5CE6000E3EB3 /* SwiftGraphics.framework */; };
+		453E1F9C1B2B8BA4003FFFA8 /* SwiftGraphics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 454D550719AA5CE6000E3EB3 /* SwiftGraphics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		453E1FA81B2B8BFC003FFFA8 /* SwiftUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452034A21B2B8518002CCCFA /* SwiftUtilities.framework */; };
+		453E1FA91B2B8BFC003FFFA8 /* SwiftUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 452034A21B2B8518002CCCFA /* SwiftUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		453E1FB71B2B8DBE003FFFA8 /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E1FB51B2B8DBE003FFFA8 /* Sketch.swift */; };
+		453E1FB81B2B8DBE003FFFA8 /* CGTypes+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453E1FB61B2B8DBE003FFFA8 /* CGTypes+String.swift */; };
+		453E1FB91B2B8DDE003FFFA8 /* Bitmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450717061A6B7EBA00E86EB4 /* Bitmap.swift */; };
 		453F7C0A1A7D7188002CE3A6 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F7C091A7D7188002CE3A6 /* MatrixTests.swift */; };
 		453F7C0C1A7D71AC002CE3A6 /* BezierPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F7C0B1A7D71AC002CE3A6 /* BezierPathTests.swift */; };
 		454B0D5719CA9E7F00044B7C /* Fuzzy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B0D5619CA9E7F00044B7C /* Fuzzy.swift */; };
@@ -177,7 +183,6 @@
 		45A14E1C1A69D582006F4949 /* GenericGeometryTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A14E1B1A69D582006F4949 /* GenericGeometryTypes.swift */; };
 		45A14E1D1A69D582006F4949 /* GenericGeometryTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A14E1B1A69D582006F4949 /* GenericGeometryTypes.swift */; };
 		45B32D481A637DF3004FD3FB /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B32D451A637DF3004FD3FB /* Arc.swift */; };
-		45B32D4A1A637DF3004FD3FB /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B32D471A637DF3004FD3FB /* Sketch.swift */; };
 		45B32D511A637EE7004FD3FB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B32D501A637EE7004FD3FB /* Utilities.swift */; };
 		45B32D531A637F10004FD3FB /* OmniGraffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B32D521A637F10004FD3FB /* OmniGraffle.swift */; };
 		45B78E631A7702F80058B3A0 /* Scratch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B78E621A7702F80058B3A0 /* Scratch.swift */; };
@@ -279,12 +284,19 @@
 			remoteGlobalIDString = 45E8EEC5199A8EA50035C722;
 			remoteInfo = SwiftUtilities_iOS;
 		};
-		453997BB1A61F20A00572E47 /* PBXContainerItemProxy */ = {
+		453E1F9D1B2B8BA4003FFFA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 454FE66119C77031002E4DEF;
-			remoteInfo = SwiftGraphicsPlayground;
+			remoteGlobalIDString = 454D550619AA5CE6000E3EB3;
+			remoteInfo = SwiftGraphics_OSX;
+		};
+		453E1FAA1B2B8BFC003FFFA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45E8EEA3199A8E080035C722;
+			remoteInfo = SwiftUtilities_OSX;
 		};
 		454FE67B19C77094002E4DEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -335,14 +347,22 @@
 			remoteGlobalIDString = 45DA4AC319AA62A800133F32;
 			remoteInfo = SwiftGraphics_iOS;
 		};
-		45CFDCBD1A61CEE400053F96 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 454D54FE19AA5CE6000E3EB3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 454D550619AA5CE6000E3EB3;
-			remoteInfo = SwiftGraphics_OSX;
-		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		453E1F9F1B2B8BA4003FFFA8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				453E1F9C1B2B8BA4003FFFA8 /* SwiftGraphics.framework in Embed Frameworks */,
+				453E1FA91B2B8BFC003FFFA8 /* SwiftUtilities.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		029651A91A6366FA0099DA1C /* CDisplayLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDisplayLink.h; sourceTree = "<group>"; };
@@ -362,7 +382,6 @@
 		45066CFC1A74349500F561E1 /* Lines+Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lines+Drawing.swift"; sourceTree = "<group>"; };
 		45066CFF1A743BD400F561E1 /* Triangle+Markup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Triangle+Markup.swift"; sourceTree = "<group>"; };
 		450717061A6B7EBA00E86EB4 /* Bitmap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bitmap.swift; sourceTree = "<group>"; };
-		450717081A6B7F0700E86EB4 /* CGTypes+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGTypes+String.swift"; sourceTree = "<group>"; };
 		4508FAE01A8C5C7D00E648D5 /* Handleable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Handleable.swift; sourceTree = "<group>"; };
 		450C7EC41A849326003A8AD2 /* CGPointSwiftDocTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointSwiftDocTests.swift; sourceTree = "<group>"; };
 		45124C9B1A89E18F000F5ABB /* MagicConsole.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MagicConsole.storyboard; sourceTree = "<group>"; };
@@ -399,6 +418,8 @@
 		453997C61A61F89F00572E47 /* MetaballsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaballsView.swift; sourceTree = "<group>"; };
 		453997C71A61F89F00572E47 /* Polygon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
 		453A8FBC1A69DFC000D7EAD0 /* Silly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Silly.swift; sourceTree = "<group>"; };
+		453E1FB51B2B8DBE003FFFA8 /* Sketch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sketch.swift; path = ../../../../../Desktop/Sketch.swift; sourceTree = "<group>"; };
+		453E1FB61B2B8DBE003FFFA8 /* CGTypes+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGTypes+String.swift"; path = "../../../../../Desktop/CGTypes+String.swift"; sourceTree = "<group>"; };
 		453F7C041A7D6666002CE3A6 /* Matrix.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Matrix.playground; sourceTree = "<group>"; };
 		453F7C091A7D7188002CE3A6 /* MatrixTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixTests.swift; sourceTree = "<group>"; };
 		453F7C0B1A7D71AC002CE3A6 /* BezierPathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathTests.swift; sourceTree = "<group>"; };
@@ -464,7 +485,6 @@
 		459EE5E519AEC5130012E023 /* Scaling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scaling.swift; sourceTree = "<group>"; };
 		45A14E1B1A69D582006F4949 /* GenericGeometryTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericGeometryTypes.swift; sourceTree = "<group>"; };
 		45B32D451A637DF3004FD3FB /* Arc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
-		45B32D471A637DF3004FD3FB /* Sketch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sketch.swift; sourceTree = "<group>"; };
 		45B32D501A637EE7004FD3FB /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		45B32D521A637F10004FD3FB /* OmniGraffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmniGraffle.swift; sourceTree = "<group>"; };
 		45B78E621A7702F80058B3A0 /* Scratch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scratch.swift; sourceTree = "<group>"; };
@@ -551,6 +571,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				453E1F9B1B2B8BA4003FFFA8 /* SwiftGraphics.framework in Frameworks */,
+				453E1FA81B2B8BFC003FFFA8 /* SwiftUtilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,13 +595,6 @@
 				45066CFC1A74349500F561E1 /* Lines+Drawing.swift */,
 			);
 			name = Drawable;
-			sourceTree = "<group>";
-		};
-		450717051A6B7EA100E86EB4 /* Non-Graphics */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Non-Graphics";
 			sourceTree = "<group>";
 		};
 		450C7EC31A849326003A8AD2 /* SwiftDocTests */ = {
@@ -648,6 +663,8 @@
 		453997BD1A61F2B700572E47 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				453E1FB51B2B8DBE003FFFA8 /* Sketch.swift */,
+				453E1FB61B2B8DBE003FFFA8 /* CGTypes+String.swift */,
 				45B32D521A637F10004FD3FB /* OmniGraffle.swift */,
 				4514F6061A61D4C400CC9C26 /* SketchOmniGraffle.swift */,
 				4514F60B1A61D4C400CC9C26 /* TestArc.swift */,
@@ -800,7 +817,6 @@
 				454FE67F19C77455002E4DEF /* SwiftGraphicsPlayground.swift */,
 				458C59021A740A1000E993A6 /* WIP */,
 				458C59011A7409E200E993A6 /* Will Deprecate */,
-				450717051A6B7EA100E86EB4 /* Non-Graphics */,
 				454FE66419C77031002E4DEF /* Supporting Files */,
 			);
 			name = SwiftGraphics_OSX_Playground;
@@ -870,8 +886,6 @@
 		458C59011A7409E200E993A6 /* Will Deprecate */ = {
 			isa = PBXGroup;
 			children = (
-				45B32D471A637DF3004FD3FB /* Sketch.swift */,
-				450717081A6B7F0700E86EB4 /* CGTypes+String.swift */,
 				450717061A6B7EBA00E86EB4 /* Bitmap.swift */,
 			);
 			name = "Will Deprecate";
@@ -1188,12 +1202,13 @@
 				45CFDC9A1A61CE3500053F96 /* Sources */,
 				45CFDC9B1A61CE3500053F96 /* Frameworks */,
 				45CFDC9C1A61CE3500053F96 /* Resources */,
+				453E1F9F1B2B8BA4003FFFA8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				453997BC1A61F20A00572E47 /* PBXTargetDependency */,
-				45CFDCBE1A61CEE400053F96 /* PBXTargetDependency */,
+				453E1F9E1B2B8BA4003FFFA8 /* PBXTargetDependency */,
+				453E1FAB1B2B8BFC003FFFA8 /* PBXTargetDependency */,
 			);
 			name = SwiftGraphics_OSX_UITest;
 			productName = SwiftGraphics_OSX_UITest;
@@ -1479,10 +1494,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B32D4A1A637DF3004FD3FB /* Sketch.swift in Sources */,
 				45B32D481A637DF3004FD3FB /* Arc.swift in Sources */,
 				453A8FBD1A69DFC000D7EAD0 /* Silly.swift in Sources */,
-				450717091A6B7F0700E86EB4 /* CGTypes+String.swift in Sources */,
 				454FE68019C77455002E4DEF /* SwiftGraphicsPlayground.swift in Sources */,
 				450717071A6B7EBA00E86EB4 /* Bitmap.swift in Sources */,
 			);
@@ -1515,6 +1528,7 @@
 				453997C91A61F89F00572E47 /* BouncingBalls.swift in Sources */,
 				453997CA1A61F89F00572E47 /* Grid.swift in Sources */,
 				455621911A6A2DD800EB181E /* Scratch.swift in Sources */,
+				453E1FB91B2B8DDE003FFFA8 /* Bitmap.swift in Sources */,
 				4514F6151A61D4C400CC9C26 /* QuadTreeView.swift in Sources */,
 				4514F61D1A61D4C400CC9C26 /* TestArc.swift in Sources */,
 				45B32D531A637F10004FD3FB /* OmniGraffle.swift in Sources */,
@@ -1526,7 +1540,9 @@
 				4514F6181A61D4C400CC9C26 /* SketchOmniGraffle.swift in Sources */,
 				453997CC1A61F89F00572E47 /* MetaballsView.swift in Sources */,
 				45B32D511A637EE7004FD3FB /* Utilities.swift in Sources */,
+				453E1FB71B2B8DBE003FFFA8 /* Sketch.swift in Sources */,
 				4514F6111A61D4C400CC9C26 /* DemoView.swift in Sources */,
+				453E1FB81B2B8DBE003FFFA8 /* CGTypes+String.swift in Sources */,
 				455621901A6A2DD800EB181E /* HandleEditorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1621,10 +1637,15 @@
 			name = SwiftUtilities_iOS;
 			targetProxy = 452034AB1B2B8606002CCCFA /* PBXContainerItemProxy */;
 		};
-		453997BC1A61F20A00572E47 /* PBXTargetDependency */ = {
+		453E1F9E1B2B8BA4003FFFA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 454FE66119C77031002E4DEF /* SwiftGraphics_OSX_Playground */;
-			targetProxy = 453997BB1A61F20A00572E47 /* PBXContainerItemProxy */;
+			target = 454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */;
+			targetProxy = 453E1F9D1B2B8BA4003FFFA8 /* PBXContainerItemProxy */;
+		};
+		453E1FAB1B2B8BFC003FFFA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftUtilities_OSX;
+			targetProxy = 453E1FAA1B2B8BFC003FFFA8 /* PBXContainerItemProxy */;
 		};
 		454FE67C19C77094002E4DEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1660,11 +1681,6 @@
 			isa = PBXTargetDependency;
 			target = 45DA4AC319AA62A800133F32 /* SwiftGraphics_iOS */;
 			targetProxy = 45B8AE9519BCE57900C61A3F /* PBXContainerItemProxy */;
-		};
-		45CFDCBE1A61CEE400053F96 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 454D550619AA5CE6000E3EB3 /* SwiftGraphics_OSX */;
-			targetProxy = 45CFDCBD1A61CEE400053F96 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1821,6 +1837,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1842,6 +1859,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1896,6 +1914,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1921,6 +1940,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1995,6 +2015,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -2015,6 +2036,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SwiftGraphics_OSX_UITest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;

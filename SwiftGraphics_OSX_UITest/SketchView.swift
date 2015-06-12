@@ -9,7 +9,6 @@
 import Cocoa
 
 import SwiftGraphics
-import SwiftGraphicsPlayground
 import SwiftUtilities
 
 class SketchView: NSView {

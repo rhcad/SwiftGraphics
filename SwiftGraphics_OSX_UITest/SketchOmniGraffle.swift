@@ -9,7 +9,6 @@
 import Foundation
 
 import SwiftGraphics
-import SwiftGraphicsPlayground
 
 class OmniGraffleLoader {
 
