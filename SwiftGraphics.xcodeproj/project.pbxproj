@@ -91,6 +91,7 @@
 		451D29201A8A920800209FE3 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4C35B1A7DA8EF0036EE2B /* ProjectTests.swift */; };
 		451D29211A8A920800209FE3 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F7C091A7D7188002CE3A6 /* MatrixTests.swift */; };
 		451D29221A8A920800209FE3 /* BezierPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F7C0B1A7D71AC002CE3A6 /* BezierPathTests.swift */; };
+		452034B21B2B889A002CCCFA /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452034B11B2B889A002CCCFA /* Random.swift */; };
 		452F09181A81D2DD00334A4E /* SelectionMarquee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452F09171A81D2DD00334A4E /* SelectionMarquee.swift */; };
 		4535BD601AB260F3005A04A5 /* BezierCurve+Transforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4535BD5F1AB260F3005A04A5 /* BezierCurve+Transforms.swift */; };
 		4535BD611AB260F3005A04A5 /* BezierCurve+Transforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4535BD5F1AB260F3005A04A5 /* BezierCurve+Transforms.swift */; };
@@ -347,6 +348,7 @@
 		451CE9F31A61D73B006F721B /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ScratchPad.playground; sourceTree = "<group>"; };
 		451CE9F41A61D73C006F721B /* SwiftGraphicsTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftGraphicsTest.playground; sourceTree = "<group>"; };
 		451D29091A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGraphics_iOS_UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		452034B11B2B889A002CCCFA /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		452F09171A81D2DD00334A4E /* SelectionMarquee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionMarquee.swift; sourceTree = "<group>"; };
 		4535BD5F1AB260F3005A04A5 /* BezierCurve+Transforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BezierCurve+Transforms.swift"; sourceTree = "<group>"; };
 		4537990419AA671E004DF99E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -831,6 +833,7 @@
 				4594B08719AEDC2100101EB4 /* SwiftGraphicsHelper.h */,
 				4594B08819AEDC2100101EB4 /* SwiftGraphicsHelper.m */,
 				458C590D1A74136000E993A6 /* Insidedness.swift */,
+				452034B11B2B889A002CCCFA /* Random.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -1327,6 +1330,7 @@
 				4535BD601AB260F3005A04A5 /* BezierCurve+Transforms.swift in Sources */,
 				459EE5F319AEC5130012E023 /* CGSize.swift in Sources */,
 				4574C0271A64613A00454DE5 /* CGContext+BitmapContexts.swift in Sources */,
+				452034B21B2B889A002CCCFA /* Random.swift in Sources */,
 				45BA25B819CA112E00B612B7 /* MonotoneChain.swift in Sources */,
 				458C590B1A74121600E993A6 /* CGContext+Drawing.swift in Sources */,
 				4515825C19C9F21000856C91 /* Turn.swift in Sources */,

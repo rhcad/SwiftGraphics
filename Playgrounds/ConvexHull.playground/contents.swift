@@ -19,7 +19,7 @@ let bad_hull = monotoneChain(bad_points)
 
 let rng = SwiftUtilities.random
 
-var points = arrayOfRandomPoints(50, range: CGRect(w:480, h:320), rng:rng)
+var points = random.arrayOfRandomPoints(50, range: CGRect(w:480, h:320))
 points.count
 
 //let hull = grahamScan(points)
