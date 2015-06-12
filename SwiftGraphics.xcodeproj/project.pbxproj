@@ -70,7 +70,6 @@
 		4514F61B1A61D4C400CC9C26 /* SwiftOutline.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4514F6091A61D4C400CC9C26 /* SwiftOutline.svg */; };
 		4514F61C1A61D4C400CC9C26 /* Test.graffle in Resources */ = {isa = PBXBuildFile; fileRef = 4514F60A1A61D4C400CC9C26 /* Test.graffle */; };
 		4514F61D1A61D4C400CC9C26 /* TestArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4514F60B1A61D4C400CC9C26 /* TestArc.swift */; };
-		4514F6211A61D56500CC9C26 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4514F6201A61D56500CC9C26 /* libz.dylib */; };
 		4515825C19C9F21000856C91 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515825B19C9F21000856C91 /* Turn.swift */; };
 		4515825D19C9F21800856C91 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515825B19C9F21000856C91 /* Turn.swift */; };
 		4515825F19C9F6A600856C91 /* TurnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515825E19C9F6A600856C91 /* TurnTests.swift */; };
@@ -184,7 +183,6 @@
 		45A14E1D1A69D582006F4949 /* GenericGeometryTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A14E1B1A69D582006F4949 /* GenericGeometryTypes.swift */; };
 		45B32D481A637DF3004FD3FB /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B32D451A637DF3004FD3FB /* Arc.swift */; };
 		45B32D4A1A637DF3004FD3FB /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B32D471A637DF3004FD3FB /* Sketch.swift */; };
-		45B32D4D1A637E74004FD3FB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4514F6201A61D56500CC9C26 /* libz.dylib */; };
 		45B32D4F1A637ECD004FD3FB /* RegularExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B32D4E1A637ECC004FD3FB /* RegularExpression.swift */; };
 		45B32D511A637EE7004FD3FB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B32D501A637EE7004FD3FB /* Utilities.swift */; };
 		45B32D531A637F10004FD3FB /* OmniGraffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B32D521A637F10004FD3FB /* OmniGraffle.swift */; };
@@ -353,7 +351,6 @@
 		4514F6091A61D4C400CC9C26 /* SwiftOutline.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SwiftOutline.svg; sourceTree = "<group>"; };
 		4514F60A1A61D4C400CC9C26 /* Test.graffle */ = {isa = PBXFileReference; lastKnownFileType = file; path = Test.graffle; sourceTree = "<group>"; };
 		4514F60B1A61D4C400CC9C26 /* TestArc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestArc.swift; sourceTree = "<group>"; };
-		4514F6201A61D56500CC9C26 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		4515825B19C9F21000856C91 /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		4515825E19C9F6A600856C91 /* TurnTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnTests.swift; sourceTree = "<group>"; };
 		4515826019C9F83300856C91 /* Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
@@ -515,7 +512,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B32D4D1A637E74004FD3FB /* libz.dylib in Frameworks */,
 				454FE68319C7799B002E4DEF /* SwiftGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,7 +529,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4514F6211A61D56500CC9C26 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +581,6 @@
 		4514F5F71A61D2D800CC9C26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4514F6201A61D56500CC9C26 /* libz.dylib */,
 				45CFDC6F1A61CD4500053F96 /* CoreGraphics.framework */,
 				4570B83C1A1EC3770055847A /* AppKit.framework */,
 			);
@@ -1933,6 +1927,7 @@
 				INFOPLIST_FILE = SwiftGraphics_OSX_UITest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = "-lz";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.schwa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = SwiftGraphics_OSX_UITest/BridgingHeader.h;
@@ -1948,6 +1943,7 @@
 				INFOPLIST_FILE = SwiftGraphics_OSX_UITest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_LDFLAGS = "-lz";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.schwa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = SwiftGraphics_OSX_UITest/BridgingHeader.h;
