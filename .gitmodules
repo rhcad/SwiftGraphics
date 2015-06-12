@@ -1,0 +1,3 @@
+[submodule "Externals/SwiftUtilities"]
+	path = Externals/SwiftUtilities
+	url = https://github.com/schwa/SwiftUtilities.git
