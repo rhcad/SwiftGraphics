@@ -720,8 +720,6 @@
 				457E72861A72EA6E00E5A7A1 /* RegularPolygon.playground */,
 				45BA25BB19CA156800B612B7 /* Triangle.playground */,
 				457C74A01A7C3B01004F3DBF /* BezierPathSplitting.playground */,
-				453F7C041A7D6666002CE3A6 /* Matrix.playground */,
-				459673EA1A81A0CE00BDF9D5 /* Scratch.playground */,
 				45E38D311A7424F600EC672A /* Broken or Limited Usefulness */,
 				45E38D321A74254000EC672A /* Very WIP */,
 				457B6E751ABE07D6007083C0 /* Squircle.playground */,
@@ -967,6 +965,8 @@
 		45E38D311A7424F600EC672A /* Broken or Limited Usefulness */ = {
 			isa = PBXGroup;
 			children = (
+				453F7C041A7D6666002CE3A6 /* Matrix.playground */,
+				459673EA1A81A0CE00BDF9D5 /* Scratch.playground */,
 				45BF1EBF1A61FED300DE8AE5 /* Random.playground */,
 				02A969E21A6744C3006DDF62 /* RulerPoint.playground */,
 				45FAC0661A16C4CA00A3F1D3 /* Animations.playground */,
