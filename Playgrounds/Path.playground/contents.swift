@@ -5,8 +5,6 @@ import CoreGraphics
 import SwiftGraphics
 
 let context = CGContextRef.bitmapContext(CGSize(w:201, h:201))
-context.setFillColor(CGColor.greenColor())
-CGContextFillRect(context, CGRect(w:201, h:201))
 
 var path = CGPathCreateMutable()
 

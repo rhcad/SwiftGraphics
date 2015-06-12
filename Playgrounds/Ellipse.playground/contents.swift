@@ -54,8 +54,6 @@ let styles = [
 let cgpath = CGPathCreateWithEllipseInRect(CGRect(center:CGPointZero, radius:1.0), nil)
 cgpath.dump()
 
-
-
 var generator = ellipses.generate()
 
 let tileSize = CGSize(width:800, height:800)
