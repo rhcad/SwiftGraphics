@@ -90,6 +90,8 @@
 		451D29201A8A920800209FE3 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C4C35B1A7DA8EF0036EE2B /* ProjectTests.swift */; };
 		451D29211A8A920800209FE3 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F7C091A7D7188002CE3A6 /* MatrixTests.swift */; };
 		451D29221A8A920800209FE3 /* BezierPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453F7C0B1A7D71AC002CE3A6 /* BezierPathTests.swift */; };
+		451FD2C01B2BA6E100562653 /* DrawCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FD2BF1B2BA6E100562653 /* DrawCache.swift */; };
+		451FD2C41B2BB09D00562653 /* BlendModesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451FD2C31B2BB09D00562653 /* BlendModesViewController.swift */; };
 		452034AA1B2B8538002CCCFA /* SwiftUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452034A21B2B8518002CCCFA /* SwiftUtilities.framework */; };
 		452034AD1B2B860B002CCCFA /* SwiftUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452034A21B2B8518002CCCFA /* SwiftUtilities.framework */; };
 		452034B21B2B889A002CCCFA /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452034B11B2B889A002CCCFA /* Random.swift */; };
@@ -404,6 +406,8 @@
 		451CE9F31A61D73B006F721B /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ScratchPad.playground; sourceTree = "<group>"; };
 		451CE9F41A61D73C006F721B /* SwiftGraphicsTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftGraphicsTest.playground; sourceTree = "<group>"; };
 		451D29091A8A911F00209FE3 /* SwiftGraphics_iOS_UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftGraphics_iOS_UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		451FD2BF1B2BA6E100562653 /* DrawCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawCache.swift; sourceTree = "<group>"; };
+		451FD2C31B2BB09D00562653 /* BlendModesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlendModesViewController.swift; sourceTree = "<group>"; };
 		4520349A1B2B8518002CCCFA /* SwiftUtilities.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SwiftUtilities.xcodeproj; sourceTree = "<group>"; };
 		452034B11B2B889A002CCCFA /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		452F09171A81D2DD00334A4E /* SelectionMarquee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionMarquee.swift; sourceTree = "<group>"; };
@@ -683,6 +687,7 @@
 				4514F6091A61D4C400CC9C26 /* SwiftOutline.svg */,
 				4514F60A1A61D4C400CC9C26 /* Test.graffle */,
 				45CFDCA11A61CE3500053F96 /* Info.plist */,
+				451FD2C31B2BB09D00562653 /* BlendModesViewController.swift */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -706,6 +711,7 @@
 				453997C51A61F89F00572E47 /* MarchingSquares.swift */,
 				453997C61A61F89F00572E47 /* MetaballsView.swift */,
 				453997C71A61F89F00572E47 /* Polygon.swift */,
+				451FD2BF1B2BA6E100562653 /* DrawCache.swift */,
 			);
 			path = MarchingSquares;
 			sourceTree = "<group>";
@@ -1528,6 +1534,7 @@
 				453997C91A61F89F00572E47 /* BouncingBalls.swift in Sources */,
 				453997CA1A61F89F00572E47 /* Grid.swift in Sources */,
 				455621911A6A2DD800EB181E /* Scratch.swift in Sources */,
+				451FD2C01B2BA6E100562653 /* DrawCache.swift in Sources */,
 				453E1FB91B2B8DDE003FFFA8 /* Bitmap.swift in Sources */,
 				4514F6151A61D4C400CC9C26 /* QuadTreeView.swift in Sources */,
 				4514F61D1A61D4C400CC9C26 /* TestArc.swift in Sources */,
@@ -1542,6 +1549,7 @@
 				45B32D511A637EE7004FD3FB /* Utilities.swift in Sources */,
 				453E1FB71B2B8DBE003FFFA8 /* Sketch.swift in Sources */,
 				4514F6111A61D4C400CC9C26 /* DemoView.swift in Sources */,
+				451FD2C41B2BB09D00562653 /* BlendModesViewController.swift in Sources */,
 				453E1FB81B2B8DBE003FFFA8 /* CGTypes+String.swift in Sources */,
 				455621901A6A2DD800EB181E /* HandleEditorView.swift in Sources */,
 			);

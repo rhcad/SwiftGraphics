@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7515.2" systemVersion="14D72i" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="15A178w" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7515.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8121.17"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -658,6 +658,7 @@
                         <view key="contentView" id="O92-4t-NeX">
                             <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
                         </view>
                     </window>
                     <connections>
@@ -678,6 +679,7 @@
                         <subviews>
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="xZi-As-omL">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <animations/>
                                 <connections>
                                     <segue destination="TNj-8r-aRG" kind="embed" id="5rA-LA-iui"/>
                                 </connections>
@@ -689,6 +691,7 @@
                             <constraint firstItem="xZi-As-omL" firstAttribute="leading" secondItem="yHy-Vx-cS9" secondAttribute="leading" id="MwA-Vi-kk4"/>
                             <constraint firstAttribute="trailing" secondItem="xZi-As-omL" secondAttribute="trailing" id="U11-xP-nwf"/>
                         </constraints>
+                        <animations/>
                     </view>
                 </viewController>
                 <customObject id="lwk-cQ-Kjr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -698,24 +701,27 @@
         <!--Tab View Controller-->
         <scene sceneID="rEa-fV-D4r">
             <objects>
-                <tabViewController selectedTabViewItemIndex="0" id="TNj-8r-aRG" sceneMemberID="viewController">
+                <tabViewController selectedTabViewItemIndex="1" id="TNj-8r-aRG" sceneMemberID="viewController">
                     <tabView key="view" id="HWi-xv-eW4">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <font key="font" metaFont="message"/>
                         <tabViewItems/>
                     </tabView>
                     <tabViewItems>
+                        <tabViewItem id="9PR-CI-Qee"/>
+                        <tabViewItem id="pGs-yN-u52"/>
                         <tabViewItem label="QuadTree" identifier="" id="oBZ-Bk-eg9"/>
                         <tabViewItem label="DemoView" identifier="" id="kra-Ev-EVF"/>
                         <tabViewItem label="OmniGraffle" id="FN0-r7-S0E"/>
-                        <tabViewItem id="9PR-CI-Qee"/>
                     </tabViewItems>
                     <connections>
+                        <segue destination="71F-0d-QXL" kind="relationship" relationship="tabItems" id="jgK-Bb-c84"/>
+                        <segue destination="FwE-aQ-LLs" kind="relationship" relationship="tabItems" id="mvv-0E-GON"/>
                         <segue destination="K8q-YO-JNy" kind="relationship" relationship="tabItems" id="TNr-Ix-zi4"/>
                         <segue destination="ttq-86-y00" kind="relationship" relationship="tabItems" id="U9j-mm-h6O"/>
                         <segue destination="Gm2-q4-fPO" kind="relationship" relationship="tabItems" id="BhL-rY-faV"/>
-                        <segue destination="71F-0d-QXL" kind="relationship" relationship="tabItems" id="jgK-Bb-c84"/>
                     </connections>
                 </tabViewController>
                 <customObject id="OyY-ov-XOg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -729,6 +735,7 @@
                     <view key="view" id="n9J-4L-f9U" customClass="QuadTreeView" customModule="SwiftGraphics_OSX_UITest" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </view>
                 </viewController>
                 <customObject id="UhZ-TA-jcK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -742,6 +749,7 @@
                     <view key="view" id="CyE-il-7EE" customClass="DemoView" customModule="SwiftGraphics_OSX_UITest" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </view>
                 </viewController>
                 <customObject id="8Oy-KX-wxj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -755,11 +763,92 @@
                     <view key="view" id="7g8-nA-gIq" customClass="SketchView" customModule="SwiftGraphics_OSX_UITest" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </view>
                 </viewController>
                 <customObject id="HxR-HE-j1s" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1660" y="1912"/>
+        </scene>
+        <!--Blend Modes-->
+        <scene sceneID="B3x-LI-vcW">
+            <objects>
+                <viewController title="Blend Modes" id="FwE-aQ-LLs" customClass="BlendModesViewController" customModule="SwiftGraphics_OSX_UITest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Yaz-Kv-AjC">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="amZ-8b-F49">
+                                <rect key="frame" x="73" y="20" width="267" height="113"/>
+                                <animations/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="tH9-Sa-qPl"/>
+                                <connections>
+                                    <binding destination="FwE-aQ-LLs" name="value" keyPath="outputImage" id="VM5-p1-a3J"/>
+                                </connections>
+                            </imageView>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Nd-2M-FDH">
+                                <rect key="frame" x="170" y="171" width="73" height="26"/>
+                                <animations/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="fW5-36-brs" id="Kdi-In-qHe">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="TjZ-C2-n3J">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="fW5-36-brs"/>
+                                            <menuItem title="Item 2" id="eiR-Gn-CD9"/>
+                                            <menuItem title="Item 3" id="hmv-WN-2Y0"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <binding destination="fU3-6H-rfT" name="contentValues" keyPath="arrangedObjects.name" id="IOg-aO-5zW"/>
+                                    <binding destination="FwE-aQ-LLs" name="selectedIndex" keyPath="selectedBlendModeIndex" previousBinding="IOg-aO-5zW" id="oLW-Gf-rSl"/>
+                                </connections>
+                            </popUpButton>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ITw-vE-qhB">
+                                <rect key="frame" x="17" y="155" width="128" height="128"/>
+                                <animations/>
+                                <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="gnd-8S-l14"/>
+                                <connections>
+                                    <binding destination="FwE-aQ-LLs" name="value" keyPath="destinationImage" id="Ik1-5n-2qA"/>
+                                </connections>
+                            </imageView>
+                            <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zbX-Ls-2fO">
+                                <rect key="frame" x="172" y="221" width="44" height="23"/>
+                                <animations/>
+                                <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <binding destination="FwE-aQ-LLs" name="value" keyPath="fillColor" id="3YU-sR-a2y"/>
+                                </connections>
+                            </colorWell>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n3n-TS-e9O">
+                                <rect key="frame" x="245" y="155" width="128" height="128"/>
+                                <animations/>
+                                <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="gJe-5b-QOF"/>
+                                <connections>
+                                    <binding destination="FwE-aQ-LLs" name="value" keyPath="sourceImage" id="aF7-3e-aFi"/>
+                                </connections>
+                            </imageView>
+                            <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2v-tD-8sn">
+                                <rect key="frame" x="172" y="257" width="44" height="23"/>
+                                <animations/>
+                                <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <binding destination="FwE-aQ-LLs" name="value" keyPath="backgroundColor" id="ziR-1I-R6F"/>
+                                </connections>
+                            </colorWell>
+                        </subviews>
+                        <animations/>
+                    </view>
+                </viewController>
+                <customObject id="IIw-uE-JPA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <arrayController id="fU3-6H-rfT">
+                    <connections>
+                        <binding destination="FwE-aQ-LLs" name="contentArray" keyPath="lazyBlendModes" id="bNy-qq-vUE"/>
+                    </connections>
+                </arrayController>
+            </objects>
+            <point key="canvasLocation" x="1945" y="1494"/>
         </scene>
         <!--Metaballs-->
         <scene sceneID="yDx-uK-ilu">
@@ -768,6 +857,7 @@
                     <view key="view" id="KsV-IC-MbJ" customClass="MetaballsView" customModule="SwiftGraphics_OSX_UITest" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </view>
                 </viewController>
                 <customObject id="yGT-ep-DpR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
