@@ -17,12 +17,12 @@ public struct Circle {
         return radius * 2
     }
     
-    public init(center:CGPoint, radius:CGFloat) {
+    public init(center:CGPoint = CGPointZero, radius:CGFloat) {
         self.center = center
         self.radius = radius
     }
     
-    public init(center:CGPoint, diameter:CGFloat) {
+    public init(center:CGPoint = CGPointZero, diameter:CGFloat) {
         self.center = center
         self.radius = diameter * 0.5
     }

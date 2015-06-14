@@ -140,6 +140,18 @@ public extension CGMutablePath {
 // MARK: Enumerate path elements
 
 public extension CGPath {
+
+//    typealias ElementPtr = UnsafePointer<CGPathElement>
+//    typealias ApplyClosure = ElementPtr -> Void
+//    func apply(var closure:ApplyClosure) {
+//        var info = UnsafeMutablePointer<ApplyClosure> (&closure)
+//        CGPathApply(self, info) {
+//            (info:UnsafeMutablePointer<Void>, elementPtr:ElementPtr) -> Void in
+//            let closure:ApplyClosure = info.memory
+//            closure(elementPtr.memory)
+//        }
+//    }
+
     func enumerate(/*@noescape*/ block:(type:CGPathElementType, points:[CGPoint]) -> Void) {
         var curpt = CGPoint()
         var start = curpt
@@ -224,7 +236,6 @@ public extension CGPath {
             }
         }
     }
-
 }
 
 // MARK: Bounding box and length

@@ -120,6 +120,7 @@
 		454FE66719C77031002E4DEF /* SwiftGraphicsPlayground.h in Headers */ = {isa = PBXBuildFile; fileRef = 454FE66619C77031002E4DEF /* SwiftGraphicsPlayground.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		454FE68019C77455002E4DEF /* SwiftGraphicsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454FE67F19C77455002E4DEF /* SwiftGraphicsPlayground.swift */; };
 		454FE68319C7799B002E4DEF /* SwiftGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 454D550719AA5CE6000E3EB3 /* SwiftGraphics.framework */; };
+		455179811B2BE3AD00B8E5AB /* Scratch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455179801B2BE3AD00B8E5AB /* Scratch.swift */; };
 		455621901A6A2DD800EB181E /* HandleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4556218E1A6A2DD800EB181E /* HandleEditorView.swift */; };
 		455621911A6A2DD800EB181E /* Scratch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4556218F1A6A2DD800EB181E /* Scratch.swift */; };
 		455621931A6A2EAC00EB181E /* Dragging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455621921A6A2EAC00EB181E /* Dragging.swift */; };
@@ -438,6 +439,8 @@
 		454FE66519C77031002E4DEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		454FE66619C77031002E4DEF /* SwiftGraphicsPlayground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftGraphicsPlayground.h; sourceTree = "<group>"; };
 		454FE67F19C77455002E4DEF /* SwiftGraphicsPlayground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftGraphicsPlayground.swift; sourceTree = "<group>"; };
+		455179801B2BE3AD00B8E5AB /* Scratch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scratch.swift; sourceTree = "<group>"; };
+		455179841B2BE85B00B8E5AB /* Layout.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Layout.playground; sourceTree = "<group>"; };
 		4556218E1A6A2DD800EB181E /* HandleEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandleEditorView.swift; sourceTree = "<group>"; };
 		4556218F1A6A2DD800EB181E /* Scratch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scratch.swift; sourceTree = "<group>"; };
 		455621921A6A2EAC00EB181E /* Dragging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dragging.swift; sourceTree = "<group>"; };
@@ -813,6 +816,7 @@
 				45E38D311A7424F600EC672A /* Broken or Limited Usefulness */,
 				45E38D321A74254000EC672A /* Very WIP */,
 				457B6E751ABE07D6007083C0 /* Squircle.playground */,
+				455179841B2BE85B00B8E5AB /* Layout.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
@@ -902,6 +906,7 @@
 			children = (
 				45B32D451A637DF3004FD3FB /* Arc.swift */,
 				453A8FBC1A69DFC000D7EAD0 /* Silly.swift */,
+				455179801B2BE3AD00B8E5AB /* Scratch.swift */,
 			);
 			name = WIP;
 			sourceTree = "<group>";
@@ -1504,6 +1509,7 @@
 				453A8FBD1A69DFC000D7EAD0 /* Silly.swift in Sources */,
 				454FE68019C77455002E4DEF /* SwiftGraphicsPlayground.swift in Sources */,
 				450717071A6B7EBA00E86EB4 /* Bitmap.swift in Sources */,
+				455179811B2BE3AD00B8E5AB /* Scratch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
