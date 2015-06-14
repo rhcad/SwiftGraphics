@@ -89,7 +89,7 @@ class MetaballsView: NSView {
         self.bouncingBalls.moveBalls(delta)
         if let marchingSquares = marchingSquares {
             marchingSquares.update()
-            }
+        }
         self.needsDisplay = true
     }
 

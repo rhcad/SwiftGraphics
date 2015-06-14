@@ -41,10 +41,8 @@ class SketchView: NSView {
     func renderNode(context:CGContext, rect:CGRect, node:Node, applyStyleForNode:(context:CGContext, node:Node) -> Void) {
         applyStyleForNode(context: context, node: node)
 
-        if let geometryNode = node as? GeometryNode {
-            if rect.intersects(geometryNode.frame) == false {
-                return
-            }
+        if let geometryNode = node as? GeometryNode where rect.intersects(geometryNode.frame) == false {
+            return
         }
         
         switch node {

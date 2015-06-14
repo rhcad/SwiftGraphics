@@ -21,11 +21,9 @@ public struct BezierCurveChain {
             (curve:BezierCurve) -> BezierCurve in
 
             var newCurve = curve
-            if let previousEndPoint = previousCurve?.end {
-                if let start = curve.start {
-                    assert(previousEndPoint == start)
-                    newCurve = BezierCurve(controls:curve.controls, end:curve.end)
-                }
+            if let previousEndPoint = previousCurve?.end, let start = curve.start {
+                assert(previousEndPoint == start)
+                newCurve = BezierCurve(controls:curve.controls, end:curve.end)
             }
 
             previousCurve = curve
