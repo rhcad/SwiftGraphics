@@ -70,7 +70,7 @@ public func * (lhs:Matrix, rhs:Matrix) -> Matrix {
     return Matrix(data:resultData, columns:resultColumns, rows:resultRows, stride:1)
 #elseif os(iOS) && (arch(arm64) || arch(x86_64))
     assert(sizeof(Float) == sizeof(CGFloat))
-    var resultPointer = UnsafeMutablePointer <Float> (resultData.mutableBytes)
+    let resultPointer = UnsafeMutablePointer <Float> (resultData.mutableBytes)
     vDSP_mmul(UnsafePointer <Float> (lhs.pointer), lhs.stride, UnsafePointer <Float> (rhs.pointer), rhs.stride, resultPointer, 1, vDSP_Length(lhs.rows), vDSP_Length(rhs.columns), vDSP_Length(lhs.columns))
     return Matrix(data:resultData, columns:resultColumns, rows:resultRows, stride:1)
 #else

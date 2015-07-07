@@ -223,14 +223,14 @@ public extension CGPath {
             (type:CGPathElementType, points:[CGPoint]) -> Void in
             switch type.rawValue {
             case CGPathElementType.MoveToPoint.rawValue:
-                print("kCGPathElementMoveToPoint (\(points[0].x),\(points[0].y))")
+                print("kCGPathElementMoveToPoint (\(points[0].x),\(points[0].y))", appendNewline: false)
             case CGPathElementType.AddLineToPoint.rawValue:
-                print("kCGPathElementAddLineToPoint (\(points[0].x),\(points[0].y))-(\(points[1].x),\(points[1].y))")
+                print("kCGPathElementAddLineToPoint (\(points[0].x),\(points[0].y))-(\(points[1].x),\(points[1].y))", appendNewline: false)
             case CGPathElementType.AddCurveToPoint.rawValue:
                 print("kCGPathElementAddCurveToPoint (\(points[0].x),\(points[0].y))-(\(points[1].x),\(points[1].y))"
-                    + ", (\(points[2].x),\(points[2].y))-(\(points[3].x),\(points[3].y))")
+                    + ", (\(points[2].x),\(points[2].y))-(\(points[3].x),\(points[3].y))", appendNewline: false)
             case CGPathElementType.CloseSubpath.rawValue:
-                print("kCGPathElementCloseSubpath (\(points[0].x),\(points[0].y))-(\(points[1].x),\(points[1].y))")
+                print("kCGPathElementCloseSubpath (\(points[0].x),\(points[0].y))-(\(points[1].x),\(points[1].y))", appendNewline: false)
             default:
                 assert(false)
             }

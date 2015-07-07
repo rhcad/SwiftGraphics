@@ -16,11 +16,11 @@ var kUserInfoKey:Int = 0
 extension NSToolbarItem {
     var userInfo:AnyObject? {
         get {
-            return getAssociatedObject(self, &kUserInfoKey)
+            return getAssociatedObject(self, key: &kUserInfoKey)
         }
         set {
             // TODO: What about nil
-            setAssociatedObject(self, &kUserInfoKey, newValue!)
+            setAssociatedObject(self, key: &kUserInfoKey, value: newValue!)
         }
     }
 }
@@ -28,11 +28,11 @@ extension NSToolbarItem {
 extension NSMenuItem {
     var userInfo:AnyObject? {
         get {
-            return getAssociatedObject(self, &kUserInfoKey)
+            return getAssociatedObject(self, key: &kUserInfoKey)
         }
         set {
             // TODO: What about nil
-            setAssociatedObject(self, &kUserInfoKey, newValue!)
+            setAssociatedObject(self, key: &kUserInfoKey, value: newValue!)
         }
     }
 }

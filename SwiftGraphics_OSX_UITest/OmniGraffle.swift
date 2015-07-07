@@ -16,9 +16,9 @@ class OmniGraffleDocumentModel {
     var rootNode: OmniGraffleGroup!
     var nodesByID: [Int:OmniGraffleNode] = [:]
     
-    init(path: String) {
+    init(path: String) throws {
         self.path = path
-        self.load()
+        try self.load()
     }
 }
 
@@ -41,18 +41,18 @@ class OmniGraffleDocumentModel {
 
 @objc class OmniGraffleShape: OmniGraffleNode {
     var shape:String? { return dictionary["Shape"] as? String }
-    var bounds:CGRect { return StringToRect(dictionary["Bounds"] as! String) }
+    var bounds:CGRect { return try! StringToRect(dictionary["Bounds"] as! String) }
     lazy var lines:[OmniGraffleLine] = []
 }
 
 @objc class OmniGraffleLine: OmniGraffleNode {
     var start:CGPoint {
         let strings = dictionary["Points"] as! [String]
-        return StringToPoint(strings[0])
+        return try! StringToPoint(strings[0])
     }
     var end:CGPoint {
         let strings = dictionary["Points"] as! [String]
-        return StringToPoint(strings[1])
+        return try! StringToPoint(strings[1])
     }
     var head:OmniGraffleNode?
     var tail:OmniGraffleNode?
@@ -60,13 +60,13 @@ class OmniGraffleDocumentModel {
 
 extension OmniGraffleDocumentModel {
 
-    func load() {
+    func load() throws {
         let data = NSData(contentsOfCompressedFile:path)
         // TODO: Swift 2
-        if let d = try! NSPropertyListSerialization.propertyListWithData(data, options:NSPropertyListReadOptions(), format: nil) as? NSDictionary {
+        if let d = try NSPropertyListSerialization.propertyListWithData(data, options:NSPropertyListReadOptions(), format: nil) as? NSDictionary {
             _processRoot(d)
-            let origin = StringToPoint(d["CanvasOrigin"] as! String)
-            let size = StringToSize(d["CanvasSize"] as! String)
+            let origin = try! StringToPoint(d["CanvasOrigin"] as! String)
+            let size = try! StringToSize(d["CanvasSize"] as! String)
             frame = CGRect(origin:origin, size:size)
 //            print(nodesByID)
             

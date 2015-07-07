@@ -156,8 +156,8 @@ public extension CGPoint {
      */
     func clampedTo(rect:CGRect) -> CGPoint {
         return CGPoint(
-            x:clamp(x, rect.minX, rect.maxX),
-            y:clamp(y, rect.minY, rect.maxY)
+            x:clamp(x, lower: rect.minX, upper: rect.maxX),
+            y:clamp(y, lower: rect.minY, upper: rect.maxY)
         )
     }
 

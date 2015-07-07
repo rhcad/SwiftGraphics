@@ -13,12 +13,12 @@ import SwiftGraphics
 class OmniGraffleLoader {
 
     let path:String
-    let doc:OmniGraffleDocumentModel
+    var doc:OmniGraffleDocumentModel!
     var root:Node!
     
-    init(path:String) {
+    init(path:String) throws {
         self.path = path
-        doc = OmniGraffleDocumentModel(path: path)
+        doc = try OmniGraffleDocumentModel(path: path)
 
 // TODO: Swift 1.2
         root = convert(doc.rootNode)

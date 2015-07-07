@@ -59,20 +59,20 @@ class BouncingBalls {
                 ball.color = NSColor.greenColor()
                 if ball.frame.minX < bounds.minX {
                     ball.velocity.x *= -1
-                    ball.frame = CGRect(minX:bounds.minX, minY:ball.frame.minY, maxX:ball.frame.maxX, maxY:ball.frame.maxY)
+                    ball.frame = CGRect(x:bounds.minX, y:ball.frame.minY, width:ball.frame.maxX, height:ball.frame.maxY)
                 }
                 else if ball.frame.maxX > bounds.maxX {
                     ball.velocity.x *= -1
-                    ball.frame = CGRect(minX:ball.frame.minX, minY:ball.frame.minY, maxX:bounds.maxX, maxY:ball.frame.maxY)
+                    ball.frame = CGRect(x:ball.frame.minX, y:ball.frame.minY, width:bounds.maxX, height:ball.frame.maxY)
                 }
 
                 if ball.frame.minY < bounds.minY {
                     ball.velocity.y *= -1
-                    ball.frame = CGRect(minX:ball.frame.minX, minY:bounds.minY, maxX:ball.frame.maxX, maxY:ball.frame.maxY)
+                    ball.frame = CGRect(x:ball.frame.minX, y:bounds.minY, width:ball.frame.maxX, height:ball.frame.maxY)
                 }
                 else if ball.frame.maxY > bounds.maxY {
                     ball.velocity.y *= -1
-                    ball.frame = CGRect(minX:ball.frame.minX, minY:ball.frame.minY, maxX:ball.frame.maxX, maxY:bounds.maxY)
+                    ball.frame = CGRect(x:ball.frame.minX, y:ball.frame.minY, width:ball.frame.maxX, height:bounds.maxY)
                 }
             }
             else {

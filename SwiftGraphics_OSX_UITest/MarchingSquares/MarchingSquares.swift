@@ -130,10 +130,10 @@ class MarchingSquares {
         }
 
         let (X,Y) = cell
-        let A = clamp(magnitudeForCell(IntPoint(x:X, y:Y)), 0, 1)
-        let B = clamp(magnitudeForCell(IntPoint(x:X + 1, y:Y)), 0, 1)
-        let C = clamp(magnitudeForCell(IntPoint(x:X + 1, y:Y + 1)), 0, 1)
-        let D = clamp(magnitudeForCell(IntPoint(x:X, y:Y + 1)), 0, 1)
+        let A = clamp(magnitudeForCell(IntPoint(x:X, y:Y)), lower: 0, upper: 1)
+        let B = clamp(magnitudeForCell(IntPoint(x:X + 1, y:Y)), lower: 0, upper: 1)
+        let C = clamp(magnitudeForCell(IntPoint(x:X + 1, y:Y + 1)), lower: 0, upper: 1)
+        let D = clamp(magnitudeForCell(IntPoint(x:X, y:Y + 1)), lower: 0, upper: 1)
 
         let (MINX, MIDX, MAXX) = (0.0 * size.width, 0.5 * size.width, 1.0 * size.width)
         let (MINY, MIDY, MAXY) = (1.0 * size.height, 0.5 * size.height, 0.0 * size.height)
