@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "575D880AECD46D5450DCE1653E0F6C244B39D702",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "729A64D6D525F9784C8EE5D237BF81C9AEA202EE" : 0,
+    "575D880AECD46D5450DCE1653E0F6C244B39D702" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "92668694-4BBA-446E-928F-98DD0949EB34",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "729A64D6D525F9784C8EE5D237BF81C9AEA202EE" : "SwiftGraphics\/Externals\/SwiftUtilities\/",
+    "575D880AECD46D5450DCE1653E0F6C244B39D702" : "SwiftGraphics\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SwiftGraphics Demo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Demos\/SwiftGraphics Demo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:schwa\/SwiftGraphics.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "575D880AECD46D5450DCE1653E0F6C244B39D702"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:schwa\/SwiftUtilities.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "729A64D6D525F9784C8EE5D237BF81C9AEA202EE"
+    }
+  ]
+}
