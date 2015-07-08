@@ -6,9 +6,10 @@ All development happens on the [develop][develop] branch. Code is merged back on
 
 [develop]: https://github.com/schwa/SwiftGraphics/tree/develop
 
-Also note this project is moving to Swift 1.2, which requires Xcode 6.3 and Mac OS X 10.10. Note that this changes breaks [Travis CI][issue58].
+Also note this project has moved to Swift 2.0 which requires Xcode 7.0 and Mac OS X 10.10. Note that this change breaks [Travis CI][issue58] (again). This project will move to [BuildKite][BuildKite]. A Swift 1.2 branch has been made available - but no development will be occurring on this branch.
 
-[issue58]:https://github.com/schwa/SwiftGraphics/issues/58
+[issue58]: https://github.com/schwa/SwiftGraphics/issues/58
+[buildkite]: http://buildkite.com/
 
 ## Bringing Swift goodness to Quartz.
 
@@ -33,7 +34,7 @@ See "Help Wanted" section of this document for how you can contribute to SwiftGr
 
 Wrap Quartz (and other related Frameworks such as CoreImage) in a nice "Swifthonic" API.
 
-Provide wrappers and operators to help make working with graphics primitives in swift as 
+Provide wrappers and operators to help make working with graphics primitives in swift as
 convenient as possible.
 
 ## What's included
@@ -42,7 +43,7 @@ convenient as possible.
 * Object Oriented extensions for CGContext (including easy creation of bitmap context), CGPath
 * A bezier curve object that can represent curves of any order (including quadratic and
 cubic of course)
-* A path object that represents a bezier path - can be used to create and manipulate paths in a more natural way than CGPath or NSBezierPath can do 
+* A path object that represents a bezier path - can be used to create and manipulate paths in a more natural way than CGPath or NSBezierPath can do
 * Fleshed out Geometry objects (Triangle, Ellipse, etc) allowing creating and introspection.
 * Convex Hull Generation
 * QuadTree data structure
@@ -75,13 +76,13 @@ You can add SwiftGraphics in your project as one of the following ways:
 
 - Add SwiftGraphics.xcodeproj to your project and set up your dependencies appropriately.
   You can add SwiftGraphics as a submodule by opening the Terminal, trying to enter the command:
-  
+
   ```sh
   git submodule add https://github.com/schwa/SwiftGraphics.git
   ```
 
 - Install with [Carthage][carthage_url] (Recommended):
- 
+
   1. Add `github "schwa/SwiftGraphics"` to your project Cartfile.
   2. Run `carthage update` to download and build SwiftGraphics.
   3. Drag SwiftGraphics.framework to your project and link it.
@@ -93,9 +94,9 @@ You can add SwiftGraphics in your project as one of the following ways:
   use_frameworks!
   pod 'SwiftGraphics/iOS'
   ```
-  
+
   or
-  
+
   ```
   platform :osx, '10.9'
   use_frameworks!
