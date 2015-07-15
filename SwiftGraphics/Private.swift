@@ -26,17 +26,17 @@ func ordered <T:Comparable> (tuple:(T, T)) -> (T, T) {
 
 
 extension Array {
-    init(count:Int, @noescape block:(Void) -> T) {
+    init(count:Int, @noescape block:(Void) -> Element) {
         self.init()
         for _ in 0..<count {
             self.append(block())
         }
     }
 
-    mutating func push(o:T) {
+    mutating func push(o:Element) {
         append(o)
     }
-    mutating func pop() -> T? {
+    mutating func pop() -> Element? {
         if let first = first {
             removeAtIndex(0)
             return first
